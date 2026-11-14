@@ -1,0 +1,10 @@
+﻿import fs from 'node:fs';
+import { loadCatalog, readJson } from '../src/catalog.mjs';
+import { buildValidationMatrix, jsonDigest } from '../src/validation-matrix.mjs';
+const files = ['catalog/http.json', 'catalog/grpc.json', 'catalog/functions.json', 'evidence/live-checks.json'];
+const sources = Object.fromEntries(files.map(file => [file, readJson(file)]));
+const matrix = buildValidationMatrix(loadCatalog(process.cwd()), sources['catalog/functions.json'], sources['evidence/live-checks.json'], Object.fromEntries(files.map(file => [file, jsonDigest(sources[file])])));
+fs.writeFileSync('catalog/validation-matrix.json', JSON.stringify(matrix, null, 2) + '\n');
+const lines = ['# 全量验证准备状态', '', `纳入 ${matrix.summary.declarations} 条声明，其中 HTTP ${matrix.summary.http}、gRPC ${matrix.summary.grpc}。现有 ${matrix.summary.with_anonymous_sample} 条有匿名样本，完整场景验证为 0；不能将最小 JSON 检查算成完整接口验证。`, '', '[逐项验证矩阵](../catalog/validation-matrix.json) · [资源与操作范围](validation-resources.md) · [已有抽查](validation.md)', '', '矩阵仅用于计划，不发送请求，也不由 HTTP 方法自动决定是否可以执行。每条默认未审核，资源与权限标签是待核对提示。相同路径的不同声明保留原 ID，避免忽略参数、域名和拦截器差异。', '', '| 准备项提示 | 涉及声明数 |', '| --- | ---: |', ...Object.entries(matrix.summary.requirements).map(([name, count]) => `| ${name} | ${count} |`), '', '## 完成判据', '', ...matrix.acceptance.map(s => '- ' + s), '', '“全量”指对每条目录声明保留验证结果或具体未覆盖原因，不承诺所有静态库声明都有当前可访问的服务端实现。一次业务错误只验证该错误路径，无法证明合法参数下可以正常调用。', '', '## 更新计划', '', '在仓库根目录执行以下命令仅重新生成计划，不联网：', '', '```sh', 'node scripts/build-validation-matrix.mjs', '```', '', '矩阵是从静态目录生成的计划产物。此阶段不在其中手工填写测试结果；后续执行结果应追加至独立、带来源哈希的证据文件，再由生成器关联，避免重建覆盖实测记录。', ''];
+fs.writeFileSync('docs/validation-plan.md', lines.join('\n'));
+console.log(JSON.stringify(matrix.summary));

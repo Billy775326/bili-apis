@@ -12,6 +12,10 @@
 
 功能导航参考 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的模块组织；当前交付仍为 APK 证据目录，认证、签名和可调用封装尚待实现。
 
+## 全量验证准备
+
+[逐项验证计划](docs/validation-plan.md)为全部 2,929 条声明建立验收与资源清单；[资源需求与操作范围](docs/validation-resources.md)说明设备、测试账号、自有内容和特殊角色的需求。当前完整场景验证为 0，六个匿名样本保留原结论。计划生成不发送请求。
+
 ## 已提取内容
 
 | 内容                 |  数量 | 入口                                                                        |

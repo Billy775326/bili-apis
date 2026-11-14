@@ -10,7 +10,7 @@
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "catalog": "node bin/bili-apis.mjs",
-    "docs:generate": "node scripts/build-docs.mjs && node scripts/build-discovery.mjs && node scripts/build-functions.mjs"
+    "docs:generate": "node scripts/build-docs.mjs && node scripts/build-discovery.mjs && node scripts/build-functions.mjs && node scripts/build-validation-matrix.mjs"
   },
   "engines": {
     "node": ">=24.11.0"
