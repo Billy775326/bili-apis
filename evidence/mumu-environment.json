@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-14T15:37:40.659Z",
+  "environment": {
+    "kind": "mumu",
+    "instance": 1,
+    "android_release": "12",
+    "android_sdk": 32,
+    "supported_abis": [
+      "x86_64",
+      "arm64-v8a",
+      "x86",
+      "armeabi-v7a",
+      "armeabi"
+    ],
+    "native_bridge": "libnb.so",
+    "package_name": "com.bilibili.app.in",
+    "version_name": "6.8.0",
+    "version_code": 9180200,
+    "primary_cpu_abi": "arm64-v8a",
+    "installed_apks": [
+      {
+        "filename": "com.bilibili.app.in.apk",
+        "sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+        "bytes": 403962674
+      },
+      {
+        "filename": "config.arm64_v8a.apk",
+        "sha256": "9febe49b1e56095bbda638bbcf8405d25d8012faff5bc89c0fa6eaebc2a90366",
+        "bytes": 128361182
+      },
+      {
+        "filename": "config.xxhdpi.apk",
+        "sha256": "677f54b20e12e80b405d42a4e8c3d325bef17a1d569e1a695616c5cf55e033a1",
+        "bytes": 153133
+      }
+    ],
+    "root_available": false
+  },
+  "host_tools": {
+    "python_version": "3.12.0",
+    "frida_version": "17.26.3",
+    "virtual_environment": "project-local ignored directory",
+    "frida_wheel_sha256": "f91b80f3e5f72eaffb63ee5d0a5f49e63fdb91d35cc7dc2d6540b31c3a8f3833",
+    "frida_wheel_provenance_url": "https://pypi.org/project/frida/17.26.3/#files",
+    "download_channel": "PyPI Tsinghua mirror; exact SHA-256 matched official PyPI metadata",
+    "server_installed": false
+  },
+  "startup": {
+    "status": "ok",
+    "observed_duration_ms": 15000,
+    "process_alive_all_samples": true,
+    "same_process_all_samples": true,
+    "foreground_app_observed": true,
+    "first_screen": "first-run asset loading, then dismissible login prompt"
+  },
+  "observations": [
+    {
+      "id": "anonymous-home",
+      "title": "游客首页",
+      "checked_at": "2026-11-14T15:21:52.793Z",
+      "authentication": "anonymous",
+      "input": {
+        "search_query": "bilibili",
+        "public_target": null
+      },
+      "result": "ui-observed",
+      "checks": [
+        {
+          "kind": "visible-ui-text",
+          "expected": "推荐",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "热门",
+          "passed": true
+        }
+      ],
+      "ui_node_count": 153,
+      "local_evidence": {
+        "ui_xml_sha256": "c106c64d98130823451cd2a94f2b7f00aaa04a4e7d59459015a8b92c4201fe1c",
+        "screen_png_sha256": "3b95a6440548cca71b9e27fafc0fed7d1d052ac97c063fb174b53bf27a98eba8",
+        "raw_artifacts_committed": false
+      },
+      "mapped_api_ids": [],
+      "http_status": null,
+      "business_code": null,
+      "scope": "Only visible App behavior was observed; no captured request, per-route business assertion, pagination contract or complete API validation."
+    },
+    {
+      "id": "anonymous-search-suggestions",
+      "title": "游客搜索建议",
+      "checked_at": "2026-11-14T15:23:22.705Z",
+      "authentication": "anonymous",
+      "input": {
+        "search_query": "bilibili",
+        "public_target": null
+      },
+      "result": "ui-observed",
+      "checks": [
+        {
+          "kind": "visible-ui-text",
+          "expected": "bilibili",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "反馈",
+          "passed": true
+        }
+      ],
+      "ui_node_count": 54,
+      "local_evidence": {
+        "ui_xml_sha256": "5ca801954157c1010525f8fafffc00aa16d05887c7a9d4a9ae961c935a1a71d3",
+        "screen_png_sha256": "6af6944f9a4e5ba83de4e3f7fe091432d80cc2825fb0fda07433b19d511f0036",
+        "raw_artifacts_committed": false
+      },
+      "mapped_api_ids": [],
+      "http_status": null,
+      "business_code": null,
+      "scope": "Only visible App behavior was observed; no captured request, per-route business assertion, pagination contract or complete API validation."
+    },
+    {
+      "id": "anonymous-search-results",
+      "title": "游客搜索结果",
+      "checked_at": "2026-11-14T15:24:39.112Z",
+      "authentication": "anonymous",
+      "input": {
+        "search_query": "bilibili",
+        "public_target": null
+      },
+      "result": "ui-observed",
+      "checks": [
+        {
+          "kind": "visible-ui-text",
+          "expected": "综合",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "番剧",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "用户",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "哔哩哔哩弹幕网",
+          "passed": true
+        }
+      ],
+      "ui_node_count": 130,
+      "local_evidence": {
+        "ui_xml_sha256": "38665f8f83ad6da0105a66a1fa0c12102bd9005ae1ac358c8fe195adbdfddc88",
+        "screen_png_sha256": "dbc6c30eb076a780b3cff33780aa1aa7c4fe3ee33be59e52c31493d08f8c4a78",
+        "raw_artifacts_committed": false
+      },
+      "mapped_api_ids": [],
+      "http_status": null,
+      "business_code": null,
+      "scope": "Only visible App behavior was observed; no captured request, per-route business assertion, pagination contract or complete API validation."
+    },
+    {
+      "id": "anonymous-video-detail",
+      "title": "公开视频详情",
+      "checked_at": "2026-11-14T15:27:11.631Z",
+      "authentication": "anonymous",
+      "input": {
+        "search_query": "bilibili",
+        "public_target": "当机器人加入我的乐队，音乐变了吗？"
+      },
+      "result": "ui-observed",
+      "checks": [
+        {
+          "kind": "visible-ui-text",
+          "expected": "简介",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "评论",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "创作团队",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "当机器人加入我的乐队，音乐变了吗？",
+          "passed": true
+        }
+      ],
+      "ui_node_count": 147,
+      "local_evidence": {
+        "ui_xml_sha256": "c7b27457f3d534345b0744868e6df3c5912104ac23d5ff17841e1950f00bdfa6",
+        "screen_png_sha256": "9b351bfd9f459804b5458a6d34430cf0321d6f2104b09b9443628901f5a8e1e7",
+        "raw_artifacts_committed": false
+      },
+      "mapped_api_ids": [],
+      "http_status": null,
+      "business_code": null,
+      "scope": "Only visible App behavior was observed; no captured request, per-route business assertion, pagination contract or complete API validation."
+    },
+    {
+      "id": "anonymous-comments",
+      "title": "公开视频评论读取",
+      "checked_at": "2026-11-14T15:28:20.499Z",
+      "authentication": "anonymous",
+      "input": {
+        "search_query": "bilibili",
+        "public_target": "当机器人加入我的乐队，音乐变了吗？"
+      },
+      "result": "ui-observed",
+      "checks": [
+        {
+          "kind": "visible-ui-text",
+          "expected": "热门评论",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "按热度",
+          "passed": true
+        }
+      ],
+      "ui_node_count": 125,
+      "local_evidence": {
+        "ui_xml_sha256": "6211d5935866daf9024dbc3aa6f4b14768a0a8f85894a8d76b6217990cd18e4f",
+        "screen_png_sha256": "82fdd7522a2fe5110997bac27c810ac7d7b25109326e85de2933ea1bd2e99949",
+        "raw_artifacts_committed": false
+      },
+      "mapped_api_ids": [],
+      "http_status": null,
+      "business_code": null,
+      "scope": "Only visible App behavior was observed; no captured request, per-route business assertion, pagination contract or complete API validation."
+    },
+    {
+      "id": "anonymous-public-space",
+      "title": "公开账号空间",
+      "checked_at": "2026-11-14T15:34:50.986Z",
+      "authentication": "anonymous",
+      "input": {
+        "search_query": "bilibili",
+        "public_target": "哔哩哔哩弹幕网"
+      },
+      "result": "ui-observed",
+      "checks": [
+        {
+          "kind": "visible-ui-text",
+          "expected": "空间页",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "主页",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "动态",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "投稿",
+          "passed": true
+        },
+        {
+          "kind": "visible-ui-text",
+          "expected": "哔哩哔哩弹幕网",
+          "passed": true
+        }
+      ],
+      "ui_node_count": 667,
+      "local_evidence": {
+        "ui_xml_sha256": "adeccd164c41d2b1084394a9699db12b036db7985984bc1d27734f8523ca62b4",
+        "screen_png_sha256": "4cca972a2e356a9d3a76f29a8c47375fa7f3011683b09fffdc26822821fd8353",
+        "raw_artifacts_committed": false
+      },
+      "mapped_api_ids": [],
+      "http_status": null,
+      "business_code": null,
+      "scope": "Only visible App behavior was observed; no captured request, per-route business assertion, pagination contract or complete API validation."
+    }
+  ],
+  "verification": {
+    "ui_cases": 6,
+    "new_fully_validated_api_declarations": 0,
+    "account_login": "not-performed",
+    "request_capture": "not-started",
+    "root_permission_change": "not-performed; explicit approval pending after automatic-review rejection",
+    "remaining_scope": "Map real anonymous requests and business assertions after approved observation setup; authenticated and write cases still need their own resources and scope."
+  },
+  "limitations": [
+    "ARM64 native-bridge observations on Android 12 x86_64 MuMu do not establish physical ARM64-device compatibility.",
+    "Raw screenshots/XML remain only in ignored local storage; public evidence contains summaries and hashes, not independently reproducible raw captures.",
+    "One earlier emulator connection went offline; the active environment was then fixed to instance 1 and all installed APK hashes were rechecked there."
+  ]
+}
