@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "com.bilibili.app.in.apk",
+    "sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+    "size": 403962674,
+    "parent_archive_sha256": "9727420e3299847db1b8d34e8a6bbad13ff79f79f693ab84b71cfb3276cbb169"
+  },
+  "dex_files": [
+    {
+      "name": "classes.dex",
+      "size": 16943156,
+      "sha256": "615263f7de91048c65eb8d5d5da6685da83d4a7df392f101cf01f9bd4ddeca78",
+      "string_count": 56775
+    },
+    {
+      "name": "classes10.dex",
+      "size": 6764028,
+      "sha256": "fb4eeed7f6d819b79ddff71525a723cbd6644b736bd1ad53c1b1252382258a09",
+      "string_count": 37400
+    },
+    {
+      "name": "classes11.dex",
+      "size": 10747416,
+      "sha256": "3fd222c935432065f430831cb0dbf9352239c4a91d846974fd58208bb1871ec1",
+      "string_count": 67233
+    },
+    {
+      "name": "classes12.dex",
+      "size": 11486072,
+      "sha256": "9cc74576003126d2481b4d2885cd30ca85a4907898e9b1f0ca4cea514c61045e",
+      "string_count": 81819
+    },
+    {
+      "name": "classes13.dex",
+      "size": 11324792,
+      "sha256": "fff6e058abfa7f3bd9e5063f1d05d4e539049298a27d902bd112e1fc0feb1896",
+      "string_count": 77580
+    },
+    {
+      "name": "classes14.dex",
+      "size": 10669892,
+      "sha256": "13fc86873e5a39c3eabce5c19bdc331355df04a8635ade56ac34386339f84583",
+      "string_count": 66823
+    },
+    {
+      "name": "classes15.dex",
+      "size": 11708136,
+      "sha256": "cf26618774b72872294aab91b648a28ab6f80c4dd3520eb07bfa5730a512ab91",
+      "string_count": 75444
+    },
+    {
+      "name": "classes16.dex",
+      "size": 12221216,
+      "sha256": "47f051b96b0ebe8f11b2516b52c2dfc25077ec0c482748cfca3e4388fb9fb8d8",
+      "string_count": 80046
+    },
+    {
+      "name": "classes17.dex",
+      "size": 9901296,
+      "sha256": "aad353ae868bd2b6d64989d5c631354e7f4945a80b8fec4c1fdaaaa98045d319",
+      "string_count": 71378
+    },
+    {
+      "name": "classes18.dex",
+      "size": 11045304,
+      "sha256": "f668428faf8071d378ced4970b4748a55d4c89e5e3da46b17098e58363c1abd3",
+      "string_count": 66591
+    },
+    {
+      "name": "classes19.dex",
+      "size": 8835068,
+      "sha256": "ed3b29da1a8694c9e92d768406ac50e056ca858a39c081d4b91b25664394ae76",
+      "string_count": 58320
+    },
+    {
+      "name": "classes2.dex",
+      "size": 4977616,
+      "sha256": "bc2ce9884768b32763de1cfcc3e674fd606adddd96b12a7425f3cefbe235cb0b",
+      "string_count": 21710
+    },
+    {
+      "name": "classes20.dex",
+      "size": 10549948,
+      "sha256": "f6d2c16e803ced34bd067c5b8d7f7db49d5de457d123a84a8e5777e04b35be5b",
+      "string_count": 74174
+    },
+    {
+      "name": "classes21.dex",
+      "size": 10605596,
+      "sha256": "52b6e977fa340c4c49f8088d9e0a5d7c165cc7adc1496ec8a55b1cc595de8d9e",
+      "string_count": 60858
+    },
+    {
+      "name": "classes22.dex",
+      "size": 11897872,
+      "sha256": "82ad426652368d35931dc8061fa87bdc14fc0d387b3fc81520e3cc6a10ae0fc1",
+      "string_count": 67735
+    },
+    {
+      "name": "classes23.dex",
+      "size": 11797856,
+      "sha256": "7bff0d1dfa2188b53e99fe4f4cee92fc15960af989f3ec3fce606a2ab104d775",
+      "string_count": 55512
+    },
+    {
+      "name": "classes24.dex",
+      "size": 699792,
+      "sha256": "7844ee44ee7c6fdcd3582905a50bce32540ef70aed1c817ec4f629596ef42c70",
+      "string_count": 3596
+    },
+    {
+      "name": "classes25.dex",
+      "size": 12500208,
+      "sha256": "32bdc58d0c4ba68e7acdcf81bc667f275fbe6504ceb0c31df7e9069aee386447",
+      "string_count": 66512
+    },
+    {
+      "name": "classes26.dex",
+      "size": 12164944,
+      "sha256": "c4901f27939ace4541af4f9d2c3d9a156858cb60beb85a77cefb5cb773688c38",
+      "string_count": 62388
+    },
+    {
+      "name": "classes27.dex",
+      "size": 7818636,
+      "sha256": "72ca62355695c7aee4ce0d3fdaaf59cb85051b72bde92e4bd6a30b4d40db5d2d",
+      "string_count": 38344
+    },
+    {
+      "name": "classes28.dex",
+      "size": 13821396,
+      "sha256": "e4992ec1263ac1c3558d74ce5ed171059366e10b1450b9966b8b6eb2f77f11fb",
+      "string_count": 56525
+    },
+    {
+      "name": "classes29.dex",
+      "size": 11372212,
+      "sha256": "045745006b8643fef77d000eaeea293bba4f77ae13c14adbd3759de7868d1970",
+      "string_count": 66938
+    },
+    {
+      "name": "classes3.dex",
+      "size": 5879224,
+      "sha256": "fbc0f3d73b5b84b1f95f98a47f8e881cd58eaa1fb81778ea592c8dfee6504a69",
+      "string_count": 23222
+    },
+    {
+      "name": "classes30.dex",
+      "size": 11176196,
+      "sha256": "5898c3d638837c559eb52ede2247db407890eb5087a4fd8439c9d73103335a7c",
+      "string_count": 67959
+    },
+    {
+      "name": "classes31.dex",
+      "size": 282532,
+      "sha256": "e50390c2ffda7124dee8e7c7b6d684b74597e2278054968b7d3c429ba18cbf5e",
+      "string_count": 2039
+    },
+    {
+      "name": "classes32.dex",
+      "size": 9126472,
+      "sha256": "de63b2eb4fc62ce728e08555e1d879755ad3fa1ff0f4370a4ac991d143737def",
+      "string_count": 47200
+    },
+    {
+      "name": "classes33.dex",
+      "size": 6807900,
+      "sha256": "9ebe21a643cf65c2ec22c3556a1ce8c1688131f83c96e696548eec15cc0eb6d4",
+      "string_count": 45197
+    },
+    {
+      "name": "classes34.dex",
+      "size": 436732,
+      "sha256": "523c0df6c4acce81e7e5620c86d727575b9002ff73128877f3b42b49b22c747a",
+      "string_count": 3824
+    },
+    {
+      "name": "classes35.dex",
+      "size": 9253900,
+      "sha256": "70504fdd657936e80107f5246f71cf98d69ea0332b5707cdb81103c496f2457a",
+      "string_count": 56794
+    },
+    {
+      "name": "classes36.dex",
+      "size": 53904,
+      "sha256": "9a4688168b43d726a452b5287e7efa44b5820f5cdb45147c0d5c4fb7015b36d5",
+      "string_count": 762
+    },
+    {
+      "name": "classes37.dex",
+      "size": 2201716,
+      "sha256": "a1a7a52d034e54138c3d2ca623b5d53864a112590816c097dc23e36ad69f989c",
+      "string_count": 13986
+    },
+    {
+      "name": "classes4.dex",
+      "size": 7275132,
+      "sha256": "077a1b9398a7eea73a8a38bfcf831e37cc89382a61d61e9045cbfc6da75a4d69",
+      "string_count": 47214
+    },
+    {
+      "name": "classes5.dex",
+      "size": 6518928,
+      "sha256": "0ecda0e571ec50af26cb99697b92508ff42fad157aa9f672dcea402875d9d081",
+      "string_count": 28730
+    },
+    {
+      "name": "classes6.dex",
+      "size": 5838628,
+      "sha256": "aee7703baac6d28e3e1e7281be840d5abcdca200c67754adaf1717bc00d9dd6c",
+      "string_count": 24833
+    },
+    {
+      "name": "classes7.dex",
+      "size": 6073944,
+      "sha256": "d6e9869d06510ad382d815cf3b0e7600c2cec6d5eb514f50b47241a5ef947d2b",
+      "string_count": 28239
+    },
+    {
+      "name": "classes8.dex",
+      "size": 6659428,
+      "sha256": "f1de208131619997204603ed0be138e1e9c62e40deab88dbec67bd6de8c0e8fe",
+      "string_count": 29724
+    },
+    {
+      "name": "classes9.dex",
+      "size": 5819048,
+      "sha256": "75046729fb832fb17f27dea469f45a21f0437411781db0d346826f3f2dbac3ee",
+      "string_count": 25895
+    }
+  ],
+  "origin": "Original base APK extracted from the pinned XAPK; exact DEX bytes and hashes recorded."
+}

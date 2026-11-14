@@ -1,0 +1,15 @@
+﻿{
+  "kind": "derived-analysis-fragment",
+  "source_apk_sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+  "source_dex": "classes18.dex",
+  "source_dex_sha256": "f668428faf8071d378ced4970b4748a55d4c89e5e3da46b17098e58363c1abd3",
+  "derived_apk_sha256": "bf79a13ead3f003c2fe85d45a442eeae990eb400996288f4d22e715123c5cf54",
+  "mapping": {
+    "AndroidManifest.xml": "AndroidManifest.xml",
+    "classes18.dex": "classes.dex"
+  },
+  "limitations": [
+    "Unsigned reconstructed archive with other DEX and resources omitted.",
+    "Selected DEX bytes unmodified; static code is not runtime observation."
+  ]
+}

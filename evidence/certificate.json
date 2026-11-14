@@ -1,0 +1,8 @@
+{
+  "file": "com.bilibili.app.in.apk",
+  "certificate_sha256": "93ba270f5521139ecafe4bb638ac5b1198bc548f62d9fd8f8580a079faf5910e",
+  "certificate_subject": "C=CN\nST=Guangdong\nL=Zhuhai\nO=danmaku.tv\nOU=danmaku.tv\nCN=Bbcallen",
+  "matches_published_fingerprint": true,
+  "published_fingerprint_source": "https://www.apkmirror.com/apk/bilibili-inc/bilibili/bilibili-anime-%C2%B7-video-hd-6-7-1-release/",
+  "verification_scope": "Certificate extraction and fingerprint comparison only; APK cryptographic signature and content digest not verified"
+}

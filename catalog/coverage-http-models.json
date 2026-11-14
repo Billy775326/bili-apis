@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "com.bilibili.app.in.apk",
+    "sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+    "size": 403962674,
+    "parent_archive_sha256": "9727420e3299847db1b8d34e8a6bbad13ff79f79f693ab84b71cfb3276cbb169"
+  },
+  "dex_files_scanned": 37,
+  "non_framework_class_definitions_indexed": 301140,
+  "http_declarations_seeded": 2325,
+  "root_references": 9120,
+  "model_definitions": 4792,
+  "unique_model_descriptors": 4792,
+  "fields": 26677,
+  "enum_constants": 205,
+  "external_descriptors": 83,
+  "unresolved_descriptors": 0,
+  "unresolved_references": [],
+  "duplicate_class_descriptors": [],
+  "size_bytes": 21471459,
+  "limitations": [
+    "Field inventories are Java/DEX metadata, not verified JSON request/response schemas.",
+    "SerializedName, JSONField, Json and other supported serialization annotations are preserved as observed; no requiredness/default/serialization inclusion rules are inferred.",
+    "All instance fields and named enum constants are included. Static non-enum fields are excluded; transient/synthetic flags remain visible without guessing serializer behavior.",
+    "Graph follows selected descriptor/signature field types and app superclasses; it does not follow methods, object creation, native code, reflection or serializer adapters.",
+    "Framework namespaces are listed as external even if their implementation exists in the APK. Dangling references and duplicate class definitions remain explicit."
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "kind": "derived-analysis-fragment",
+  "source_apk_sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+  "source_dex": "classes7.dex",
+  "source_dex_sha256": "d6e9869d06510ad382d815cf3b0e7600c2cec6d5eb514f50b47241a5ef947d2b",
+  "derived_apk_sha256": "6440acbb9e149edb0054fbc0ca86ffefa356f9aa94dde9ddbbf1ab1693c8f405",
+  "mapping": {
+    "classes7.dex": "classes.dex",
+    "AndroidManifest.xml": "AndroidManifest.xml"
+  },
+  "limitations": [
+    "Reconstructed archive is unsigned and omits other original DEX/resources.",
+    "Selected DEX bytes are unmodified; decompilation does not establish runtime behavior."
+  ]
+}

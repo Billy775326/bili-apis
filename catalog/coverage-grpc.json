@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "dex_files": 37,
+  "moss_classes": 146,
+  "method_descriptor_definitions": 1190,
+  "descriptor_builders": 604,
+  "unique_methods": 604,
+  "message_classes": 4216,
+  "decoded_message_layouts": 4216,
+  "decoded_wire_fields": 20621,
+  "field_number_cross_checks_matched": 4216,
+  "diagnostics": [],
+  "scope": "Every class definition in every supplied DEX examined; fixed signatures and direct GeneratedMessageLite classes selected",
+  "runtime_verification": false
+}

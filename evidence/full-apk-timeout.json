@@ -1,0 +1,16 @@
+{
+  "operation": "inspect_android_package",
+  "code": "provider_timeout",
+  "timeout_ms": 120000,
+  "original_apk_sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+  "provider_facts": {
+    "jar_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+    "bridge_sha256": "5a5a4e32264fbe597a329d7ad4b06a6266b7b31243e86b0263dbddcecaf351a1",
+    "bridge_name": "rea-jadx-bridge",
+    "bridge_version": "1",
+    "server_name": "rea-jadx-bridge",
+    "server_version": "1",
+    "engine_version": "0.7.1"
+  },
+  "scope": "Full APK metadata loading did not finish; focused artifacts were used for method checks."
+}

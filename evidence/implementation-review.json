@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "original_apk_sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+  "evidence": [
+    {
+      "label": "view-descriptor-method",
+      "parent_evidence_id": "ev_5cf01c9ad7fceee3ed3431e7ca688d8878e6d349f526cd305884f92c68d824e2",
+      "derived_artifact_sha256": "6440acbb9e149edb0054fbc0ca86ffefa356f9aa94dde9ddbbf1ab1693c8f405",
+      "provider": {
+        "id": "jadx",
+        "name": "JADX headless",
+        "version": "0.7.1"
+      },
+      "operation": "inspect_android_method",
+      "class_name": "com.bapis.bilibili.app.viewunite.v1.E2",
+      "method": {
+        "name": "getViewMethod",
+        "reported_signature": "getViewMethod(): io.grpc.MethodDescriptor<com.bapis.bilibili.app.viewunite.v1.ViewReq, com.bapis.bilibili.app.viewunite.v1.ViewReply>",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "source_status": "complete",
+      "source_sha256": "3af7f61aa01649d67056de34701dae1dcbdc558df8ba5fa0301ea818ebe3276f",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "label": "common-interceptor-sign",
+      "parent_evidence_id": "ev_bd39972f768272d28c3fd1137e0fa43f5fed55fd77469e839ef1f4498913ef47",
+      "derived_artifact_sha256": "bf79a13ead3f003c2fe85d45a442eeae990eb400996288f4d22e715123c5cf54",
+      "provider": {
+        "id": "jadx",
+        "name": "JADX headless",
+        "version": "0.7.1"
+      },
+      "operation": "inspect_android_method",
+      "class_name": "qC0.a",
+      "method": {
+        "name": "signQuery",
+        "reported_signature": "signQuery(java.util.Map<java.lang.String, java.lang.String>): com.bilibili.nativelibrary.SignedQuery",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "source_status": "complete",
+      "source_sha256": "fb7e572670d0abaf73fce3292a3afddf30e5a102b2098606d2c8109af1f12b47",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "label": "common-interceptor-params",
+      "parent_evidence_id": "ev_c1d3280e797d019255f5043e96d4afd21e027820a73616d949f3ac4d354e9bd1",
+      "derived_artifact_sha256": "bf79a13ead3f003c2fe85d45a442eeae990eb400996288f4d22e715123c5cf54",
+      "provider": {
+        "id": "jadx",
+        "name": "JADX headless",
+        "version": "0.7.1"
+      },
+      "operation": "inspect_android_method",
+      "class_name": "qC0.a",
+      "method": {
+        "name": "addCommonParam",
+        "reported_signature": "addCommonParam(java.util.Map<java.lang.String, java.lang.String>): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "source_status": "complete",
+      "source_sha256": "41c9560072aca1060d95c481e42cbe0d2761c6ebcc2d9506ca2a9b85f0d6b49d",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    },
+    {
+      "label": "common-interceptor-intercept",
+      "parent_evidence_id": "ev_db7044b9df4bb3260e925260af2670bddc50f21674715992119fd6ae0bdb0d60",
+      "derived_artifact_sha256": "bf79a13ead3f003c2fe85d45a442eeae990eb400996288f4d22e715123c5cf54",
+      "provider": {
+        "id": "jadx",
+        "name": "JADX headless",
+        "version": "0.7.1"
+      },
+      "operation": "inspect_android_method",
+      "class_name": "qC0.a",
+      "method": {
+        "name": "intercept",
+        "reported_signature": "intercept(okhttp3.z): okhttp3.z",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "source_status": "complete",
+      "source_sha256": "834a4a4bac40f2bf41a68e885020937e31f9de18c7f249ea549be284c2d84f5e",
+      "limitations": [
+        "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+        "Method signatures use provider display types; exact DEX descriptors and instruction offsets are unavailable. Overload indices are local to this engine and artifact.",
+        "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+        "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "label": "view-descriptor-method",
+      "route": "/bilibili.app.viewunite.v1.View/View",
+      "declared_kind": "UNARY",
+      "request_type": "Lcom/bapis/bilibili/app/viewunite/v1/ViewReq;",
+      "response_type": "Lcom/bapis/bilibili/app/viewunite/v1/ViewReply;",
+      "basis": "MethodDescriptor<ViewReq,ViewReply> generic signature and distinct request/response marshaller fields in decompiled builder."
+    },
+    {
+      "label": "common-interceptor-sign",
+      "calls": "LibBili.h(Map)",
+      "basis": "Decompiled signQuery delegates without exposing native implementation."
+    },
+    {
+      "label": "common-interceptor-params",
+      "literal_keys": [
+        "platform",
+        "mobi_app",
+        "appkey",
+        "build",
+        "channel",
+        "c_locale",
+        "s_locale"
+      ],
+      "literal_values": {
+        "platform": "android"
+      },
+      "account_value": "Optional account access key under an unresolved key constant",
+      "alternate_path": "netPublicParamFactory.create() can replace the default population path"
+    },
+    {
+      "label": "common-interceptor-intercept",
+      "http_behavior": "GET adds common URL parameters; POST attempts body parameters and falls back to URL parameters; headers added before dispatch."
+    }
+  ],
+  "scope": "Focused decompilation of unmodified selected DEX in unsigned derived archives; no runtime or live-network observation. Other gRPC roles remain candidates."
+}
