@@ -1,4 +1,4 @@
-﻿export function instructions(bytes, codeOffset) {
+﻿export function instructions(bytes, codeOffset, onInstruction) {
   if (!codeOffset) return [];
   const count = bytes.readUInt32LE(codeOffset + 12),
     start = codeOffset + 16;
@@ -48,6 +48,13 @@
     )
       throw Error("Unsupported opcode " + op.toString(16));
     if (pc + width > count) throw Error("Truncated instruction");
+    onInstruction?.({
+      opcode: op,
+      word,
+      width,
+      byte_offset: p,
+      code_unit_offset: pc,
+    });
     if (op === 0x1a || op === 0x1b)
       events.push({
         kind: "string",

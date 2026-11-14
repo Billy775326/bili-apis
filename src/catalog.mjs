@@ -1,45 +1,95 @@
-import fs from "node:fs";
+﻿import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 export const readJson = (file) =>
   JSON.parse(fs.readFileSync(file, "utf8").replace(/^\uFEFF/, ""));
+export const CATALOG_KINDS = [
+  "http",
+  "grpc",
+  "artifact",
+  "message",
+  "http-model",
+  "dynamic-url",
+  "dex-route",
+  "resource-route",
+  "broadcast",
+  "native-url",
+  "native-jni",
+  "java-native",
+  "associated-message",
+];
+const definitions = [
+  ["http", "http.json", "endpoints"],
+  ["grpc", "grpc.json", "methods"],
+  ["artifact", "artifacts.json", "candidates"],
+  ["message", "messages.json", "messages"],
+  ["http-model", "http-models.json", "models"],
+  ["dynamic-url", "dex-routes.json", "dynamic_url_callers"],
+  ["dex-route", "dex-routes.json", "route_argument_candidates"],
+  ["resource-route", "resource-routes.json", "declarations"],
+  ["broadcast", "grpc-additional.json", "broadcast_dispatch_paths"],
+  ["native-url", "native.json", "candidates"],
+  ["java-native", "native.json", "java_native_declarations"],
+  [
+    "native-jni",
+    "native.json",
+    (r) =>
+      r.libraries.flatMap((l) =>
+        l.jni_table_candidates.map((e) => ({
+          ...e,
+          member: l.member,
+          member_sha256: l.sha256,
+        })),
+      ),
+  ],
+  ["associated-message", "grpc-audit.json", "outside_associated_messages"],
+];
 export function loadCatalog(root) {
-  return [
-    ["http", "http.json", "endpoints"],
-    ["grpc", "grpc.json", "methods"],
-    ["artifact", "artifacts.json", "candidates"],
-    ["message", "messages.json", "messages"],
-    ["http-model", "http-models.json", "models"],
-  ].flatMap(([kind, file, key]) => {
-    const name = path.join(root, "catalog", file);
-    if (!fs.existsSync(name)) throw Error("Missing required catalog: " + file);
-    const data = readJson(name);
-    if (!Array.isArray(data[key]))
+  const cache = new Map();
+  return definitions.flatMap(([kind, file, key]) => {
+    if (!cache.has(file)) {
+      const name = path.join(root, "catalog", file);
+      if (!fs.existsSync(name))
+        throw Error("Missing required catalog: " + file);
+      cache.set(file, readJson(name));
+    }
+    const data = cache.get(file),
+      rows = typeof key === "function" ? key(data) : data[key];
+    if (!Array.isArray(rows))
       throw Error(`Invalid ${file}: expected ${key} array`);
-    return data[key].map((e) => ({
-      ...e,
-      id:
-        e.id ??
-        (kind === "message" || kind === "http-model"
-          ? kind + ":" + e.descriptor
-          : "artifact:" +
+    return rows.map((e) => {
+      let id = e.id;
+      if (!id) {
+        if (["message", "http-model", "associated-message"].includes(kind))
+          id = kind + ":" + e.descriptor;
+        else if (kind === "artifact")
+          id =
+            "artifact:" +
             e.archive_sha256.slice(0, 12) +
             ":" +
             e.member +
             ":" +
-            e.member_byte_offset),
-      kind,
-    }));
+            e.member_byte_offset;
+        else
+          id =
+            kind +
+            ":" +
+            crypto
+              .createHash("sha256")
+              .update(JSON.stringify(e))
+              .digest("hex")
+              .slice(0, 24);
+      }
+      return { ...e, id, ...(e.kind ? { record_kind: e.kind } : {}), kind };
+    });
   });
 }
 export function select(
   entries,
   { kind, query = "", offset = 0, limit = 20 } = {},
 ) {
-  if (
-    kind &&
-    !["http", "grpc", "artifact", "message", "http-model"].includes(kind)
-  )
-    throw Error("kind must be http, grpc, artifact, message or http-model");
+  if (kind && !CATALOG_KINDS.includes(kind))
+    throw Error("kind must be one of: " + CATALOG_KINDS.join(", "));
   if (
     !Number.isSafeInteger(offset) ||
     offset < 0 ||
@@ -48,11 +98,11 @@ export function select(
     limit > 1000
   )
     throw Error("offset must be nonnegative; limit must be 1..1000");
-  const text = query.toLowerCase(),
+  const q = query.toLowerCase(),
     matches = entries.filter(
       (e) =>
-        (!kind || e.kind === kind) &&
-        (!text || JSON.stringify(e).toLowerCase().includes(text)),
+        (!kind || kind === e.kind) &&
+        (!q || JSON.stringify(e).toLowerCase().includes(q)),
     );
   return {
     total: matches.length,
@@ -63,7 +113,7 @@ export function select(
   };
 }
 export function summarize(entries) {
-  const counts = { http: 0, grpc: 0, artifact: 0, message: 0, "http-model": 0 },
+  const counts = Object.fromEntries(CATALOG_KINDS.map((k) => [k, 0])),
     verbs = {};
   for (const e of entries) {
     if (!(e.kind in counts)) throw Error("Unknown catalog kind");
@@ -78,6 +128,6 @@ export function summarize(entries) {
     counts,
     http_verbs: verbs,
     verification:
-      "Static APK declarations/candidates; live availability is not established.",
+      "Counts are evidence records, not a count of callable interfaces. Static declarations, construction observations and unresolved candidates remain separate; live availability is not established.",
   };
 }

@@ -30,3 +30,13 @@
 `catalog/artifacts.json.candidates` 记录完整成员名、成员哈希、未压缩内容字节偏移及 native 数据节名。URL 字符串只是一条线索，不能据此推断 HTTP 动词、参数或可达代码。扫描排除查询/fragment 值；这不是执行时抓包。
 
 所有目录均未发送线上请求；`static-declaration`、`dex-method-descriptor`、`static-string-only` 等状态应按对应提取方式理解。
+
+## 第二轮结果
+
+`dynamic-url` 表示动态声明的直接调用位置，可能仍缺 URL 值；`dex-route` 表示寄存器关联的 URL/路径参数，不等于网络请求。被标为 `verified-url-setter` 的调用仅说明目标设置器语义通过局部反编译核对，HTTP 动词和实际发送仍可能未知。
+
+`resource-route` 保留请求形态、计算值、成员来源链和 UTF-8 字节偏移。配置对象和调用语法可能重复；不统一假设包装器绑定。`broadcast` 是客户端分发路径候选，不能当作 gRPC 请求路由。
+
+`native-jni` 为 ELF 数据中的指针三元组布局候选，Java 类关联仅给出可能匹配声明；`java-native` 是 Java native 声明（含随包 SDK）。二者都不等于网络 API。
+
+`catalog/discovery-summary.json` 中 `json_stringify_sha256` 对来源 JSON 去除空白和 BOM 后按 `JSON.stringify` 计算 SHA-256，用于跨平台摘要一致性；不是原始 JSON 文件字节哈希。APK/DEX/成员哈希仍对应原始二进制字节。

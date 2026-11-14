@@ -1,13 +1,18 @@
 #!/usr/bin/env node
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { loadCatalog, select, summarize } from "../src/catalog.mjs";
+import {
+  loadCatalog,
+  select,
+  summarize,
+  CATALOG_KINDS,
+} from "../src/catalog.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 try {
   const [command = "stats", ...args] = process.argv.slice(2);
   if (command === "--help" || command === "help")
     console.log(
-      "bili-apis stats\nbili-apis list [--kind http|grpc|artifact|message|http-model] [--query TEXT] [--offset N] [--limit N]\nbili-apis show ID\nAll output is JSON; no API requests are sent.",
+      "bili-apis stats\nbili-apis list [--kind KIND] [--query TEXT] [--offset N] [--limit N]\nbili-apis show ID\nAll output is JSON; no API requests are sent.\nKinds: " + CATALOG_KINDS.join("|"),
     );
   else {
     const entries = loadCatalog(root);

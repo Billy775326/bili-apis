@@ -1,0 +1,24 @@
+﻿{
+  "kind": "derived-analysis-fragment",
+  "source_apk_sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+  "source_dex_files": [
+    {
+      "sha256": "47f051b96b0ebe8f11b2516b52c2dfc25077ec0c482748cfca3e4388fb9fb8d8",
+      "name": "classes16.dex"
+    },
+    {
+      "sha256": "045745006b8643fef77d000eaeea293bba4f77ae13c14adbd3759de7868d1970",
+      "name": "classes29.dex"
+    }
+  ],
+  "derived_apk_sha256": "4ee97b5ec8e8e07b18b7912f4027f9bc546d0f06003ab601ffa83675bbe16129",
+  "mapping": {
+    "AndroidManifest.xml": "AndroidManifest.xml",
+    "classes29.dex": "classes2.dex",
+    "classes16.dex": "classes.dex"
+  },
+  "limitations": [
+    "Unsigned analysis fragment; other DEX/resources omitted.",
+    "DEX bytes unchanged; static observations are not runtime evidence."
+  ]
+}

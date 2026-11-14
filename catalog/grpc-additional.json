@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "com.bilibili.app.in.apk",
+    "sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+    "size": 403962674,
+    "parent_archive_sha256": "9727420e3299847db1b8d34e8a6bbad13ff79f79f693ab84b71cfb3276cbb169"
+  },
+  "catalog_sources": {
+    "grpc_sha256": "02c991fef7429458c33b1aaf75e9cdd03d73f3115df8db71deacd2fb5b77f4fc",
+    "messages_sha256": "32ca62c109afb92b61416f0fa61a8213f56f2d2734c63535e9db763af609feb6"
+  },
+  "new_confirmed_rpc_routes": [],
+  "broadcast_dispatch_paths": [
+    {
+      "path": "/bilibili.broadcast.message.reply.Reply/SubjectNotice",
+      "kind": "broadcast-message-dispatch-path-candidate",
+      "is_confirmed_rpc_request_route": false,
+      "status": "static-string-in-method-body",
+      "declarations": [
+        {
+          "dex": "classes11.dex",
+          "class_descriptor": "Loi/a$b;",
+          "method_index": 61961,
+          "method_name": "onNext",
+          "descriptor": "(Ljava/lang/Object;)V",
+          "code_offset": 6306764,
+          "string_index": 5711,
+          "code_unit_offset": 46
+        },
+        {
+          "dex": "classes26.dex",
+          "class_descriptor": "Lkntr/common/comment/section/store/SectionStore$joinRoom$1$a;",
+          "method_index": 46304,
+          "method_name": "emit",
+          "descriptor": "(Ljava/lang/Object;LcF1/c;)Ljava/lang/Object;",
+          "code_offset": 6167828,
+          "string_index": 6494,
+          "code_unit_offset": 252
+        },
+        {
+          "dex": "classes5.dex",
+          "class_descriptor": "Lcom/bilibili/app/comment3/data/source/v1/a;",
+          "method_index": 62255,
+          "method_name": "onNext",
+          "descriptor": "(Ljava/lang/Object;)V",
+          "code_offset": 4026184,
+          "string_index": 1916,
+          "code_unit_offset": 186
+        }
+      ],
+      "limitations": [
+        "Path occurs in client message-handling code; this does not establish a remotely callable gRPC endpoint or request schema."
+      ]
+    },
+    {
+      "path": "/bilibili.broadcast.message.reply.Reply/SubjectReplyInsertion",
+      "kind": "broadcast-message-dispatch-path-candidate",
+      "is_confirmed_rpc_request_route": false,
+      "status": "static-string-in-method-body",
+      "declarations": [
+        {
+          "dex": "classes11.dex",
+          "class_descriptor": "Loi/a$b;",
+          "method_index": 61961,
+          "method_name": "onNext",
+          "descriptor": "(Ljava/lang/Object;)V",
+          "code_offset": 6306764,
+          "string_index": 5712,
+          "code_unit_offset": 170
+        },
+        {
+          "dex": "classes26.dex",
+          "class_descriptor": "Lkntr/common/comment/section/store/SectionStore$joinRoom$1$a;",
+          "method_index": 46304,
+          "method_name": "emit",
+          "descriptor": "(Ljava/lang/Object;LcF1/c;)Ljava/lang/Object;",
+          "code_offset": 6167828,
+          "string_index": 6495,
+          "code_unit_offset": 69
+        },
+        {
+          "dex": "classes5.dex",
+          "class_descriptor": "Lcom/bilibili/app/comment3/data/source/v1/a;",
+          "method_index": 62255,
+          "method_name": "onNext",
+          "descriptor": "(Ljava/lang/Object;)V",
+          "code_offset": 4026184,
+          "string_index": 1917,
+          "code_unit_offset": 67
+        }
+      ],
+      "limitations": [
+        "Path occurs in client message-handling code; this does not establish a remotely callable gRPC endpoint or request schema."
+      ]
+    },
+    {
+      "path": "/bilibili.broadcast.message.reply.Reply/SubjectInteraction",
+      "kind": "broadcast-message-dispatch-path-candidate",
+      "is_confirmed_rpc_request_route": false,
+      "status": "static-string-in-method-body",
+      "declarations": [
+        {
+          "dex": "classes11.dex",
+          "class_descriptor": "Loi/a$b;",
+          "method_index": 61961,
+          "method_name": "onNext",
+          "descriptor": "(Ljava/lang/Object;)V",
+          "code_offset": 6306764,
+          "string_index": 5710,
+          "code_unit_offset": 291
+        },
+        {
+          "dex": "classes5.dex",
+          "class_descriptor": "Lcom/bilibili/app/comment3/data/source/v1/a;",
+          "method_index": 62255,
+          "method_name": "onNext",
+          "descriptor": "(Ljava/lang/Object;)V",
+          "code_offset": 4026184,
+          "string_index": 1915,
+          "code_unit_offset": 109
+        }
+      ],
+      "limitations": [
+        "Path occurs in client message-handling code; this does not establish a remotely callable gRPC endpoint or request schema."
+      ]
+    },
+    {
+      "path": "/bilibili.broadcast.message.topic.Topic/DetailNotify",
+      "kind": "broadcast-message-dispatch-path-candidate",
+      "is_confirmed_rpc_request_route": false,
+      "status": "static-string-in-method-body",
+      "declarations": [
+        {
+          "dex": "classes20.dex",
+          "class_descriptor": "Lcom/bilibili/topix/detail/E$b;",
+          "method_index": 28262,
+          "method_name": "onNext",
+          "descriptor": "(Ljava/lang/Object;)V",
+          "code_offset": 3641712,
+          "string_index": 5318,
+          "code_unit_offset": 75
+        }
+      ],
+      "limitations": [
+        "Path occurs in client message-handling code; this does not establish a remotely callable gRPC endpoint or request schema."
+      ]
+    }
+  ],
+  "limitations": [
+    "No new io.grpc.MethodDescriptor routes were found in this audit; broadcast message path candidates must not be counted as confirmed request RPCs."
+  ]
+}

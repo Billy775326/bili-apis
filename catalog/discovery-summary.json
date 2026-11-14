@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "com.bilibili.app.in.apk",
+    "sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+    "size": 403962674,
+    "parent_archive_sha256": "9727420e3299847db1b8d34e8a6bbad13ff79f79f693ab84b71cfb3276cbb169"
+  },
+  "sources": [
+    {
+      "file": "catalog/dex-routes.json",
+      "json_stringify_sha256": "b43052b23607770d4b90a1d66d38e3c1ddcf8d57e4cd02a351c8adfafd099290"
+    },
+    {
+      "file": "catalog/coverage-dex-routes.json",
+      "json_stringify_sha256": "da676ae1c3963cc5ad973791e717e51ea81bd47aa02d0bfca7186665d3719348"
+    },
+    {
+      "file": "catalog/resource-routes.json",
+      "json_stringify_sha256": "5cd716906bc8136b34061cacf7e35d2c79ae4037e604d5a695687d573e90f21b"
+    },
+    {
+      "file": "catalog/coverage-resource-routes.json",
+      "json_stringify_sha256": "8074a4a573e888301023303cca0bd243d0192cc3fbecdf63e32b90934ab5be1d"
+    },
+    {
+      "file": "catalog/grpc-audit.json",
+      "json_stringify_sha256": "79968529a8ee7e4227bac3566fe92001528dc63672ade237593c14aaae6870a0"
+    },
+    {
+      "file": "catalog/coverage-grpc-audit.json",
+      "json_stringify_sha256": "678be3cfca043e12c8206049b027c052317cf924606995c4345ea03bb5169c94"
+    },
+    {
+      "file": "catalog/grpc-additional.json",
+      "json_stringify_sha256": "69ef9d5d247cbb8d8f473f3d27827063e1753e73dc9e59380bdf317bb0aa2fcb"
+    },
+    {
+      "file": "catalog/native.json",
+      "json_stringify_sha256": "a5bb9f245ce3ff38fc96f704fc9e94f2f647e0a9d9db3659b595a36a5adda4b4"
+    },
+    {
+      "file": "catalog/coverage-native.json",
+      "json_stringify_sha256": "e9a91729c30a369fff5d311b5a96fe4027c8a419a459f17f599e78fb6286bec4"
+    }
+  ],
+  "dynamic_url": {
+    "declarations": 18,
+    "caller_sites": 20,
+    "resolved_sites": 7,
+    "unresolved_sites": 13
+  },
+  "dex_arguments": {
+    "verified_url_setter_occurrences": 19,
+    "verified_url_setter_unique_values": 17,
+    "observations": 1392,
+    "unique_values": 765,
+    "not_matching_core_catalog_values": 671,
+    "interpretation": "Route-shaped argument values, including logs/pages/URI construction; not new callable API count."
+  },
+  "resources": {
+    "declarations": 290,
+    "static_path_observations": 72,
+    "unique_method_path_pairs": 45,
+    "computed_paths": 218,
+    "nested_zip_archives": 9,
+    "parser_status_counts": {
+      "parsed-json": 499,
+      "parsed-javascript": 389,
+      "nested-zip-expanded": 9,
+      "parsed-html-inline-scripts": 12,
+      "unsupported-format": 1,
+      "parse-error": 1
+    }
+  },
+  "grpc_audit": {
+    "descriptor_definitions": 1190,
+    "classifications": {
+      "catalogued-builder": 604,
+      "static-reference-to-builder": 585,
+      "generic-descriptor-factory": 1
+    },
+    "known_routes_referenced": 604,
+    "additional_broadcast_paths": 4,
+    "outside_associated_messages": 17,
+    "outside_fields": 62
+  },
+  "native": {
+    "libraries": 113,
+    "java_native_methods": 4977,
+    "jni_layout_candidates": 1062,
+    "url_candidates": 14
+  },
+  "limitations": [
+    "Evidence categories can overlap; observation counts must not be added as unique network APIs.",
+    "All results are static. Dynamic URL values, computed JavaScript, native call graphs and live server state remain unverified."
+  ]
+}

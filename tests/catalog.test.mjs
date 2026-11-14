@@ -3,7 +3,12 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { loadCatalog, select, summarize } from "../src/catalog.mjs";
+import {
+  loadCatalog,
+  select,
+  summarize,
+  CATALOG_KINDS,
+} from "../src/catalog.mjs";
 const sample = [
   { kind: "http", id: "h1", http_method: "GET", path: "/x/search" },
   { kind: "http", id: "h2", http_method: "POST", path: "/x/reply" },
@@ -42,13 +47,15 @@ test("malformed catalog shape is rejected", (t) => {
 });
 test("counts include all transport kinds without implying live verification", () => {
   const r = summarize(sample);
-  assert.deepEqual(r.counts, {
-    http: 2,
-    grpc: 1,
-    artifact: 0,
-    message: 0,
-    "http-model": 0,
-  });
+  assert.deepEqual(
+    r.counts,
+    Object.fromEntries(
+      CATALOG_KINDS.map((kind) => [
+        kind,
+        kind === "http" ? 2 : kind === "grpc" ? 1 : 0,
+      ]),
+    ),
+  );
   assert.deepEqual(r.http_verbs, { GET: 1, POST: 1 });
   assert.match(r.verification, /Static/);
 });

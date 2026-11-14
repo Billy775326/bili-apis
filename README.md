@@ -1,4 +1,4 @@
-# Bilibili Play 版接口目录
+﻿# Bilibili Play 版接口目录
 
 从 `com.bilibili.app.in` 6.8.0（9180200）的完整基础 APK 和两个配置分包提取 HTTP/gRPC 接口声明、参数元数据与资源线索，供接口研究、定位请求代码及后续客户端实现使用。
 
@@ -18,9 +18,19 @@ HTTP 按动词/路径去重为 2,038 组，未按域名区分。目录保留所�
 
 [覆盖范围](docs/coverage.md) · [实现核对](docs/implementation.md) · [数据格式](docs/catalog-format.md) · [来源哈希](evidence/inputs.json) · [更新日志](CHANGELOG.md)
 
+## 第二轮深挖
+
+[深挖结果及已恢复调用位置](docs/discovery.md) · [资源请求观察](docs/resource-routes.md) · [Native/JNI 边界](docs/native.md)
+
+- 18 个动态 URL 声明找到 20 个直接调用位置，7 处恢复常量 URL；另 13 处仍未知。
+- DEX 寄存器关联观察 1,392 条，去重为 765 个值，其中 671 个值未匹配原目录；另核对了 19 处 URL 设置器调用（17 个去重值）。这些值包含日志、页面和 URI 构造，不能作为新增接口数量。
+- H5 及 9 个嵌套 ZIP 中找到 290 条请求语法观察，72 条为静态路径，218 条路径仍为计算值。
+- gRPC 全量审计解释了 1,190 个描述符定义；增加 4 个广播分发路径候选及 17 个关联消息类型，没有增加已确认 RPC 数量。
+- 113 个 native 库的元数据补充了 4,977 个 native 方法声明（含 SDK）、1,062 个 JNI 表布局候选和 14 条平台 URL 字符串。
+
 ## 查询接口与字段
 
-需要 Node.js 24 或更新版本。仓库运行时没有第三方依赖，在仓库根目录执行：
+需要 Node.js 24.11 或更新版本。目录查询无第三方运行时依赖；资源提取与完整测试需安装锁定的开发依赖。在仓库根目录执行：
 
 ```sh
 node bin/bili-apis.mjs stats
@@ -28,6 +38,10 @@ node bin/bili-apis.mjs list --kind http --query search --limit 10
 node bin/bili-apis.mjs list --kind grpc --query PlayView --limit 10
 node bin/bili-apis.mjs list --kind message --query ViewReq --limit 2
 node bin/bili-apis.mjs list --kind http-model --query Search --limit 2
+node bin/bili-apis.mjs list --kind dynamic-url --query measure --limit 10
+node bin/bili-apis.mjs list --kind dex-route --query verified-url-setter --limit 10
+node bin/bili-apis.mjs list --kind resource-route --query reply --limit 10
+node bin/bili-apis.mjs list --kind native-jni --query sign --limit 5
 node bin/bili-apis.mjs show /bilibili.app.viewunite.v1.View/View
 ```
 
@@ -40,12 +54,17 @@ node bin/bili-apis.mjs show /bilibili.app.viewunite.v1.View/View
 以下 `inputs/` 为示例目录。在仓库根目录执行，使用与记录一致的安装包：
 
 ```sh
+npm ci --ignore-scripts
 node scripts/unpack-dex.mjs inputs/com.bilibili.app.in.apk .local/dex evidence/inputs.json
 node scripts/extract-http.mjs .local/dex evidence/inputs.json catalog
 node scripts/extract-grpc.mjs .local/dex evidence/inputs.json catalog
 node scripts/extract-http-models.mjs .local/dex evidence/inputs.json catalog/http.json catalog
 node scripts/extract-artifacts.mjs --apk inputs/com.bilibili.app.in.apk --apk inputs/config.arm64_v8a.apk --apk inputs/config.xxhdpi.apk
-node scripts/build-docs.mjs
+node scripts/extract-dex-routes.mjs .local/dex evidence/inputs.json catalog/http.json catalog
+node scripts/audit-grpc.mjs .local/dex evidence/inputs.json catalog
+node scripts/extract-native.mjs .local/dex evidence/inputs.json inputs/config.arm64_v8a.apk catalog
+node scripts/extract-resource-routes.mjs --apk inputs/com.bilibili.app.in.apk --apk inputs/config.arm64_v8a.apk --apk inputs/config.xxhdpi.apk
+npm run docs:generate
 node --test tests/*.test.mjs
 ```
 

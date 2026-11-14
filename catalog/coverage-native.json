@@ -1,0 +1,2094 @@
+{
+  "schema_version": 1,
+  "dex_files": 37,
+  "java_native_methods": 4977,
+  "native_libraries": 113,
+  "parsed_libraries": 113,
+  "exports": 1707,
+  "jni_table_candidates": 1062,
+  "url_candidates": 14,
+  "libraries": [
+    {
+      "member": "lib/arm64-v8a/libAPSE_8.0.0.so",
+      "sha256": "40cba902632851c7152006d8e9b3031e541af1d380c0c0d635825ca428fc7cb2",
+      "status": "parsed",
+      "symbols_examined": 271,
+      "matched_exports": 1,
+      "jni_table_candidates": 9,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 14,
+        "1025": 35,
+        "1026": 257,
+        "1027": 9906
+      },
+      "unresolved_relocation_counts": {
+        "257": 14,
+        "1025": 35,
+        "1026": 257,
+        "1027": 56
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libAPSE_J.so",
+      "sha256": "fa8d8d847a08f8a1b22e61fec163a9cb9617876e020aa18049a4c6160c269dff",
+      "status": "parsed",
+      "symbols_examined": 40,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 5,
+        "1026": 33,
+        "1027": 11103
+      },
+      "unresolved_relocation_counts": {
+        "1025": 5,
+        "1026": 33
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libBugly.so",
+      "sha256": "d2cd5f2e2a2832e124b9c05539ab84b0d4e1c34edb6547ac9b828c2315b8c1db",
+      "status": "parsed",
+      "symbols_examined": 328,
+      "matched_exports": 1,
+      "jni_table_candidates": 10,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 5,
+        "1026": 101,
+        "1027": 152
+      },
+      "unresolved_relocation_counts": {
+        "1025": 5,
+        "1026": 101
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libBurstLinker.so",
+      "sha256": "0f73a1d54f6ae8497d742aeda15f0e20aa981177c366695cf8a958cd0eb3751a",
+      "status": "parsed",
+      "symbols_examined": 2245,
+      "matched_exports": 5,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1805,
+        "1025": 172,
+        "1026": 476,
+        "1027": 1420
+      },
+      "unresolved_relocation_counts": {
+        "1025": 172,
+        "1026": 476
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libCtaApiLib.so",
+      "sha256": "0c147525d95dbf609526fae825609b57b27562528182702d59f347aeb0d58f32",
+      "status": "parsed",
+      "symbols_examined": 283,
+      "matched_exports": 1,
+      "jni_table_candidates": 11,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 201,
+        "1025": 35,
+        "1026": 148,
+        "1027": 885
+      },
+      "unresolved_relocation_counts": {
+        "1025": 35,
+        "1026": 148
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libMBox2d.so",
+      "sha256": "df8464a304aadceed15753bf19a62cbf85263a120969f7ce7221a5a7d0263e29",
+      "status": "parsed",
+      "symbols_examined": 705,
+      "matched_exports": 9,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 64,
+        "1025": 14,
+        "1026": 69,
+        "1027": 23
+      },
+      "unresolved_relocation_counts": {
+        "257": 12,
+        "1025": 14,
+        "1026": 69
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libMNN.so",
+      "sha256": "d347b2e8de10f388eaf9c0187322b21188c6c1692d32dd2308cb78769662e3a5",
+      "status": "parsed",
+      "symbols_examined": 1259,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 901,
+        "1025": 70,
+        "1026": 459,
+        "1027": 4685
+      },
+      "unresolved_relocation_counts": {
+        "1025": 70,
+        "1026": 459
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libMNN_CL.so",
+      "sha256": "c205e71b3bba258e107398b6a0c89a3d3d2e78e1e19064db34b25a8e6d0c84a7",
+      "status": "parsed",
+      "symbols_examined": 76,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 50,
+        "1025": 3,
+        "1026": 70,
+        "1027": 1432
+      },
+      "unresolved_relocation_counts": {
+        "257": 50,
+        "1025": 3,
+        "1026": 70
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libMNN_Express.so",
+      "sha256": "c16b302e72d85c0b9c81f40ddb3fa433967870c82502994dd070a57b772c45f5",
+      "status": "parsed",
+      "symbols_examined": 494,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 58,
+        "1025": 20,
+        "1026": 217,
+        "1027": 817
+      },
+      "unresolved_relocation_counts": {
+        "257": 54,
+        "1025": 20,
+        "1026": 217
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libMiFilterSDK.so",
+      "sha256": "3aec87a28634b79e2be60ef8228ef670d356a221d5edd3ae44c132cf59da85e8",
+      "status": "parsed",
+      "symbols_examined": 748,
+      "matched_exports": 16,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 582,
+        "1025": 44,
+        "1026": 263,
+        "1027": 2652
+      },
+      "unresolved_relocation_counts": {
+        "1025": 44,
+        "1026": 263
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libPerfgeniusApi.so",
+      "sha256": "cdb8bc612891b6d3e29852f4c151ddb2ac981cd0dc8546e5ee67549c1e2ba35f",
+      "status": "parsed",
+      "symbols_examined": 353,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 110,
+        "1025": 29,
+        "1026": 198,
+        "1027": 5
+      },
+      "unresolved_relocation_counts": {
+        "257": 16,
+        "1025": 29,
+        "1026": 198
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libSapling.so",
+      "sha256": "776f8b74130d89229350809faec6dcee114ef82c25089a761f54267903ec6616",
+      "status": "parsed",
+      "symbols_examined": 3180,
+      "matched_exports": 3,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 2009,
+        "1025": 313,
+        "1026": 966,
+        "1027": 1516
+      },
+      "unresolved_relocation_counts": {
+        "1025": 313,
+        "1026": 966
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libYTCommonLiveness.so",
+      "sha256": "4493128fa784032cd37569447b780e1b19338e341b4462760d5a243a558f9c9a",
+      "status": "parsed",
+      "symbols_examined": 170,
+      "matched_exports": 1,
+      "jni_table_candidates": 9,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 4,
+        "1026": 133,
+        "1027": 2966
+      },
+      "unresolved_relocation_counts": {
+        "1025": 4,
+        "1026": 133
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libYTLiveness.so",
+      "sha256": "9adfda235e83cb60343e6c4a9ec3627f16246175fb8e700e5f2301207bfe3889",
+      "status": "parsed",
+      "symbols_examined": 118,
+      "matched_exports": 1,
+      "jni_table_candidates": 37,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 4,
+        "1026": 114,
+        "1027": 4236
+      },
+      "unresolved_relocation_counts": {
+        "1025": 4,
+        "1026": 114
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libacckitjni-lib.so",
+      "sha256": "07ff255a4075f2d84753db3dcab4ee1201c10eb88dca9ab6faba18733d4f14e9",
+      "status": "parsed",
+      "symbols_examined": 1809,
+      "matched_exports": 14,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1549,
+        "1025": 156,
+        "1026": 353,
+        "1027": 1365
+      },
+      "unresolved_relocation_counts": {
+        "1025": 156,
+        "1026": 353
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libadjni.so",
+      "sha256": "091cbdefd42a75f056d84b800ea179f96bb9cb46e7c7927d581b70f44fccb36a",
+      "status": "parsed",
+      "symbols_examined": 2020,
+      "matched_exports": 2,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1754,
+        "1025": 154,
+        "1026": 348,
+        "1027": 1380
+      },
+      "unresolved_relocation_counts": {
+        "1025": 154,
+        "1026": 348
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libandroidx.graphics.path.so",
+      "sha256": "41e9a793c43a0f4fddb19e33f346bace464f30f888ba7b9eaf96294ea115bfb6",
+      "status": "parsed",
+      "symbols_examined": 9,
+      "matched_exports": 1,
+      "jni_table_candidates": 10,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 7,
+        "1027": 48
+      },
+      "unresolved_relocation_counts": {
+        "1026": 7
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libapkdiffpatch.so",
+      "sha256": "fc058b259eaa2b343c87dc4e6c14491b60696d415b44a03b247e80da4cd93c8d",
+      "status": "parsed",
+      "symbols_examined": 87,
+      "matched_exports": 8,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 2,
+        "1026": 76,
+        "1027": 1411
+      },
+      "unresolved_relocation_counts": {
+        "1025": 2,
+        "1026": 76
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libapkpatch.so",
+      "sha256": "6684d7bdb877334687ba8049da688dbdee9db9b52f2409a4716ff5188283836f",
+      "status": "parsed",
+      "symbols_examined": 1312,
+      "matched_exports": 13,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 517,
+        "1025": 56,
+        "1026": 548,
+        "1027": 1332
+      },
+      "unresolved_relocation_counts": {
+        "1025": 56,
+        "1026": 548
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libapminsighta.so",
+      "sha256": "4da62be9b09106a077481a376365b861f1ffdc10b03e25362c24bc7c5efafb0c",
+      "status": "parsed",
+      "symbols_examined": 111,
+      "matched_exports": 1,
+      "jni_table_candidates": 35,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 1,
+        "1026": 108,
+        "1027": 132
+      },
+      "unresolved_relocation_counts": {
+        "1025": 1,
+        "1026": 108
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libapminsightb.so",
+      "sha256": "229c907fc65dffbf7742ed9a4b83418ac984267da3d81af3c5a5509ef1f3a5c2",
+      "status": "parsed",
+      "symbols_examined": 140,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 9,
+        "1026": 107,
+        "1027": 67
+      },
+      "unresolved_relocation_counts": {
+        "1025": 9,
+        "1026": 107
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libavif.so",
+      "sha256": "e7eebed910296013cd45cae0750b1f496262f9b9ef7ef70038e5b294e0c5791c",
+      "status": "parsed",
+      "symbols_examined": 765,
+      "matched_exports": 11,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 446,
+        "1025": 39,
+        "1026": 258,
+        "1027": 1228
+      },
+      "unresolved_relocation_counts": {
+        "1025": 39,
+        "1026": 258
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbili-upload.so",
+      "sha256": "03a88beff412a330c053f24306a066c31646e535506643889eeba1dd5fab4872",
+      "status": "parsed",
+      "symbols_examined": 209,
+      "matched_exports": 1,
+      "jni_table_candidates": 16,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 282,
+        "1025": 4,
+        "1026": 199,
+        "1027": 2902
+      },
+      "unresolved_relocation_counts": {
+        "257": 282,
+        "1025": 4,
+        "1026": 199
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbili.so",
+      "sha256": "8e89db7d5a78e06ea97873734521e75ea80c0c925890953ba400bc397a79bf18",
+      "status": "parsed",
+      "symbols_examined": 433,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 48,
+        "1025": 255,
+        "1026": 75,
+        "1027": 206
+      },
+      "unresolved_relocation_counts": {
+        "257": 3,
+        "1025": 255,
+        "1026": 75
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbili_core.so",
+      "sha256": "f9a8f05ceb78f07eded874e4190366ca8bb86195cecf04fb863fef049382aea8",
+      "status": "parsed",
+      "symbols_examined": 273,
+      "matched_exports": 5,
+      "jni_table_candidates": 4,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 39,
+        "1026": 207,
+        "1027": 71
+      },
+      "unresolved_relocation_counts": {
+        "1025": 39,
+        "1026": 207
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbili_core_dumper.so",
+      "sha256": "1497f6fa88e396c18e1cb59f687449e650c911ca317af42bdb5edc3ff027671b",
+      "status": "parsed",
+      "symbols_examined": 73,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 1,
+        "1026": 71,
+        "1027": 105
+      },
+      "unresolved_relocation_counts": {
+        "1025": 1,
+        "1026": 71
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbiliid.so",
+      "sha256": "5eaf23c4d88ab8cfb2933630b611c763fd27c1b94198fbec0487219eae762db5",
+      "status": "parsed",
+      "symbols_examined": 2056,
+      "matched_exports": 1,
+      "jni_table_candidates": 6,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1760,
+        "1025": 157,
+        "1026": 370,
+        "1027": 1412
+      },
+      "unresolved_relocation_counts": {
+        "1025": 157,
+        "1026": 370
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbilirtclibrary.so",
+      "sha256": "393ae91f1d1e033900056e68cee98eba405a4d957cb12107238e2f02ddc99d66",
+      "status": "parsed",
+      "symbols_examined": 441,
+      "matched_exports": 213,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 11,
+        "1026": 220,
+        "1027": 23223
+      },
+      "unresolved_relocation_counts": {
+        "1025": 11,
+        "1026": 220
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libblive_pandora.so",
+      "sha256": "8de6cb3acbf1accc989b6e49170f0b8898b77e8840711a21b8910c4c0f5b4ba8",
+      "status": "parsed",
+      "symbols_examined": 312,
+      "matched_exports": 105,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 7,
+        "1026": 204,
+        "1027": 10151
+      },
+      "unresolved_relocation_counts": {
+        "1025": 7,
+        "1026": 204
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libblkv.so",
+      "sha256": "b760b0b8f3bc24d531a1279f878deed70382a4d75fb55da0841fb62bdf3e186f",
+      "status": "parsed",
+      "symbols_examined": 578,
+      "matched_exports": 1,
+      "jni_table_candidates": 18,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 444,
+        "1025": 37,
+        "1026": 127,
+        "1027": 1262
+      },
+      "unresolved_relocation_counts": {
+        "1025": 37,
+        "1026": 127
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libblog.so",
+      "sha256": "d0fe7f2d553eae57351ff3be4867941c00734df849fd7172c9fe91ba9707dbb2",
+      "status": "parsed",
+      "symbols_examined": 88,
+      "matched_exports": 5,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 1,
+        "1026": 81,
+        "1027": 1524
+      },
+      "unresolved_relocation_counts": {
+        "1025": 1,
+        "1026": 81
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbox2d.so",
+      "sha256": "e8c25c0994da0b237ad4db7ee7dc25f81273d0e25463b7bafe64b4f83206298a",
+      "status": "parsed",
+      "symbols_examined": 5881,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 702,
+        "1025": 85,
+        "1026": 447,
+        "1027": 1211
+      },
+      "unresolved_relocation_counts": {
+        "1025": 85,
+        "1026": 447
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbreflect.so",
+      "sha256": "a19a1d62fdbc730918956f020395ccf307966927f9887c8518292081db1cb59b",
+      "status": "parsed",
+      "symbols_examined": 15,
+      "matched_exports": 1,
+      "jni_table_candidates": 3,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 4,
+        "1026": 7,
+        "1027": 12
+      },
+      "unresolved_relocation_counts": {
+        "1025": 4,
+        "1026": 7
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbspatch.so",
+      "sha256": "9ae2a6588ea50dd87bb1730557b4bb05d979504fa1fb0e44bbe2d8ce6332795f",
+      "status": "parsed",
+      "symbols_examined": 28,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 1,
+        "1026": 25,
+        "1027": 5
+      },
+      "unresolved_relocation_counts": {
+        "1025": 1,
+        "1026": 25
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbuffer_pgl.so",
+      "sha256": "d416381c202993e4a03fd6ae0c5b407f1531f61fc45f518ad5b7f4620d5a2133",
+      "status": "parsed",
+      "symbols_examined": 30,
+      "matched_exports": 11,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 17,
+        "1027": 3
+      },
+      "unresolved_relocation_counts": {
+        "1026": 17
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbvc-xcode-tools.so",
+      "sha256": "5157f2eb8c2ce78ea6b32434e68eb3259081f3d5878f67f8c9742359b7271901",
+      "status": "parsed",
+      "symbols_examined": 123,
+      "matched_exports": 3,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 3,
+        "1026": 89,
+        "1027": 14
+      },
+      "unresolved_relocation_counts": {
+        "1025": 3,
+        "1026": 89
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libbytehook.so",
+      "sha256": "1fa39f206cf1cb5863dc3770ec3a21339921364e647a3ab4dbb094eab83676d8",
+      "status": "parsed",
+      "symbols_examined": 96,
+      "matched_exports": 1,
+      "jni_table_candidates": 10,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 6,
+        "1026": 87,
+        "1027": 47
+      },
+      "unresolved_relocation_counts": {
+        "1025": 6,
+        "1026": 87
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libc++_shared.so",
+      "sha256": "f4e1e97c1943e60311e47e8b024d78f5b3b7229b3ccc65feb33af83d6025a670",
+      "status": "parsed",
+      "symbols_examined": 2498,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 2012,
+        "1025": 189,
+        "1026": 470,
+        "1027": 1587
+      },
+      "unresolved_relocation_counts": {
+        "1025": 189,
+        "1026": 470
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libchronos.so",
+      "sha256": "a875e5a82287941df29e13b2fa7b712667ec46edc99345e39843e9954766817a",
+      "status": "parsed",
+      "symbols_examined": 311,
+      "matched_exports": 1,
+      "jni_table_candidates": 40,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 25,
+        "1025": 3,
+        "1026": 283,
+        "1027": 17084
+      },
+      "unresolved_relocation_counts": {
+        "257": 25,
+        "1025": 3,
+        "1026": 283
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libcppjieba.so",
+      "sha256": "7ffae23a0d7062a02ef2ee1d60d35b63a496b32d1f02624443a209a49cc081fc",
+      "status": "parsed",
+      "symbols_examined": 2160,
+      "matched_exports": 3,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1846,
+        "1025": 175,
+        "1026": 448,
+        "1027": 1415
+      },
+      "unresolved_relocation_counts": {
+        "1025": 175,
+        "1026": 448
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libcpptokenizer.so",
+      "sha256": "f585c20a07a3a583b863d3b95224c8c57abeaf75647a8fb91df746f0bedd52a5",
+      "status": "parsed",
+      "symbols_examined": 6179,
+      "matched_exports": 2,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 2145,
+        "1025": 349,
+        "1026": 1654,
+        "1027": 23215
+      },
+      "unresolved_relocation_counts": {
+        "257": 1,
+        "1025": 349,
+        "1026": 1654
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libcrypto.so",
+      "sha256": "00d3e789064b6263a56a567574f7349299e44de4eabc8b2b1a8975188d8854ee",
+      "status": "parsed",
+      "symbols_examined": 2497,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 243,
+        "1025": 104,
+        "1026": 1149,
+        "1027": 3728
+      },
+      "unresolved_relocation_counts": {
+        "1025": 104,
+        "1026": 1149
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libcrypto_c.so",
+      "sha256": "d78b7630356d40a34101a797448ae5c4a158b70761c868a0e39b600143c22d83",
+      "status": "parsed",
+      "symbols_examined": 142,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 74,
+        "1025": 1,
+        "1026": 59,
+        "1027": 15
+      },
+      "unresolved_relocation_counts": {
+        "1025": 1,
+        "1026": 59
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libcsgface.so",
+      "sha256": "713ecea49e8c6f756f4eb24157ee128928a32e464178694f3c949216ff0e7212",
+      "status": "parsed",
+      "symbols_examined": 442,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1,
+        "1025": 3,
+        "1026": 153,
+        "1027": 2627
+      },
+      "unresolved_relocation_counts": {
+        "257": 1,
+        "1025": 3,
+        "1026": 153
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libdatastore_shared_counter.so",
+      "sha256": "d3e48717c9aa147e0ab21063ba0e8e0211cabf8bf40b222640829519edbf58e1",
+      "status": "parsed",
+      "symbols_examined": 20,
+      "matched_exports": 4,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 14,
+        "1027": 4
+      },
+      "unresolved_relocation_counts": {
+        "1026": 14
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libdexvmp.so",
+      "sha256": "535057e127484434a4dbb6f590f6a340a46a4e605985c66677bc46d677079eb4",
+      "status": "parsed",
+      "symbols_examined": 317,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 2,
+        "1026": 122,
+        "1027": 219
+      },
+      "unresolved_relocation_counts": {
+        "1025": 2,
+        "1026": 122
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libdu.so",
+      "sha256": "72f3780d68ed33d3d7e3e218389b15e6f791f0eee5eda99727c14bfa88a58d9f",
+      "status": "parsed",
+      "symbols_examined": 139,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 4,
+        "1026": 132,
+        "1027": 2928
+      },
+      "unresolved_relocation_counts": {
+        "1025": 4,
+        "1026": 132
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libdvvcd.so",
+      "sha256": "4d35117a8ef4c5d5e8e086772747af7ca3db246377a4a79e5dcc542cfdba105c",
+      "status": "parsed",
+      "symbols_examined": 147,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 30,
+        "1025": 15,
+        "1026": 113,
+        "1027": 233
+      },
+      "unresolved_relocation_counts": {
+        "257": 19,
+        "1025": 15,
+        "1026": 113
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libdynamicengine.so",
+      "sha256": "cc5aba5d164c967bcecbed5024dc6c561a8e7b14e3d222380c1b44940cf2a560",
+      "status": "parsed",
+      "symbols_examined": 55,
+      "matched_exports": 9,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 2,
+        "1026": 42,
+        "1027": 1149
+      },
+      "unresolved_relocation_counts": {
+        "1025": 2,
+        "1026": 42
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libentryexpro.so",
+      "sha256": "78c62496188851cbc3bd15ad6fe0f607b7f9916abee25b30b007a2a66542b54d",
+      "status": "parsed",
+      "symbols_examined": 368,
+      "matched_exports": 49,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 5,
+        "1025": 1,
+        "1026": 31,
+        "1027": 41
+      },
+      "unresolved_relocation_counts": {
+        "257": 5,
+        "1025": 1,
+        "1026": 31
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libfacedevice.so",
+      "sha256": "2e6ce238c1926ce4579910daa6fac6660f49b29905c15a82547a43dd31c84cd1",
+      "status": "parsed",
+      "symbols_examined": 2875,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1751,
+        "1025": 201,
+        "1026": 936,
+        "1027": 1133
+      },
+      "unresolved_relocation_counts": {
+        "1025": 201,
+        "1026": 936
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libfb_dalvik-internals.so",
+      "sha256": "ceb19907edd9ded91e00919dc9da014878a16db63d9ff85af39fdd2f7c232952",
+      "status": "parsed",
+      "symbols_examined": 33,
+      "matched_exports": 8,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 14,
+        "1027": 2
+      },
+      "unresolved_relocation_counts": {
+        "1026": 14
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libffmpeg_cc_dummy_app_for_so.so",
+      "sha256": "5423cc5363a8493cc5409459c2b6bfa91bc90943e4fbdda1a784e0404bb5ae3b",
+      "status": "parsed",
+      "symbols_examined": 4,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 3,
+        "1027": 3
+      },
+      "unresolved_relocation_counts": {
+        "1026": 3
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libfile_lock_pgl.so",
+      "sha256": "d14096b150b4b2f21263fdb4f1c61eea3fcd76804c776de2395b13dfbe1d8ca0",
+      "status": "parsed",
+      "symbols_examined": 16,
+      "matched_exports": 6,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 9,
+        "1027": 3
+      },
+      "unresolved_relocation_counts": {
+        "1026": 9
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libfinauthlivenessv5Ex.so",
+      "sha256": "cc5efb2f858c9c9b60823ebe4bbe0ffbfedf2646fd20c7540efa961f333c4757",
+      "status": "parsed",
+      "symbols_examined": 306,
+      "matched_exports": 88,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 3,
+        "1025": 5,
+        "1026": 214,
+        "1027": 3570
+      },
+      "unresolved_relocation_counts": {
+        "257": 3,
+        "1025": 5,
+        "1026": 214
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libfreetypejni.so",
+      "sha256": "db760b33a44ee21e30e6d7dd98dd366beb960bb41150d72857a886083f3f089c",
+      "status": "parsed",
+      "symbols_examined": 680,
+      "matched_exports": 81,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 381,
+        "1025": 23,
+        "1026": 249,
+        "1027": 2524
+      },
+      "unresolved_relocation_counts": {
+        "1025": 23,
+        "1026": 249
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libgifimage.so",
+      "sha256": "7dc55d060419b7ad59745c79f0d094730dc6be5f8358b565580b4192a1642449",
+      "status": "parsed",
+      "symbols_examined": 450,
+      "matched_exports": 1,
+      "jni_table_candidates": 25,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 451,
+        "1025": 27,
+        "1026": 126,
+        "1027": 1344
+      },
+      "unresolved_relocation_counts": {
+        "1025": 27,
+        "1026": 126
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libgraphics-core.so",
+      "sha256": "d16e179a7f6217591e8253627ef87ed4e459beabd075e0f00c1dce7b61f50f13",
+      "status": "parsed",
+      "symbols_examined": 93,
+      "matched_exports": 3,
+      "jni_table_candidates": 52,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 1,
+        "1026": 88,
+        "1027": 1222
+      },
+      "unresolved_relocation_counts": {
+        "1025": 1,
+        "1026": 88
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libhardcoder.so",
+      "sha256": "91d7a0d8f5f14b4792feb401a9735b1965df8301e051cc2da7fd2d08aa1090c8",
+      "status": "parsed",
+      "symbols_examined": 579,
+      "matched_exports": 28,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 292,
+        "1025": 51,
+        "1026": 184,
+        "1027": 478
+      },
+      "unresolved_relocation_counts": {
+        "257": 94,
+        "1025": 51,
+        "1026": 184
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libhpatchz.so",
+      "sha256": "04528f8e59c19068fedabe17ecbfee9d11fd88f32c75a21e0e1b0d1ee862734e",
+      "status": "parsed",
+      "symbols_examined": 38,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 1,
+        "1026": 26,
+        "1027": 15
+      },
+      "unresolved_relocation_counts": {
+        "1025": 1,
+        "1026": 26
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libignet.so",
+      "sha256": "761f1d541a53942619e7fa7e16251bea39ba33dc051cf263e07d270df1aa7795",
+      "status": "parsed",
+      "symbols_examined": 3284,
+      "matched_exports": 395,
+      "jni_table_candidates": 38,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1921,
+        "1025": 110,
+        "1026": 1999,
+        "1027": 16607
+      },
+      "unresolved_relocation_counts": {
+        "257": 1,
+        "1025": 110,
+        "1026": 1999
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libijk.so",
+      "sha256": "0037b5a304818807f58c89ec35693f5184faa344fcff892f239241ff4e176975",
+      "status": "parsed",
+      "symbols_examined": 495,
+      "matched_exports": 19,
+      "jni_table_candidates": 93,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 327,
+        "1025": 35,
+        "1026": 434,
+        "1027": 9589
+      },
+      "unresolved_relocation_counts": {
+        "257": 325,
+        "1025": 35,
+        "1026": 434
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libijkDolbyVision.so",
+      "sha256": "3dd8dc11fb512543dbdcb93a596fc5c0e9d37135f626325fd32f15f60692be3e",
+      "status": "parsed",
+      "symbols_examined": 2530,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1704,
+        "1025": 259,
+        "1026": 818,
+        "1027": 991
+      },
+      "unresolved_relocation_counts": {
+        "1025": 259,
+        "1026": 818
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libijkffext.so",
+      "sha256": "713ce032bed6497243b9fcbb8118457d7b802ad7136e3d8760d75ada1a47d739",
+      "status": "parsed",
+      "symbols_examined": 986,
+      "matched_exports": 6,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 143,
+        "1025": 53,
+        "1026": 743,
+        "1027": 6708
+      },
+      "unresolved_relocation_counts": {
+        "257": 35,
+        "1025": 53,
+        "1026": 743
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libijkffmpeg.so",
+      "sha256": "601260383dd5d88de88a6f65b32385b82b4bc7779a236c2a3bb44bcc1c583724",
+      "status": "parsed",
+      "symbols_examined": 5322,
+      "matched_exports": 11,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 12,
+        "1025": 14,
+        "1026": 221,
+        "1027": 15191
+      },
+      "unresolved_relocation_counts": {
+        "257": 12,
+        "1025": 14,
+        "1026": 221
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libijkplayer.so",
+      "sha256": "82211db0366a4165c6ae6e0a88941a580f6621df5e2bdc16ee64804f044ad333",
+      "status": "parsed",
+      "symbols_examined": 939,
+      "matched_exports": 2,
+      "jni_table_candidates": 101,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1,
+        "1025": 17,
+        "1026": 886,
+        "1027": 531
+      },
+      "unresolved_relocation_counts": {
+        "257": 1,
+        "1025": 17,
+        "1026": 886
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libijksdl.so",
+      "sha256": "c95ed2803019522c2db258905ece8c1285843cb339f7a6dd1e28aefad0a166a3",
+      "status": "parsed",
+      "symbols_examined": 1158,
+      "matched_exports": 2,
+      "jni_table_candidates": 9,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 86,
+        "1025": 18,
+        "1026": 748,
+        "1027": 6674
+      },
+      "unresolved_relocation_counts": {
+        "257": 86,
+        "1025": 18,
+        "1026": 748
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libimage_processing_util_jni.so",
+      "sha256": "3e0071afcdc7e321f839e196d266014182f18d0988e4455acc9857a085b2184e",
+      "status": "parsed",
+      "symbols_examined": 23,
+      "matched_exports": 6,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 16,
+        "1027": 36
+      },
+      "unresolved_relocation_counts": {
+        "1026": 16
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libimagepipeline.so",
+      "sha256": "ddfb16382b3ca2a389e0ac7e3a5f7b732adc1e48265b47f298f8c18c8888bcc6",
+      "status": "parsed",
+      "symbols_examined": 11,
+      "matched_exports": 1,
+      "jni_table_candidates": 8,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 9,
+        "1027": 27
+      },
+      "unresolved_relocation_counts": {
+        "1026": 9
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libjpeg.so",
+      "sha256": "d2a070fc98b044045cc6fe28b2e895c42fcb2305cb175ebe864eb4f2b6d2b019",
+      "status": "parsed",
+      "symbols_examined": 153,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 26,
+        "1026": 86,
+        "1027": 209
+      },
+      "unresolved_relocation_counts": {
+        "1025": 26,
+        "1026": 86
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libkntr.so",
+      "sha256": "7ddf86bf599069f2be48faabe4934db6c781b23087c061e4453c4df360fa11a4",
+      "status": "parsed",
+      "symbols_examined": 78,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 2,
+        "1025": 2,
+        "1026": 74,
+        "1027": 7991
+      },
+      "unresolved_relocation_counts": {
+        "1025": 2,
+        "1026": 74
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libkoom-fast-dump.so",
+      "sha256": "9b4aa50ea7c0d071929ac926405bc93b0c9f5581a12da3c5d0ec02034450fc19",
+      "status": "parsed",
+      "symbols_examined": 15192,
+      "matched_exports": 4,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1869,
+        "1025": 233,
+        "1026": 859,
+        "1027": 1452
+      },
+      "unresolved_relocation_counts": {
+        "1025": 233,
+        "1026": 859
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libkoom-strip-dump.so",
+      "sha256": "07a995441ef9ff455a44bc21e085a9d52415c35130c1d66826a547aebb04933a",
+      "status": "parsed",
+      "symbols_examined": 15627,
+      "matched_exports": 6,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1869,
+        "1025": 239,
+        "1026": 899,
+        "1027": 1460
+      },
+      "unresolved_relocation_counts": {
+        "1025": 239,
+        "1026": 899
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/liblive2d-pngcompress.so",
+      "sha256": "f172a9132c9917836a1b6ada4bc367887d133a0f030e60dccc1b5d729570aab6",
+      "status": "parsed",
+      "symbols_examined": 553,
+      "matched_exports": 1,
+      "jni_table_candidates": 3,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 472,
+        "1025": 36,
+        "1026": 119,
+        "1027": 1530
+      },
+      "unresolved_relocation_counts": {
+        "1025": 36,
+        "1026": 119
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/liblynx.so",
+      "sha256": "c1c4e23a80efb4a3ca685e1928ed846c01b2a10ec7093e8d9e76da2c3d4a125f",
+      "status": "parsed",
+      "symbols_examined": 1025,
+      "matched_exports": 1,
+      "jni_table_candidates": 217,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 79,
+        "1025": 26,
+        "1026": 615,
+        "1027": 14563
+      },
+      "unresolved_relocation_counts": {
+        "1025": 26,
+        "1026": 615
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/liblynx_service_api.so",
+      "sha256": "762e6565965b45d140826996bcc853126fc04999cd2f950cbca84c92a9ef9abc",
+      "status": "parsed",
+      "symbols_examined": 47,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 2,
+        "1025": 3,
+        "1026": 40,
+        "1027": 999
+      },
+      "unresolved_relocation_counts": {
+        "1025": 3,
+        "1026": 40
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/liblynxbase.so",
+      "sha256": "27e9707e3fd855aabc131e1ca9b14fa4a774c4321246e808560eb2db21cd2bb8",
+      "status": "parsed",
+      "symbols_examined": 448,
+      "matched_exports": 1,
+      "jni_table_candidates": 6,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 24,
+        "1025": 11,
+        "1026": 211,
+        "1027": 1752
+      },
+      "unresolved_relocation_counts": {
+        "1025": 11,
+        "1026": 211
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/liblynxtrace.so",
+      "sha256": "be50ceba035e855396ae4048bdb73a51d521d46fe09dc3f0bb6b97701518983a",
+      "status": "parsed",
+      "symbols_examined": 77,
+      "matched_exports": 1,
+      "jni_table_candidates": 14,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 2,
+        "1026": 41,
+        "1027": 998
+      },
+      "unresolved_relocation_counts": {
+        "1025": 2,
+        "1026": 41
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libmmkv.so",
+      "sha256": "def591e513d4806ae5e3e779132dd0d309dd7845deeee6b1fe13b35b41eb250d",
+      "status": "parsed",
+      "symbols_examined": 661,
+      "matched_exports": 1,
+      "jni_table_candidates": 54,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 447,
+        "1025": 46,
+        "1026": 174,
+        "1027": 1390
+      },
+      "unresolved_relocation_counts": {
+        "1025": 46,
+        "1026": 174
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libmnn_predictor.so",
+      "sha256": "9f6e228637f01e06e1ec45120531312de948473404ba9a878b0b1a080a1b0750",
+      "status": "parsed",
+      "symbols_examined": 1757,
+      "matched_exports": 49,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1307,
+        "1025": 146,
+        "1026": 448,
+        "1027": 263
+      },
+      "unresolved_relocation_counts": {
+        "257": 153,
+        "1025": 146,
+        "1026": 448
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libmsaoaidauth.so",
+      "sha256": "3fbc23ab77cbbe2bbbca0ed7b937119082818128700312705bd8e65de2855ed5",
+      "status": "parsed",
+      "symbols_examined": 0,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {},
+      "unresolved_relocation_counts": {}
+    },
+    {
+      "member": "lib/arm64-v8a/libmsaoaidsec.so",
+      "sha256": "9396b26095c22181d8eeeb11bec1a1afa81f620e302743c380568ccee47da9c1",
+      "status": "parsed",
+      "symbols_examined": 0,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {},
+      "unresolved_relocation_counts": {}
+    },
+    {
+      "member": "lib/arm64-v8a/libnapi.so",
+      "sha256": "cabfe0a7531cbbfac6975041e4a894958aeaf7475c9efb81f5c9961e4738c006",
+      "status": "parsed",
+      "symbols_examined": 414,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 4,
+        "1026": 156,
+        "1027": 1341
+      },
+      "unresolved_relocation_counts": {
+        "1025": 4,
+        "1026": 156
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libnative-filters.so",
+      "sha256": "bf5d3a20bdfd68f43d676541c432d88a13651633c4884276c0bd0ab2df6ee524",
+      "status": "parsed",
+      "symbols_examined": 13,
+      "matched_exports": 1,
+      "jni_table_candidates": 5,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 11,
+        "1027": 18
+      },
+      "unresolved_relocation_counts": {
+        "1026": 11
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libnative-imagetranscoder.so",
+      "sha256": "24f825dbf70d23d7d56ea34f0716e87be555acd6b0a1cb2a2576234e2c64a966",
+      "status": "parsed",
+      "symbols_examined": 350,
+      "matched_exports": 1,
+      "jni_table_candidates": 2,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 381,
+        "1025": 22,
+        "1026": 83,
+        "1027": 1395
+      },
+      "unresolved_relocation_counts": {
+        "1025": 22,
+        "1026": 83
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libnative-live2d.so",
+      "sha256": "53c6b3afe28d9ed82bd738ef2198d8a68d5a72dc98c838cfe61709640b3b8043",
+      "status": "parsed",
+      "symbols_examined": 3920,
+      "matched_exports": 31,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 2784,
+        "1025": 335,
+        "1026": 1070,
+        "1027": 1664
+      },
+      "unresolved_relocation_counts": {
+        "1025": 335,
+        "1026": 1070
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libndkCameraEx.so",
+      "sha256": "41f893bbd9bd61145f94be8609c16659a0d06b150afca116cc4e04050581cfbc",
+      "status": "parsed",
+      "symbols_examined": 799,
+      "matched_exports": 12,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 512,
+        "1025": 58,
+        "1026": 259,
+        "1027": 955
+      },
+      "unresolved_relocation_counts": {
+        "1025": 58,
+        "1026": 259
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libnirvana.so",
+      "sha256": "0198b83af44c5f610e9a7e2ff7ac292f023d84f953eb923d30903cd676380f1a",
+      "status": "parsed",
+      "symbols_examined": 338,
+      "matched_exports": 145,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 37,
+        "1025": 15,
+        "1026": 145,
+        "1027": 1658
+      },
+      "unresolved_relocation_counts": {
+        "257": 27,
+        "1025": 15,
+        "1026": 145
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libnms.so",
+      "sha256": "6f980556f17ed029c4c6918027dab07069ebcfb3f0e70b14c4be4e5f1c170b9b",
+      "status": "parsed",
+      "symbols_examined": 47,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 24,
+        "1025": 1,
+        "1026": 39,
+        "1027": 1795
+      },
+      "unresolved_relocation_counts": {
+        "257": 24,
+        "1025": 1,
+        "1026": 39
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libpglarmor.so",
+      "sha256": "69218eb7accd450feb707bfe9fa6533c390a2c0bf63b5c685c5548c18a0fe716",
+      "status": "parsed",
+      "symbols_examined": 15,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 4,
+        "1026": 12,
+        "1027": 264
+      },
+      "unresolved_relocation_counts": {
+        "257": 4,
+        "1026": 12
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libpng.so",
+      "sha256": "a90eb702964c8e81d0bc0973ea8d2efcea7e64793ec9c7f7bd95137cf461bd57",
+      "status": "parsed",
+      "symbols_examined": 456,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 3,
+        "1026": 38,
+        "1027": 19
+      },
+      "unresolved_relocation_counts": {
+        "1025": 3,
+        "1026": 38
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libprotobuf-lite.so",
+      "sha256": "ca550f56a07c08bce49777619d5c97bcf3c3d2f2252fd814f3aceb4e538146a6",
+      "status": "parsed",
+      "symbols_examined": 1164,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 221,
+        "1025": 43,
+        "1026": 446,
+        "1027": 2046
+      },
+      "unresolved_relocation_counts": {
+        "1025": 43,
+        "1026": 446
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libquick.so",
+      "sha256": "c16e08a43addcf1b55cf6b932bf0af14ec7e9188d674b71cf27071faf8c2f868",
+      "status": "parsed",
+      "symbols_examined": 2550,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 50,
+        "1025": 4,
+        "1026": 129,
+        "1027": 4754
+      },
+      "unresolved_relocation_counts": {
+        "257": 50,
+        "1025": 4,
+        "1026": 129
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libquickjs-jni.so",
+      "sha256": "bb4c2f541e36a35c72f56024fdf40b41cfbb73487bbbbaf362948c6202ccd97b",
+      "status": "parsed",
+      "symbols_examined": 123,
+      "matched_exports": 57,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 62,
+        "1027": 8
+      },
+      "unresolved_relocation_counts": {
+        "1026": 62
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libquickjs.so",
+      "sha256": "2d2f7eebbb85f5f4453966edd5f3780e3c91571fe7626964fc87ed023f8ba032",
+      "status": "parsed",
+      "symbols_examined": 387,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 26,
+        "1025": 9,
+        "1026": 311,
+        "1027": 1544
+      },
+      "unresolved_relocation_counts": {
+        "257": 26,
+        "1025": 9,
+        "1026": 311
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libsafemode.so",
+      "sha256": "b547cc74cacd245e6a98a209c8f9dbea206708a98e62688107a17b9e02520a0b",
+      "status": "parsed",
+      "symbols_examined": 7,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 5,
+        "1027": 3
+      },
+      "unresolved_relocation_counts": {
+        "1026": 5
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libserval_svg.so",
+      "sha256": "aa1b4ae6892c1582d4e6b6e1e919263f10649bdf9707acf03eecedf901b41fd7",
+      "status": "parsed",
+      "symbols_examined": 99,
+      "matched_exports": 1,
+      "jni_table_candidates": 2,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 3,
+        "1026": 80,
+        "1027": 1470
+      },
+      "unresolved_relocation_counts": {
+        "1025": 3,
+        "1026": 80
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libshadowhook.so",
+      "sha256": "5afb272443eafb5c6ccabf4bb019e49840aa0a22698930164a8ac0fd25de684a",
+      "status": "parsed",
+      "symbols_examined": 101,
+      "matched_exports": 1,
+      "jni_table_candidates": 11,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 6,
+        "1026": 82,
+        "1027": 102
+      },
+      "unresolved_relocation_counts": {
+        "1025": 6,
+        "1026": 82
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libshadowhook_nothing.so",
+      "sha256": "f2cc6a6f94d7361be915daafff1d25b7b3af34972e7308ac540982cfd608bd32",
+      "status": "parsed",
+      "symbols_examined": 1,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {},
+      "unresolved_relocation_counts": {}
+    },
+    {
+      "member": "lib/arm64-v8a/libsqliteJni.so",
+      "sha256": "5c4aa613a0bc34878ddc87d1bd02c3b0d10dee56473e3e34781d21db55346372",
+      "status": "parsed",
+      "symbols_examined": 357,
+      "matched_exports": 1,
+      "jni_table_candidates": 22,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 283,
+        "1025": 4,
+        "1026": 194,
+        "1027": 1228
+      },
+      "unresolved_relocation_counts": {
+        "257": 22,
+        "1025": 4,
+        "1026": 194
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libssl.so",
+      "sha256": "e6a29dc7556575d977fbe675cb881266944d189b500ccd1bbcec5402e1e09c49",
+      "status": "parsed",
+      "symbols_examined": 921,
+      "matched_exports": 0,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 15,
+        "1025": 4,
+        "1026": 446,
+        "1027": 348
+      },
+      "unresolved_relocation_counts": {
+        "257": 15,
+        "1025": 4,
+        "1026": 446
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libstatic-webp.so",
+      "sha256": "3ad4eaa9db1a0a323d75d581cf744c44b1beff6028d6094642bc48e240b9e0cb",
+      "status": "parsed",
+      "symbols_examined": 425,
+      "matched_exports": 1,
+      "jni_table_candidates": 27,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 381,
+        "1025": 26,
+        "1026": 127,
+        "1027": 1528
+      },
+      "unresolved_relocation_counts": {
+        "1025": 26,
+        "1026": 127
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libsurface_util_jni.so",
+      "sha256": "ee3f0d56f81cc0a301db32dc4fd51274c3216733b4c40172768e38bc5049a265",
+      "status": "parsed",
+      "symbols_examined": 10,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 8,
+        "1027": 3
+      },
+      "unresolved_relocation_counts": {
+        "1026": 8
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libtencentloc.so",
+      "sha256": "75346d63df847857200ab31593a7966ed0a031568d7ed5ba2e5568412ecf8872",
+      "status": "parsed",
+      "symbols_examined": 507,
+      "matched_exports": 12,
+      "jni_table_candidates": 19,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 469,
+        "1025": 46,
+        "1026": 130,
+        "1027": 1251
+      },
+      "unresolved_relocation_counts": {
+        "1025": 46,
+        "1026": 130
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libtf.so",
+      "sha256": "222e12f79ed018b655739a78e4be040341d6a6bd796e09e6ffbca0110f5f0872",
+      "status": "parsed",
+      "symbols_examined": 1530,
+      "matched_exports": 32,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 1022,
+        "1025": 146,
+        "1026": 731,
+        "1027": 282
+      },
+      "unresolved_relocation_counts": {
+        "257": 470,
+        "1025": 146,
+        "1026": 731
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libtoyger.so",
+      "sha256": "7bdad298fc63603bd72f9f4ad86992f21fef4171c447da13ae15c5399640df03",
+      "status": "parsed",
+      "symbols_examined": 136,
+      "matched_exports": 12,
+      "jni_table_candidates": 25,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 21,
+        "1025": 2,
+        "1026": 102,
+        "1027": 3074
+      },
+      "unresolved_relocation_counts": {
+        "257": 1,
+        "1025": 2,
+        "1026": 102
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libtt_ugen_layout.so",
+      "sha256": "6356784adf27dac5d18cd14a052d4ab9c161fb74eb4df3d4107d00f2549edeb2",
+      "status": "parsed",
+      "symbols_examined": 760,
+      "matched_exports": 1,
+      "jni_table_candidates": 96,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 451,
+        "1025": 43,
+        "1026": 361,
+        "1027": 1389
+      },
+      "unresolved_relocation_counts": {
+        "1025": 43,
+        "1026": 361
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libturingmfa.so",
+      "sha256": "537edc54d6d4ab39d4e7aa6d6f5bddb8e14264d52585d0d69124fbcf61d45dc0",
+      "status": "parsed",
+      "symbols_examined": 137,
+      "matched_exports": 1,
+      "jni_table_candidates": 15,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 5,
+        "1026": 129,
+        "1027": 282
+      },
+      "unresolved_relocation_counts": {
+        "1025": 5,
+        "1026": 129
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libuam_compositor.so",
+      "sha256": "99f6b40a91ae9f324a6123e7af19c49c0e427312ed3dd219eb1a0dc9b2f8e5e9",
+      "status": "parsed",
+      "symbols_examined": 16,
+      "matched_exports": 5,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1026": 9,
+        "1027": 3
+      },
+      "unresolved_relocation_counts": {
+        "1026": 9
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libwasm.so",
+      "sha256": "0a52fc6f15d08e6d89d9a443a3c51df08e0369a2c9aaed53491362db74719af6",
+      "status": "parsed",
+      "symbols_examined": 108,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 4,
+        "1026": 102,
+        "1027": 1602
+      },
+      "unresolved_relocation_counts": {
+        "1025": 4,
+        "1026": 102
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libweibosdkcore.so",
+      "sha256": "be9562a75f118aa5b74a2eae230df8e31215e0f4b5c3705d76965cd44d4ea769",
+      "status": "parsed",
+      "symbols_examined": 38,
+      "matched_exports": 5,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 1,
+        "1026": 16,
+        "1027": 13
+      },
+      "unresolved_relocation_counts": {
+        "1025": 1,
+        "1026": 16
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libzkfv_tj.so",
+      "sha256": "7e12d5677e216fec24f009b2336099e36addea6f861380697bfb48cc386c7172",
+      "status": "parsed",
+      "symbols_examined": 40,
+      "matched_exports": 1,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "1025": 5,
+        "1026": 33,
+        "1027": 3301
+      },
+      "unresolved_relocation_counts": {
+        "1025": 5,
+        "1026": 33
+      }
+    },
+    {
+      "member": "lib/arm64-v8a/libzstd-jni-1.5.7-6.so",
+      "sha256": "e5ebc383da2f10794b1ca23964fb7e202fcb351e83942f0c8fe5d082a119b2c6",
+      "status": "parsed",
+      "symbols_examined": 763,
+      "matched_exports": 148,
+      "jni_table_candidates": 0,
+      "unsupported_relocations": [],
+      "relocation_type_counts": {
+        "257": 51,
+        "1025": 9,
+        "1026": 337,
+        "1027": 23
+      },
+      "unresolved_relocation_counts": {
+        "1025": 9,
+        "1026": 337
+      }
+    }
+  ]
+}

@@ -22,3 +22,13 @@ REA/JADX 对 `classes18.dex` 的未修改副本反编译 `qC0.a`：
 [View 副本来源](../evidence/focused-artifact.json) 和 [拦截器副本来源](../evidence/auth-focused-artifact.json) 记录原 APK 哈希、原 DEX 哈希、成员映射及副本哈希。这些副本移除了其他 DEX/资源，属于未签名的分析片段；不能当作可安装原包或完整调用图。
 
 [完整包超时记录](../evidence/full-apk-timeout.json) 记录 REA 的 120 秒加载限制。原始 APK 和分包均未被修改。
+
+## 第二轮实现核对
+
+[第二轮摘要](../evidence/round2-implementation.json) 对局部原始 DEX 字节进行 REA/JADX 核对：
+
+- DEX `okhttp3.z$a.l(String)`（JADX 名称 `okhttp3.z.a`）拒绝空 URL，转换 `ws/wss` scheme，然后调用 URL 解析器并赋给请求 URL 字段。只有该方法的关联调用提升为 `verified-url-setter`；仍不推断 HTTP 动词或实际发送。
+- 同类 `i(String)` 只委托请求头容器操作，没有提升为 URL 设置器。
+- `LibBili.h(Map)` 先复制为 `TreeMap`，再调用 native `s(SortedMap)`；含整型选项的 `i(Map,int,int)` 委托 native `so(SortedMap,int,int)`。静态初始化向库加载封装传入 `bili`。
+
+这只定位了排序封装与 JNI 签名边界，没有恢复 native 签名算法。所用副本的原始 DEX 映射及哈希分别记录在 [网络封装副本](../evidence/network-focused-artifact.json) 和 [native Java 副本](../evidence/native-java-focused-artifact.json)。

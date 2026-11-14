@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "original_apk_sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+  "evidence": [
+    {
+      "label": "okhttp-url-setter",
+      "parent_evidence_id": "ev_42148e316f94661abf3e5defe11dee421e26f561e88ed315ab8f499a64a3d96f",
+      "derived_artifact_sha256": "4ee97b5ec8e8e07b18b7912f4027f9bc546d0f06003ab601ffa83675bbe16129",
+      "class_name": "okhttp3.z.a",
+      "method": {
+        "name": "l",
+        "reported_signature": "l(java.lang.String): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "source_sha256": "c9ae15cfc60899c2fa4e3b7f5263a02bb8e3eada362734e24af6fce6f2cb2bab",
+      "provider": {
+        "id": "jadx",
+        "name": "JADX headless",
+        "version": "0.7.1"
+      }
+    },
+    {
+      "label": "okhttp-string-setter-i",
+      "parent_evidence_id": "ev_9208a6a3881c5d2930ff613a9c623fe6c22b58cb1e655874e661a8e4d9a45ea7",
+      "derived_artifact_sha256": "4ee97b5ec8e8e07b18b7912f4027f9bc546d0f06003ab601ffa83675bbe16129",
+      "class_name": "okhttp3.z.a",
+      "method": {
+        "name": "i",
+        "reported_signature": "i(java.lang.String): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "source_sha256": "fba0cd3a7dc8aeebfe92b9ea424a5227ce1737ebcdf0266a1533c74a428c1138",
+      "provider": {
+        "id": "jadx",
+        "name": "JADX headless",
+        "version": "0.7.1"
+      }
+    },
+    {
+      "label": "libbili-map-sign",
+      "parent_evidence_id": "ev_63a88bfb8f84f469af4c3354e0de175973a7749b5ad9e2eab1c23ab1ae9961b0",
+      "derived_artifact_sha256": "d116437995c376e1140be8a4c0a0c7eb6b3d03ff1b206a77af95e630100ab95e",
+      "class_name": "com.bilibili.nativelibrary.LibBili",
+      "method": {
+        "name": "h",
+        "reported_signature": "h(java.util.Map<java.lang.String, java.lang.String>): com.bilibili.nativelibrary.SignedQuery",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "source_sha256": "27b7d142d357e963d94c637a400620a87f4f67d931e72ba861c6c4e9474b25e0",
+      "provider": {
+        "id": "jadx",
+        "name": "JADX headless",
+        "version": "0.7.1"
+      }
+    },
+    {
+      "label": "libbili-map-sign-options",
+      "parent_evidence_id": "ev_d0ffc9cc240f2d365fdc55a30149b9c4109266504eefb11e83252f0dda2807ba",
+      "derived_artifact_sha256": "d116437995c376e1140be8a4c0a0c7eb6b3d03ff1b206a77af95e630100ab95e",
+      "class_name": "com.bilibili.nativelibrary.LibBili",
+      "method": {
+        "name": "i",
+        "reported_signature": "i(java.util.Map<java.lang.String, java.lang.String>, int, int): com.bilibili.nativelibrary.SignedQuery",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "source_sha256": "e1ca6f39768ee07a04a72ed82343ede7e2e76cc9736895d9cb21110d68b21d9a",
+      "provider": {
+        "id": "jadx",
+        "name": "JADX headless",
+        "version": "0.7.1"
+      }
+    },
+    {
+      "label": "libbili-library-load",
+      "parent_evidence_id": "ev_7b3cf5e99c6991e67151c1c539418400099088b6f459329ea199f27c0ff4eaa5",
+      "derived_artifact_sha256": "d116437995c376e1140be8a4c0a0c7eb6b3d03ff1b206a77af95e630100ab95e",
+      "class_name": "com.bilibili.nativelibrary.LibBili",
+      "method": {
+        "name": "<clinit>",
+        "reported_signature": "<clinit>(): void",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "source_status": "complete",
+      "source_sha256": "070c2f10f01f59c57746b988da139c7d5a870b545aa6a2fde2a924bccfb18f82",
+      "provider": {
+        "id": "jadx",
+        "name": "JADX headless",
+        "version": "0.7.1"
+      }
+    }
+  ],
+  "facts": [
+    {
+      "label": "okhttp-url-setter",
+      "dex_owner": "Lokhttp3/z$a;",
+      "dex_descriptor": "(Ljava/lang/String;)V",
+      "method": "l",
+      "meaning": "URL setter; rejects null, maps ws/wss schemes to http/https, then assigns parsed okhttp3.t.h(String) URL."
+    },
+    {
+      "label": "okhttp-string-setter-i",
+      "method": "i",
+      "meaning": "Delegates to a header-container operation; not classified as a URL setter."
+    },
+    {
+      "label": "libbili-map-sign",
+      "meaning": "Copies supplied Map into TreeMap (or creates empty TreeMap), then calls native s(SortedMap).",
+      "native_descriptor": "(Ljava/util/SortedMap;)Lcom/bilibili/nativelibrary/SignedQuery;"
+    },
+    {
+      "label": "libbili-map-sign-options",
+      "meaning": "Copies Map into TreeMap then calls native so(SortedMap,int,int).",
+      "native_descriptor": "(Ljava/util/SortedMap;II)Lcom/bilibili/nativelibrary/SignedQuery;"
+    },
+    {
+      "label": "libbili-library-load",
+      "meaning": "Static initializer passes bili to its library-loading wrapper."
+    }
+  ],
+  "limitations": [
+    "Only unchanged selected DEX bytes in unsigned focused archives were decompiled.",
+    "Static URL assignment and native-boundary calls do not establish requests being sent, endpoint availability or the native signing algorithm.",
+    "Failed full-fragment class searches reflect JADX inventory naming/count behavior; successful inner-class inspection uses JADX dot notation."
+  ]
+}
