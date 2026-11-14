@@ -1,4 +1,5 @@
-﻿import fs from "node:fs";
+import { classifyFunction, functionCategory, isEndpoint } from "./functions.mjs";
+import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 export const readJson = (file) =>
@@ -86,7 +87,7 @@ export function loadCatalog(root) {
 }
 export function select(
   entries,
-  { kind, query = "", offset = 0, limit = 20 } = {},
+  { kind, category, query = "", offset = 0, limit = 20 } = {},
 ) {
   if (kind && !CATALOG_KINDS.includes(kind))
     throw Error("kind must be one of: " + CATALOG_KINDS.join(", "));
@@ -98,10 +99,12 @@ export function select(
     limit > 1000
   )
     throw Error("offset must be nonnegative; limit must be 1..1000");
+  if (category) functionCategory(category);
   const q = query.toLowerCase(),
     matches = entries.filter(
       (e) =>
         (!kind || kind === e.kind) &&
+        (!category || (isEndpoint(e) && classifyFunction(e).category === category)) &&
         (!q || JSON.stringify(e).toLowerCase().includes(q)),
     );
   return {

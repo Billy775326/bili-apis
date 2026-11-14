@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { FUNCTION_CATEGORIES } from "../src/functions.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -12,12 +13,17 @@ try {
   const [command = "stats", ...args] = process.argv.slice(2);
   if (command === "--help" || command === "help")
     console.log(
-      "bili-apis stats\nbili-apis list [--kind KIND] [--query TEXT] [--offset N] [--limit N]\nbili-apis show ID\nAll output is JSON; no API requests are sent.\nKinds: " + CATALOG_KINDS.join("|"),
+      "bili-apis stats\nbili-apis categories\nbili-apis list [--category CATEGORY] [--kind KIND] [--query TEXT] [--offset N] [--limit N]\nbili-apis show ID\nAll output is JSON; no API requests are sent.\nKinds: " + CATALOG_KINDS.join("|"),
     );
   else {
     const entries = loadCatalog(root);
     let result;
     if (command === "stats") result = summarize(entries);
+    else if (command === "categories")
+      result = FUNCTION_CATEGORIES.map((c) => ({
+        ...c,
+        total: select(entries, { category: c.id, limit: 1 }).total,
+      }));
     else if (command === "show") {
       if (args.length !== 1) throw Error("show requires one ID");
       result = entries.filter((e) => e.id === args[0]);
@@ -28,7 +34,7 @@ try {
         const flag = args[i],
           value = args[i + 1];
         if (
-          !["--kind", "--query", "--offset", "--limit"].includes(flag) ||
+          !["--kind", "--category", "--query", "--offset", "--limit"].includes(flag) ||
           value === undefined
         )
           throw Error("Unknown or incomplete option: " + flag);
