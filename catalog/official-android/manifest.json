@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "official64.apk",
+    "sha256": "c3ea50c7773267f252e441b5c1aebf7574492223b2bb1568d7a7093d1f8eb59c",
+    "size": 241376892,
+    "package_name": "tv.danmaku.bili",
+    "version_name": "9.19.0",
+    "version_code": 9190400,
+    "distribution": "official Android 64-bit"
+  },
+  "encoding": "gzip of compact UTF-8 JSON; original extraction metadata retained without source bodies or APK binaries",
+  "scope": "All files are static extraction outputs. Coverage files without a standalone artifact field are bound by this manifest to the companion pinned extractor inputs.",
+  "files": [
+    {
+      "name": "artifacts.json.gz",
+      "bytes": 1642895,
+      "sha256": "bcdbbbf300505888074782780869878948dcc25116b19e5430ad389edb4f9cec",
+      "uncompressed_bytes": 6640099,
+      "uncompressed_sha256": "6f681b9c2ba83c0abcfbe44de23990624c7728fc90d0e5810690a7bffa6e87a3",
+      "source_pretty_json_sha256": "d3654f4fd53b063dc6bdf1b8ad770ad78cc68c2b8a1963551a65aba653542d40"
+    },
+    {
+      "name": "coverage-artifacts.json.gz",
+      "bytes": 301551,
+      "sha256": "a4eb9a14d88fa486833274cb0a76eb6f0ebd9c0aabe0698e6ec0735663470bf8",
+      "uncompressed_bytes": 6359294,
+      "uncompressed_sha256": "f0f9954e47a1a699f705c52752e3beeccc0c17f641b782a31a0b9ced5eddcbda",
+      "source_pretty_json_sha256": "3b7ed425afa1b1a9f6d23691d7ec3d4fcb3b40ad339d62b9695754cf5928c974"
+    },
+    {
+      "name": "coverage-dex-routes.json.gz",
+      "bytes": 12869,
+      "sha256": "9f714d08fc3bf6027afbac1c38318a70bc5ce6278cfd1fdc52b7027472b358ba",
+      "uncompressed_bytes": 50627,
+      "uncompressed_sha256": "2872c8180f98b1c357a67bd92fc299f408250942d8c1eae4a674cdf7c82b2023",
+      "source_pretty_json_sha256": "6201ffcbce44af7ed92e33d7ba81a44710674e57ec2a76d7f7db472341377ab9"
+    },
+    {
+      "name": "coverage-grpc-audit.json.gz",
+      "bytes": 2763,
+      "sha256": "a0b9d220ad64083020209d4387a666d159af260ac44cd3e760ea3f6e769cfde4",
+      "uncompressed_bytes": 6116,
+      "uncompressed_sha256": "6a2a8e4c4869707195ecdfcbc189f0016a3991a72f116c84aeac2a14697d9d41",
+      "source_pretty_json_sha256": "f0937b0b588ebc4bd9fa0de12b0fedbc9ee88d2823c69a56975ee70b6e219638"
+    },
+    {
+      "name": "coverage-grpc.json.gz",
+      "bytes": 293,
+      "sha256": "f8d8b2debe998a9b6e65e474fd6fc7f129eeb1586d55847d382ea45881e588c3",
+      "uncompressed_bytes": 439,
+      "uncompressed_sha256": "c8294c8aaf0670c5eb4ef79bfd33ad39e85c4ff01aa5a8428d3af71a270b99a8",
+      "source_pretty_json_sha256": "938b1eb0959e40d692d8b258b95bba24739361181f8866a090d21cf226ff46ce"
+    },
+    {
+      "name": "coverage-http-models.json.gz",
+      "bytes": 817,
+      "sha256": "d82a102f279783f67bf08e5a2b5cc0e5c2157045696123c06c0dbc6ead0ff7ce",
+      "uncompressed_bytes": 1422,
+      "uncompressed_sha256": "b809ff86375a8727deba7c580114522ef20aad633651d1c3e91a1228bd0f0a86",
+      "source_pretty_json_sha256": "188fa8d438bd9cd2e7de5dad760f4fbf1d1b62ac373924e82d93f9151ac11cd1"
+    },
+    {
+      "name": "coverage-http.json.gz",
+      "bytes": 5556,
+      "sha256": "ec2a58773f7211b8234e993b675a2f1c2fc26e0bf1bb54fef102b5cc3a800242",
+      "uncompressed_bytes": 37988,
+      "uncompressed_sha256": "f1e3aaf944553f641036e74b40158f792f5d6cbfd8e64a4c63158182eeab636a",
+      "source_pretty_json_sha256": "e7043a4e389cae5513ab2015d60eb9feee1002b15206a06eeea8afb68b71acb3"
+    },
+    {
+      "name": "coverage-native.json.gz",
+      "bytes": 6734,
+      "sha256": "c0b733b0a3fd2683aad136660e316412af7e4fcdffe38a044a91535e4acc4ae4",
+      "uncompressed_bytes": 33230,
+      "uncompressed_sha256": "99542cb4374a4bc684b27c15e8633daaa67b9c82ab5215c2db062839beaa782b",
+      "source_pretty_json_sha256": "9c9a28c4662d4c9dd4d2dcb4f63014b96580a5cd67c7c6bb547cdce1d8e9dcfd"
+    },
+    {
+      "name": "coverage-resource-routes.json.gz",
+      "bytes": 51308,
+      "sha256": "05e7c6e632f49549dab602362411adbe9132147fd56e98cea4afb0cc6f48c96b",
+      "uncompressed_bytes": 312052,
+      "uncompressed_sha256": "0e83e552844c2360be6834af2c07183cf4d75e24a80fc7b5ff2cf5975202cea4",
+      "source_pretty_json_sha256": "dd96b546cc651735bb3c97291247d0500c09112d438fc77539a9df24737b4d87"
+    },
+    {
+      "name": "dex-routes.json.gz",
+      "bytes": 214280,
+      "sha256": "92a5245b9298069415f49b964ab0cef0931070c65f090e4dacad4c992e20b6ac",
+      "uncompressed_bytes": 2932991,
+      "uncompressed_sha256": "ea1d070745a481ee9994e865727e2a6a7e5938ab75771cccfafd650c2cf61768",
+      "source_pretty_json_sha256": "9defc7a490fc2643a7615d362929e24674bb31e67549b7d0043289f0d61c48b8"
+    },
+    {
+      "name": "grpc-additional.json.gz",
+      "bytes": 1006,
+      "sha256": "52a054ed493a90d0770cbd95064baf15eeffc17621fad9f9b2b903c087ce0599",
+      "uncompressed_bytes": 4083,
+      "uncompressed_sha256": "d8dde8077d617c70af2dbc42fb52044474d661bf3bcd9679bf20b542b7642a9a",
+      "source_pretty_json_sha256": "4a07c1a5c1c701175e994f4c4e555a18a3ec2e059a3931ae10f43f58bc238a87"
+    },
+    {
+      "name": "grpc-audit.json.gz",
+      "bytes": 180776,
+      "sha256": "a351de7661c6fce4da29ac697cf1e7a3756c9c944d472d63a9cd1646ab697ae6",
+      "uncompressed_bytes": 3901970,
+      "uncompressed_sha256": "b32dc692834405662e48b293f2c8e3cadfec28927c43d9b8f176975131455cdb",
+      "source_pretty_json_sha256": "e3453f8703ae28388fbb71298424f9d823434bc0f7973e6958ce1a545e167d67"
+    },
+    {
+      "name": "grpc.json.gz",
+      "bytes": 33512,
+      "sha256": "f38edc7e7cc5418a92658b39b280a5396cb14526b28eef7e428c9571e59aa671",
+      "uncompressed_bytes": 502438,
+      "uncompressed_sha256": "4f7e67d602be6084d957416e21d4c06063593dca60941d9cd8c286473fdba5f7",
+      "source_pretty_json_sha256": "36f459510bed638ea5debcfd7c97f381f63f48ffb540ec2f85d179b1492fc7d6"
+    },
+    {
+      "name": "http-models.json.gz",
+      "bytes": 848684,
+      "sha256": "57d8842c7e497074aeff2120196cdf0e64f93be28d3ee8d05c1f6428ad66d19d",
+      "uncompressed_bytes": 14725932,
+      "uncompressed_sha256": "b5268f98b54a262a037b31c9610d392d953876ee669c024fec7877768ebba35d",
+      "source_pretty_json_sha256": "7c666404769ed2fd7470fb1094ee7508ab7e6ef2025353f8185cd947a14c5c6b"
+    },
+    {
+      "name": "http.json.gz",
+      "bytes": 244950,
+      "sha256": "148bd1ddc26f2976e1d8817bf6c4922bf39b80b4f8c3de82841a59a0afb57251",
+      "uncompressed_bytes": 5915575,
+      "uncompressed_sha256": "455b8852db34dd0d196ee554aced7a5f51d614eb379022b3f3d0db6e19a1e8bd",
+      "source_pretty_json_sha256": "c5cc7c17006c5ef8c509123232065e52bfb3803205d27cd3401813f1986b54c0"
+    },
+    {
+      "name": "messages.json.gz",
+      "bytes": 601346,
+      "sha256": "c81818f0f17d0e7d4bbb6e4b4405d96401c78496b683a6ec0e6c8a7e858d0fc5",
+      "uncompressed_bytes": 6120093,
+      "uncompressed_sha256": "6f244cb76d43b6549da9e1a75900f9ebdb3eb5a9c6b6b45cee29d8d92bb24cd3",
+      "source_pretty_json_sha256": "6f244cb76d43b6549da9e1a75900f9ebdb3eb5a9c6b6b45cee29d8d92bb24cd3"
+    },
+    {
+      "name": "native.json.gz",
+      "bytes": 189000,
+      "sha256": "b8f4036fe864a829f6e8ec552b47618b18cc012f89f6059cc059f51e2ca36592",
+      "uncompressed_bytes": 2719254,
+      "uncompressed_sha256": "2bfd4f30b06798e3e1def5999b24cf6bff1369fe4ce132fc2d2080ff451f42ad",
+      "source_pretty_json_sha256": "f2c8ded99f7d9a0176620ccc4fee935fa8e1d5a2098d7223fce9ba5018284239"
+    },
+    {
+      "name": "resource-routes.json.gz",
+      "bytes": 11533,
+      "sha256": "057d7746022edae69e941b084c2b0fc7a4d8e43e7d960463f3d3ed71ef603c2e",
+      "uncompressed_bytes": 258737,
+      "uncompressed_sha256": "f4600108f0804e5c61579128c5af9679f5d4b4774c411fd39ac172b296cbfd85",
+      "source_pretty_json_sha256": "ca2bcd5036c5f07c3e0e00af7a1a4cbe178e5cc0afc323d2f139c1bedd13e54b"
+    }
+  ]
+}

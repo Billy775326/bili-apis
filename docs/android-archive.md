@@ -87,3 +87,7 @@ HTTP 参数来自 Retrofit 注解，`BaseUrl` 的 URL 拼接仅为语法候选�
 完整 APK 的 REA 加载超时；局部方法核对使用记录了映射和哈希的派生副本。所有核心目录仍从原始 37 个 DEX 生成。Native 签名入口已定位，算法、运行时认证、服务端分页和错误语义尚未验证。
 
 项目处于研究阶段；`schema_version: 1` 表示目录格式，包版本 `0.0.0` 是未发布占位。应用升级可能改变名称、索引和协议，旧目录不能自动代表新版本。
+
+## 官方 Android 补充基线
+
+[官方 Android 9.19.0](official-android/README.md)提供独立功能分类、压缩元数据和与 Play 的静态比较。使用 `node bin/bili-apis.mjs --edition official stats` 查询，省略 edition 时继续读取历史 Play 目录。

@@ -1,0 +1,17 @@
+{
+  "source_apk_sha256": "c3ea50c7773267f252e441b5c1aebf7574492223b2bb1568d7a7093d1f8eb59c",
+  "derived_apk_sha256": "091fd5041881a3076f526d49c7e83422c9737be784f2b0b44368c7b12de05aec",
+  "members": [
+    {
+      "source_member": "AndroidManifest.xml",
+      "sha256": "3931746ca1dc47d9f478e5c11cdb85c6c5f0ec60ecc4babc7160329cc38efc0a",
+      "size": 386940
+    },
+    {
+      "source_member": "classes33.dex",
+      "sha256": "0127a6d2db2ab1224eb4cbba9672a0c288f6cf29e992633027f7a09acfc515b6",
+      "size": 5610776
+    }
+  ],
+  "scope": "Unmodified original manifest and classes33.dex repackaged only for bounded REA static inspection. Unsigned, incomplete derived APK; never executed; not whole-app coverage."
+}

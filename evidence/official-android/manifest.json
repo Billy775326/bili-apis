@@ -1,0 +1,22 @@
+{
+  "artifact_sha256": "c3ea50c7773267f252e441b5c1aebf7574492223b2bb1568d7a7093d1f8eb59c",
+  "manifest_sha256": "3931746ca1dc47d9f478e5c11cdb85c6c5f0ec60ecc4babc7160329cc38efc0a",
+  "package_name": "tv.danmaku.bili",
+  "version_name": "9.19.0",
+  "version_code": 9190400,
+  "min_sdk": 24,
+  "target_sdk": 35,
+  "application_class": "tv.danmaku.bili.HiltApplication",
+  "debuggable": null,
+  "uses_cleartext_traffic": true,
+  "component_counts": {
+    "activity": 725,
+    "activity-alias": 1,
+    "service": 85,
+    "receiver": 34,
+    "provider": 62
+  },
+  "manifest_string_count": 1651,
+  "manifest_attribute_count": 5295,
+  "scope": "Binary AndroidManifest.xml metadata only; references into resources are preserved as unresolved typed values. No app execution or policy enforcement inferred."
+}

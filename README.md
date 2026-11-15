@@ -41,3 +41,5 @@ node bin/bili-web.mjs call search.videos keyword=bilibili page=1
 [历史 Android 研究入口](docs/android-archive.md)保留原始来源与旧 CLI，当前 PC 目录不导入 APK 声明。项目仍处于未发布研究阶段，版本 `0.0.0` 不提供稳定兼容承诺。
 
 [更新日志](CHANGELOG.md)
+
+[官方 Android 9.19.0 静态目录与 Play 对比](docs/official-android/README.md)：新增官方包的 HTTP/gRPC、参数模型、资源/native 证据及独立查询入口，均未作为网页接口的可用性证据。

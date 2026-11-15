@@ -1,7 +1,12 @@
-import { classifyFunction, functionCategory, isEndpoint } from "./functions.mjs";
+import {
+  classifyFunction,
+  functionCategory,
+  isEndpoint,
+} from "./functions.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import { gunzipSync } from "node:zlib";
 export const readJson = (file) =>
   JSON.parse(fs.readFileSync(file, "utf8").replace(/^\uFEFF/, ""));
 export const CATALOG_KINDS = [
@@ -45,14 +50,47 @@ const definitions = [
   ],
   ["associated-message", "grpc-audit.json", "outside_associated_messages"],
 ];
-export function loadCatalog(root) {
+export function loadCatalog(root, { edition = "play" } = {}) {
+  if (!["play", "official"].includes(edition))
+    throw Error("edition must be play or official");
+  const directory =
+    edition === "official"
+      ? path.join(root, "catalog", "official-android")
+      : path.join(root, "catalog");
+  const manifest =
+    edition === "official"
+      ? readJson(path.join(directory, "manifest.json"))
+      : null;
   const cache = new Map();
   return definitions.flatMap(([kind, file, key]) => {
     if (!cache.has(file)) {
-      const name = path.join(root, "catalog", file);
+      const name = path.join(
+        directory,
+        file + (edition === "official" ? ".gz" : ""),
+      );
       if (!fs.existsSync(name))
         throw Error("Missing required catalog: " + file);
-      cache.set(file, readJson(name));
+      if (edition === "official") {
+        const record = manifest.files.find((e) => e.name === file + ".gz"),
+          packed = fs.readFileSync(name);
+        if (
+          !record ||
+          !Number.isSafeInteger(record.bytes) ||
+          record.bytes < 0 ||
+          packed.length !== record.bytes ||
+          crypto.createHash("sha256").update(packed).digest("hex") !==
+            record.sha256
+        )
+          throw Error("Official catalog hash mismatch: " + file);
+        const bytes = gunzipSync(packed, { maxOutputLength: 64 * 1024 * 1024 });
+        if (
+          bytes.length !== record.uncompressed_bytes ||
+          crypto.createHash("sha256").update(bytes).digest("hex") !==
+            record.uncompressed_sha256
+        )
+          throw Error("Official unpacked catalog hash mismatch: " + file);
+        cache.set(file, JSON.parse(bytes.toString("utf8")));
+      } else cache.set(file, readJson(name));
     }
     const data = cache.get(file),
       rows = typeof key === "function" ? key(data) : data[key];
@@ -104,7 +142,8 @@ export function select(
     matches = entries.filter(
       (e) =>
         (!kind || kind === e.kind) &&
-        (!category || (isEndpoint(e) && classifyFunction(e).category === category)) &&
+        (!category ||
+          (isEndpoint(e) && classifyFunction(e).category === category)) &&
         (!q || JSON.stringify(e).toLowerCase().includes(q)),
     );
   return {

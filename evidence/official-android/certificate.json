@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "official64.apk",
+    "sha256": "c3ea50c7773267f252e441b5c1aebf7574492223b2bb1568d7a7093d1f8eb59c",
+    "size": 241376892,
+    "package_name": "tv.danmaku.bili",
+    "version_name": "9.19.0",
+    "version_code": 9190400,
+    "distribution": "official Android 64-bit"
+  },
+  "verification_scope": "Certificate extraction only; APK cryptographic signatures and content digests were not verified.",
+  "signing_block": {
+    "apk_file_offset": 239538176,
+    "total_size": 4096,
+    "central_directory_offset": 239542272,
+    "scheme_ids": [
+      "0x7109871a",
+      "0xf05368c0"
+    ],
+    "pairs": [
+      {
+        "id": "0x7109871a",
+        "value_size": 1001,
+        "apk_file_offset": 239538184
+      },
+      {
+        "id": "0xf05368c0",
+        "value_size": 1001,
+        "apk_file_offset": 239539197
+      },
+      {
+        "id": "0x71777777",
+        "value_size": 18,
+        "apk_file_offset": 239540210
+      },
+      {
+        "id": "0x42726577",
+        "value_size": 1996,
+        "apk_file_offset": 239540240
+      }
+    ],
+    "pair_ids": [
+      "0x7109871a",
+      "0xf05368c0",
+      "0x71777777",
+      "0x42726577"
+    ],
+    "scheme_identification": {
+      "known_ids": {
+        "0x7109871a": "APK Signature Scheme v2",
+        "0xf05368c0": "APK Signature Scheme v3"
+      },
+      "other_pair_ids": [
+        "0x71777777",
+        "0x42726577"
+      ]
+    }
+  },
+  "parsed_certificate_scheme_ids": [
+    "0x7109871a"
+  ],
+  "signers": [
+    {
+      "scheme_id": "0x7109871a",
+      "signer_index": 0,
+      "certificates": [
+        {
+          "certificate_sha256": "93ba270f5521139ecafe4bb638ac5b1198bc548f62d9fd8f8580a079faf5910e",
+          "spki_sha256": "99dab62bf39e9832ce4568e694171021b78df779308ccda24cc933e16dbb2891",
+          "issuer": "C=CN\nST=Guangdong\nL=Zhuhai\nO=danmaku.tv\nOU=danmaku.tv\nCN=Bbcallen",
+          "subject": "C=CN\nST=Guangdong\nL=Zhuhai\nO=danmaku.tv\nOU=danmaku.tv\nCN=Bbcallen",
+          "public_key_type": "rsa",
+          "serial_number": "4F3BB0EC",
+          "valid_from": "Feb 15 13:19:40 2012 GMT",
+          "valid_to": "Nov 18 13:19:40 2066 GMT"
+        }
+      ]
+    }
+  ],
+  "play_certificate_comparison": {
+    "reference_certificate_sha256": "93ba270f5521139ecafe4bb638ac5b1198bc548f62d9fd8f8580a079faf5910e",
+    "official_leaf_certificate_sha256": "93ba270f5521139ecafe4bb638ac5b1198bc548f62d9fd8f8580a079faf5910e",
+    "matches_play": true
+  },
+  "limits": {
+    "signing_block_bytes": 16777216,
+    "signers": 32,
+    "certificates_per_signer": 16,
+    "certificate_bytes": 1048576
+  },
+  "limitations": [
+    "Only v2 certificate chains were parsed; other pair IDs are inventoried only.",
+    "Equal fingerprints do not establish signature validity, publisher trust or runtime behavior.",
+    "No private or public key bytes were exported; only certificate metadata and digests."
+  ]
+}

@@ -1,0 +1,418 @@
+{
+  "artifact_sha256": "c3ea50c7773267f252e441b5c1aebf7574492223b2bb1568d7a7093d1f8eb59c",
+  "members": 26669,
+  "root_dex_files": 36,
+  "root_dex_bytes": 303666492,
+  "native_members": [
+    {
+      "name": "lib/arm64-v8a/libAPSE_8.0.0.so",
+      "size": 3577384
+    },
+    {
+      "name": "lib/arm64-v8a/libAPSE_J.so",
+      "size": 1105512
+    },
+    {
+      "name": "lib/arm64-v8a/libBugly.so",
+      "size": 190656
+    },
+    {
+      "name": "lib/arm64-v8a/libBurstLinker.so",
+      "size": 988440
+    },
+    {
+      "name": "lib/arm64-v8a/libCtaApiLib.so",
+      "size": 498176
+    },
+    {
+      "name": "lib/arm64-v8a/libMNN.so",
+      "size": 2455136
+    },
+    {
+      "name": "lib/arm64-v8a/libMNN_CL.so",
+      "size": 1415024
+    },
+    {
+      "name": "lib/arm64-v8a/libMNN_Express.so",
+      "size": 800344
+    },
+    {
+      "name": "lib/arm64-v8a/libMiFilterSDK.so",
+      "size": 1225368
+    },
+    {
+      "name": "lib/arm64-v8a/libPerfgeniusApi.so",
+      "size": 149256
+    },
+    {
+      "name": "lib/arm64-v8a/libSapling.so",
+      "size": 1421992
+    },
+    {
+      "name": "lib/arm64-v8a/libYTCommonLiveness.so",
+      "size": 709344
+    },
+    {
+      "name": "lib/arm64-v8a/libYTLiveness.so",
+      "size": 1504320
+    },
+    {
+      "name": "lib/arm64-v8a/libacckitjni-lib.so",
+      "size": 836000
+    },
+    {
+      "name": "lib/arm64-v8a/libadjni.so",
+      "size": 904328
+    },
+    {
+      "name": "lib/arm64-v8a/libandroidx.graphics.path.so",
+      "size": 10096
+    },
+    {
+      "name": "lib/arm64-v8a/libapkdiffpatch.so",
+      "size": 507776
+    },
+    {
+      "name": "lib/arm64-v8a/libapkpatch.so",
+      "size": 888824
+    },
+    {
+      "name": "lib/arm64-v8a/libavif.so",
+      "size": 430568
+    },
+    {
+      "name": "lib/arm64-v8a/libbili-upload.so",
+      "size": 869680
+    },
+    {
+      "name": "lib/arm64-v8a/libbili.so",
+      "size": 834760
+    },
+    {
+      "name": "lib/arm64-v8a/libbili_core.so",
+      "size": 136720
+    },
+    {
+      "name": "lib/arm64-v8a/libbili_core_dumper.so",
+      "size": 119192
+    },
+    {
+      "name": "lib/arm64-v8a/libbiliid.so",
+      "size": 921360
+    },
+    {
+      "name": "lib/arm64-v8a/libbilirtclibrary.so",
+      "size": 9306240
+    },
+    {
+      "name": "lib/arm64-v8a/libblive_pandora.so",
+      "size": 3929280
+    },
+    {
+      "name": "lib/arm64-v8a/libblkv.so",
+      "size": 347168
+    },
+    {
+      "name": "lib/arm64-v8a/libblog.so",
+      "size": 295616
+    },
+    {
+      "name": "lib/arm64-v8a/libbreflect.so",
+      "size": 18976
+    },
+    {
+      "name": "lib/arm64-v8a/libbspatch.so",
+      "size": 38608
+    },
+    {
+      "name": "lib/arm64-v8a/libbvc-xcode-tools.so",
+      "size": 54176
+    },
+    {
+      "name": "lib/arm64-v8a/libbytehook.so",
+      "size": 59080
+    },
+    {
+      "name": "lib/arm64-v8a/libc++_shared.so",
+      "size": 1292904
+    },
+    {
+      "name": "lib/arm64-v8a/libchronos.so",
+      "size": 4850224
+    },
+    {
+      "name": "lib/arm64-v8a/libcrypto.so",
+      "size": 1289016
+    },
+    {
+      "name": "lib/arm64-v8a/libcrypto_c.so",
+      "size": 53424
+    },
+    {
+      "name": "lib/arm64-v8a/libcsgface.so",
+      "size": 1030104
+    },
+    {
+      "name": "lib/arm64-v8a/libdexvmp.so",
+      "size": 477776
+    },
+    {
+      "name": "lib/arm64-v8a/libdu.so",
+      "size": 1371136
+    },
+    {
+      "name": "lib/arm64-v8a/libdvvcd.so",
+      "size": 983016
+    },
+    {
+      "name": "lib/arm64-v8a/libdynamicengine.so",
+      "size": 756120
+    },
+    {
+      "name": "lib/arm64-v8a/libentryexpro.so",
+      "size": 177624
+    },
+    {
+      "name": "lib/arm64-v8a/libfacedevice.so",
+      "size": 2755184
+    },
+    {
+      "name": "lib/arm64-v8a/libfb_dalvik-internals.so",
+      "size": 14216
+    },
+    {
+      "name": "lib/arm64-v8a/libffmpeg_cc_dummy_app_for_so.so",
+      "size": 18792
+    },
+    {
+      "name": "lib/arm64-v8a/libfinauthlivenessv5Ex.so",
+      "size": 1560232
+    },
+    {
+      "name": "lib/arm64-v8a/libfreetypejni.so",
+      "size": 939016
+    },
+    {
+      "name": "lib/arm64-v8a/libgifimage.so",
+      "size": 311408
+    },
+    {
+      "name": "lib/arm64-v8a/libgraphics-core.so",
+      "size": 212112
+    },
+    {
+      "name": "lib/arm64-v8a/libhardcoder.so",
+      "size": 412080
+    },
+    {
+      "name": "lib/arm64-v8a/libhpatchz.so",
+      "size": 38704
+    },
+    {
+      "name": "lib/arm64-v8a/libignet.so",
+      "size": 6337024
+    },
+    {
+      "name": "lib/arm64-v8a/libijk.so",
+      "size": 3161496
+    },
+    {
+      "name": "lib/arm64-v8a/libijkDolbyVision.so",
+      "size": 1145952
+    },
+    {
+      "name": "lib/arm64-v8a/libijkffext.so",
+      "size": 4401288
+    },
+    {
+      "name": "lib/arm64-v8a/libijkffmpeg.so",
+      "size": 11578224
+    },
+    {
+      "name": "lib/arm64-v8a/libijkplayer.so",
+      "size": 379944
+    },
+    {
+      "name": "lib/arm64-v8a/libijksdl.so",
+      "size": 2757408
+    },
+    {
+      "name": "lib/arm64-v8a/libimage_processing_util_jni.so",
+      "size": 29008
+    },
+    {
+      "name": "lib/arm64-v8a/libimagepipeline.so",
+      "size": 8760
+    },
+    {
+      "name": "lib/arm64-v8a/libkntr.so",
+      "size": 17749152
+    },
+    {
+      "name": "lib/arm64-v8a/liblynx.so",
+      "size": 6027016
+    },
+    {
+      "name": "lib/arm64-v8a/liblynx_service_api.so",
+      "size": 182488
+    },
+    {
+      "name": "lib/arm64-v8a/liblynxbase.so",
+      "size": 559880
+    },
+    {
+      "name": "lib/arm64-v8a/liblynxtrace.so",
+      "size": 182504
+    },
+    {
+      "name": "lib/arm64-v8a/libmmkv.so",
+      "size": 570320
+    },
+    {
+      "name": "lib/arm64-v8a/libmnn_predictor.so",
+      "size": 776144
+    },
+    {
+      "name": "lib/arm64-v8a/libmsaoaidauth.so",
+      "size": 323968
+    },
+    {
+      "name": "lib/arm64-v8a/libmsaoaidsec.so",
+      "size": 1646976
+    },
+    {
+      "name": "lib/arm64-v8a/libnapi.so",
+      "size": 411936
+    },
+    {
+      "name": "lib/arm64-v8a/libnative-filters.so",
+      "size": 23736
+    },
+    {
+      "name": "lib/arm64-v8a/libnative-imagetranscoder.so",
+      "size": 515040
+    },
+    {
+      "name": "lib/arm64-v8a/libndkCameraEx.so",
+      "size": 329920
+    },
+    {
+      "name": "lib/arm64-v8a/libnirvana.so",
+      "size": 951152
+    },
+    {
+      "name": "lib/arm64-v8a/libquick.so",
+      "size": 2460336
+    },
+    {
+      "name": "lib/arm64-v8a/libquickjs-jni.so",
+      "size": 68592
+    },
+    {
+      "name": "lib/arm64-v8a/libquickjs.so",
+      "size": 568912
+    },
+    {
+      "name": "lib/arm64-v8a/libsafemode.so",
+      "size": 18648
+    },
+    {
+      "name": "lib/arm64-v8a/libserval_svg.so",
+      "size": 282912
+    },
+    {
+      "name": "lib/arm64-v8a/libshadowhook.so",
+      "size": 79464
+    },
+    {
+      "name": "lib/arm64-v8a/libshadowhook_nothing.so",
+      "size": 1112
+    },
+    {
+      "name": "lib/arm64-v8a/libsqliteJni.so",
+      "size": 1096032
+    },
+    {
+      "name": "lib/arm64-v8a/libssl.so",
+      "size": 372744
+    },
+    {
+      "name": "lib/arm64-v8a/libstatic-webp.so",
+      "size": 671128
+    },
+    {
+      "name": "lib/arm64-v8a/libsurface_util_jni.so",
+      "size": 4832
+    },
+    {
+      "name": "lib/arm64-v8a/libtencentloc.so",
+      "size": 420040
+    },
+    {
+      "name": "lib/arm64-v8a/libtf.so",
+      "size": 523384
+    },
+    {
+      "name": "lib/arm64-v8a/libtoyger.so",
+      "size": 1345192
+    },
+    {
+      "name": "lib/arm64-v8a/libturingmfa.so",
+      "size": 333192
+    },
+    {
+      "name": "lib/arm64-v8a/libuam_compositor.so",
+      "size": 18752
+    },
+    {
+      "name": "lib/arm64-v8a/libwasm.so",
+      "size": 395512
+    },
+    {
+      "name": "lib/arm64-v8a/libweibosdkcore.so",
+      "size": 26136
+    },
+    {
+      "name": "lib/arm64-v8a/libzkfv_tj.so",
+      "size": 465512
+    },
+    {
+      "name": "lib/arm64-v8a/libzstd-jni-1.5.7-6.so",
+      "size": 603960
+    }
+  ],
+  "nested_bytecode_or_archive_members": [
+    {
+      "name": "assets/appbase_1661149883752.zip",
+      "size": 181258
+    },
+    {
+      "name": "assets/appbasex_1793800814730.zip",
+      "size": 183066
+    },
+    {
+      "name": "assets/bili-commercial-landing-template_1.0.12.zip",
+      "size": 342520
+    },
+    {
+      "name": "assets/bili-novel-template_1.3.4.zip",
+      "size": 531134
+    },
+    {
+      "name": "assets/bili-ott-landing-page-template_0.0.18.zip",
+      "size": 44175
+    },
+    {
+      "name": "assets/bili-playlet-template_2.3.9.zip",
+      "size": 143619
+    },
+    {
+      "name": "assets/gamebase_1793782296852.zip",
+      "size": 339071
+    },
+    {
+      "name": "assets/pause-ad/package_1.0.684.zip",
+      "size": 215292
+    }
+  ]
+}

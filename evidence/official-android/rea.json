@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "artifact_sha256": "c3ea50c7773267f252e441b5c1aebf7574492223b2bb1568d7a7093d1f8eb59c",
+  "derived_apk_sha256": "091fd5041881a3076f526d49c7e83422c9737be784f2b0b44368c7b12de05aec",
+  "engine": {
+    "name": "jadx-headless-mcp",
+    "version": "0.7.1",
+    "artifact_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+    "source_revision": "5844800a486d2248fa949b74c9896285f5b54de2",
+    "worker_count": 1,
+    "heap_limit_mib": 4096
+  },
+  "contract_sha256": "85e7ab8f5ed1dda4a2e022645b88f1b8ac4fca2b9fca6291532c43a4cfb06536",
+  "full_apk_attempt": {
+    "tool": "inspect_android_package",
+    "outcome": "provider_timeout_then_cleanup_incomplete",
+    "timeout_ms": 120000,
+    "raw_result_sha256": "68b3a97073dc9a879a5481b87eaef7e1025347945c05eae81108e1d4a8babfbd",
+    "follow_up": "No REA Java process remained when reviewed. Repeated whole-APK loading was stopped; a smaller unchanged-DEX input was inspected instead. Temporary directory removal was not asserted."
+  },
+  "observations": [
+    {
+      "evidence_id": "ev_f8b73d8790a46d813712a7fef0361b175a917f54fbc769577009968700fed2db",
+      "tool": "inspect_android_package",
+      "target": "derived view-focused.apk",
+      "package_name": "tv.danmaku.bili",
+      "version_name": "9.19.0",
+      "version_code": "9190400",
+      "min_sdk": "24",
+      "target_sdk": "35",
+      "class_count": 1895,
+      "signature_verification": "not_performed",
+      "raw_result_sha256": "668e116cedde56f5ebd0883fdb43e37b78f02be1cf6fefe611bb698b4a77a769"
+    },
+    {
+      "evidence_id": "ev_f7909a6f279a4f0d5e960662195f3dba0505e316a74e6ce76962739898d00932",
+      "tool": "inspect_android_method",
+      "class_name": "defpackage.sap2",
+      "method": {
+        "name": "getViewMethod",
+        "reported_signature": "getViewMethod(): io.grpc.MethodDescriptor<com.bapis.bilibili.app.viewunite.v1.ViewReq, com.bapis.bilibili.app.viewunite.v1.ViewReply>",
+        "overload_index": 0,
+        "is_constructor": false,
+        "dex_descriptor": null
+      },
+      "representation": "java",
+      "body_status": "available",
+      "source_text_sha256": "3d155f3fc5dcb945cd707a062772cfa0046fa992db4109d5e1e439aef25b6f39",
+      "raw_result_sha256": "b105877443a5f0d29b55cbbd83e41417b8d168fa2eeefb1ab98a79481427a147",
+      "facts": {
+        "route": "/bilibili.app.viewunite.v1.View/View",
+        "method_type": "UNARY",
+        "marshaller_default_instances_in_order": [
+          "com.bapis.bilibili.app.viewunite.v1.ViewReq",
+          "com.bapis.bilibili.app.viewunite.v1.ViewReply"
+        ],
+        "original_dex_class": "Lsap2;",
+        "source_member": "classes33.dex",
+        "source_member_sha256": "0127a6d2db2ab1224eb4cbba9672a0c288f6cf29e992633027f7a09acfc515b6",
+        "method_index": 61541,
+        "code_offset": 1352248
+      }
+    }
+  ],
+  "limitations": [
+    "Static decompiler observations; no App execution or network verification.",
+    "Derived package retains only original manifest and classes33.dex; 1895 class inventory is not the full APK inventory.",
+    "Full decompiled method/manifest text remains ignored locally; only summaries and hashes are published.",
+    "Marshaller slot ordering observed for one method does not validate every gRPC route or authentication chain.",
+    "Exact DEX descriptors and offsets come from the independent original DEX parser, not the decompiler provider."
+  ]
+}

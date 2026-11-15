@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "artifact": {
+    "filename": "official64.apk",
+    "sha256": "c3ea50c7773267f252e441b5c1aebf7574492223b2bb1568d7a7093d1f8eb59c",
+    "size": 241376892,
+    "package_name": "tv.danmaku.bili",
+    "version_name": "9.19.0",
+    "version_code": 9190400,
+    "distribution": "official Android 64-bit"
+  },
+  "dex_files": [
+    {
+      "name": "classes.dex",
+      "size": 10126124,
+      "sha256": "6fa29fc2ebaedc428df858bdbc3489da1314d121ee12645d804fc7be758bae85",
+      "string_count": 51680
+    },
+    {
+      "name": "classes10.dex",
+      "size": 9786276,
+      "sha256": "f040b615517ecf487363d30d41bed32787091a1ed452047541547a29bf624025",
+      "string_count": 67842
+    },
+    {
+      "name": "classes11.dex",
+      "size": 9629944,
+      "sha256": "8f69ce34dc3b0f1b1a363d7b441fbcb933bee91c9ce24dd6510ad45701cef676",
+      "string_count": 54176
+    },
+    {
+      "name": "classes12.dex",
+      "size": 9175652,
+      "sha256": "a59a6d63f0154094cf6ec3ed441e359ced63843bcb103b0e08c364ceaac9c79a",
+      "string_count": 57713
+    },
+    {
+      "name": "classes13.dex",
+      "size": 10712520,
+      "sha256": "d5492828dea086a9e31688040c1da3611e13ee1e6969bcf00a6d86d0d21e3d1a",
+      "string_count": 43814
+    },
+    {
+      "name": "classes14.dex",
+      "size": 9647236,
+      "sha256": "a98965394e249fe22173babbfb176f5495f39459f88894fde4eba12aa72ee3f9",
+      "string_count": 50699
+    },
+    {
+      "name": "classes15.dex",
+      "size": 9433784,
+      "sha256": "0c8e33d263c9f6f6d9bfbe1d69246db6940f10e0378afab978060fe3274f5353",
+      "string_count": 46755
+    },
+    {
+      "name": "classes16.dex",
+      "size": 11195124,
+      "sha256": "16e7434f7c3534dc7e157b5a008608c4994c96456f4c9419546a544c9e881280",
+      "string_count": 46388
+    },
+    {
+      "name": "classes17.dex",
+      "size": 12070400,
+      "sha256": "d99cf168215be49536d808013ae42c9e5e868c11ce9538c80d2d2c75210dc8ac",
+      "string_count": 51523
+    },
+    {
+      "name": "classes18.dex",
+      "size": 9895848,
+      "sha256": "374b2d8b4e4a7e145b766655817276c59751f071f61dd27bd272d94755f50a86",
+      "string_count": 62662
+    },
+    {
+      "name": "classes19.dex",
+      "size": 9743348,
+      "sha256": "92f430702264cabdef655a97b771394255dc6ac31f239878991307289c0ccf49",
+      "string_count": 75614
+    },
+    {
+      "name": "classes2.dex",
+      "size": 262036,
+      "sha256": "858786dd8158d9f6acb920f05d16873f55e9d847c94b1059983e503ecc825637",
+      "string_count": 2016
+    },
+    {
+      "name": "classes20.dex",
+      "size": 8360680,
+      "sha256": "b93d30200f0fafd19442044c9bbea9a946e7eed032d4f7f05de413227cd24abd",
+      "string_count": 62894
+    },
+    {
+      "name": "classes21.dex",
+      "size": 9640896,
+      "sha256": "eb1c7d1c94ecb6d2f6c1a636c434e972951f9e0efd22a998b5fd72c15b1473d2",
+      "string_count": 60227
+    },
+    {
+      "name": "classes22.dex",
+      "size": 12497136,
+      "sha256": "9d1769a2e80fa16ab461b88e8e3d1fdd8442e406f8bef1acf0006472b7653b1a",
+      "string_count": 56136
+    },
+    {
+      "name": "classes23.dex",
+      "size": 13578400,
+      "sha256": "877769766cce127ea8f26a738ab23c6cceb8751b768fde40adb807683c5243a2",
+      "string_count": 54476
+    },
+    {
+      "name": "classes24.dex",
+      "size": 4843100,
+      "sha256": "0e2f6bf144f0c49d24dd5a6e662053ae312fb77e2fc1be9e44467891b4712f3f",
+      "string_count": 19750
+    },
+    {
+      "name": "classes25.dex",
+      "size": 13213372,
+      "sha256": "c64821b738e462b453f16da6121255ac9c5586cc8f046ff1917ecc874739994b",
+      "string_count": 53834
+    },
+    {
+      "name": "classes26.dex",
+      "size": 11617112,
+      "sha256": "d2bccfe65a4c7351da3574d2b4ce14aa69c6b80c83f319e535782580708604ed",
+      "string_count": 51873
+    },
+    {
+      "name": "classes27.dex",
+      "size": 8883980,
+      "sha256": "e27d1a8c6432d02ab33839670fd5ebdf31bd78f2ef8d9f402315cad77aa2e4f9",
+      "string_count": 52366
+    },
+    {
+      "name": "classes28.dex",
+      "size": 9430584,
+      "sha256": "dedcf86e4546a98cee911bfb7465faab5555bc89c6b0df1721076dbf85acc3a3",
+      "string_count": 57130
+    },
+    {
+      "name": "classes29.dex",
+      "size": 6922140,
+      "sha256": "b6832f6c4132ed1cd2975d8a2f0a8f261d14822ddaaba07b221050e664c9c8a0",
+      "string_count": 28115
+    },
+    {
+      "name": "classes3.dex",
+      "size": 5568956,
+      "sha256": "e4ffadf6c19741371baadcd1a367a63b8fa0d1878f4b99e231a870b3231f624f",
+      "string_count": 26739
+    },
+    {
+      "name": "classes30.dex",
+      "size": 443740,
+      "sha256": "f294b05ea5373e2a3445921bb45290ed551736e3bf6f12fb6234626fbbe25fff",
+      "string_count": 2584
+    },
+    {
+      "name": "classes31.dex",
+      "size": 5849632,
+      "sha256": "7ee4ed1cfd52fdba89773fb24c1c9b6c6d20d266815d21b43d060850469e185f",
+      "string_count": 24363
+    },
+    {
+      "name": "classes32.dex",
+      "size": 5604588,
+      "sha256": "787417039d8ac3a9875eb6a5ccd744f4aa92530fa369cabf8b4578fe8a38efa0",
+      "string_count": 23572
+    },
+    {
+      "name": "classes33.dex",
+      "size": 5610776,
+      "sha256": "0127a6d2db2ab1224eb4cbba9672a0c288f6cf29e992633027f7a09acfc515b6",
+      "string_count": 25130
+    },
+    {
+      "name": "classes34.dex",
+      "size": 5357636,
+      "sha256": "657aa2797dec50d8f16c294032af43b8fee3aff9637e8058672098ba53e2cf02",
+      "string_count": 20962
+    },
+    {
+      "name": "classes35.dex",
+      "size": 5900164,
+      "sha256": "f0704504893b8f45d7f4a9022720a1b8246152ea0b9cd85b72125cf5457a073d",
+      "string_count": 24253
+    },
+    {
+      "name": "classes36.dex",
+      "size": 6238848,
+      "sha256": "b4b065432696ecbf5271b3cd543199c6e3c2c3d78d65330a2de3d367c20c3f1a",
+      "string_count": 31005
+    },
+    {
+      "name": "classes4.dex",
+      "size": 5804972,
+      "sha256": "01d2b03beb39372c65f2d199f17a3e79de953eb52457e00ae7d91787e448e94b",
+      "string_count": 28567
+    },
+    {
+      "name": "classes5.dex",
+      "size": 8921768,
+      "sha256": "b23c6382af54f6a959e48b4dd1fd2dd6b66da043902061c315fc9fe6bed9e62f",
+      "string_count": 50363
+    },
+    {
+      "name": "classes6.dex",
+      "size": 9689920,
+      "sha256": "a220ebb0bfe976bc122cc88c7f098dd6938729d8cf6c0f7bddf5f10a3a72b4c6",
+      "string_count": 56894
+    },
+    {
+      "name": "classes7.dex",
+      "size": 9420604,
+      "sha256": "23cebe9696b0de38a687c8b282a3dc80d715046ed41520a3281ac1fe7f353e75",
+      "string_count": 62836
+    },
+    {
+      "name": "classes8.dex",
+      "size": 9558716,
+      "sha256": "16a1279789920a3c91b11b33866163bb103b90ad510b42c112e19ca3d4d9e656",
+      "string_count": 66472
+    },
+    {
+      "name": "classes9.dex",
+      "size": 9030480,
+      "sha256": "f10f9c04aa2c9bb3ca2a3629c1e2022153e6e20231751a33bd5091f2ca333190",
+      "string_count": 52525
+    }
+  ],
+  "scope": "Pinned original APK and all root classes*.dex. Downloaded modules, nested bytecode and runtime behavior are separate coverage questions."
+}

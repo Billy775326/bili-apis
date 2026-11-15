@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "source_page": "https://app.bilibili.com/",
+  "source_link_label": "Android 64-bit",
+  "download_url": "https://dl.hdslb.com/mobile/latest/android64/iBiliPlayer-bili.apk",
+  "local_filename": "official64.apk",
+  "started_at": "2026-11-15T02:41:53.316Z",
+  "finished_at": "2026-11-15T02:46:16.384Z",
+  "http_status": 200,
+  "content_type": "application/vnd.android.package-archive",
+  "content_length": 241376892,
+  "received_bytes": 241376892,
+  "etag": "\"818A5840A330BB80202E7243200CF859\"",
+  "last_modified": "Wed, 11 Nov 2026 10:43:30 GMT",
+  "sha256": "c3ea50c7773267f252e441b5c1aebf7574492223b2bb1568d7a7093d1f8eb59c",
+  "md5": "818a5840a330bb80202e7243200cf859",
+  "scope": "Downloaded directly from the official app download center link. Hash and complete transfer verified; APK identity/signature and code are inspected separately."
+}
