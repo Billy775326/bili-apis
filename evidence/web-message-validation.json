@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "scope": "Direct Node HTTP between the dedicated test sender and one user-controlled personal recipient. No UI, session lists, pagination or other conversations.",
+  "outcome": "controlled-message-delivery-and-revoke-passed",
+  "ui_actions": 0,
+  "manual_interventions": 0,
+  "personal_account_scope": "Receive controlled tests and inspect only messages from the dedicated test peer; no outgoing personal-account messages or settings changes.",
+  "test_text_messages": 2,
+  "started_at": "2026-11-15T10:26:37.357Z",
+  "finished_at": "2026-11-15T10:31:35.855Z",
+  "initial_attempt": {
+    "state": "failed",
+    "checks": [
+      {
+        "name": "send-returned-exact-message-key",
+        "passed": true
+      }
+    ],
+    "observations": [
+      {
+        "role": "test-sender",
+        "stage": "send",
+        "method": "POST",
+        "url": "https://api.vc.bilibili.com/web_im/v1/web_im/send_msg",
+        "http_status": 200,
+        "business_code": 0,
+        "body_sha256": "0bf06ce4e6eb8d19cb911ca7438344c88dedd97049e3a83da211dae5f9da3ae9",
+        "data_shape": "object",
+        "data_keys": [
+          "msg_key",
+          "msg_content",
+          "key_hit_infos"
+        ]
+      },
+      {
+        "role": "test-sender",
+        "stage": "readback",
+        "method": "POST",
+        "url": "https://api.vc.bilibili.com/x/im/sync_msg_svr/v1/fetch_msg_detail",
+        "http_status": 200,
+        "business_code": -400,
+        "body_sha256": "2e7181bb4c8606c1a613fa6550dec5b665e864404df094a582a095e6f07d95d9",
+        "data_shape": "undefined",
+        "data_keys": []
+      },
+      {
+        "role": "test-sender",
+        "stage": "revoke",
+        "method": "POST",
+        "url": "https://api.vc.bilibili.com/web_im/v1/web_im/send_msg",
+        "http_status": 200,
+        "business_code": 0,
+        "body_sha256": "300c64be5545600c4bff95a29314a6e3f615600e41ccad4003beef044b84e373",
+        "data_shape": "object",
+        "data_keys": [
+          "msg_key"
+        ]
+      },
+      {
+        "role": "personal-recipient",
+        "stage": "readback",
+        "method": "POST",
+        "url": "https://api.vc.bilibili.com/x/im/sync_msg_svr/v1/fetch_msg_detail",
+        "http_status": 200,
+        "business_code": -400,
+        "body_sha256": "2e7181bb4c8606c1a613fa6550dec5b665e864404df094a582a095e6f07d95d9",
+        "data_shape": "undefined",
+        "data_keys": []
+      },
+      {
+        "role": "test-sender",
+        "stage": "readback",
+        "method": "POST",
+        "url": "https://api.vc.bilibili.com/x/im/sync_msg_svr/v1/fetch_msg_detail",
+        "http_status": 200,
+        "business_code": -400,
+        "body_sha256": "2e7181bb4c8606c1a613fa6550dec5b665e864404df094a582a095e6f07d95d9",
+        "data_shape": "undefined",
+        "data_keys": []
+      },
+      {
+        "role": "personal-recipient",
+        "stage": "readback",
+        "method": "POST",
+        "url": "https://api.vc.bilibili.com/x/im/sync_msg_svr/v1/fetch_msg_detail",
+        "http_status": 200,
+        "business_code": -400,
+        "body_sha256": "2e7181bb4c8606c1a613fa6550dec5b665e864404df094a582a095e6f07d95d9",
+        "data_shape": "undefined",
+        "data_keys": []
+      },
+      {
+        "role": "personal-recipient",
+        "stage": "latest-controlled-peer-event",
+        "method": "GET",
+        "url": "https://api.vc.bilibili.com/svr_sync/v1/svr_sync/fetch_session_msgs",
+        "http_status": 200,
+        "business_code": 0,
+        "body_sha256": "c10c7bd66a157c1275ecd664ebc14a60d0b5f3c089bdcb146ec695fcc1c59e6a",
+        "data_shape": "object",
+        "data_keys": [
+          "messages",
+          "has_more",
+          "min_seqno",
+          "max_seqno"
+        ]
+      },
+      {
+        "role": "personal-recipient",
+        "stage": "readback",
+        "method": "POST",
+        "url": "https://api.vc.bilibili.com/x/im/sync_msg_svr/v1/fetch_msg_detail",
+        "http_status": 200,
+        "business_code": -400,
+        "body_sha256": "2e7181bb4c8606c1a613fa6550dec5b665e864404df094a582a095e6f07d95d9",
+        "data_shape": "undefined",
+        "data_keys": []
+      }
+    ],
+    "exact_detail_outcome": "business-error -400; unresolved",
+    "cleanup": "recipient-readback-confirmed-revoked",
+    "recipient_revoke_readback": {
+      "target_identity_matches": true,
+      "revoke_event_targets_sent_message": true
+    }
+  },
+  "delivery_attempt": {
+    "state": "controlled-message-delivery-passed",
+    "checks": [
+      {
+        "name": "send-returned-exact-message-key",
+        "passed": true
+      },
+      {
+        "name": "sender-exact-message-identity-and-marker",
+        "passed": true
+      },
+      {
+        "name": "recipient-exact-message-identity-and-marker",
+        "passed": true
+      },
+      {
+        "name": "recipient-exact-message-revoked-or-absent-after-revoke",
+        "passed": true
+      }
+    ],
+    "observations": [
+      {
+        "role": "test-sender",
+        "stage": "send",
+        "method": "POST",
+        "url": "https://api.vc.bilibili.com/web_im/v1/web_im/send_msg",
+        "http_status": 200,
+        "business_code": 0,
+        "body_sha256": "06b7a3859d4917786da9e64f12faa021548ce7e75edf3efd99da2ef788285212",
+        "data_shape": "object",
+        "data_keys": [
+          "msg_key",
+          "msg_content",
+          "key_hit_infos"
+        ]
+      },
+      {
+        "role": "test-sender",
+        "stage": "latest-peer-message",
+        "method": "GET",
+        "url": "https://api.vc.bilibili.com/svr_sync/v1/svr_sync/fetch_session_msgs",
+        "http_status": 200,
+        "business_code": 0,
+        "body_sha256": "6686ed3f5be5cf80053096bc4bef9db76a467a9176670a10b44ed240e7ec1c91",
+        "data_shape": "object",
+        "data_keys": [
+          "messages",
+          "has_more",
+          "min_seqno",
+          "max_seqno"
+        ]
+      },
+      {
+        "role": "personal-recipient",
+        "stage": "latest-peer-message",
+        "method": "GET",
+        "url": "https://api.vc.bilibili.com/svr_sync/v1/svr_sync/fetch_session_msgs",
+        "http_status": 200,
+        "business_code": 0,
+        "body_sha256": "6686ed3f5be5cf80053096bc4bef9db76a467a9176670a10b44ed240e7ec1c91",
+        "data_shape": "object",
+        "data_keys": [
+          "messages",
+          "has_more",
+          "min_seqno",
+          "max_seqno"
+        ]
+      },
+      {
+        "role": "test-sender",
+        "stage": "revoke",
+        "method": "POST",
+        "url": "https://api.vc.bilibili.com/web_im/v1/web_im/send_msg",
+        "http_status": 200,
+        "business_code": 0,
+        "body_sha256": "c171c2cb8ac3620bf6ba5319c71e9533021580f283e6aa9d5860575c67d3339e",
+        "data_shape": "object",
+        "data_keys": [
+          "msg_key"
+        ]
+      },
+      {
+        "role": "personal-recipient",
+        "stage": "latest-peer-message",
+        "method": "GET",
+        "url": "https://api.vc.bilibili.com/svr_sync/v1/svr_sync/fetch_session_msgs",
+        "http_status": 200,
+        "business_code": 0,
+        "body_sha256": "b1032b39b936e5957a462a210a78bee9626dd6a1c82ce4ab3c9f9aafe8e5f484",
+        "data_shape": "object",
+        "data_keys": [
+          "messages",
+          "has_more",
+          "min_seqno",
+          "max_seqno"
+        ]
+      }
+    ],
+    "cleanup": "readback-confirmed-revoked"
+  },
+  "cleanup": "Both controlled text messages have recipient-side revoke readback. Revoke notifications may remain; no conversation deletion was attempted.",
+  "protocol": [
+    {
+      "operation": "send",
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/2233-monorepo/message-pc/static/js/index.f9c057f6.js",
+        "sha256": "7f485400ea2ed4e24b01c0f172c60d53ca2f8ca5dd3c48d1f027b8d1b29b6645",
+        "utf16_offset": 615064,
+        "byte_offset": 663747,
+        "needle": "url:\"/web_im/v1/web_im/send_msg\"",
+        "snippet": "url:\"/web_im/v1/web_im/send_msg\",method:\"POST\",params:{w_sender_uid:t.sender_uid,w_receiver_id:t.receiver_id,w_dev_id:n},data:v(v({},i),{},{from_firework:0,build:0,mobi_app:\"web\"}),headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"},chainProxy:function(e){return e.with(\"UNIOS_WBI_ENCODE\",{a"
+      }
+    },
+    {
+      "operation": "fetch-single-peer",
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/2233-monorepo/message-pc/static/js/index.f9c057f6.js",
+        "sha256": "7f485400ea2ed4e24b01c0f172c60d53ca2f8ca5dd3c48d1f027b8d1b29b6645",
+        "utf16_offset": 613624,
+        "byte_offset": 662295,
+        "needle": "url:\"/svr_sync/v1/svr_sync/fetch_session_msgs\"",
+        "snippet": "url:\"/svr_sync/v1/svr_sync/fetch_session_msgs\",params:v(v({},t),{},{sender_device_id:\"1\",build:0,mobi_app:\"web\"}),chainProxy:function(e){return e.with(\"UNIOS_WBI_ENCODE\",{active:!0}).with(dB)}});case 1:return e.a(2,e.v)}},e)})),function(e){return fw.apply(this,arguments)}),fp=(fk=i(g().m(function e("
+      }
+    },
+    {
+      "operation": "experimental-detail",
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/2233-monorepo/message-pc/static/js/index.f9c057f6.js",
+        "sha256": "7f485400ea2ed4e24b01c0f172c60d53ca2f8ca5dd3c48d1f027b8d1b29b6645",
+        "utf16_offset": 615582,
+        "byte_offset": 664265,
+        "needle": "url:\"/x/im/sync_msg_svr/v1/fetch_msg_detail\"",
+        "snippet": "url:\"/x/im/sync_msg_svr/v1/fetch_msg_detail\",method:\"POST\",data:v(v({},t),{},{build:0,mobi_app:\"web\"}),headers:{\"Content-Type\":\"application/x-www-form-urlencoded\"}});case 1:return e.a(2,e.v)}},e)})),function(e){return fA.apply(this,arguments)});function fv(e,t,n){var r=void 0;return function(e,t,n){"
+      }
+    },
+    {
+      "operation": "revoke",
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/2233-monorepo/message-pc/static/js/index.f9c057f6.js",
+        "sha256": "7f485400ea2ed4e24b01c0f172c60d53ca2f8ca5dd3c48d1f027b8d1b29b6645",
+        "utf16_offset": 870227,
+        "byte_offset": 922142,
+        "needle": "msg_type:5,content:o",
+        "snippet": "msg_type:5,content:o,canal_token:A.canalToken});case 5:if(0===(s=e.v).code){e.n=6;break}return lx(null!=(u=s.message)?u:T(\"recallFailed\",\"撤回失败\")),e.a(2);case 6:f3({msgKey:o,msg:{msg_status:1}}),c=uY(!0),eM(t,v(v({},a),{},{sender:v(v({},a.sender),{},{visible:!1}),key:o,status:\"loaded\",content:{type:u"
+      }
+    },
+    {
+      "operation": "form-array",
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/seed/jinkela/short/unios/web.min.js",
+        "sha256": "341d107d671b1770d96c77f1fd94050ceb5f02efdedb32a4874a646c1f425974",
+        "utf16_offset": 22693,
+        "byte_offset": 22693,
+        "needle": "V=function(e,t)",
+        "snippet": "V=function(e,t){var r=[];Object.keys(t).forEach((function(e){var o=t[e];null!=o&&(!function(e){return\"[object Array]\"===toString.call(e)}(o)?o=[o]:e+=\"[]\",o.forEach((function(t){!function(e){return\"[object Date]\"===toString.call(e)}(t)?function(e){return null!==e&&\"object\"===n(e)}(t)&&(t=JSON.string"
+      }
+    },
+    {
+      "operation": "device",
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/2233-monorepo/message-pc/static/js/index.f9c057f6.js",
+        "sha256": "7f485400ea2ed4e24b01c0f172c60d53ca2f8ca5dd3c48d1f027b8d1b29b6645",
+        "utf16_offset": 613185,
+        "byte_offset": 661856,
+        "needle": "function fd(e)",
+        "snippet": "function fd(e){if(\"undefined\"==typeof window||!e)return fc();var t=fl[e];if(t||(t=window.localStorage.getItem(fu(e))||\"\")&&(fl[e]=t),!t){var n=fc();return Object.keys(localStorage).forEach(function(e){e.match(/^im_deviceid_/)&&window.localStorage.removeItem(e)}),window.localStorage.setItem(fu(e),n),"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "file": "direct-results.json",
+      "sha256": "be270b641cb023b262f3a65283e2e36b267cae66780c1a0bc9a1ec09c946dd5a"
+    },
+    {
+      "file": "delivery-results.json",
+      "sha256": "84f07562d6abf7cb1916864607e7ca17331036c22d2faf08a1b9bb770c1153e6"
+    },
+    {
+      "file": "assets.json",
+      "sha256": "4e27c878b6fb8cd671d26d3f6a3b2207d7c5f254d60b8182412fc4388983b34a"
+    }
+  ],
+  "limits": [
+    "The message detail POST still returns -400 and is not considered passed.",
+    "Latest-peer GET was validated only with size=1 and this controlled account pair, not pagination, group, media or bulk messaging.",
+    "Only test sender wrote messages and revoke actions. Personal recipient used no send, read-ack, follow, setting or delete API.",
+    "No account UID, message key/sequence, device ID, random marker, Cookie, CSRF or private response body is distributed.",
+    "64-bit message keys are kept as exact decimal strings; normal JSON number rounding must not be used.",
+    "This does not remove phone verification, stranger-message limits, server risk checks or entitlement requirements."
+  ]
+}

@@ -4,7 +4,7 @@
 
 本轮独立 Node HTTP 请求不执行 UI、DOM、文件选择或页面按钮。此前真实写接口工作流继续作为单独证据；没有为刷新日期重复发表、点赞或删除已有账号内容。
 
-固定目录 82 组方法/URL；已发现目录合计 137 组（含签名上传地址族）。逐项状态如下，不能将这些数字理解为全部成功。
+固定目录 82 组方法/URL；已发现目录合计 140 组（含签名上传地址族）。逐项状态如下，不能将这些数字理解为全部成功。
 
 | 固定目录结果 | 地址数 |
 | --- | --- |
@@ -344,6 +344,9 @@
 | controlled-write | GET https://api.bilibili.com/x/web-interface/archive/relation | prior-direct-workflow-evidence |
 | controlled-write | GET https://api.bilibili.com/x/web-interface/history/cursor | prior-direct-workflow-evidence |
 | controlled-write | POST https://api.bilibili.com/x/v2/history/delete | prior-direct-workflow-evidence |
+| message | POST https://api.vc.bilibili.com/web_im/v1/web_im/send_msg | controlled-message-workflow-passed |
+| message | GET https://api.vc.bilibili.com/svr_sync/v1/svr_sync/fetch_session_msgs | controlled-message-workflow-passed |
+| message | POST https://api.vc.bilibili.com/x/im/sync_msg_svr/v1/fetch_msg_detail | business-error |
 
 ## 仍需资源或实现
 
@@ -352,12 +355,12 @@
 - 新增 GET 的 code=0 仅表示直接业务应答；没有领域字段断言时不升级成字段用例通过。
 - 新增请求中历史缺少参数的条目进行了部分输入探测；返回0只算应答，不代表完整参数/功能已验证。直播弹幕配置返回-352后，另一直播跟踪请求停止；6个辅助POST及部分页面POST仍未直接重放。
 - 已有评论/收藏等写入用例使用凭据化 fetch 直接请求 API；独立 Node 上传证据另存，均不以 UI 点击充当接口验证。
-- 私信发送缺少第二个受控账号；笔记、预约及特殊权限需要对应样本或角色。
+- 受控账号对的私信发送、最新单条读取与撤回已单独验证；精确消息详情仍-400。笔记、预约及特殊权限仍需对应样本或角色。
 - 573 条静态候选未逐条盲测；全部已发现目录不等于全站所有接口。
 
 ## 复现与证据
 
-[逐项脱敏 JSON](../../evidence/web-direct-validation.json) · [既有写操作与清理](write-validation.md) · [独立上传](direct-upload.md) · [先前浏览器验证](full-validation.md)
+[逐项脱敏 JSON](../../evidence/web-direct-validation.json) · [既有写操作与清理](write-validation.md) · [独立上传](direct-upload.md) · [受控私信](message.md) · [先前浏览器验证](full-validation.md)
 
 在线驱动只在本地读取专用隔离会话；原始参数、会话、账号及上传标识不发布。公开字段断言在 `src/pc-cases.mjs`、`src/pc-full-checks.mjs` 和 `src/pc-browser-probe.mjs`，本轮为其注入带授权会话的 Node fetch。文档与汇总生成不会发送请求。
 

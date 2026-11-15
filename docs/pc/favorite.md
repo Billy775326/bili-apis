@@ -1,6 +1,6 @@
 # 公开收藏夹
 
-[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [先前浏览器矩阵](full-validation.md) · [最新直接 HTTP](web-validation.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [先前浏览器矩阵](full-validation.md) · [最新直接 HTTP](web-validation.md) · [受控私信](message.md)
 
 本模块有 1 个读取别名，1 个通过匿名快照相关匿名 HTTP 字段用例。
 

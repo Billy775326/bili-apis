@@ -4,7 +4,7 @@
 
 当前封装 39 个只读别名，匿名快照 33 个地址通过相关匿名 HTTP 字段用例。
 
-[使用场景与完整示例](usage.md) · [环境与客户端](client.md) · [匿名快照](current.md) · [先前浏览器矩阵](full-validation.md) · [最新直接 HTTP](web-validation.md) · [受控写操作](write-validation.md) · [直接 HTTP 上传](direct-upload.md) · [验证历史](validation.md)
+[使用场景与完整示例](usage.md) · [环境与客户端](client.md) · [匿名快照](current.md) · [先前浏览器矩阵](full-validation.md) · [最新直接 HTTP](web-validation.md) · [受控私信](message.md) · [受控写操作](write-validation.md) · [直接 HTTP 上传](direct-upload.md) · [验证历史](validation.md)
 
 ## 功能分类
 

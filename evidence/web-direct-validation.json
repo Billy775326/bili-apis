@@ -23,20 +23,21 @@
       "business-error": 2,
       "unconfirmed-response": 1
     },
-    "inventory": 137,
+    "inventory": 140,
     "inventory_outcomes": {
       "field-case-passed": 66,
       "observation-only-not-directly-replayed": 10,
       "json-without-numeric-business-code": 1,
       "response-assertion-failed": 3,
-      "business-error": 4,
+      "business-error": 5,
       "protobuf-structure-passed": 3,
       "non-json-or-http-error": 1,
       "direct-business-acknowledged": 28,
       "risk-or-rate-response": 1,
       "not-executed-risk-stop": 1,
       "unconfirmed-response": 1,
-      "prior-direct-workflow-evidence": 18
+      "prior-direct-workflow-evidence": 18,
+      "controlled-message-workflow-passed": 2
     }
   },
   "baseline": [
@@ -5760,6 +5761,27 @@
       "category": "controlled-write",
       "outcome": "prior-direct-workflow-evidence",
       "evidence": "pc-full-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.vc.bilibili.com/web_im/v1/web_im/send_msg",
+      "category": "message",
+      "outcome": "controlled-message-workflow-passed",
+      "evidence": "web-message-validation.json"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/svr_sync/v1/svr_sync/fetch_session_msgs",
+      "category": "message",
+      "outcome": "controlled-message-workflow-passed",
+      "evidence": "web-message-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.vc.bilibili.com/x/im/sync_msg_svr/v1/fetch_msg_detail",
+      "category": "message",
+      "outcome": "business-error",
+      "evidence": "web-message-validation.json"
     }
   ],
   "limits": [
@@ -5768,7 +5790,7 @@
     "新增 GET 的 code=0 仅表示直接业务应答；没有领域字段断言时不升级成字段用例通过。",
     "新增请求中历史缺少参数的条目进行了部分输入探测；返回0只算应答，不代表完整参数/功能已验证。直播弹幕配置返回-352后，另一直播跟踪请求停止；6个辅助POST及部分页面POST仍未直接重放。",
     "已有评论/收藏等写入用例使用凭据化 fetch 直接请求 API；独立 Node 上传证据另存，均不以 UI 点击充当接口验证。",
-    "私信发送缺少第二个受控账号；笔记、预约及特殊权限需要对应样本或角色。",
+    "受控账号对的私信发送、最新单条读取与撤回已单独验证；精确消息详情仍-400。笔记、预约及特殊权限仍需对应样本或角色。",
     "573 条静态候选未逐条盲测；全部已发现目录不等于全站所有接口。"
   ]
 }
