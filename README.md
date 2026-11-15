@@ -1,44 +1,100 @@
-# Bilibili PC 网页接口
+# Bilibili APIs
 
-面向 PC 网页数据读取与接口研究：依据网站实际请求、官方前端脚本及独立 HTTP 样本整理功能目录，并提供可调用的只读客户端。
+Bilibili PC 网页数据读取与接口研究项目。面向需要读取公开视频、搜索、评论、空间与直播信息的开发者，提供按功能组织的接口说明、Node.js 只读客户端及验证记录。
 
-本轮选择 39 个 PC 请求地址，33 个地址的匿名 HTTP 字段用例通过。历史累计目录记录 82 组地址；历史成功与本轮成功分开显示，风控、失败和跳过保留原样。
+当前封装 **39 个 PC 只读别名**；本轮 **33 个地址**通过相关匿名 HTTP 字段用例。网页观察目录共 82 组方法与 URL，包含这些读取地址；不能将所有观察都算作可调用接口。
 
-## 按功能查找
+## 功能特性
 
-[功能导航](docs/pc/README.md) · [本轮验证结果](docs/pc/current.md) · [历史记录与限制](docs/pc/validation.md) · [客户端参数](docs/pc/client.md) · [完整 JSON](catalog/pc-web.json)
+- **视频与搜索**：视频详情及统计、分 P、相关视频、标签、综合搜索、视频搜索、搜索建议。
+- **评论读取**：普通评论、置顶评论、楼中楼；本轮公开视频的首屏与一次下一页通过。
+- **空间与内容**：关注/粉丝统计、公开合集、公告、专栏、追番、代表作、公开收藏夹、热门动态。
+- **推荐与直播**：热门视频、首页推荐、直播播放元数据、房间基础信息和直播推荐。
+- **接口调用**：命令行与 JavaScript 两种入口；WBI 由客户端处理，默认匿名、不自动重试。
+- **研究资料**：独立保留官方 Android 与 Play 静态目录、参数模型和差异报告。
 
-| 功能 | 本轮可读取的内容 |
-| --- | --- |
-| 视频 | 详情、内嵌统计、分 P、相关视频、标签 |
-| 搜索 | 综合搜索、视频搜索、默认搜索词 |
-| 评论 | 本轮样本的普通评论、楼中楼和下一页；历史其他样本有失败 |
-| 播放 | 播放器信息、播放地址元数据、在线人数 |
-| 用户与内容 | 关注/粉丝数、空间合集/专栏/公告/追番、公开收藏夹、热门内容 |
-| 直播 | PC 直播间播放信息、基础信息和直播推荐 |
-
-用户资料等存在浏览器成功而独立 HTTP 被风控的情况，详情见验证记录。登录、写操作及特殊账号权益没有测试。
+部分读取地址仍受风控、返回结构或参数限制，具体状态见[本轮验证结果](docs/pc/current.md)。登录、私信、发布和其他写操作尚未实现或验证。
 
 ## 快速开始
 
-需要 Node.js 24.11 或更新版本。在仓库根目录执行：
+### 运行环境
+
+Node.js 24.11 或更新版本。查询目录和调用客户端无需安装第三方运行时依赖；运行提取工具及完整测试需要 `npm ci --ignore-scripts`。
+
+### 获取项目
 
 ```sh
-node bin/bili-web.mjs stats
-node bin/bili-web.mjs list --current-http --limit 100
-node bin/bili-web.mjs list --category search
-node bin/bili-web.mjs call video.detail bvid=[REDACTED_VIDEO]
-node bin/bili-web.mjs call search.videos keyword=bilibili page=1
+git clone https://github.com/Billy775326/bili-apis.git
+cd bili-apis
 ```
 
-查询已生成目录及调用客户端无需安装依赖；只有 `call` 会发送请求。WBI 使用当前公开 nav 数据生成；不需要模拟器或 App 签名。
+仓库访问权限以你的 GitHub 账号为准。
 
-## 证据与范围
+### 查询和调用
 
-网页请求记录和脚本字符串候选分开保存。候选数量不作为可用接口数；完整响应、Cookie、签名、浏览器状态与第三方脚本正文留在本地忽略目录。公开证据包含字段、断言、来源 URL、时间和哈希。
+```sh
+# 本地查询，不发送 API 请求
+node bin/bili-web.mjs list --current-http --limit 100
 
-功能组织参考 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的模块思路；接口定义和本轮验证来自 Bilibili PC 网站。
+# 请求三条热门视频；此命令会发送匿名 HTTPS GET
+node bin/bili-web.mjs call home.popular pn=1 ps=3
 
-[历史 Android 研究入口](docs/android-archive.md)保留原始来源与旧 CLI，当前 PC 目录不导入 APK 声明。项目仍处于未发布研究阶段，版本 `0.0.0` 不提供稳定兼容承诺。
+# 从热门列表选取公开视频，串联详情和分 P 请求
+node examples/pc-read.mjs
+```
 
-[官方 Android 静态分析与 Play 对比](docs/official-android/README.md) · [更新日志](CHANGELOG.md)
+## 按功能查找
+
+| 功能 | 接口入口 | 示例 |
+| --- | --- | --- |
+| 视频 | [详情、分 P、相关视频、标签](docs/pc/video.md) | video.detail |
+| 播放 | [播放地址与播放器](docs/pc/playback.md) | playback.url |
+| 搜索 | [视频、综合搜索和搜索建议](docs/pc/search.md) | search.videos |
+| 评论 | [评论列表与楼中楼](docs/pc/comment.md) | comment.main |
+| 用户空间 | [合集、公告、追番、专栏等](docs/pc/user.md) | user.collections |
+| 关注与粉丝 | [公开统计](docs/pc/relation.md) | user.relationStats |
+| 收藏 | [公开收藏夹](docs/pc/favorite.md) | favorite.folders |
+| 动态 | [热门动态](docs/pc/dynamic.md) | dynamic.hot |
+| 推荐 | [热门与首页推荐](docs/pc/feed.md) | home.popular |
+| 直播 | [房间状态和推荐](docs/pc/live.md) | live.roomBaseInfo |
+
+## 文档与示例
+
+- [完整接口索引](docs/pc/README.md)：每项包含用途、请求参数、调用示例、返回字段和验证状态。
+- [按场景使用](docs/pc/usage.md)：热门视频到详情、搜索、评论下一页、空间和直播。
+- [客户端配置与错误处理](docs/pc/client.md)：会话、超时、WBI、失败和调用入口。
+- [本轮验证](docs/pc/current.md)与[历史验证](docs/pc/validation.md)：明确通过、失败、风控和跳过。
+
+## 项目结构
+
+```text
+bin/                  命令行入口：bili-web 与 Android 目录查询
+src/web-client.mjs    PC 匿名 GET 客户端及读取别名
+src/pc-cases.mjs      字段断言
+examples/             可执行的 PC 读取示例
+docs/pc/              功能文档、使用场景及验证结果
+catalog/              脱敏目录、静态候选与 Android 元数据
+evidence/             来源哈希与脱敏验证记录
+scripts/              提取、复测和文档生成
+tests/                离线测试
+```
+
+## Android 研究资料
+
+[官方 Android 静态目录与 Play 对比](docs/official-android/README.md) · [历史 Play 目录与旧 CLI](docs/android-archive.md)。这些是独立静态证据，不自动作为网页可用性验证，也不导入 PC 客户端。
+
+## 验证与维护
+
+样本通过只覆盖记录的输入和字段；未保证所有视频、完整分页、登录角色、付费内容或未来版本。完整响应、账号 Cookie、动态签名及第三方脚本正文均留在本地忽略目录。
+
+```sh
+npm ci --ignore-scripts
+npm test
+npm run docs:generate
+```
+
+入口与接口详情页由 `scripts/build-pc-docs.mjs` 和 `scripts/pc-reference-docs.mjs` 生成；接口说明模板与参数释义在后者维护，验证数字来自已保存目录。生成文档不会发送 API 请求。
+
+文档组织参考 [cv-cat/DouYin_Spider](https://github.com/cv-cat/DouYin_Spider) 的功能清单、快速开始和模块入口，以及其 API 方法对用途和参数的说明；Bilibili 的接口、客户端实现和验证结论由本仓库独立整理。
+
+项目处于未发布研究阶段，版本 `0.0.0` 尚无稳定兼容承诺。[更新日志](CHANGELOG.md)
