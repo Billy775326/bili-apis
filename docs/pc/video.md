@@ -1,18 +1,18 @@
 # 视频详情与关联内容
 
-[功能导航](README.md) · [使用场景](usage.md) · [本轮验证](current.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
 
-本模块有 5 个读取别名，5 个通过本轮相关匿名 HTTP 字段用例。
+本模块有 5 个读取别名，5 个通过匿名快照相关匿名 HTTP 字段用例。
 
 ## 接口列表
 
-| 接口 | 用途 | 本轮状态 |
+| 接口 | 用途 | 匿名快照状态 |
 | --- | --- | --- |
-| [视频详情及内嵌统计](#video-detail) | 读取单个视频详情、稿件和分 P 标识及内嵌统计。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [分 P 列表](#video-pages) | 读取视频的分 P 列表，取得播放接口需要的 cid。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [相关视频](#video-related) | 读取与目标视频相关的推荐条目。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [视频标签](#video-tags) | 读取目标视频的标签列表。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [视频详情聚合](#video-detailBundle) | 读取详情、相关推荐等聚合信息；历史和本轮结果存在差异。 | ✅ 本轮匿名 HTTP 字段用例通过 |
+| [视频详情及内嵌统计](#video-detail) | 读取单个视频详情、稿件和分 P 标识及内嵌统计。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [分 P 列表](#video-pages) | 读取视频的分 P 列表，取得播放接口需要的 cid。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [相关视频](#video-related) | 读取与目标视频相关的推荐条目。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [视频标签](#video-tags) | 读取目标视频的标签列表。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [视频详情聚合](#video-detailBundle) | 读取详情、相关推荐等聚合信息；历史和匿名快照结果存在差异。 | ✅ 匿名快照 HTTP 字段用例通过 |
 
 ## JavaScript 初始化
 
@@ -31,7 +31,8 @@ const client = new BiliWebClient();
 
 - 客户端别名：`video.detail`
 - 请求：`GET https://api.bilibili.com/x/web-interface/view`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -69,7 +70,7 @@ console.log(result.data);
 | data.pages | 分 P 列表 |
 | data.stat | 视频统计，字段随服务端变化 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show video.detail
@@ -83,7 +84,8 @@ node bin/bili-web.mjs show video.detail
 
 - 客户端别名：`video.pages`
 - 请求：`GET https://api.bilibili.com/x/player/pagelist`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -119,7 +121,7 @@ console.log(result.data);
 | data[] | 分 P 列表 |
 | data[].cid / data[].page | 内容标识与分 P 序号 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show video.pages
@@ -133,7 +135,8 @@ node bin/bili-web.mjs show video.pages
 
 - 客户端别名：`video.related`
 - 请求：`GET https://api.bilibili.com/x/web-interface/archive/related`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -169,7 +172,7 @@ console.log(result.data);
 | data[] | 关联视频列表 |
 | data[].bvid / data[].title | 关联稿件标识与标题 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show video.related
@@ -183,7 +186,8 @@ node bin/bili-web.mjs show video.related
 
 - 客户端别名：`video.tags`
 - 请求：`GET https://api.bilibili.com/x/tag/archive/tags`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -219,7 +223,7 @@ console.log(result.data);
 | data[] | 标签列表 |
 | data[].tag_name | 标签名称 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show video.tags
@@ -229,11 +233,12 @@ node bin/bili-web.mjs show video.tags
 
 ## 视频详情聚合
 
-读取详情、相关推荐等聚合信息；历史和本轮结果存在差异。
+读取详情、相关推荐等聚合信息；历史和匿名快照结果存在差异。
 
 - 客户端别名：`video.detailBundle`
 - 请求：`GET https://api.bilibili.com/x/web-interface/wbi/view/detail`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -269,7 +274,7 @@ console.log(result.data);
 | data.View | 视频详情对象 |
 | data.Related | 关联视频列表 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show video.detailBundle

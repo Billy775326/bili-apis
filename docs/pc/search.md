@@ -1,17 +1,17 @@
 # 搜索
 
-[功能导航](README.md) · [使用场景](usage.md) · [本轮验证](current.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
 
-本模块有 4 个读取别名，4 个通过本轮相关匿名 HTTP 字段用例。
+本模块有 4 个读取别名，4 个通过匿名快照相关匿名 HTTP 字段用例。
 
 ## 接口列表
 
-| 接口 | 用途 | 本轮状态 |
+| 接口 | 用途 | 匿名快照状态 |
 | --- | --- | --- |
-| [视频搜索](#search-videos) | 按关键词读取视频搜索结果。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [综合搜索](#search-all) | 按关键词读取综合搜索结果；结果可能按内容类型分组。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [默认搜索词](#search-default) | 读取当前默认搜索词及展示文案。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [搜索建议](#search-suggest) | 读取输入关键词的搜索建议。 | ✅ 本轮匿名 HTTP 字段用例通过 |
+| [视频搜索](#search-videos) | 按关键词读取视频搜索结果。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [综合搜索](#search-all) | 按关键词读取综合搜索结果；结果可能按内容类型分组。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [默认搜索词](#search-default) | 读取当前默认搜索词及展示文案。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [搜索建议](#search-suggest) | 读取输入关键词的搜索建议。 | ✅ 匿名快照 HTTP 字段用例通过 |
 
 ## JavaScript 初始化
 
@@ -30,7 +30,8 @@ const client = new BiliWebClient();
 
 - 客户端别名：`search.videos`
 - 请求：`GET https://api.bilibili.com/x/web-interface/wbi/search/type`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -71,9 +72,9 @@ console.log(result.data);
 
 ### 使用说明
 
-本轮只核对首页样本；page 参数可传递，不代表所有页码或结果总数均已验证。
+匿名快照只核对首页样本；page 参数可传递，不代表所有页码或结果总数均已验证。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show search.videos
@@ -87,7 +88,8 @@ node bin/bili-web.mjs show search.videos
 
 - 客户端别名：`search.all`
 - 请求：`GET https://api.bilibili.com/x/web-interface/wbi/search/all/v2`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -127,9 +129,9 @@ console.log(result.data);
 
 ### 使用说明
 
-本轮只核对首页样本；综合结果的分组结构与视频搜索不同。
+匿名快照只核对首页样本；综合结果的分组结构与视频搜索不同。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show search.all
@@ -143,7 +145,8 @@ node bin/bili-web.mjs show search.all
 
 - 客户端别名：`search.default`
 - 请求：`GET https://api.bilibili.com/x/web-interface/wbi/search/default`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -177,7 +180,7 @@ console.log(result.data);
 | data.name | 默认搜索词 |
 | data.show_name | 展示文案 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show search.default
@@ -191,7 +194,8 @@ node bin/bili-web.mjs show search.default
 
 - 客户端别名：`search.suggest`
 - 请求：`GET https://api.bilibili.com/x/web-interface/suggest`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -227,7 +231,7 @@ console.log(result.data);
 | data.result.tag | 建议条目列表 |
 | data.result.tag[].value | 建议词 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show search.suggest

@@ -1,15 +1,15 @@
 # 动态
 
-[功能导航](README.md) · [使用场景](usage.md) · [本轮验证](current.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
 
-本模块有 2 个读取别名，1 个通过本轮相关匿名 HTTP 字段用例。
+本模块有 2 个读取别名，1 个通过匿名快照相关匿名 HTTP 字段用例。
 
 ## 接口列表
 
-| 接口 | 用途 | 本轮状态 |
+| 接口 | 用途 | 匿名快照状态 |
 | --- | --- | --- |
-| [热门动态](#dynamic-hot) | 读取热门动态条目及返回的游标元数据。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [动态横幅](#dynamic-banner) | 读取动态页横幅；本轮返回成功业务码但缺少预期数组。 | ⚠️ 字段断言未通过 |
+| [热门动态](#dynamic-hot) | 读取热门动态条目及返回的游标元数据。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [动态横幅](#dynamic-banner) | 读取动态页横幅；匿名快照返回成功业务码但缺少预期数组。 | ⚠️ 字段断言未通过 |
 
 ## JavaScript 初始化
 
@@ -28,7 +28,8 @@ const client = new BiliWebClient();
 
 - 客户端别名：`dynamic.hot`
 - 请求：`GET https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/hot`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -64,7 +65,7 @@ console.log(result.data);
 | data.items | 动态条目 |
 | data.offset | 分页游标元数据；完整遍历未验证 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show dynamic.hot
@@ -74,11 +75,12 @@ node bin/bili-web.mjs show dynamic.hot
 
 ## 动态横幅
 
-读取动态页横幅；本轮返回成功业务码但缺少预期数组。
+读取动态页横幅；匿名快照返回成功业务码但缺少预期数组。
 
 - 客户端别名：`dynamic.banner`
 - 请求：`GET https://api.bilibili.com/x/dynamic/feed/dyn/banner`
-- 验证：⚠️ 字段断言未通过
+- 匿名快照：⚠️ 字段断言未通过
+- 登录态浏览器：response-assertion-failed；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -109,13 +111,13 @@ console.log(result.data);
 
 | 字段位置 | 说明 |
 | --- | --- |
-| data.banners | 预期数组；本轮字段缺失，未通过 |
+| data.banners | 预期数组；匿名快照字段缺失，未通过 |
 
-### 本轮限制
+### 匿名快照限制
 
 - HTTP 200 / 业务码 0；未通过断言：banner-list。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show dynamic.banner

@@ -1,6 +1,6 @@
-# 本轮 PC HTTP 验证
+# PC 匿名 HTTP 验证快照
 
-本轮仅使用匿名 HTTPS GET、当前公开 nav WBI 数据和已审阅的公开输入。每个方法/URL 取本轮最新报告，报告内全部相关用例通过才列为通过；同一评论地址包含首屏与下一页。历史成功与本轮结果分别保留。
+此页保留登录态验证之前的匿名快照；最新登录态与受控写操作见 [全量验证矩阵](full-validation.md)。该快照仅使用匿名 HTTPS GET、当前公开 nav WBI 数据和已审阅的公开输入。每个方法/URL 取本轮最新报告，报告内全部相关用例通过才列为通过；同一评论地址包含首屏与下一页。历史成功与本轮结果分别保留。
 
 共选择 39 个地址，执行或记录 41 个用例，其中 33 个地址的本轮字段用例通过。计数包含明确跳过，不等于全部网页接口。
 
@@ -63,6 +63,6 @@ node bin/bili-web.mjs list --current-http --category user
 - 本轮公开视频普通评论首屏和下一页通过；历史其他视频失败仍保留，不能保证所有视频或无限翻页。
 - 本轮浏览器记录：home, popular, search-all, search-videos, video；部分完成，CDP timeout: Page.navigate.
 - 空列表通过只说明本次响应结构可读取；播放地址只验证元数据，没有下载媒体或验证会员/地区权益。
-- 登录、个人历史、私信、发布、关注、点赞、删除和支付未执行。
+- 此匿名快照未执行登录态或写操作；后续账号验证独立记录在 [全量矩阵](full-validation.md)。
 
 [全部用例与断言](../../evidence/pc-http-checks.json) · [本轮脱敏 JSON](../../evidence/pc-current-validation.json) · [历史验证记录](validation.md)

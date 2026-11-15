@@ -1,16 +1,16 @@
 # 推荐与热门
 
-[功能导航](README.md) · [使用场景](usage.md) · [本轮验证](current.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
 
-本模块有 3 个读取别名，2 个通过本轮相关匿名 HTTP 字段用例。
+本模块有 3 个读取别名，2 个通过匿名快照相关匿名 HTTP 字段用例。
 
 ## 接口列表
 
-| 接口 | 用途 | 本轮状态 |
+| 接口 | 用途 | 匿名快照状态 |
 | --- | --- | --- |
-| [热门视频](#home-popular) | 读取热门视频列表。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [番剧推荐](#home-ogv) | 读取番剧推荐请求；本轮两次受控参数样本均返回 -400。 | ⚠️ 请求失败 |
-| [首页推荐](#home-recommendations) | 读取首页推荐视频条目。 | ✅ 本轮匿名 HTTP 字段用例通过 |
+| [热门视频](#home-popular) | 读取热门视频列表。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [番剧推荐](#home-ogv) | 读取番剧推荐请求；匿名快照两次受控参数样本均返回 -400。 | ⚠️ 请求失败 |
+| [首页推荐](#home-recommendations) | 读取首页推荐视频条目。 | ✅ 匿名快照 HTTP 字段用例通过 |
 
 ## JavaScript 初始化
 
@@ -29,7 +29,8 @@ const client = new BiliWebClient();
 
 - 客户端别名：`home.popular`
 - 请求：`GET https://api.bilibili.com/x/web-interface/popular`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -66,7 +67,7 @@ console.log(result.data);
 | data.list | 热门视频条目 |
 | data.no_more | 是否没有更多条目 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show home.popular
@@ -76,11 +77,12 @@ node bin/bili-web.mjs show home.popular
 
 ## 番剧推荐
 
-读取番剧推荐请求；本轮两次受控参数样本均返回 -400。
+读取番剧推荐请求；匿名快照两次受控参数样本均返回 -400。
 
 - 客户端别名：`home.ogv`
 - 请求：`GET https://api.bilibili.com/x/web-interface/index/ogv/rcmd`
-- 验证：⚠️ 请求失败
+- 匿名快照：⚠️ 请求失败
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:09:22.254Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -90,7 +92,7 @@ node bin/bili-web.mjs show home.popular
 
 | 参数 | 建议类型 | 客户端必填 | 客户端默认值 | 说明 |
 | --- | --- | --- | --- | --- |
-| season_type | number 或数字字符串 | 否 | 1 | 推荐内容类型；本轮 HTTP 仍返回 -400 |
+| season_type | number 或数字字符串 | 否 | 1 | 推荐内容类型；匿名快照 HTTP 返回 -400 |
 | request_cnt | number 或数字字符串 | 否 | 5 | 推荐请求数量参数 |
 | brush | number 或数字字符串 | 否 | 0 | 推荐刷新参数，其他取值未核对 |
 | fresh_type | number 或数字字符串 | 否 | 0 | 推荐刷新类型，其他取值未核对 |
@@ -116,17 +118,17 @@ console.log(result.data);
 
 | 字段位置 | 说明 |
 | --- | --- |
-| data.items | 预期条目列表；本轮未取得成功业务响应 |
+| data.items | 预期条目列表；匿名快照未取得成功业务响应 |
 
 ### 使用说明
 
 默认参数补充参考官方网页脚本，但独立 HTTP 仍未通过；保留失败记录。
 
-### 本轮限制
+### 匿名快照限制
 
 - HTTP 200 / 业务码 -400。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show home.ogv
@@ -140,7 +142,8 @@ node bin/bili-web.mjs show home.ogv
 
 - 客户端别名：`home.recommendations`
 - 请求：`GET https://api.bilibili.com/x/web-interface/wbi/index/top/feed/rcmd`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -176,7 +179,7 @@ console.log(result.data);
 | data.item | 推荐视频条目 |
 | data.item[].bvid | 推荐稿件标识 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show home.recommendations

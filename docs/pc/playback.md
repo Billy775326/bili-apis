@@ -1,17 +1,17 @@
 # 播放与在线人数
 
-[功能导航](README.md) · [使用场景](usage.md) · [本轮验证](current.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
 
-本模块有 4 个读取别名，4 个通过本轮相关匿名 HTTP 字段用例。
+本模块有 4 个读取别名，4 个通过匿名快照相关匿名 HTTP 字段用例。
 
 ## 接口列表
 
-| 接口 | 用途 | 本轮状态 |
+| 接口 | 用途 | 匿名快照状态 |
 | --- | --- | --- |
-| [在线观看人数](#video-online) | 读取目标稿件及分 P 的在线人数显示信息。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [播放器与字幕信息](#playback-info) | 读取播放器及字幕元数据。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [播放地址元数据](#playback-url) | 读取播放资源元数据；本项目没有验证媒体下载或权益。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [广播连接配置](#playback-broadcastServers) | 读取网页广播连接的域名、节点和端口配置，不建立连接。 | ✅ 本轮匿名 HTTP 字段用例通过 |
+| [在线观看人数](#video-online) | 读取目标稿件及分 P 的在线人数显示信息。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [播放器与字幕信息](#playback-info) | 读取播放器及字幕元数据。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [播放地址元数据](#playback-url) | 读取播放资源元数据；本项目没有验证媒体下载或权益。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [广播连接配置](#playback-broadcastServers) | 读取网页广播连接的域名、节点和端口配置，不建立连接。 | ✅ 匿名快照 HTTP 字段用例通过 |
 
 ## JavaScript 初始化
 
@@ -30,7 +30,8 @@ const client = new BiliWebClient();
 
 - 客户端别名：`video.online`
 - 请求：`GET https://api.bilibili.com/x/player/online/total`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -67,7 +68,7 @@ console.log(result.data);
 | data.total | 显示人数，样本为字符串 |
 | data.show_switch | 显示配置 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show video.online
@@ -81,7 +82,8 @@ node bin/bili-web.mjs show video.online
 
 - 客户端别名：`playback.info`
 - 请求：`GET https://api.bilibili.com/x/player/wbi/v2`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -118,7 +120,7 @@ console.log(result.data);
 | data.aid / data.cid | 用于核对请求目标 |
 | data.subtitle | 字幕元数据，不等于已下载字幕 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show playback.info
@@ -132,7 +134,8 @@ node bin/bili-web.mjs show playback.info
 
 - 客户端别名：`playback.url`
 - 请求：`GET https://api.bilibili.com/x/player/wbi/playurl`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -145,7 +148,7 @@ node bin/bili-web.mjs show playback.info
 | bvid | string | 是 | 无 | BV 形式的视频标识；示例值需替换 |
 | cid | string 或 number | 是 | 无 | 分 P 内容 ID，可由 video.detail 或 video.pages 取得 |
 | qn | number 或数字字符串 | 否 | 32 | 期望清晰度代码；实际清晰度查看响应字段 |
-| fnval | number 或数字字符串 | 否 | 16 | 播放器能力标记；本轮默认 16 |
+| fnval | number 或数字字符串 | 否 | 16 | 播放器能力标记；匿名快照默认 16 |
 
 ### 调用示例
 
@@ -175,7 +178,7 @@ console.log(result.data);
 
 只核对播放元数据字段；没有测试媒体下载、会员内容或地区权益。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show playback.url
@@ -189,7 +192,8 @@ node bin/bili-web.mjs show playback.url
 
 - 客户端别名：`playback.broadcastServers`
 - 请求：`GET https://api.bilibili.com/x/web-interface/broadcast/servers`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -225,7 +229,7 @@ console.log(result.data);
 | data.domain | 广播服务域名 |
 | data.nodes | 节点列表 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show playback.broadcastServers

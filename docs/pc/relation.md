@@ -1,14 +1,14 @@
 # 关注与粉丝统计
 
-[功能导航](README.md) · [使用场景](usage.md) · [本轮验证](current.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
 
-本模块有 1 个读取别名，1 个通过本轮相关匿名 HTTP 字段用例。
+本模块有 1 个读取别名，1 个通过匿名快照相关匿名 HTTP 字段用例。
 
 ## 接口列表
 
-| 接口 | 用途 | 本轮状态 |
+| 接口 | 用途 | 匿名快照状态 |
 | --- | --- | --- |
-| [关注与粉丝数](#user-relationStats) | 读取公开关注与粉丝统计，不是关注/粉丝明细列表。 | ✅ 本轮匿名 HTTP 字段用例通过 |
+| [关注与粉丝数](#user-relationStats) | 读取公开关注与粉丝统计，不是关注/粉丝明细列表。 | ✅ 匿名快照 HTTP 字段用例通过 |
 
 ## JavaScript 初始化
 
@@ -27,7 +27,8 @@ const client = new BiliWebClient();
 
 - 客户端别名：`user.relationStats`
 - 请求：`GET https://api.bilibili.com/x/relation/stat`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -67,7 +68,7 @@ console.log(result.data);
 
 这是统计接口，不提供关注名单或粉丝名单。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show user.relationStats

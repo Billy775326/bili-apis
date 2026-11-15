@@ -1,8 +1,8 @@
 # 登录状态
 
-[功能导航](README.md) · [使用场景](usage.md) · [本轮验证](current.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
 
-本模块有 0 个读取别名，0 个通过本轮相关匿名 HTTP 字段用例。
+本模块有 0 个读取别名，0 个通过匿名快照相关匿名 HTTP 字段用例。
 
 ## 其他网页观察请求
 

@@ -1,17 +1,17 @@
 # 直播
 
-[功能导航](README.md) · [使用场景](usage.md) · [本轮验证](current.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
 
-本模块有 4 个读取别名，3 个通过本轮相关匿名 HTTP 字段用例。
+本模块有 4 个读取别名，3 个通过匿名快照相关匿名 HTTP 字段用例。
 
 ## 接口列表
 
-| 接口 | 用途 | 本轮状态 |
+| 接口 | 用途 | 匿名快照状态 |
 | --- | --- | --- |
-| [直播间播放信息](#live-roomPlayInfo) | 读取 PC 直播间状态及播放元数据，不监听直播弹幕。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [直播间基础信息](#live-roomBaseInfo) | 读取指定直播间的基础信息映射。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [直播推荐](#live-recommendations) | 读取 PC 直播推荐房间列表。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [直播间综合信息](#live-roomInfo) | 读取直播间综合信息；本轮返回 -352。 | ⚠️ 风控或限速 |
+| [直播间播放信息](#live-roomPlayInfo) | 读取 PC 直播间状态及播放元数据，不监听直播弹幕。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [直播间基础信息](#live-roomBaseInfo) | 读取指定直播间的基础信息映射。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [直播推荐](#live-recommendations) | 读取 PC 直播推荐房间列表。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [直播间综合信息](#live-roomInfo) | 读取直播间综合信息；匿名快照返回 -352。 | ⚠️ 风控或限速 |
 
 ## JavaScript 初始化
 
@@ -30,7 +30,8 @@ const client = new BiliWebClient();
 
 - 客户端别名：`live.roomPlayInfo`
 - 请求：`GET https://api.live.bilibili.com/xlive/web-room/v2/index/getRoomPlayInfo`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -77,7 +78,7 @@ console.log(result.data);
 
 请区分实际房间号和短号；房间未开播时不保证有播放资源。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show live.roomPlayInfo
@@ -91,7 +92,8 @@ node bin/bili-web.mjs show live.roomPlayInfo
 
 - 客户端别名：`live.roomBaseInfo`
 - 请求：`GET https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomBaseInfo`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -101,7 +103,7 @@ node bin/bili-web.mjs show live.roomPlayInfo
 
 | 参数 | 建议类型 | 客户端必填 | 客户端默认值 | 说明 |
 | --- | --- | --- | --- | --- |
-| room_ids | string | 是 | 无 | 目标房间号字符串；本轮只核对单个房间 |
+| room_ids | string | 是 | 无 | 目标房间号字符串；匿名快照只核对单个房间 |
 | req_biz | string | 否 | "web_room_componet" | 房间基础信息的调用场景参数，默认值来自封装 |
 
 ### 调用示例
@@ -132,7 +134,7 @@ console.log(result.data);
 
 目前文档示例和身份断言仅针对单个 room_ids 值；多房间输入未验证。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show live.roomBaseInfo
@@ -146,7 +148,8 @@ node bin/bili-web.mjs show live.roomBaseInfo
 
 - 客户端别名：`live.recommendations`
 - 请求：`GET https://api.live.bilibili.com/xlive/web-interface/v1/webMain/getMoreRecList`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -181,7 +184,7 @@ console.log(result.data);
 | --- | --- |
 | data.recommend_room_list | 推荐房间列表 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show live.recommendations
@@ -191,11 +194,12 @@ node bin/bili-web.mjs show live.recommendations
 
 ## 直播间综合信息
 
-读取直播间综合信息；本轮返回 -352。
+读取直播间综合信息；匿名快照返回 -352。
 
 - 客户端别名：`live.roomInfo`
 - 请求：`GET https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom`
-- 验证：⚠️ 风控或限速
+- 匿名快照：⚠️ 风控或限速
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -229,13 +233,13 @@ console.log(result.data);
 | 字段位置 | 说明 |
 | --- | --- |
 | data.room_info.room_id | 客户端预期核对的房间号 |
-| data.room_info.live_status | 客户端预期状态；本轮未取得成功业务响应 |
+| data.room_info.live_status | 客户端预期状态；匿名快照未取得成功业务响应 |
 
-### 本轮限制
+### 匿名快照限制
 
 - HTTP 200 / 业务码 -352。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show live.roomInfo

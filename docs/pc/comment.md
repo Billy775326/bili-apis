@@ -1,16 +1,16 @@
 # 评论与楼中楼
 
-[功能导航](README.md) · [使用场景](usage.md) · [本轮验证](current.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
 
-本模块有 3 个读取别名，3 个通过本轮相关匿名 HTTP 字段用例。
+本模块有 3 个读取别名，3 个通过匿名快照相关匿名 HTTP 字段用例。
 
 ## 接口列表
 
-| 接口 | 用途 | 本轮状态 |
+| 接口 | 用途 | 匿名快照状态 |
 | --- | --- | --- |
-| [评论主列表](#comment-main) | 读取视频普通评论及游标；本轮核对首屏和一次下一页。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [楼中楼回复](#comment-replies) | 读取某条根评论下的楼中楼回复，并核对根评论及稿件身份。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [评论区说明](#comment-subject) | 读取评论区的说明元数据。 | ✅ 本轮匿名 HTTP 字段用例通过 |
+| [评论主列表](#comment-main) | 读取视频普通评论及游标；匿名快照核对首屏和一次下一页。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [楼中楼回复](#comment-replies) | 读取某条根评论下的楼中楼回复，并核对根评论及稿件身份。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [评论区说明](#comment-subject) | 读取评论区的说明元数据。 | ✅ 匿名快照 HTTP 字段用例通过 |
 
 ## JavaScript 初始化
 
@@ -25,11 +25,12 @@ const client = new BiliWebClient();
 
 ## 评论主列表
 
-读取视频普通评论及游标；本轮核对首屏和一次下一页。
+读取视频普通评论及游标；匿名快照核对首屏和一次下一页。
 
 - 客户端别名：`comment.main`
 - 请求：`GET https://api.bilibili.com/x/v2/reply/wbi/main`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -41,9 +42,9 @@ const client = new BiliWebClient();
 | --- | --- | --- | --- | --- |
 | oid | string 或 number | 是 | 无 | 资源 ID；本项目视频评论和笔记样本使用 aid |
 | type | number 或数字字符串 | 否 | 1 | 资源或列表类型；取值按当前封装默认值 |
-| mode | number 或数字字符串 | 否 | 3 | 评论模式；本轮仅核对默认值 3 |
+| mode | number 或数字字符串 | 否 | 3 | 评论模式；匿名快照仅核对默认值 3 |
 | pagination_str | string | 否 | "{\"offset\":\"\"}" | JSON 字符串；首屏为空 offset，下一页使用服务端返回的游标 |
-| plat | number 或数字字符串 | 否 | 1 | 评论请求平台参数，本轮默认 1 |
+| plat | number 或数字字符串 | 否 | 1 | 评论请求平台参数，匿名快照默认 1 |
 | web_location | number 或数字字符串 | 否 | 1315875 | 网页入口参数；不代表可以解除风控 |
 
 ### 调用示例
@@ -76,7 +77,7 @@ console.log(result.data);
 
 下一页请原样消费服务端游标并使用 JSON.stringify({ offset: nextOffset })；不要自行猜测页码或把游标写入公开文档。普通评论和置顶评论分别判断，历史其他视频仍有失败。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show comment.main
@@ -90,7 +91,8 @@ node bin/bili-web.mjs show comment.main
 
 - 客户端别名：`comment.replies`
 - 请求：`GET https://api.bilibili.com/x/v2/reply/reply`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -135,7 +137,7 @@ console.log(result.data);
 
 root 建议使用响应的 rpid_str 字符串；oid 必须与该根评论所属视频一致。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show comment.replies
@@ -149,7 +151,8 @@ node bin/bili-web.mjs show comment.replies
 
 - 客户端别名：`comment.subject`
 - 请求：`GET https://api.bilibili.com/x/v2/reply/subject/description`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -185,7 +188,7 @@ console.log(result.data);
 | --- | --- |
 | data.base | 评论区说明对象 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show comment.subject

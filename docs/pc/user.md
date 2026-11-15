@@ -1,23 +1,23 @@
 # 用户与空间
 
-[功能导航](README.md) · [使用场景](usage.md) · [本轮验证](current.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
 
-本模块有 10 个读取别名，8 个通过本轮相关匿名 HTTP 字段用例。
+本模块有 10 个读取别名，8 个通过匿名快照相关匿名 HTTP 字段用例。
 
 ## 接口列表
 
-| 接口 | 用途 | 本轮状态 |
+| 接口 | 用途 | 匿名快照状态 |
 | --- | --- | --- |
-| [公开用户资料](#user-info) | 读取公开用户资料；本轮因同类风控停止而跳过。 | ⏭ 本轮跳过 |
-| [用户投稿列表](#user-uploads) | 读取用户投稿列表；本轮返回 HTTP 412，尚未通过。 | ⚠️ 风控或限速 |
-| [空间合集与系列](#user-collections) | 读取公开空间的合集与系列列表。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [空间内容计数](#user-counters) | 读取公开空间的投稿、专栏等内容计数。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [空间公告](#user-notice) | 读取公开空间公告文本，允许空文本。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [代表作](#user-masterpieces) | 读取空间代表作列表，允许合法空列表。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [公开追番](#user-followedBangumi) | 读取目标空间可公开的追番列表。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [最近游戏列表](#user-games) | 读取空间最近游戏列表及条数元数据。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [空间专栏](#user-articles) | 读取空间专栏列表及分页元数据。 | ✅ 本轮匿名 HTTP 字段用例通过 |
-| [空间公开设置](#user-settings) | 读取空间公开展示设置，不修改账号配置。 | ✅ 本轮匿名 HTTP 字段用例通过 |
+| [公开用户资料](#user-info) | 读取公开用户资料；匿名快照因同类风控停止而跳过。 | ⏭ 匿名快照跳过 |
+| [用户投稿列表](#user-uploads) | 读取用户投稿列表；匿名快照返回 HTTP 412，尚未通过。 | ⚠️ 风控或限速 |
+| [空间合集与系列](#user-collections) | 读取公开空间的合集与系列列表。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [空间内容计数](#user-counters) | 读取公开空间的投稿、专栏等内容计数。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [空间公告](#user-notice) | 读取公开空间公告文本，允许空文本。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [代表作](#user-masterpieces) | 读取空间代表作列表，允许合法空列表。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [公开追番](#user-followedBangumi) | 读取目标空间可公开的追番列表。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [最近游戏列表](#user-games) | 读取空间最近游戏列表及条数元数据。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [空间专栏](#user-articles) | 读取空间专栏列表及分页元数据。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [空间公开设置](#user-settings) | 读取空间公开展示设置，不修改账号配置。 | ✅ 匿名快照 HTTP 字段用例通过 |
 
 ## JavaScript 初始化
 
@@ -32,11 +32,12 @@ const client = new BiliWebClient();
 
 ## 公开用户资料
 
-读取公开用户资料；本轮因同类风控停止而跳过。
+读取公开用户资料；匿名快照因同类风控停止而跳过。
 
 - 客户端别名：`user.info`
 - 请求：`GET https://api.bilibili.com/x/space/wbi/acc/info`
-- 验证：⏭ 本轮跳过
+- 匿名快照：⏭ 匿名快照跳过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -70,13 +71,13 @@ console.log(result.data);
 | 字段位置 | 说明 |
 | --- | --- |
 | data.mid | 预期核对的用户标识 |
-| data.name / data.face | 预期公开昵称与头像；本轮未请求 |
+| data.name / data.face | 预期公开昵称与头像；匿名快照未请求 |
 
-### 本轮限制
+### 匿名快照限制
 
 - HTTP 未请求 / 业务码 未知；same-category-risk-response。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show user.info
@@ -86,11 +87,12 @@ node bin/bili-web.mjs show user.info
 
 ## 用户投稿列表
 
-读取用户投稿列表；本轮返回 HTTP 412，尚未通过。
+读取用户投稿列表；匿名快照返回 HTTP 412，尚未通过。
 
 - 客户端别名：`user.uploads`
 - 请求：`GET https://api.bilibili.com/x/space/wbi/arc/search`
-- 验证：⚠️ 风控或限速
+- 匿名快照：⚠️ 风控或限速
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -127,13 +129,13 @@ console.log(result.data);
 | 字段位置 | 说明 |
 | --- | --- |
 | data.list.vlist | 客户端预期核对的稿件列表 |
-| data.page | 客户端预期分页对象；本轮未取得成功业务响应 |
+| data.page | 客户端预期分页对象；匿名快照未取得成功业务响应 |
 
-### 本轮限制
+### 匿名快照限制
 
 - HTTP 412 / 业务码 -412。
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show user.uploads
@@ -147,7 +149,8 @@ node bin/bili-web.mjs show user.uploads
 
 - 客户端别名：`user.collections`
 - 请求：`GET https://api.bilibili.com/x/polymer/web-space/home/seasons_series`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -185,7 +188,7 @@ console.log(result.data);
 | data.items_lists.seasons_list | 合集列表 |
 | data.items_lists.series_list | 系列列表 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show user.collections
@@ -199,7 +202,8 @@ node bin/bili-web.mjs show user.collections
 
 - 客户端别名：`user.counters`
 - 请求：`GET https://api.bilibili.com/x/space/navnum`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -234,7 +238,7 @@ console.log(result.data);
 | --- | --- |
 | data.video / data.article | 视频与专栏计数 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show user.counters
@@ -248,7 +252,8 @@ node bin/bili-web.mjs show user.counters
 
 - 客户端别名：`user.notice`
 - 请求：`GET https://api.bilibili.com/x/space/notice`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -283,7 +288,7 @@ console.log(result.data);
 | --- | --- |
 | data | 空间公告字符串 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show user.notice
@@ -297,7 +302,8 @@ node bin/bili-web.mjs show user.notice
 
 - 客户端别名：`user.masterpieces`
 - 请求：`GET https://api.bilibili.com/x/space/masterpiece`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -333,7 +339,7 @@ console.log(result.data);
 | data[] | 代表作列表，可为空 |
 | data[].aid / data[].bvid | 非空条目的稿件标识 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show user.masterpieces
@@ -347,7 +353,8 @@ node bin/bili-web.mjs show user.masterpieces
 
 - 客户端别名：`user.followedBangumi`
 - 请求：`GET https://api.bilibili.com/x/space/bangumi/follow/list`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -384,7 +391,7 @@ console.log(result.data);
 | data.list | 公开追番列表 |
 | data.total | 总条数元数据 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show user.followedBangumi
@@ -398,7 +405,8 @@ node bin/bili-web.mjs show user.followedBangumi
 
 - 客户端别名：`user.games`
 - 请求：`GET https://api.bilibili.com/x/space/lastplaygame/v2`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -434,7 +442,7 @@ console.log(result.data);
 | data.list | 游戏列表 |
 | data.total_count | 总条数元数据 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show user.games
@@ -448,7 +456,8 @@ node bin/bili-web.mjs show user.games
 
 - 客户端别名：`user.articles`
 - 请求：`GET https://api.bilibili.com/x/space/wbi/article`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：response-assertion-failed；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -486,7 +495,7 @@ console.log(result.data);
 | data.articles | 专栏列表 |
 | data.count | 条数元数据 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show user.articles
@@ -500,7 +509,8 @@ node bin/bili-web.mjs show user.articles
 
 - 客户端别名：`user.settings`
 - 请求：`GET https://api.bilibili.com/x/space/setting`
-- 验证：✅ 本轮匿名 HTTP 字段用例通过
+- 匿名快照：✅ 匿名快照 HTTP 字段用例通过
+- 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -536,7 +546,7 @@ console.log(result.data);
 | data.privacy | 公开展示配置 |
 | data.index_order | 空间版块顺序 |
 
-[本轮验证记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
+[匿名快照记录](current.md) · [错误与会话说明](client.md#错误处理) · [完整位置证据](../../catalog/pc-web.json)
 
 ```sh
 node bin/bili-web.mjs show user.settings
