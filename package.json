@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "PC desktop web API read client and evidence-based Bilibili interface catalog",
+  "description": "Web API read client and evidence-based Bilibili interface catalog",
   "bin": {
     "bili-apis": "bin/bili-apis.mjs",
     "bili-web": "bin/bili-web.mjs"
@@ -15,7 +15,8 @@
     "android:docs": "node scripts/build-docs.mjs && node scripts/build-discovery.mjs && node scripts/build-functions.mjs",
     "pc:capture": "node scripts/capture-pc-web.mjs",
     "pc:check": "node scripts/check-pc-web.mjs",
-    "android:official:docs": "node scripts/build-official-android.mjs"
+    "android:official:docs": "node scripts/build-official-android.mjs",
+    "privacy:check": "node scripts/check-public-data.mjs"
   },
   "engines": {
     "node": ">=24.11.0"

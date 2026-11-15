@@ -91,11 +91,14 @@ tests/                离线测试
 
 ## 验证与维护
 
+[公开数据边界与隐私检查](docs/privacy.md)：真实账号、消息、资源样本、凭据及个人路径禁止进入 Git；公开验证仅保留脱敏参数名、断言、状态和哈希。
+
 样本通过只覆盖记录的输入和字段；未保证所有视频、完整分页、登录角色、付费内容或未来版本。完整响应、账号 Cookie、动态签名及第三方脚本正文均留在本地忽略目录。
 
 ```sh
 npm ci --ignore-scripts
 npm test
+npm run privacy:check
 npm run docs:generate
 ```
 

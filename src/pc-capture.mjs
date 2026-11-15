@@ -69,7 +69,7 @@ export async function capturePcPages({chromePath,outputDir,waitMs=12000,onProgre
   const evaluate=async expression=>{const v=await cdp.call('Runtime.evaluate',{expression,returnByValue:true},sessionId);if(v.exceptionDetails)throw Error('Browser evaluation failed');return v.result.value;};
   const inspectExpression='('+(()=>({url:location.origin+location.pathname,title:document.title,links:Array.from(document.querySelectorAll('a')).map(a=>a.href).filter(h=>/^https:\/\/www\.bilibili\.com\/video\/BV[A-Za-z0-9]{10}(?:\/|\?|$)/.test(h)).slice(0,5),login_prompt_visible:!!document.querySelector('.bili-mini-login-header,.login-panel'),body_text_length:document.body?.innerText.length||0})).toString()+')()';
   let video;
-  const plan=[['home','https://www.bilibili.com/'],['popular','https://www.bilibili.com/v/popular/all/'],['search-all','https://search.bilibili.com/all?keyword=bilibili'],['search-videos','https://search.bilibili.com/video?keyword=bilibili'],['video',null],['space','https://space.bilibili.com/[REQUIRED_USER]'],['dynamic','https://t.bilibili.com/'],['live','https://live.bilibili.com/[REQUIRED_ROOM]']];
+  const plan=[['home','https://www.bilibili.com/'],['popular','https://www.bilibili.com/v/popular/all/'],['search-all','https://search.bilibili.com/all?keyword=bilibili'],['search-videos','https://search.bilibili.com/video?keyword=bilibili'],['video',null],['dynamic','https://t.bilibili.com/']];
   for(const [id,url]of (pagePlan||plan)){
    stage=id;const target=url||(video?'https://www.bilibili.com/video/'+video+'/':null);if(!target){diagnostics.push({stage:id,kind:'no-public-video-from-home'});continue;}
    const pageStarted=new Date().toISOString();await cdp.call('Page.navigate',{url:target},sessionId);await sleep(waitMs);

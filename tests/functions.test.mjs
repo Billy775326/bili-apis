@@ -49,16 +49,17 @@ test('HTTP 200 does not establish success without business code and data shape',
 });
 test('live plan permits only explicit catalog GET URLs without ambient credentials',()=>{
  const http=readJson('catalog/http.json');
- for(const p of LIVE_PLAN){const url=planUrl(p,http.endpoints);assert.equal(url.protocol,'https:');assert.ok(!/[?&](?:access_key|appkey|sign|cookie)=/.test(url.href));}
+ for(const p of LIVE_PLAN){const url=planUrl(p,http.endpoints,{vmid:'1001',room_id:'1002'});assert.equal(url.protocol,'https:');assert.ok(!/[?&](?:access_key|appkey|sign|cookie)=/.test(url.href));}
+ for(const p of LIVE_PLAN.filter(p=>p.required_params?.length))assert.throws(()=>planUrl(p,http.endpoints),/Explicit authorized/);
  const plan={endpoint_id:'a',params:{}};
  for(const [http_method,resolved_url_candidate] of [['POST','https://api.bilibili.com/x'],['GET','https://evil.example/x'],['GET','https://api.bilibili.com/x?access_key=secret'],['GET','http://api.bilibili.com/x']])assert.throws(()=>planUrl(plan,[{id:'a',http_method,resolved_url_candidate}]));
 });
-test('published live observations retain routes, redacted parameter names and pinned source provenance',()=>{
+test('published live observations retain routes, parameter names and provenance while redacting values',()=>{
  const live=readJson('evidence/live-checks.json'),http=readJson('catalog/http.json');
  assert.equal(live.source_artifact_sha256,http.artifact.sha256);
  assert.equal(live.observations.length,LIVE_PLAN.length);
  for(const [i,r] of live.observations.entries()){
-  const p=LIVE_PLAN[i];assert.equal(r.endpoint_id,p.endpoint_id);const planned=planUrl(p,http.endpoints),recorded=new URL(r.url);assert.equal(recorded.origin+recorded.pathname,planned.origin+planned.pathname);assert.equal(recorded.search,'');assert.equal(recorded.hash,'');assert.deepEqual([...(r.request_parameter_names||[])].sort(),[...planned.searchParams.keys()].sort());assert.equal(r.authentication,'none');assert.equal(r.method,'GET');
+  const p=LIVE_PLAN[i];assert.equal(r.endpoint_id,p.endpoint_id);const expected=planUrl(p,http.endpoints,{vmid:'1001',room_id:'1002'});assert.equal(r.url,expected.origin+expected.pathname);assert.deepEqual(r.request_parameter_names||[],[...new Set(expected.searchParams.keys())].sort());assert.equal(r.authentication,'none');assert.equal(r.method,'GET');
   assert.ok(Date.parse(r.finished_at)>=Date.parse(r.started_at));
   if(r.outcome==='business-success'){assert.equal(r.http_status,200);assert.equal(r.business_code,0);assert.equal(r.minimal_data_shape,true);}
   if(r.outcome==='business-error')assert.notEqual(r.business_code,0);

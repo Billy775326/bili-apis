@@ -4,7 +4,7 @@ import {BiliWebClient,WEB_READ_ENDPOINTS} from '../src/web-client.mjs';
 import {checkPcCase} from '../src/pc-cases.mjs';
 import {safePcUrl,summarizePcJson,sha256} from '../src/pc-capture.mjs';
 const args=process.argv.slice(2);if(args[0]!=='--run')throw Error('Use --run --output .local/DIRECTORY --video-case FILE');
-const options={};for(let i=1;i<args.length;i+=2){if(!['--output','--video-case','--bvid','--only'].includes(args[i])||!args[i+1])throw Error('Invalid option');options[args[i].slice(2)]=args[i+1];}
+const options={};for(let i=1;i<args.length;i+=2){if(!['--output','--video-case','--bvid','--only','--uid','--room-id'].includes(args[i])||!args[i+1])throw Error('Invalid option');options[args[i].slice(2)]=args[i+1];}
 if(!options.output||Boolean(options['video-case'])===Boolean(options.bvid))throw Error('Output and exactly one of --video-case or --bvid are required');
 const output=path.resolve(options.output);if(!output.startsWith(path.resolve('.local')+path.sep))throw Error('Raw results must stay under .local');fs.mkdirSync(output,{recursive:true});
 const sample=options.bvid?{bvid:options.bvid,source:'explicit public video test input'}:JSON.parse(fs.readFileSync(options['video-case'],'utf8'));if(!/^BV[A-Za-z0-9]{10}$/.test(sample.bvid))throw Error('Expected public bvid from observed web page');
@@ -15,14 +15,14 @@ const client=new BiliWebClient({onObservation:o=>{
 }});
 const queue=[
  ['home.popular',{pn:1,ps:3}],['video.detail',()=>({bvid:context.bvid})],['video.pages',()=>({bvid:context.bvid})],['video.related',()=>({bvid:context.bvid})],['video.tags',()=>({bvid:context.bvid})],
- ['user.relationStats',{vmid:'[REDACTED_INPUT]'}],['search.default',{}],['search.suggest',{term:'bilibili'}],['search.videos',{keyword:'bilibili',page:1}],['search.all',{keyword:'bilibili',page:1}],
+ ['user.relationStats',()=>options.uid?{vmid:options.uid}:null],['search.default',{}],['search.suggest',{term:'bilibili'}],['search.videos',{keyword:'bilibili',page:1}],['search.all',{keyword:'bilibili',page:1}],
  ['comment.subject',()=>context.aid?{oid:context.aid}:null],['comment.main',()=>context.aid?{oid:context.aid}:null],['comment.replies',()=>context.aid&&root?{oid:context.aid,root}:null],
  ['video.online',()=>context.aid&&context.cid?{aid:context.aid,cid:context.cid,bvid:context.bvid}:null],['playback.info',()=>context.aid&&context.cid?{aid:context.aid,cid:context.cid}:null],['playback.url',()=>context.cid?{bvid:context.bvid,cid:context.cid}:null],['playback.broadcastServers',{}],
- ['favorite.folders',{up_mid:'[REDACTED_INPUT]'}],['dynamic.hot',{page:1}],['dynamic.banner',{}],
- ['user.collections',{mid:'[REDACTED_INPUT]'}],['user.counters',{mid:'[REDACTED_INPUT]'}],['user.notice',{mid:'[REDACTED_INPUT]'}],['user.masterpieces',{vmid:'[REDACTED_INPUT]'}],['user.followedBangumi',{vmid:'[REDACTED_INPUT]'}],['user.games',{mid:'[REDACTED_INPUT]'}],['user.articles',{mid:'[REDACTED_INPUT]'}],['user.settings',{mid:'[REDACTED_INPUT]'}],
+ ['favorite.folders',()=>options.uid?{up_mid:options.uid}:null],['dynamic.hot',{page:1}],['dynamic.banner',{}],
+ ['user.collections',()=>options.uid?{mid:options.uid}:null],['user.counters',()=>options.uid?{mid:options.uid}:null],['user.notice',()=>options.uid?{mid:options.uid}:null],['user.masterpieces',()=>options.uid?{vmid:options.uid}:null],['user.followedBangumi',()=>options.uid?{vmid:options.uid}:null],['user.games',()=>options.uid?{mid:options.uid}:null],['user.articles',()=>options.uid?{mid:options.uid}:null],['user.settings',()=>options.uid?{mid:options.uid}:null],
  ['live.roomPlayInfo',{room_id:7734200}],['live.roomBaseInfo',{room_ids:'7734200'}],['live.recommendations',{}],['live.roomInfo',{room_id:7734200}],
  ['note.publicList',()=>context.aid?{oid:context.aid}:null],['note.availability',()=>context.aid?{aid:context.aid}:null],['home.ogv',{}],['home.recommendations',{}],
- ['video.detailBundle',()=>context.aid?{aid:context.aid}:null],['user.uploads',{mid:'[REDACTED_INPUT]',pn:1,ps:25,order:'pubdate'}],['user.info',{mid:'[REDACTED_INPUT]'}],
+ ['video.detailBundle',()=>context.aid?{aid:context.aid}:null],['user.uploads',()=>options.uid?{mid:options.uid,pn:1,ps:25,order:'pubdate'}:null],['user.info',()=>options.uid?{mid:options.uid}:null],
  ['comment.main',()=>context.comments?.cursor?.is_end!==true&&context.comments?.cursor?.pagination_reply?.next_offset&&context.comments?.replies?.length?{oid:context.aid,pagination_str:JSON.stringify({offset:context.comments.cursor.pagination_reply.next_offset})}:null]
 ];
 if(options.only&&!Object.hasOwn(WEB_READ_ENDPOINTS,options.only))throw Error('Unknown selected web alias');

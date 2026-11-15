@@ -3,16 +3,17 @@ export const LIVE_PLAN = [
  {name:'region-index',endpoint_id:'classes30.dex:32464:GET',params:{},purpose:'公开分区列表'},
  {name:'emote-search',endpoint_id:'classes11.dex:63095:GET',params:{business:'reply',name:'bilibili',ps:'1',pn:'1'},purpose:'表情搜索'},
  {name:'search-channel',endpoint_id:'classes18.dex:28874:GET',params:{keyword:'bilibili',pn:'1',ps:'1'},purpose:'搜索频道样本'},
- {name:'public-space',endpoint_id:'classes11.dex:32804:GET',params:{vmid:'[REDACTED_INPUT]',ps:'1',order:'pubdate',sort:'0'},purpose:'公开用户空间作品样本'},
- {name:'live-room-brief',endpoint_id:'classes.dex:53424:GET',params:{room_id:'[REDACTED_INPUT]'},purpose:'公开直播间状态样本'},
+ {name:'public-space',endpoint_id:'classes11.dex:32804:GET',params:{ps:'1',order:'pubdate',sort:'0'},required_params:['vmid'],purpose:'公开用户空间作品样本'},
+ {name:'live-room-brief',endpoint_id:'classes.dex:53424:GET',params:{},required_params:['room_id'],purpose:'公开直播间状态样本'},
  {name:'history-anonymous',endpoint_id:'classes15.dex:18407:GET',params:{},purpose:'匿名历史记录的认证错误对照'},
 ];
-export function planUrl(plan,endpoints) {
+export function planUrl(plan,endpoints,explicitInputs={}) {
  const endpoint=endpoints.find(e=>e.id===plan.endpoint_id);
  if(!endpoint||endpoint.http_method!=='GET')throw Error('Plan must match a catalog GET declaration');
  const url=new URL(endpoint.resolved_url_candidate);
  if(url.protocol!=='https:'||!['api.bilibili.com','app.bilibili.com','api.live.bilibili.com'].includes(url.hostname)||url.port||url.username||url.password||url.search||url.hash)throw Error('Unexpected plan URL');
- for(const [key,value] of Object.entries(plan.params))url.searchParams.set(key,value);
+ const params={...plan.params};for(const name of plan.required_params||[]){const value=explicitInputs[name];if(typeof value!=='string'||!/^[1-9]\d*$/.test(value))throw Error('Explicit authorized resource input required');params[name]=value;}
+ for(const [key,value] of Object.entries(params))url.searchParams.set(key,value);
  return url;
 }
 export function evaluateLiveResponse(status,body) {

@@ -12,3 +12,4 @@ jobs:
           node-version: "24"
       - run: npm ci --ignore-scripts
       - run: node --test tests/*.test.mjs
+      - run: node scripts/check-public-data.mjs

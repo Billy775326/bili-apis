@@ -1,3 +1,4 @@
+import {sanitizePublicEvidence} from '../src/public-evidence.mjs';
 ﻿import fs from 'node:fs';
 import path from 'node:path';
 import {parse} from '@babel/parser';
@@ -40,6 +41,6 @@ const catalog=buildPcCatalog({observations,aliases:WEB_READ_ENDPOINTS,sources,co
 const current=currentPcValidation(currentRows,WEB_READ_ENDPOINTS);
 for(const endpoint of catalog.endpoints){const row=current.endpoints.find(r=>r.method===endpoint.method&&r.url===endpoint.url);endpoint.verification.current_http_outcome=row?.outcome||'not-selected';endpoint.verification.current_http_checked_at=row?.checked_at||null;}
 catalog.summary.current_http_selected=current.summary.endpoints;catalog.summary.current_http_passed=current.summary.passed;
-fs.writeFileSync('evidence/pc-current-validation.json',JSON.stringify(current,null,2)+'\n');
-fs.writeFileSync('catalog/pc-web.json',JSON.stringify(catalog,null,2)+'\n');fs.writeFileSync('catalog/pc-candidates.json',JSON.stringify({schema_version:1,scope:coverage.limitations[0],candidates:[...grouped.values()].sort((a,b)=>a.literal.localeCompare(b.literal)),coverage:{assets:sources.length,parsed:scan.filter(s=>s.status==='parsed').length,skipped:scan.filter(s=>s.status==='source-budget-skip').length,errors:scan.filter(s=>s.status==='parse-error').length}},null,2)+'\n');
-fs.writeFileSync('evidence/pc-http-checks.json',JSON.stringify({schema_version:1,scope:'Reviewed anonymous desktop HTTP cases; opaque cursor/signature values are not published. Failed pagination remains failed.',runs:caseRows},null,2)+'\n');console.log(JSON.stringify(catalog.summary));
+fs.writeFileSync('evidence/pc-current-validation.json',JSON.stringify(sanitizePublicEvidence(current),null,2)+'\n');
+fs.writeFileSync('catalog/pc-web.json',JSON.stringify(sanitizePublicEvidence(catalog),null,2)+'\n');fs.writeFileSync('catalog/pc-candidates.json',JSON.stringify({schema_version:1,scope:coverage.limitations[0],candidates:[...grouped.values()].sort((a,b)=>a.literal.localeCompare(b.literal)),coverage:{assets:sources.length,parsed:scan.filter(s=>s.status==='parsed').length,skipped:scan.filter(s=>s.status==='source-budget-skip').length,errors:scan.filter(s=>s.status==='parse-error').length}},null,2)+'\n');
+fs.writeFileSync('evidence/pc-http-checks.json',JSON.stringify(sanitizePublicEvidence({schema_version:1,scope:'Reviewed anonymous desktop HTTP cases. All request input values are redacted after assertions; hashes and failures are retained.',runs:caseRows}),null,2)+'\n');console.log(JSON.stringify(catalog.summary));

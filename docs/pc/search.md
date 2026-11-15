@@ -222,7 +222,7 @@ node bin/bili-web.mjs call search.suggest term=bilibili
 本页顶部的初始化代码创建 `client` 后：
 
 ```js
-const result = await client.call('search.suggest', {"term":"[REDACTED_INPUT]"});
+const result = await client.call('search.suggest', {"term":"bilibili"});
 console.log(result.data);
 ```
 

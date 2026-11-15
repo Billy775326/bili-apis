@@ -7,3 +7,6 @@
 - Run `node --test tests/*.test.mjs` for parser/catalog changes. Rebuild affected outputs against the pinned input and review all generated differences.
 - Input configuration comes from CLI flags or explicit environment variables; do not hardcode personal machine paths in shared scripts.
 - Publish focused catalogs and parameter schemas, not full third-party decompiled source. Restrict examples to synthetic data.
+
+- Public evidence must omit all real request input values and page titles, including public account/video/room samples. Run assertions before the egress sanitizer; keep result codes, checks and hashes unchanged. Never publish real account, message or upload identifiers. Use explicit local resources for live tests and synthetic examples only.
+- Run `npm run privacy:check` before publishing. This scans tracked files, including decompressed catalogs; provide a private local denylist for account-specific checks when available. See `docs/privacy.md`. Shared history cleanup requires explicit authorization after a concrete preview.
