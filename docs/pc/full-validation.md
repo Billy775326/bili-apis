@@ -13,7 +13,7 @@
 | Protobuf 结构通过 | 3 |
 | 非 JSON 或 HTTP 错误 | 1 |
 
-[功能导航](README.md) · [受控写操作](write-validation.md) · [脱敏矩阵 JSON](../../catalog/pc-full-validation.json) · [匿名快照](current.md)
+[功能导航](README.md) · [受控写操作](write-validation.md) · [直接 HTTP 上传](direct-upload.md) · [脱敏矩阵 JSON](../../catalog/pc-full-validation.json) · [匿名快照](current.md)
 
 ## 验证方法与结果边界
 
@@ -253,5 +253,5 @@ npm run docs:generate
 - 573 static candidate strings remain candidates. Unvisited pages, roles and runtime-generated routes may be missing.
 - Original assertion failures and delayed read-after-write outcomes are retained. Empty feature samples are not promoted to success.
 - Normal player reports and history changed; currentTime stayed zero and duration was unavailable, so actual media playback is unconfirmed.
-- Synthetic test video remains on the authorized test account. Temporary folders/comments/favorites were removed, like restored and newly created history removed.
+- The earlier UI upload required user confirmation and is auxiliary evidence only; later direct HTTP proof is in evidence/pc-direct-upload-validation.json. Synthetic test video remains on the authorized test account. Temporary folders/comments/favorites were removed, like restored and newly created history removed.
 - Response bodies and credentialed operator scripts remain private locally. Hashes and predicates permit audit of recorded conclusions, not independent reconstruction of raw traffic.

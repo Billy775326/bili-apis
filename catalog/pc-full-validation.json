@@ -6358,6 +6358,9 @@
     }
   ],
   "publication": {
+    "interaction_mode": "official-ui",
+    "manual_intervention_reported": true,
+    "direct_http_verified": false,
     "created_resource_confirmed": true,
     "ownership_verified": true,
     "media": {
@@ -6507,7 +6510,7 @@
     "573 static candidate strings remain candidates. Unvisited pages, roles and runtime-generated routes may be missing.",
     "Original assertion failures and delayed read-after-write outcomes are retained. Empty feature samples are not promoted to success.",
     "Normal player reports and history changed; currentTime stayed zero and duration was unavailable, so actual media playback is unconfirmed.",
-    "Synthetic test video remains on the authorized test account. Temporary folders/comments/favorites were removed, like restored and newly created history removed.",
+    "The earlier UI upload required user confirmation and is auxiliary evidence only; later direct HTTP proof is in evidence/pc-direct-upload-validation.json. Synthetic test video remains on the authorized test account. Temporary folders/comments/favorites were removed, like restored and newly created history removed.",
     "Response bodies and credentialed operator scripts remain private locally. Hashes and predicates permit audit of recorded conclusions, not independent reconstruction of raw traffic."
   ]
 }

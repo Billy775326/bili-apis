@@ -125,6 +125,10 @@ try {
 | non-json-response | 收到非 JSON 正文 | 不能当作 API 数据 |
 | response-size-limit | 超过 4 MiB 响应上限 | 请求被取消，记录限制 |
 
+## 直接 HTTP 上传与投稿
+
+读取客户端 `BiliWebClient` 仍只封装 GET。独立 `BiliUploadClient` 的真实 Node HTTP 上传、封面、投稿及读回已验证，详见[直接上传文档](direct-upload.md)。此前 UI 投稿含用户人工确认，仅作辅助观察。
+
 ## 生成文档与复测
 
 文档生成离线读取已保存目录。接口说明模板维护在 scripts/pc-reference-docs.mjs；实时复测是独立动作。

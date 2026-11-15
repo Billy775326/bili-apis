@@ -1,0 +1,432 @@
+{
+  "schema_version": 1,
+  "scope": "One controlled small MP4 uploaded, covered and published with direct Node HTTP calls. Not a universal upload compatibility claim.",
+  "transport": "Node fetch; isolated Chrome used ONLY to read authorized session into memory",
+  "ui_actions": 0,
+  "manual_interventions": 0,
+  "started_at": "2026-11-15T07:57:29.176Z",
+  "updated_at": "2026-11-15T08:26:04.941Z",
+  "outcome": "direct-http-upload-publish-owner-readback-passed",
+  "observations": [
+    {
+      "stage": "session",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/nav",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "e03f3c922edb1f46a48f01cdeff0141a8d4671fb08de481a7618f215e67b3704",
+      "data_keys": [
+        "isLogin",
+        "email_verified",
+        "face",
+        "face_nft",
+        "face_nft_type",
+        "level_info",
+        "mid",
+        "mobile_verified",
+        "money",
+        "moral",
+        "official",
+        "officialVerify",
+        "pendant",
+        "scores",
+        "uname",
+        "vipDueDate",
+        "vipStatus",
+        "vipType",
+        "vip_pay_type",
+        "vip_theme_type",
+        "vip_label",
+        "vip_avatar_subscript",
+        "vip_nickname_color",
+        "vip",
+        "wallet",
+        "has_shop",
+        "shop_url",
+        "answer_status",
+        "is_senior_member",
+        "wbi_img",
+        "is_jury",
+        "name_render",
+        "legal_region",
+        "ip_region"
+      ]
+    },
+    {
+      "stage": "initialize",
+      "method": "POST",
+      "url": "https://member.bilibili.com/upload/multipart/new",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "6945bbb681baee62e17002ca1aea691c5e5b2e2f29e21b57cfdba6cba131b85d",
+      "data_keys": [
+        "uri",
+        "upload_token",
+        "biz_id",
+        "retry",
+        "retry_delay",
+        "timeout",
+        "threads",
+        "chunk_size",
+        "filename"
+      ]
+    },
+    {
+      "stage": "part-route",
+      "method": "POST",
+      "url": "https://member.bilibili.com/upload/multipart/part",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "32cd1088910e41562f25881a1bec93fc862557882bf903d5bb2c82573bd09611",
+      "data_keys": [
+        "reqs"
+      ]
+    },
+    {
+      "stage": "part-bytes",
+      "method": "PUT",
+      "url": "https://jscs-luffy-upcdntx.bilivideo.com/[signed-upload]",
+      "http_status": 200,
+      "business_code": null,
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "data_keys": []
+    },
+    {
+      "stage": "complete",
+      "method": "POST",
+      "url": "https://member.bilibili.com/upload/multipart/complete",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "120c2968783e78a5ff85a178f6d0db044e8381d5d410a5f93f1a90658a17dd49",
+      "data_keys": [
+        "etag"
+      ]
+    },
+    {
+      "stage": "cover",
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vu/web/cover/up",
+      "http_status": 200,
+      "business_code": -400,
+      "body_sha256": "2e7181bb4c8606c1a613fa6550dec5b665e864404df094a582a095e6f07d95d9",
+      "data_keys": []
+    },
+    {
+      "stage": "cover",
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vu/web/cover/up",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "7bfde77aff85e23a1f0d7b1220316b4b6375386b1497d935cc6bfd0dcd33b5fe",
+      "data_keys": [
+        "url"
+      ]
+    },
+    {
+      "stage": "cover",
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vu/web/cover/up",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "7bfde77aff85e23a1f0d7b1220316b4b6375386b1497d935cc6bfd0dcd33b5fe",
+      "data_keys": [
+        "url"
+      ]
+    },
+    {
+      "stage": "publish",
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vu/web/add/v3",
+      "http_status": 200,
+      "business_code": -111,
+      "body_sha256": "998fa40f549a8d8054af75af62e656638177c353c0787844324e24b2a12119d9",
+      "data_keys": []
+    },
+    {
+      "stage": "publish",
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vu/web/add/v3",
+      "http_status": 200,
+      "business_code": 21001,
+      "body_sha256": "0106ff7f3bb75aac5d6de01733ae049e00a5c6c3c5f9e1b0774bc88122ee4aa3",
+      "data_keys": []
+    },
+    {
+      "stage": "publish",
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vu/web/add/v3",
+      "http_status": 200,
+      "business_code": 21001,
+      "body_sha256": "0106ff7f3bb75aac5d6de01733ae049e00a5c6c3c5f9e1b0774bc88122ee4aa3",
+      "data_keys": []
+    },
+    {
+      "stage": "publish",
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vu/web/add/v3",
+      "http_status": 200,
+      "business_code": 21001,
+      "body_sha256": "0106ff7f3bb75aac5d6de01733ae049e00a5c6c3c5f9e1b0774bc88122ee4aa3",
+      "data_keys": []
+    },
+    {
+      "stage": "publish",
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vu/web/add/v3",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "f247f73fe6435f5ac151b335113d0ee1ba1ec7c39203939f9ea5c74527460bc8",
+      "data_keys": [
+        "aid",
+        "bvid"
+      ]
+    },
+    {
+      "stage": "readback",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/view",
+      "http_status": 200,
+      "business_code": -404,
+      "body_sha256": "d3203fce9682ddaa957f9c31204f2158bd81c8fac979247d50e4dcbb629d269a",
+      "data_keys": []
+    },
+    {
+      "stage": "readback",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/view",
+      "http_status": 200,
+      "business_code": -404,
+      "body_sha256": "d3203fce9682ddaa957f9c31204f2158bd81c8fac979247d50e4dcbb629d269a",
+      "data_keys": []
+    },
+    {
+      "stage": "readback",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/view",
+      "http_status": 200,
+      "business_code": -404,
+      "body_sha256": "d3203fce9682ddaa957f9c31204f2158bd81c8fac979247d50e4dcbb629d269a",
+      "data_keys": []
+    },
+    {
+      "stage": "creator-readback",
+      "method": "GET",
+      "url": "https://member.bilibili.com/x/vupre/web/archive/view",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "1d93c6ae1aa3f042b1cc1dc8792d64bccbe5e7b6e72c25bda1d9f7c4bf1956bb",
+      "data_keys": [
+        "act_reserve_binded",
+        "act_reserve_create",
+        "add_season",
+        "arc_elec",
+        "archive",
+        "can_edit_delay",
+        "has_appeal",
+        "in_season",
+        "no_disturbance",
+        "origin_state",
+        "replace_check",
+        "reply",
+        "show_space_hidden",
+        "show_staff",
+        "space_hidden",
+        "staffs",
+        "subtitle",
+        "tip",
+        "videos",
+        "watermark"
+      ]
+    },
+    {
+      "stage": "readback",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/view",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "f0c062584588acd5733b01e47fe8dff6f01ee9fa661657b4be84e9a8d0271dc6",
+      "data_keys": [
+        "bvid",
+        "aid",
+        "videos",
+        "tid",
+        "tid_v2",
+        "tname",
+        "tname_v2",
+        "copyright",
+        "pic",
+        "title",
+        "pubdate",
+        "ctime",
+        "desc",
+        "desc_v2",
+        "state",
+        "duration",
+        "rights",
+        "owner",
+        "stat",
+        "argue_info",
+        "dynamic",
+        "cid",
+        "dimension",
+        "premiere",
+        "teenage_mode",
+        "is_chargeable_season",
+        "is_story",
+        "is_upower_exclusive",
+        "is_upower_play",
+        "is_upower_preview",
+        "enable_vt",
+        "vt_display",
+        "is_upower_exclusive_with_qa",
+        "is_hua_sheng",
+        "no_cache",
+        "pages",
+        "subtitle",
+        "is_season_display",
+        "user_garb",
+        "honor_reply",
+        "like_icon",
+        "need_jump_bv",
+        "disable_show_up_info",
+        "is_story_play",
+        "is_view_self"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "authenticated-account-identity",
+      "passed": true
+    },
+    {
+      "name": "all-file-bytes-sent-and-merged",
+      "passed": true
+    },
+    {
+      "name": "cover-data-url-accepted",
+      "passed": true
+    },
+    {
+      "name": "cover-data-url-accepted",
+      "passed": true
+    },
+    {
+      "name": "cover-data-url-accepted",
+      "passed": true
+    },
+    {
+      "name": "cover-data-url-accepted",
+      "passed": true
+    },
+    {
+      "name": "cover-data-url-accepted",
+      "passed": true
+    },
+    {
+      "name": "publication-identifiers-returned",
+      "passed": true
+    },
+    {
+      "name": "published-video-owner-aid-cid-match",
+      "passed": false
+    }
+  ],
+  "preflight": {
+    "http_status": 200,
+    "business_code": 0,
+    "body_sha256": "e7d2290ce444824b90f1af16265908e6eedc6face37112652f1745b92672fdb7",
+    "truthful_ai_declaration_selected": true
+  },
+  "creator_readback": {
+    "checked_at": "2026-11-15T08:26:04.835Z",
+    "archive_state": 0,
+    "duration_seconds": 15,
+    "checks": [
+      {
+        "name": "creator-archive-owner-aid-bvid-match",
+        "passed": true
+      },
+      {
+        "name": "creator-video-cid-filename-match",
+        "passed": true
+      },
+      {
+        "name": "truthful-ai-declaration-readback",
+        "passed": true
+      }
+    ]
+  },
+  "public_readback": {
+    "checked_at": "2026-11-15T08:26:04.941Z",
+    "available": true,
+    "archive_state": 0,
+    "duration_seconds": 15
+  },
+  "previous_failures": [
+    {
+      "state": "failed",
+      "error": {
+        "stage": "cover",
+        "kind": "invalid-cover-response",
+        "http_status": 200,
+        "business_code": -400
+      }
+    },
+    {
+      "state": "failed",
+      "error": {
+        "stage": "cover",
+        "kind": "invalid-cover-url",
+        "http_status": null,
+        "business_code": null
+      }
+    },
+    {
+      "state": "failed",
+      "error": {
+        "stage": "publish",
+        "kind": "business-error",
+        "http_status": 200,
+        "business_code": -111
+      }
+    },
+    {
+      "state": "failed",
+      "error": {
+        "stage": "publish",
+        "kind": "business-error",
+        "http_status": 200,
+        "business_code": 21001
+      }
+    },
+    {
+      "state": "failed",
+      "error": {
+        "stage": "publish",
+        "kind": "business-error",
+        "http_status": 200,
+        "business_code": 21001
+      }
+    },
+    {
+      "state": "failed",
+      "error": {
+        "stage": "publish",
+        "kind": "business-error",
+        "http_status": 200,
+        "business_code": 21001
+      }
+    }
+  ],
+  "media_sha256": "ec24381e3b36abe906478918a8375743a9f01748875388c188b484a4e4038f90",
+  "resource_state": "Both this direct-HTTP synthetic test video and the earlier UI-created test video are retained on the authorized test account.",
+  "limits": [
+    "Only one small 15-second MP4 was exercised online; multi-part splitting is covered offline, not by a live large-file upload.",
+    "Initial readback returned -404; later creator and public GET checks passed. Initial failed checks and request responses remain visible.",
+    "Prior UI upload required a user confirmation and is auxiliary evidence only. This run performed zero UI actions and needed zero user confirmations.",
+    "No Cookie, CSRF value, upload token, signed URL, filename, account ID or created resource ID is included.",
+    "Browser was used only as the existing authorized session source; it is not a runtime dependency of BiliUploadClient.",
+    "Captcha/verification responses stop this client. This sample does not show that every confirmation or server check can be bypassed."
+  ]
+}

@@ -1,0 +1,44 @@
+﻿import {createHash} from 'node:crypto';
+const MEMBER='https://member.bilibili.com';
+export class BiliUploadError extends Error{
+ constructor(stage,kind,httpStatus=null,businessCode=null,serverMessage=null){super(`Upload ${stage}: ${kind}`);this.name='BiliUploadError';Object.assign(this,{stage,kind,httpStatus,businessCode});Object.defineProperty(this,'serverMessage',{value:typeof serverMessage==='string'?serverMessage.slice(0,256):null,enumerable:false});}
+}
+function storageUrl(value){let u;try{u=new URL(value);}catch{throw new BiliUploadError('part','invalid-storage-url');}if(u.protocol!=='https:'||u.username||u.password||u.port||!['bilivideo.com','bilibili.com'].some(d=>u.hostname===d||u.hostname.endsWith('.'+d)))throw new BiliUploadError('part','unreviewed-storage-host');return u.href;}
+/** Direct HTTP upload; credentials stay in memory. No DOM, CDP, UI or automatic retries. */
+export class BiliUploadClient{
+ #cookie;#csrf;#fetch;#observe;#userAgent;#timeout;
+ constructor({cookie,userAgent='bili-apis-direct-upload/0.0.0',fetchImpl=fetch,onObservation=()=>{},timeoutMs=30000}={}){
+  if(typeof cookie!=='string'||!cookie||/[\r\n]/.test(cookie)||cookie.length>32768)throw new TypeError('A local authorized cookie is required');
+  if(typeof userAgent!=='string'||/[\r\n]/.test(userAgent)||!Number.isSafeInteger(timeoutMs)||timeoutMs<1||timeoutMs>180000)throw new TypeError('Invalid transport configuration');
+  this.#csrf=cookie.split(';').map(s=>s.trim()).find(s=>s.startsWith('bili_jct='))?.slice(9);if(!this.#csrf||!/^[a-zA-Z0-9_-]{16,128}$/.test(this.#csrf))throw new TypeError('Authorized CSRF cookie is required');
+  this.#cookie=cookie;this.#fetch=fetchImpl;this.#observe=onObservation;this.#userAgent=userAgent;this.#timeout=timeoutMs;
+ }
+ async #request(stage,url,{method='GET',body,contentType,storage=false}={}){
+  const u=new URL(url);if(storage)storageUrl(url);else if(u.protocol!=='https:'||u.username||u.password||u.port||!['member.bilibili.com','api.bilibili.com'].includes(u.hostname))throw new BiliUploadError(stage,'unreviewed-host');
+  const headers={'user-agent':this.#userAgent};if(!storage){Object.assign(headers,{cookie:this.#cookie,referer:MEMBER+'/',origin:MEMBER});if(contentType)headers['content-type']=contentType;}
+  let response,bytes;try{response=await this.#fetch(url,{method,body,headers,redirect:'manual',signal:AbortSignal.timeout(this.#timeout)});const chunks=[];let length=0;const reader=response.body?.getReader();if(reader)for(;;){const r=await reader.read();if(r.done)break;length+=r.value.length;if(length>4194304){await reader.cancel();throw new BiliUploadError(stage,'response-size-limit',response.status);}chunks.push(r.value);}bytes=Buffer.concat(chunks,length);}catch(error){if(error instanceof BiliUploadError)throw error;throw new BiliUploadError(stage,error?.name==='TimeoutError'?'timeout':'transport-error');}
+  let json;try{json=JSON.parse(bytes.toString('utf8'));}catch{/* Storage may return empty bytes; JSON is required by API callers below. */}
+  const record={stage,method,url:storage?u.origin+'/[signed-upload]':u.origin+u.pathname,http_status:response.status,business_code:typeof json?.code==='number'?json.code:null,body_sha256:createHash('sha256').update(bytes).digest('hex'),data_keys:json?.data&&typeof json.data==='object'&&!Array.isArray(json.data)?Object.keys(json.data).filter(k=>/^[a-zA-Z_][\w-]{0,60}$/.test(k)):[]};this.#observe(record);
+  if(!response.ok)throw new BiliUploadError(stage,[412,429].includes(response.status)?'risk-or-rate-response':'http-error',response.status,record.business_code);
+  return{response,json,bytes};
+ }
+ async #json(stage,path,data,query={}){const u=new URL(path,MEMBER);for(const[k,v]of Object.entries(query))u.searchParams.set(k,String(v));const r=await this.#request(stage,u.href,data===undefined?{}:{method:'POST',contentType:'application/json',body:JSON.stringify(data)});if(typeof r.json?.code!=='number')throw new BiliUploadError(stage,'invalid-json-business-response',r.response.status);if(r.json.code!==0)throw new BiliUploadError(stage,[244001,602,-352,-412].includes(r.json.code)?'verification-required':'business-error',r.response.status,r.json.code,r.json.message);return r.json.data;}
+ async session(){const r=await this.#request('session','https://api.bilibili.com/x/web-interface/nav');if(r.json?.code!==0||r.json?.data?.isLogin!==true||!Number.isSafeInteger(r.json?.data?.mid))throw new BiliUploadError('session','login-required',r.response.status,r.json?.code??null);return{mid:r.json.data.mid};}
+ async uploadVideo(bytes,{name='synthetic-api-test.mp4'}={}){
+  if(!(bytes instanceof Uint8Array)||bytes.length<1||bytes.length>33554432||typeof name!=='string'||!/^[\w.-]{1,120}\.mp4$/.test(name))throw new TypeError('Provide a named MP4 of 1 byte to 32 MiB');
+  const init=await this.#json('initialize','/upload/multipart/new',{profile:'ugcfx/bup',init_params:{},name,size:bytes.length});
+  if(!init||typeof init.uri!=='string'||!init.uri||typeof init.upload_token!=='string'||!init.upload_token||!Number.isSafeInteger(init.chunk_size)||init.chunk_size<1||init.chunk_size>67108864||!Number.isSafeInteger(init.biz_id)||init.biz_id<1||typeof init.filename!=='string'||!init.filename)throw new BiliUploadError('initialize','invalid-upload-metadata');
+  const count=Math.ceil(bytes.length/init.chunk_size);if(count>1024)throw new BiliUploadError('initialize','part-budget-exceeded');const parts=[];
+  for(let i=0;i<count;i++){
+   const part=await this.#json('part-route','/upload/multipart/part',{uri:init.uri,upload_token:init.upload_token,part_number:i+1});const route=part?.reqs?.[0];if(!route||!['PUT','POST'].includes(route.method)||typeof route.url!=='string')throw new BiliUploadError('part-route','invalid-part-route');
+   const r=await this.#request('part-bytes',storageUrl(route.url),{method:route.method,body:bytes.subarray(i*init.chunk_size,Math.min(bytes.length,(i+1)*init.chunk_size)),storage:true});const etag=r.response.headers.get('etag');if(!etag||etag.length>512||/[\r\n]/.test(etag))throw new BiliUploadError('part-bytes','missing-etag',r.response.status);parts.push({part_number:i+1,etag});
+  }
+  await this.#json('complete','/upload/multipart/complete',{uri:init.uri,upload_token:init.upload_token,parts,upload_params:{biz_id:init.biz_id,profile:'ugcfx/bup'}});
+  return{cid:init.biz_id,filename:init.filename,bytes:bytes.length,parts:parts.length,sha256:createHash('sha256').update(bytes).digest('hex')};
+ }
+ async uploadCover(bytes){if(!(bytes instanceof Uint8Array)||bytes.length<1||bytes.length>4194304)throw new TypeError('Provide PNG bytes of 1 byte to 4 MiB');const body=new FormData();body.set('cover','data:image/png;base64,'+Buffer.from(bytes).toString('base64'));body.set('csrf',this.#csrf);const r=await this.#request('cover',MEMBER+'/x/vu/web/cover/up',{method:'POST',body});if(r.json?.code!==0||typeof r.json?.data?.url!=='string')throw new BiliUploadError('cover','invalid-cover-response',r.response.status,r.json?.code??null);let u;try{u=new URL(r.json.data.url,'https://member.bilibili.com');}catch{throw new BiliUploadError('cover','invalid-cover-url');}if(!['https:','http:'].includes(u.protocol)||!['hdslb.com','biliimg.com'].some(d=>u.hostname===d||u.hostname.endsWith('.'+d))||u.username||u.password||u.port)throw new BiliUploadError('cover','invalid-cover-url');u.protocol='https:';return{url:u.href};}
+ async creatorPreflight(){return this.#json('creator-preflight','/x/vupre/web/archive/pre');}
+ async publish(parameters){for(const key of ['up_close_reply','up_close_danmu','up_selection_reply'])if(parameters&&Object.hasOwn(parameters,key)&&typeof parameters[key]!=='boolean')throw new TypeError('Reply/danmaku switches must be boolean');if(!parameters||typeof parameters.title!=='string'||!parameters.title.trim()||parameters.title.length>80||!Number.isSafeInteger(parameters.tid)||parameters.tid<1||!Array.isArray(parameters.videos)||parameters.videos.length!==1||typeof parameters.videos[0]?.filename!=='string'||!parameters.videos[0].filename)throw new TypeError('Single-video title, category and uploaded filename required');return this.#json('publish','/x/vu/web/add/v3',{...parameters,csrf:this.#csrf},{web_location:'333.1024',t:Date.now(),csrf:this.#csrf});}
+ async creatorVideo(aid){if(!Number.isSafeInteger(aid)||aid<1)throw new TypeError('Positive owned archive ID required');return this.#json('creator-readback','/x/vupre/web/archive/view',undefined,{aid});}
+ async videoDetail(bvid){if(typeof bvid!=='string'||!/^BV[0-9a-zA-Z]{10}$/.test(bvid))throw new TypeError('Valid BVID required');const u=new URL('https://api.bilibili.com/x/web-interface/view');u.searchParams.set('bvid',bvid);const r=await this.#request('readback',u.href);if(r.json?.code!==0||!r.json.data)throw new BiliUploadError('readback','unreadable-video',r.response.status,r.json?.code??null);return r.json.data;}
+}

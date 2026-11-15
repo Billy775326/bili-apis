@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "scope": "Focused field metadata from official PC upload scripts; source bodies and account values are not distributed.",
+  "definitions": [
+    {
+      "operation": "initialize",
+      "method": "POST",
+      "path": "/upload/multipart/new",
+      "encoding": "JSON",
+      "fields": [
+        "profile",
+        "init_params",
+        "name",
+        "size"
+      ],
+      "response": [
+        "uri",
+        "upload_token",
+        "biz_id",
+        "chunk_size",
+        "filename"
+      ],
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/creator-monorepo/videoup/static/js/100.72bee00e.js",
+        "sha256": "1cfd90281cf8f79446e1062c48e6423590032b8ce272e253f50993ac7c8a14e7",
+        "utf16_offset": 2309963,
+        "byte_offset": 2350416,
+        "needle": "v=\"//member.bilibili.com/upload/multipart/new\"",
+        "snippet": "v=\"//member.bilibili.com/upload/multipart/new\",[4,this.resolveRequestHeaders(v,\"POST\")];case 1:y=f.sent(),f.label=2;case 2:return f.trys.push([2,4,,15]),[4,ts({method:\"POST\",url:v,headers:y,withCredentials:!0,data:S(x({},p),{gaia_vtoken:t}),retryTime:10,shouldRetry:function(t){return!(t.status>=400&"
+      }
+    },
+    {
+      "operation": "part-route",
+      "method": "POST",
+      "path": "/upload/multipart/part",
+      "encoding": "JSON",
+      "fields": [
+        "uri",
+        "upload_token",
+        "part_number"
+      ],
+      "response": [
+        "reqs[].url",
+        "reqs[].method"
+      ],
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/creator-monorepo/videoup/static/js/100.72bee00e.js",
+        "sha256": "1cfd90281cf8f79446e1062c48e6423590032b8ce272e253f50993ac7c8a14e7",
+        "utf16_offset": 2312801,
+        "byte_offset": 2353440,
+        "needle": "url:\"//member.bilibili.com/upload/multipart/part\"",
+        "snippet": "url:\"//member.bilibili.com/upload/multipart/part\",withCredentials:!0,data:{uri:this.preuploadInfo.uri,upload_token:this.preuploadInfo.upload_token,part_number:t.index+1},retryTime:10})];case 2:return[2,(t.reqs=(e=r.sent()).data.reqs.map(function(t){return{cdnName:t.cdn_name||ti(t.url),method:t.metho"
+      }
+    },
+    {
+      "operation": "complete",
+      "method": "POST",
+      "path": "/upload/multipart/complete",
+      "encoding": "JSON",
+      "fields": [
+        "uri",
+        "upload_token",
+        "parts[].part_number",
+        "parts[].etag",
+        "upload_params.biz_id",
+        "upload_params.profile"
+      ],
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/creator-monorepo/videoup/static/js/100.72bee00e.js",
+        "sha256": "1cfd90281cf8f79446e1062c48e6423590032b8ce272e253f50993ac7c8a14e7",
+        "utf16_offset": 2317630,
+        "byte_offset": 2358567,
+        "needle": "url:\"//member.bilibili.com/upload/multipart/complete\"",
+        "snippet": "url:\"//member.bilibili.com/upload/multipart/complete\",data:{uri:this.preuploadInfo.uri,upload_token:this.preuploadInfo.upload_token,parts:e,upload_params:x({biz_id:this.preuploadInfo.biz_id,profile:this.profile},tt(this.completeQuery,this.cid))},retryTime:10,timeout:this.requestTimeout})];case 2:ret"
+      }
+    },
+    {
+      "operation": "part-etag",
+      "meaning": "Actual successful response ETags are required for each completed part.",
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/creator-monorepo/videoup/static/js/100.72bee00e.js",
+        "sha256": "1cfd90281cf8f79446e1062c48e6423590032b8ce272e253f50993ac7c8a14e7",
+        "utf16_offset": 2316918,
+        "byte_offset": 2357805,
+        "needle": "void 0:r.etag",
+        "snippet": "void 0:r.etag;i?e.push({part_number:n.index+1,etag:i}):t.handleError(\"noEtag\",\"chunk_\".concat(n.index,\" has no etag\"))}else n.deleted?D(\"合片忽略 chunk_\".concat(n.index,\" \").concat(n.uuid,\" 使用后续上传的chunk_\").concat(n.index)):t.handleError(\"chunkNotUploaded\",n)}),this.emit(\"chunkAllUploaded\",e.length),P(\"u"
+      }
+    },
+    {
+      "operation": "cover",
+      "method": "POST",
+      "path": "/x/vu/web/cover/up",
+      "encoding": "multipart/form-data",
+      "fields": [
+        "cover (data URL STRING)",
+        "csrf"
+      ],
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/creator-monorepo/videoup/static/js/index.9f5ceff0.js",
+        "sha256": "a66465621c27247bd19529b4fcb214b9c8343f0b6af1aef9f9022bc4e7429497",
+        "utf16_offset": 360111,
+        "byte_offset": 361917,
+        "needle": "uploadImage:function(e)",
+        "snippet": "uploadImage:function(e){return(0,c._)(function(){var t,i,a,n;return(0,p._)(this,function(o){switch(o.label){case 0:return(t=new FormData).append(\"cover\",e),t.append(\"csrf\",eT(\"bili_jct\")),[4,eB(i=\"/x/vu/web/cover/up\",\"POST\",{\"content-type\":\"multipart/form-data\"})];case 1:return a=o.sent(),[4,eO.post"
+      }
+    },
+    {
+      "operation": "cover-data-url",
+      "meaning": "The caller passes data URLs, not binary File objects.",
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/creator-monorepo/videoup/static/js/index.9f5ceff0.js",
+        "sha256": "a66465621c27247bd19529b4fcb214b9c8343f0b6af1aef9f9022bc4e7429497",
+        "utf16_offset": 380329,
+        "byte_offset": 382325,
+        "needle": "function e6(e)",
+        "snippet": "function e6(e){return/^blob/.test(e)?e5(e).then(function(e){return v().prototype.$api.uploadImage(e).then(function(e){return(null==e?void 0:e.url)||\"\"}).catch(function(e){return v().prototype.$toastError(e),Promise.reject(e)})}):/^data:/.test(e)?v().prototype.$api.uploadImage(e).then(function(e){ret"
+      }
+    },
+    {
+      "operation": "publish",
+      "method": "POST",
+      "path": "/x/vu/web/add/v3",
+      "encoding": "JSON",
+      "query": [
+        "csrf",
+        "web_location",
+        "t"
+      ],
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/creator-monorepo/videoup/static/js/index.9f5ceff0.js",
+        "sha256": "a66465621c27247bd19529b4fcb214b9c8343f0b6af1aef9f9022bc4e7429497",
+        "utf16_offset": 360548,
+        "byte_offset": 362354,
+        "needle": "submitArchive:function(e,t)",
+        "snippet": "submitArchive:function(e,t){return(0,c._)(function(){var i,a,n,o;return(0,p._)(this,function(r){switch(r.label){case 0:i={},t&&(i[\"X-Event-TraceID\"]=t),r.label=1;case 1:return r.trys.push([1,3,,4]),[4,eV.with(new eI.nh).with(new eM.A).request({url:\"//member.bilibili.com/x/vu/web/add/v3\",method:\"POST"
+      }
+    },
+    {
+      "operation": "csrf-location",
+      "meaning": "Default CSRF middleware puts CSRF in query parameters for JSON bodies.",
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/creator-monorepo/videoup/static/js/100.72bee00e.js",
+        "sha256": "1cfd90281cf8f79446e1062c48e6423590032b8ce272e253f50993ac7c8a14e7",
+        "utf16_offset": 1911244,
+        "byte_offset": 1949195,
+        "needle": "h=s.key||\"csrf\"",
+        "snippet": "h=s.key||\"csrf\",f=function(e){if(d(),c&&t.request){if(\"params\"===e)return void(t.request.params?t.request.params[h]=c:t.request.params=(0,l._)({},h,c));if(o)switch(!0){case C(o):o.append(h,c);break;case T(o):o[h]=c}}},\"GET\"===i?!0===s.params&&f(\"params\"):[\"POST\",\"PUT\",\"DELETE\",\"PATCH\"].includes(i)&&"
+      }
+    },
+    {
+      "operation": "boolean-reply-switch",
+      "meaning": "up_close_reply, up_close_danmu and up_selection_reply are booleans, not numeric 0/1.",
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/creator-monorepo/videoup/static/js/index.9f5ceff0.js",
+        "sha256": "a66465621c27247bd19529b4fcb214b9c8343f0b6af1aef9f9022bc4e7429497",
+        "utf16_offset": 871326,
+        "byte_offset": 889685,
+        "needle": "o.up_close_reply=!!l.up_close_reply",
+        "snippet": "o.up_close_reply=!!l.up_close_reply),this.showDanmu&&(o.up_close_danmu=!!l.up_close_danmu)):this.isEditMode?(o.no_reprint=(null==(n=this.view.archive)?void 0:n.no_reprint)||0,o.is_360=l.is_360,!this.isInteractive&&(this.showDubi&&(o.dolby=l.is_dolby),this.showHiRes&&(o.lossless_music=+!!l.lossless_m"
+      }
+    },
+    {
+      "operation": "creation-declaration",
+      "meaning": "Use an actual allowed declaration ID from creator preflight; do not invent a declaration.",
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/creator-monorepo/videoup/static/js/index.9f5ceff0.js",
+        "sha256": "a66465621c27247bd19529b4fcb214b9c8343f0b6af1aef9f9022bc4e7429497",
+        "utf16_offset": 1080524,
+        "byte_offset": 1104165,
+        "needle": "c.creation_statement={id:_}",
+        "snippet": "c.creation_statement={id:_}),c.human_type2=this.$store.state[\"task_\".concat(e.id)].human_type2,c.tid=l.tid,c.tag=this.getSubmitTags(l),c.tag=c.tag.join(\",\"),l.mission_id&&(c.mission_id=l.mission_id),l.topic_id&&(c.topic_id=l.topic_id,c.topic_detail={from_topic_id:l.topic_id,from_source:l.topic_from&"
+      }
+    },
+    {
+      "operation": "creator-readback",
+      "method": "GET",
+      "path": "/x/vupre/web/archive/view",
+      "query": [
+        "aid"
+      ],
+      "source": {
+        "url": "https://s1.hdslb.com/bfs/static/creator-monorepo/videoup/static/js/index.9f5ceff0.js",
+        "sha256": "a66465621c27247bd19529b4fcb214b9c8343f0b6af1aef9f9022bc4e7429497",
+        "utf16_offset": 365778,
+        "byte_offset": 367648,
+        "needle": "getArchiveInfo:function(e)",
+        "snippet": "getArchiveInfo:function(e){return(0,c._)(function(){var t;return(0,p._)(this,function(i){switch(i.label){case 0:return[4,eO.get(\"/x/vupre/web/archive/view\",{params:e})];case 1:if(0!=+(t=i.sent().data).code)return[2,Promise.reject(Error(t.message))];return[2,t.data||[]]}})})()},useElec:function(){ret"
+      }
+    }
+  ]
+}
