@@ -17,7 +17,7 @@ for(const file of captures){
   const {local_body_file,requestId,...safe}=o;const row={...safe,id:runId+':'+index,context:'browser',run_id:runId,check_result:checked};row.outcome=pcOutcome(row);observations.push(row);
  }
  for(const a of run.assets){
-  if(seenAssets.has(a.sha256))continue;seenAssets.add(a.sha256);const bytes=fs.readFileSync(a.local_file);if(sha256(bytes)!==a.sha256||bytes.length!==a.size)throw Error('PC script provenance mismatch');const source={url:a.url,sha256:a.sha256,bytes:a.size,kind:'served-pc-frontend-script'};sources.push(source);
+  if(seenAssets.has(a.sha256))continue;seenAssets.add(a.sha256);const bytes=fs.readFileSync(a.local_file);if(sha256(bytes)!==a.sha256||bytes.length!==a.size)throw Error('网页 script provenance mismatch');const source={url:a.url,sha256:a.sha256,bytes:a.size,kind:'served-pc-frontend-script'};sources.push(source);
   if(a.size>6*1024*1024){scan.push({...source,status:'source-budget-skip'});continue;}
   try{const result=extractPcLiterals(bytes.toString('utf8'),parse);scan.push({...source,status:'parsed',strings_examined:result.strings_examined,computed_templates_not_resolved:result.computed_templates_not_resolved,literal_candidates:result.candidates.length});literalRows.push(...result.candidates.map(c=>({...c,source_url:a.url,source_sha256:a.sha256})));}catch(e){scan.push({...source,status:'parse-error',error_name:e.name});}
   if(scan.length%20===0)console.log(JSON.stringify({pc_sources_processed:scan.length,literal_observations:literalRows.length}));

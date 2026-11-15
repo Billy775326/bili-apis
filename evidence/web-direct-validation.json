@@ -1,0 +1,5774 @@
+{
+  "schema_version": 1,
+  "scope": "网页接口已发现目录的逐项验证；不把静态候选当接口、不把观察当字段通过。",
+  "transport": "direct Node HTTP; no UI",
+  "started_at": "2026-11-15T09:34:46.853Z",
+  "finished_at": "2026-11-15T09:36:40.294Z",
+  "summary": {
+    "baseline": 82,
+    "baseline_outcomes": {
+      "field-case-passed": 66,
+      "observation-only-not-directly-replayed": 6,
+      "json-without-numeric-business-code": 1,
+      "response-assertion-failed": 3,
+      "business-error": 2,
+      "protobuf-structure-passed": 3,
+      "non-json-or-http-error": 1
+    },
+    "additional_get": 33,
+    "additional_outcomes": {
+      "direct-business-acknowledged": 28,
+      "risk-or-rate-response": 1,
+      "not-executed-risk-stop": 1,
+      "business-error": 2,
+      "unconfirmed-response": 1
+    },
+    "inventory": 137,
+    "inventory_outcomes": {
+      "field-case-passed": 66,
+      "observation-only-not-directly-replayed": 10,
+      "json-without-numeric-business-code": 1,
+      "response-assertion-failed": 3,
+      "business-error": 4,
+      "protobuf-structure-passed": 3,
+      "non-json-or-http-error": 1,
+      "direct-business-acknowledged": 28,
+      "risk-or-rate-response": 1,
+      "not-executed-risk-stop": 1,
+      "unconfirmed-response": 1,
+      "prior-direct-workflow-evidence": 18
+    }
+  },
+  "baseline": [
+    {
+      "id": "pc:bfaacdd293de832a8bb4",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/nav",
+      "category": "auth",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:bfaacdd293de832a8bb4",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/nav",
+          "category": "auth",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:34:46.861Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "e03f3c922edb1f46a48f01cdeff0141a8d4671fb08de481a7618f215e67b3704",
+          "body_bytes": 2491,
+          "data_type": "object",
+          "request_parameter_names": [],
+          "data_keys": [
+            "answer_status",
+            "email_verified",
+            "face",
+            "face_nft",
+            "face_nft_type",
+            "has_shop",
+            "ip_region",
+            "isLogin",
+            "is_jury",
+            "is_senior_member",
+            "legal_region",
+            "level_info",
+            "mid",
+            "mobile_verified",
+            "money",
+            "moral",
+            "name_render",
+            "official",
+            "officialVerify",
+            "pendant",
+            "scores",
+            "shop_url",
+            "uname",
+            "vip",
+            "vipDueDate",
+            "vipStatus",
+            "vipType",
+            "vip_avatar_subscript",
+            "vip_label",
+            "vip_nickname_color",
+            "vip_pay_type",
+            "vip_theme_type",
+            "wallet",
+            "wbi_img"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "logged-in-test-account",
+              "passed": true
+            },
+            {
+              "name": "account-identity-present",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:b958867f1f2ad41467e9",
+      "method": "GET",
+      "url": "https://passport.bilibili.com/x/passport-login/web/cookie/info",
+      "category": "auth",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:b958867f1f2ad41467e9",
+          "method": "GET",
+          "url": "https://passport.bilibili.com/x/passport-login/web/cookie/info",
+          "category": "auth",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:34:48.192Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "4891e88e3a5c85096dd9016d5614200e88566cba751f528649405ff74407b9ea",
+          "body_bytes": 84,
+          "data_type": "object",
+          "request_parameter_names": [
+            "web_location"
+          ],
+          "data_keys": [
+            "refresh",
+            "timestamp"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "refresh-flag",
+              "passed": true
+            },
+            {
+              "name": "timestamp",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:01d13ac74e27e3cadd66",
+      "method": "POST",
+      "url": "https://api.bilibili.com/bapis/bilibili.api.ticket.v1.Ticket/GenWebTicket",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:01d13ac74e27e3cadd66",
+          "method": "POST",
+          "url": "https://api.bilibili.com/bapis/bilibili.api.ticket.v1.Ticket/GenWebTicket",
+          "category": "auxiliary",
+          "outcome": "observation-only-not-directly-replayed"
+        }
+      ],
+      "outcome": "observation-only-not-directly-replayed"
+    },
+    {
+      "id": "pc:22009e2e2e156ee13d1c",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/click-interface/click/now",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:22009e2e2e156ee13d1c",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/click-interface/click/now",
+          "category": "auxiliary",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:34:49.677Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "1672ba73bfd0555b9b82b44dd52f5e765110ffd4b4f2f5da19593efdaeacf203",
+          "body_bytes": 58,
+          "data_type": "object",
+          "request_parameter_names": [],
+          "data_keys": [
+            "now"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "server-time",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:9fda3511b598638f87c2",
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/click-interface/click/web/h5",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:9fda3511b598638f87c2",
+          "method": "POST",
+          "url": "https://api.bilibili.com/x/click-interface/click/web/h5",
+          "category": "auxiliary",
+          "outcome": "observation-only-not-directly-replayed"
+        }
+      ],
+      "outcome": "observation-only-not-directly-replayed"
+    },
+    {
+      "id": "pc:9496dcf23e943eaea764",
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/click-interface/web/heartbeat",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:9496dcf23e943eaea764",
+          "method": "POST",
+          "url": "https://api.bilibili.com/x/click-interface/web/heartbeat",
+          "category": "auxiliary",
+          "outcome": "observation-only-not-directly-replayed"
+        }
+      ],
+      "outcome": "observation-only-not-directly-replayed"
+    },
+    {
+      "id": "pc:42e5ae003112a96e7589",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/frontend/finger/spi",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:42e5ae003112a96e7589",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/frontend/finger/spi",
+          "category": "auxiliary",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:34:51.045Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "486e9a72d6cc9c637d02e06839fc6bc6f39a63a666b12c98006c21af28f0c30c",
+          "body_bytes": 174,
+          "data_type": "object",
+          "request_parameter_names": [],
+          "data_keys": [
+            "b_3",
+            "b_4"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "two-identifiers-present",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:9059f56d9a3062be10bf",
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/gaia-vgate/v2/register",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:9059f56d9a3062be10bf",
+          "method": "POST",
+          "url": "https://api.bilibili.com/x/gaia-vgate/v2/register",
+          "category": "auxiliary",
+          "outcome": "observation-only-not-directly-replayed"
+        }
+      ],
+      "outcome": "observation-only-not-directly-replayed"
+    },
+    {
+      "id": "pc:a32b3cec3c57eca43fdd",
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/internal/gaia-gateway/ExClimbCongLing",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:a32b3cec3c57eca43fdd",
+          "method": "POST",
+          "url": "https://api.bilibili.com/x/internal/gaia-gateway/ExClimbCongLing",
+          "category": "auxiliary",
+          "outcome": "observation-only-not-directly-replayed"
+        }
+      ],
+      "outcome": "observation-only-not-directly-replayed"
+    },
+    {
+      "id": "pc:a8e26040643f7710d70c",
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/internal/gaia-gateway/ExClimbWuzhi",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:a8e26040643f7710d70c",
+          "method": "POST",
+          "url": "https://api.bilibili.com/x/internal/gaia-gateway/ExClimbWuzhi",
+          "category": "auxiliary",
+          "outcome": "observation-only-not-directly-replayed"
+        }
+      ],
+      "outcome": "observation-only-not-directly-replayed"
+    },
+    {
+      "id": "pc:486087192930ce0b77f9",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/internal/gaia-gateway/ExGetAxe",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:486087192930ce0b77f9",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/internal/gaia-gateway/ExGetAxe",
+          "category": "auxiliary",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:34:52.421Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "2da69af7b2bec08cffe1e5f80b87da18cfd2c67d4d2d5115f68d88316e4dba7b",
+          "body_bytes": 915,
+          "data_type": "object",
+          "request_parameter_names": [],
+          "data_keys": [
+            "deadline",
+            "public_key",
+            "version"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "public-challenge-metadata",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:d7f63751e6042597bb44",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/kv-frontend/namespace/data",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:d7f63751e6042597bb44",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/kv-frontend/namespace/data",
+          "category": "auxiliary",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:34:53.767Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "2650c3bcb5d06ac37e22a8ad800661de732e549a8a631a0cff46f680cc953afe",
+          "body_bytes": 1597,
+          "data_type": "object",
+          "request_parameter_names": [
+            "appKey",
+            "nscode"
+          ],
+          "data_keys": [
+            "appVersionId",
+            "data",
+            "disableUseLocalCache",
+            "versionId"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "expected-data-fields",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:1849890a68029566ec1d",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/vip/ads/materials",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:1849890a68029566ec1d",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/vip/ads/materials",
+          "category": "auxiliary",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:34:55.124Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "28599ed238f5af5fc0b332dc490d269842e5a030ecf8919eb209cb28e4834683",
+          "body_bytes": 129,
+          "data_type": "object",
+          "request_parameter_names": [
+            "platform",
+            "position"
+          ],
+          "data_keys": [
+            "list",
+            "list_v2",
+            "vip_login_coupon"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "material-lists",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:a5d8734e8f5436a88709",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-frontend/risk/config",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:a5d8734e8f5436a88709",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-frontend/risk/config",
+          "category": "auxiliary",
+          "outcome": "json-without-numeric-business-code",
+          "started_at": "2026-11-15T09:34:56.419Z",
+          "http_status": 200,
+          "business_code": null,
+          "body_sha256": "0cc668b48cb955f5e555f23792dc1cf1440174ce68f0a01c90c047f043e21fa7",
+          "body_bytes": 175,
+          "data_type": "undefined",
+          "request_parameter_names": [],
+          "data_keys": [],
+          "checks": []
+        }
+      ],
+      "outcome": "json-without-numeric-business-code"
+    },
+    {
+      "id": "pc:1b34eaa0e0146bc57d97",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-show/page/header/v2",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:1b34eaa0e0146bc57d97",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-show/page/header/v2",
+          "category": "auxiliary",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:34:57.738Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "c4eb092ea9d619dd0991a8804eb62bb9d56383d4f0fe60f4b129604323cf182e",
+          "body_bytes": 614,
+          "data_type": "object",
+          "request_parameter_names": [
+            "category"
+          ],
+          "data_keys": [
+            "id",
+            "is_split_layer",
+            "litpic",
+            "name",
+            "pic",
+            "request_id",
+            "rid",
+            "split_layer",
+            "style",
+            "url"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "header-identity",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:9c502f84f6b368b81812",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-show/res/locs",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:9c502f84f6b368b81812",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-show/res/locs",
+          "category": "auxiliary",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:34:59.060Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "c3d341c2dabba54d1aafe0d2d339996ac78b9187dce9b5c24c7b604838233a87",
+          "body_bytes": 16623,
+          "data_type": "object",
+          "request_parameter_names": [
+            "ids",
+            "pf",
+            "w_rid",
+            "web_location",
+            "wts"
+          ],
+          "data_keys": [
+            "3449"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-location-keys",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:d2393f39db7a40b8194a",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-show/wbi/res/locs",
+      "category": "auxiliary",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:d2393f39db7a40b8194a",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-show/wbi/res/locs",
+          "category": "auxiliary",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:00.509Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "d579df4da569f364207667e8a5ea79d048160926337d36ab62aeb4fe6c875fca",
+          "body_bytes": 1159,
+          "data_type": "object",
+          "request_parameter_names": [
+            "ids",
+            "pf",
+            "w_rid",
+            "web_location",
+            "wts"
+          ],
+          "data_keys": [
+            "2836",
+            "2837",
+            "2870",
+            "2953",
+            "2954",
+            "2955",
+            "2956",
+            "5672"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-location-keys",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:2ecc5c8e1b2da0ed8452",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/reply/reply",
+      "category": "comment",
+      "aliases": [
+        "comment.replies"
+      ],
+      "attempts": [
+        {
+          "id": "pc:2ecc5c8e1b2da0ed8452",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/reply/reply",
+          "category": "comment",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:01.862Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "90fcce18702bdef06617f7d7d02fb53ba67cb2f7b6639d4c53c1166301c0a3fb",
+          "body_bytes": 54442,
+          "data_type": "object",
+          "request_parameter_names": [
+            "oid",
+            "pn",
+            "ps",
+            "root",
+            "type"
+          ],
+          "data_keys": [
+            "config",
+            "control",
+            "page",
+            "replies",
+            "root",
+            "upper"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-root",
+              "passed": true
+            },
+            {
+              "name": "requested-root-oid",
+              "passed": true
+            },
+            {
+              "name": "reply-list",
+              "passed": true
+            },
+            {
+              "name": "pagination",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:be84d32cf6a585c2b123",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/reply/subject/description",
+      "category": "comment",
+      "aliases": [
+        "comment.subject"
+      ],
+      "attempts": [
+        {
+          "id": "pc:be84d32cf6a585c2b123",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/reply/subject/description",
+          "category": "comment",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:03.281Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "625923dfe4ee35b291c7850b45d27297beeb7183f098f70f050df5aff9fa6f59",
+          "body_bytes": 905,
+          "data_type": "object",
+          "request_parameter_names": [
+            "oid",
+            "type"
+          ],
+          "data_keys": [
+            "base"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "subject-base",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:fcddf6fad020c19b244d",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/reply/wbi/main",
+      "category": "comment",
+      "aliases": [
+        "comment.main"
+      ],
+      "attempts": [
+        {
+          "id": "pc:fcddf6fad020c19b244d",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/reply/wbi/main",
+          "category": "comment",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:04.706Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "058501470d504f7303e2a4807f56527ca9e033ca80fc15616bf72a7709c383e1",
+          "body_bytes": 241983,
+          "data_type": "object",
+          "request_parameter_names": [
+            "mode",
+            "oid",
+            "pagination_str",
+            "plat",
+            "type",
+            "w_rid",
+            "web_location",
+            "wts"
+          ],
+          "data_keys": [
+            "assist",
+            "blacklist",
+            "callbacks",
+            "config",
+            "control",
+            "cursor",
+            "effects",
+            "note",
+            "replies",
+            "top",
+            "top_replies",
+            "upper",
+            "vote"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "ordinary-comments-or-explicit-empty",
+              "passed": true
+            },
+            {
+              "name": "cursor-object",
+              "passed": true
+            },
+            {
+              "name": "comment-list",
+              "passed": true
+            },
+            {
+              "name": "visible-comment-or-empty-thread",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:dbe37eb5ce4d2d1c27bf",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/dynamic/feed/dyn/banner",
+      "category": "dynamic",
+      "aliases": [
+        "dynamic.banner"
+      ],
+      "attempts": [
+        {
+          "id": "pc:dbe37eb5ce4d2d1c27bf",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/dynamic/feed/dyn/banner",
+          "category": "dynamic",
+          "outcome": "response-assertion-failed",
+          "started_at": "2026-11-15T09:35:06.327Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "d7b38ce2b6139c0e712bd22cf9e59e2315a991a8e6c5ce6b7e607ea9b2c3cd02",
+          "body_bytes": 43,
+          "data_type": "object",
+          "request_parameter_names": [],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "banner-list",
+              "passed": false
+            }
+          ]
+        }
+      ],
+      "outcome": "response-assertion-failed"
+    },
+    {
+      "id": "pc:66dd477928cb1b7863fd",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/hot",
+      "category": "dynamic",
+      "aliases": [
+        "dynamic.hot"
+      ],
+      "attempts": [
+        {
+          "id": "pc:66dd477928cb1b7863fd",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/hot",
+          "category": "dynamic",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:07.643Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "7f9c2dc385986805c159f70f9d1ee336690cc179217f2d4cf1c12490f6cd78d5",
+          "body_bytes": 20651,
+          "data_type": "object",
+          "request_parameter_names": [
+            "page"
+          ],
+          "data_keys": [
+            "has_more",
+            "items",
+            "offset",
+            "update_baseline",
+            "update_num"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "dynamic-items",
+              "passed": true
+            },
+            {
+              "name": "pagination-offset",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:83030332dd474b2e07dd",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/created/list",
+      "category": "favorite",
+      "aliases": [
+        "favorite.folders"
+      ],
+      "attempts": [
+        {
+          "id": "pc:83030332dd474b2e07dd",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v3/fav/folder/created/list",
+          "category": "favorite",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:09.069Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "dc66f811fc20687fc456d85a61b32f2cb762bdfac6b8523348c290df3c654380",
+          "body_bytes": 668,
+          "data_type": "object",
+          "request_parameter_names": [
+            "pn",
+            "ps",
+            "up_mid"
+          ],
+          "data_keys": [
+            "count",
+            "has_more",
+            "list"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "collection-count",
+              "passed": true
+            },
+            {
+              "name": "collection-list",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:3326d84d0acb3082291d",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/index/ogv/rcmd",
+      "category": "feed",
+      "aliases": [
+        "home.ogv"
+      ],
+      "attempts": [
+        {
+          "id": "pc:3326d84d0acb3082291d",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/index/ogv/rcmd",
+          "category": "feed",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:34.530Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "28852810af91b74f9fe261f939d7753a20f4d690e168b37cabd5148c50699e7a",
+          "body_bytes": 5429,
+          "data_type": "object",
+          "request_parameter_names": [
+            "brush",
+            "fresh_type",
+            "request_cnt",
+            "season_type"
+          ],
+          "data_keys": [
+            "items",
+            "user_feature"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "ogv-items",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:9bbd54b4da1de581ebc6",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/popular",
+      "category": "feed",
+      "aliases": [
+        "home.popular"
+      ],
+      "attempts": [
+        {
+          "id": "pc:9bbd54b4da1de581ebc6",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/popular",
+          "category": "feed",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:10.632Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "3b6fcb1804abb39d534c22776a8c8a191f25bca2db4a0e0df9fad7ba598ecd73",
+          "body_bytes": 34285,
+          "data_type": "object",
+          "request_parameter_names": [
+            "pn",
+            "ps",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "list",
+            "no_more"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "popular-list",
+              "passed": true
+            },
+            {
+              "name": "end-marker",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:8b989ad155c330091b65",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/index/top/feed/rcmd",
+      "category": "feed",
+      "aliases": [
+        "home.recommendations"
+      ],
+      "attempts": [
+        {
+          "id": "pc:8b989ad155c330091b65",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/index/top/feed/rcmd",
+          "category": "feed",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:12.077Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "d7facb9e820172c96b3a05a4fb7b3bca7a3e84a533a00ca4fc89c38b8989e835",
+          "body_bytes": 2990,
+          "data_type": "object",
+          "request_parameter_names": [
+            "ps",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "business_card",
+            "floor_info",
+            "item",
+            "mid",
+            "preload_expose_pct",
+            "preload_floor_expose_pct",
+            "user_feature"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "recommended-items",
+              "passed": true
+            },
+            {
+              "name": "recommended-video-identities",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:27d94a45ae0bb3525751",
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/general-interface/v1/content/get",
+      "category": "live",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:27d94a45ae0bb3525751",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/general-interface/v1/content/get",
+          "category": "live",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:13.619Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "999bc824ea7f92b06d00e3248334b1fd8f7f921f0c18b5057d945df0662e68ae",
+          "body_bytes": 210133,
+          "data_type": "object",
+          "request_parameter_names": [
+            "key"
+          ],
+          "data_keys": [
+            "content",
+            "md5"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "public-content-metadata",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:09e2f2bb8ad78549c251",
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/general-interface/v1/content/getRevenueMd5",
+      "category": "live",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:09e2f2bb8ad78549c251",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/general-interface/v1/content/getRevenueMd5",
+          "category": "live",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:15.265Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "320163515516156d52a490e477b0e4ef994137413d9e753ed85c143b339a8a10",
+          "body_bytes": 86,
+          "data_type": "object",
+          "request_parameter_names": [],
+          "data_keys": [
+            "wealth"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "wealth-metadata",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:ae8a7c352fb0d0f64a84",
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-interface/v1/webMain/getMoreRecList",
+      "category": "live",
+      "aliases": [
+        "live.recommendations"
+      ],
+      "attempts": [
+        {
+          "id": "pc:ae8a7c352fb0d0f64a84",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-interface/v1/webMain/getMoreRecList",
+          "category": "live",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:16.584Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "21b3874d6e57e4be05358bf517628d89dfa3727acad920fa1c867d723e23782a",
+          "body_bytes": 28453,
+          "data_type": "object",
+          "request_parameter_names": [
+            "platform"
+          ],
+          "data_keys": [
+            "recommend_room_list",
+            "top_room_id"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "room-recommendations",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:8f89b983118831b85963",
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom",
+      "category": "live",
+      "aliases": [
+        "live.roomInfo"
+      ],
+      "attempts": [
+        {
+          "id": "pc:8f89b983118831b85963",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom",
+          "category": "live",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:35.921Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "15ee00b4c9655e4fa9b6bfe3a41e262716234fb2eaad6a4119d5f5952502ecaf",
+          "body_bytes": 24708,
+          "data_type": "object",
+          "request_parameter_names": [
+            "room_id",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "ad_banner_info",
+            "anchor_info",
+            "anchor_team",
+            "area_mask_info",
+            "area_rank_info",
+            "area_rank_info_v2",
+            "battle_info",
+            "battle_rank_entry_info",
+            "big_card_info",
+            "block_info",
+            "charm_chat_rank",
+            "chat_room_info",
+            "cloud_game_info",
+            "cny",
+            "cny_26_activity",
+            "cny_26_info",
+            "cny_quiz_guide",
+            "collaboration_live_info",
+            "danmu_extra",
+            "dm_activity",
+            "dm_brush_info",
+            "dm_combo",
+            "dm_emoticon_info",
+            "dm_interaction_ab",
+            "dm_pin",
+            "dm_reply",
+            "dm_tag_info",
+            "dm_vote",
+            "fake_device",
+            "game_info",
+            "gift_memory_info",
+            "gift_menu",
+            "gift_star",
+            "guard_info",
+            "guard_intimacy_rank_status",
+            "guard_leader",
+            "hot_rank_entrance_info",
+            "hot_rank_info",
+            "hot_rank_info_v3",
+            "interactive_game_tag",
+            "like_info_v3",
+            "live_play_info",
+            "location",
+            "lol_info",
+            "module_control_infos",
+            "multi_voice",
+            "new_area_rank_info",
+            "new_switch_info",
+            "new_tab_info",
+            "news_info",
+            "online_gold_rank_info_v2",
+            "pk_info",
+            "pk_info_v2",
+            "play_together_info",
+            "play_together_voiceroom_dispatch",
+            "player_throttle_info",
+            "player_watermark",
+            "popular_rank_info",
+            "popularity",
+            "program_info",
+            "progress_for_widget",
+            "pure_room_info",
+            "rankdb_info",
+            "record_switch_info",
+            "reenter_room_info",
+            "revenue_demotion",
+            "revenue_material_md5",
+            "room_anonymous",
+            "room_config_info",
+            "room_info",
+            "room_rank_info",
+            "second_create_info",
+            "show_reserve_status",
+            "silent_room_info",
+            "skin_info",
+            "super_chat_info",
+            "switch_info",
+            "tab_info",
+            "tab_switches",
+            "topic_info",
+            "topic_room_info",
+            "transfer_flow_info",
+            "universal_interact_info",
+            "universal_interact_info_v2",
+            "video_connection_info",
+            "video_enhancement",
+            "voice_join_info",
+            "watch_off",
+            "watched_show",
+            "xtemplate_config"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-room",
+              "passed": true
+            },
+            {
+              "name": "room-live-status",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:ec71ff5132cd73ed23ba",
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getIpInfo",
+      "category": "live",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:ec71ff5132cd73ed23ba",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getIpInfo",
+          "category": "live",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:18.142Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "ae07b6dac78716238018046485a5279a5f70fa49f639ae6c63febf3f2cbb4b9b",
+          "body_bytes": 177,
+          "data_type": "object",
+          "request_parameter_names": [],
+          "data_keys": [
+            "addr",
+            "city",
+            "country",
+            "isp",
+            "latitude",
+            "longitude",
+            "province"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "location-field-types",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:ea3fb2a37bbc4552c01c",
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomBaseInfo",
+      "category": "live",
+      "aliases": [
+        "live.roomBaseInfo"
+      ],
+      "attempts": [
+        {
+          "id": "pc:ea3fb2a37bbc4552c01c",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomBaseInfo",
+          "category": "live",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:19.491Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "3fb985694a5e79d79ba639885d9c270ac3a5fec5e668371fbd1f85317e40fccf",
+          "body_bytes": 792,
+          "data_type": "object",
+          "request_parameter_names": [
+            "req_biz",
+            "room_ids"
+          ],
+          "data_keys": [
+            "by_room_ids",
+            "by_uids"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-room-key",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:c2c0c88b5ea472435903",
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v2/index/getRoomPlayInfo",
+      "category": "live",
+      "aliases": [
+        "live.roomPlayInfo"
+      ],
+      "attempts": [
+        {
+          "id": "pc:c2c0c88b5ea472435903",
+          "method": "GET",
+          "url": "https://api.live.bilibili.com/xlive/web-room/v2/index/getRoomPlayInfo",
+          "category": "live",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:20.835Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "8d20dce61c081ab4c5bb81f3b015d6f933b6cfa758aeeb1b41c74162cd35407e",
+          "body_bytes": 20192,
+          "data_type": "object",
+          "request_parameter_names": [
+            "codec",
+            "format",
+            "platform",
+            "protocol",
+            "ptype",
+            "qn",
+            "room_id",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "all_special_types",
+            "degraded_playurl",
+            "encrypted",
+            "hidden_till",
+            "is_hidden",
+            "is_locked",
+            "is_portrait",
+            "live_status",
+            "live_time",
+            "lock_till",
+            "multi_screen_info",
+            "official_room_id",
+            "official_type",
+            "playurl_info",
+            "pure_control_function",
+            "pwd_verified",
+            "relay_room_id",
+            "risk_with_delay",
+            "room_id",
+            "room_shield",
+            "short_id",
+            "subtitle_cfg",
+            "uid"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-room",
+              "passed": true
+            },
+            {
+              "name": "live-status",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:a6004c5ff101890aa9f9",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/activity_components/eva_operation/object",
+      "category": "other",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:a6004c5ff101890aa9f9",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/activity_components/eva_operation/object",
+          "category": "other",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:22.256Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "bf5605088f179cba3bc2dbb656150a1e779a1ea1bef4912cc2fbd242227fe546",
+          "body_bytes": 926,
+          "data_type": "object",
+          "request_parameter_names": [
+            "object_id"
+          ],
+          "data_keys": [
+            "author",
+            "child",
+            "ctime",
+            "id",
+            "mtime",
+            "object",
+            "object_id",
+            "object_type",
+            "order_id",
+            "properties",
+            "source_id",
+            "state"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-object",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:121a6039886c19d3d3ff",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/activity_components/exchange/list",
+      "category": "other",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:121a6039886c19d3d3ff",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/activity_components/exchange/list",
+          "category": "other",
+          "outcome": "business-error",
+          "started_at": "2026-11-15T09:35:24.549Z",
+          "http_status": 200,
+          "business_code": 202001,
+          "body_sha256": "7cbdeb9d46ff7790aca8808d6a8d2c5a421c599f72154bd69161de9eec19a775",
+          "body_bytes": 63,
+          "data_type": "null",
+          "request_parameter_names": [
+            "rewards_id",
+            "score_id"
+          ],
+          "data_keys": [],
+          "checks": []
+        }
+      ],
+      "outcome": "business-error"
+    },
+    {
+      "id": "pc:4a90c0c307623efb1ab4",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/activity_components/exchange/merry_go_round",
+      "category": "other",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:4a90c0c307623efb1ab4",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/activity_components/exchange/merry_go_round",
+          "category": "other",
+          "outcome": "business-error",
+          "started_at": "2026-11-15T09:35:25.847Z",
+          "http_status": 200,
+          "business_code": 202001,
+          "body_sha256": "7cbdeb9d46ff7790aca8808d6a8d2c5a421c599f72154bd69161de9eec19a775",
+          "body_bytes": 63,
+          "data_type": "null",
+          "request_parameter_names": [
+            "num",
+            "score_id"
+          ],
+          "data_keys": [],
+          "checks": []
+        }
+      ],
+      "outcome": "business-error"
+    },
+    {
+      "id": "pc:e1e1b86c213a51997908",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/component/contests",
+      "category": "other",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:e1e1b86c213a51997908",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/esports/component/contests",
+          "category": "other",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:27.146Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "5368dfb5de6c0c980ff3c3ae3dbf4e5add3a6592f04f88241f03743ca35eefea",
+          "body_bytes": 86,
+          "data_type": "object",
+          "request_parameter_names": [
+            "division",
+            "sid"
+          ],
+          "data_keys": [
+            "future",
+            "history",
+            "next",
+            "prev"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "contest-lists",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:79426d59857036f0fe7e",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/contest/series/detail",
+      "category": "other",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:79426d59857036f0fe7e",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/esports/contest/series/detail",
+          "category": "other",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:28.485Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "43494b46203162cc5da49783d5ecc2be97861272892166fe2a66dbce49de8112",
+          "body_bytes": 87,
+          "data_type": "object",
+          "request_parameter_names": [
+            "series_id"
+          ],
+          "data_keys": [
+            "series_id",
+            "series_title"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-series",
+              "passed": true
+            },
+            {
+              "name": "series-title",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:285de285cdb9d7ad896e",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/contest/team/detail",
+      "category": "other",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:285de285cdb9d7ad896e",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/esports/contest/team/detail",
+          "category": "other",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:29.822Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "d0dcbd24068095b0f3a54535c63801b400b6b0f628589418630af4105bbde063",
+          "body_bytes": 296,
+          "data_type": "object",
+          "request_parameter_names": [
+            "team_ids"
+          ],
+          "data_keys": [
+            "teams"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "teams",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:3dd6fe1a58eb68610afa",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/season/series/knockout_match",
+      "category": "other",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:3dd6fe1a58eb68610afa",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/esports/season/series/knockout_match",
+          "category": "other",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:31.089Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "ee6284d84ae211f71b73e799f45091cb4970c5ef043743f7b288fd77c49fcd45",
+          "body_bytes": 12922,
+          "data_type": "object",
+          "request_parameter_names": [
+            "series_id"
+          ],
+          "data_keys": [
+            "groups",
+            "refresh_time",
+            "season_id",
+            "series_id",
+            "tbd_team_ids",
+            "teams",
+            "template_type"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-series",
+              "passed": true
+            },
+            {
+              "name": "bracket-lists",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:820230c80832a83404df",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/stats/hero2/rank",
+      "category": "other",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:820230c80832a83404df",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/esports/stats/hero2/rank",
+          "category": "other",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:32.388Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "7c195261596712710fab2eb529ab9d939b08fd8d63b56a7ab8d6ddb5b0c5d8da",
+          "body_bytes": 769,
+          "data_type": "array",
+          "request_parameter_names": [
+            "season_id",
+            "top"
+          ],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "rank-list",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:19ce901884405e1d1259",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/note/is_forbid",
+      "category": "other",
+      "aliases": [
+        "note.availability"
+      ],
+      "attempts": [
+        {
+          "id": "pc:19ce901884405e1d1259",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/note/is_forbid",
+          "category": "other",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:34.152Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "4da0adda53a2a01e7fe55b2e7b0f6d22440805521a74770cd4abab2d2082fdf0",
+          "body_bytes": 71,
+          "data_type": "object",
+          "request_parameter_names": [
+            "aid"
+          ],
+          "data_keys": [
+            "forbid_note_entrance"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "note-entrance-flag",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:2ca9be40257ba09507f4",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/note/publish/list/archive",
+      "category": "other",
+      "aliases": [
+        "note.publicList"
+      ],
+      "attempts": [
+        {
+          "id": "pc:2ca9be40257ba09507f4",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/note/publish/list/archive",
+          "category": "other",
+          "outcome": "response-assertion-failed",
+          "started_at": "2026-11-15T09:35:35.458Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "b74a66a19d5429a14d46cebd7b094c8423b14572c2e01f486eb82a7345c10354",
+          "body_bytes": 146,
+          "data_type": "object",
+          "request_parameter_names": [
+            "oid",
+            "oid_type",
+            "pn",
+            "ps"
+          ],
+          "data_keys": [
+            "list",
+            "message",
+            "page",
+            "show_public_note"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "public-note-list",
+              "passed": true
+            },
+            {
+              "name": "note-page",
+              "passed": false
+            },
+            {
+              "name": "public-note-display",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "response-assertion-failed"
+    },
+    {
+      "id": "pc:b149ac296f3f332fb1d2",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/task/totalv2",
+      "category": "other",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:b149ac296f3f332fb1d2",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/task/totalv2",
+          "category": "other",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:36.776Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "250f4c57a3a084e06d588c5fff39e292da54c960ca71d4ed42ddc33c6e78cfe8",
+          "body_bytes": 871,
+          "data_type": "object",
+          "request_parameter_names": [
+            "need_all_invited_info",
+            "task_ids"
+          ],
+          "data_keys": [
+            "list",
+            "task_refresh_conf"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "task-list",
+              "passed": true
+            },
+            {
+              "name": "requested-task",
+              "passed": true
+            },
+            {
+              "name": "expected-data-fields",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:1bac17f8469823abe2db",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/relation",
+      "category": "other",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:1bac17f8469823abe2db",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/relation",
+          "category": "other",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:38.051Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "72ab73a354f7241e7f66aadb98f58b6c70cbac0612a43715a61f3b74acc88a3d",
+          "body_bytes": 212,
+          "data_type": "object",
+          "request_parameter_names": [
+            "mid"
+          ],
+          "data_keys": [
+            "be_relation",
+            "relation"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "relation-objects",
+              "passed": true
+            },
+            {
+              "name": "requested-relation-user",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:aa32304dabe863772e94",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/stats/player/kda/rank",
+      "category": "playback",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:aa32304dabe863772e94",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/esports/stats/player/kda/rank",
+          "category": "playback",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:39.337Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "f3525329a9728f372b1fb3ed912231a1a166ab693f622ef2758cb8bce9d649d8",
+          "body_bytes": 1081,
+          "data_type": "array",
+          "request_parameter_names": [
+            "season_id",
+            "top"
+          ],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "rank-list",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:4932816da71597b033a1",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/stats/player/mvp/rank",
+      "category": "playback",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:4932816da71597b033a1",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/esports/stats/player/mvp/rank",
+          "category": "playback",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:40.657Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "5a8196dbca9a1e6531ad0ab28644ac8c83902b3151eeb8cf4f2d43ee328c7a48",
+          "body_bytes": 692,
+          "data_type": "array",
+          "request_parameter_names": [
+            "season_id",
+            "top"
+          ],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "rank-list",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:ba2b617286da9736563a",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/online/total",
+      "category": "playback",
+      "aliases": [
+        "video.online"
+      ],
+      "attempts": [
+        {
+          "id": "pc:ba2b617286da9736563a",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/player/online/total",
+          "category": "playback",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:42.002Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "a9c835e3fd98314a7819d5c42642d676b5a691354a8fcfc81dc2395bede5984f",
+          "body_bytes": 140,
+          "data_type": "object",
+          "request_parameter_names": [
+            "aid",
+            "cid"
+          ],
+          "data_keys": [
+            "abtest",
+            "count",
+            "show_switch",
+            "total"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "online-counter",
+              "passed": true
+            },
+            {
+              "name": "display-switch",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:9818c96121b7506f455f",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/wbi/playurl",
+      "category": "playback",
+      "aliases": [
+        "playback.url"
+      ],
+      "attempts": [
+        {
+          "id": "pc:9818c96121b7506f455f",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/player/wbi/playurl",
+          "category": "playback",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:43.305Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "fd46b8fb8d72178d663a3c9a244ec094f845def5660208a7fec750ab51b84512",
+          "body_bytes": 61955,
+          "data_type": "object",
+          "request_parameter_names": [
+            "bvid",
+            "cid",
+            "fnval",
+            "qn",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "accept_description",
+            "accept_format",
+            "accept_quality",
+            "auto_qn_resp",
+            "cur_language",
+            "cur_production_type",
+            "dash",
+            "format",
+            "from",
+            "high_format",
+            "last_play_cid",
+            "last_play_time",
+            "message",
+            "play_conf",
+            "quality",
+            "result",
+            "seek_param",
+            "seek_type",
+            "support_formats",
+            "timelength",
+            "video_codecid",
+            "view_info"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "quality-number",
+              "passed": true
+            },
+            {
+              "name": "playback-resource-list",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:14f31d4bfe175de63a92",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/wbi/v2",
+      "category": "playback",
+      "aliases": [
+        "playback.info"
+      ],
+      "attempts": [
+        {
+          "id": "pc:14f31d4bfe175de63a92",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/player/wbi/v2",
+          "category": "playback",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:44.683Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "f8b0c706d3a8583a124fc06d5f4630fb139e0559977c8a927ef848adc8778f7b",
+          "body_bytes": 7286,
+          "data_type": "object",
+          "request_parameter_names": [
+            "aid",
+            "cid",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "aid",
+            "allow_bp",
+            "answer_status",
+            "arc_aigc",
+            "asr_language",
+            "bgm_info",
+            "block_time",
+            "bvid",
+            "cid",
+            "disable_show_up_info",
+            "elec_high_level",
+            "fawkes",
+            "guide_attention",
+            "has_next",
+            "ip_info",
+            "is_owner",
+            "is_ugc_pay_preview",
+            "is_upower_exclusive",
+            "is_upower_exclusive_with_qa",
+            "is_upower_play",
+            "jump_card",
+            "last_play_cid",
+            "last_play_time",
+            "level_info",
+            "login_mid",
+            "login_mid_hash",
+            "max_limit",
+            "name",
+            "need_login_subtitle",
+            "no_share",
+            "now_time",
+            "ocr_language",
+            "online_count",
+            "online_switch",
+            "operation_card",
+            "options",
+            "page_no",
+            "permission",
+            "preview_toast",
+            "role",
+            "script_pace_exp",
+            "self_visible",
+            "show_switch",
+            "subtitle",
+            "toast_block",
+            "view_points",
+            "vip"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-aid-cid",
+              "passed": true
+            },
+            {
+              "name": "subtitle-metadata",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:0ff609e92893c93138ed",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/dm/wbi/web/seg.so",
+      "category": "playback",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:0ff609e92893c93138ed",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/dm/wbi/web/seg.so",
+          "category": "playback",
+          "outcome": "protobuf-structure-passed",
+          "started_at": "2026-11-15T09:35:46.043Z",
+          "http_status": 200,
+          "business_code": null,
+          "body_sha256": "537f1213b77a3b54f690381c6ee2a741fb92e417f889a3966b8bea94d326e7c5",
+          "body_bytes": 1021758,
+          "data_type": "protobuf",
+          "wire": {
+            "bytes": 1021758,
+            "total_fields": 6142,
+            "fields": {
+              "1": {
+                "wire_types": [
+                  2
+                ],
+                "occurrences": 6140,
+                "lengths": [
+                  117,
+                  97,
+                  91
+                ]
+              },
+              "4": {
+                "wire_types": [
+                  2
+                ],
+                "occurrences": 1,
+                "lengths": [
+                  4
+                ]
+              },
+              "5": {
+                "wire_types": [
+                  2
+                ],
+                "occurrences": 1,
+                "lengths": [
+                  184
+                ]
+              }
+            }
+          },
+          "request_parameter_names": [
+            "oid",
+            "pid",
+            "segment_index",
+            "type",
+            "w_rid",
+            "wts"
+          ],
+          "checks": [
+            {
+              "name": "nonempty-protobuf",
+              "passed": true
+            },
+            {
+              "name": "known-root-field-present",
+              "passed": true
+            },
+            {
+              "name": "known-field-wire-types",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "protobuf-structure-passed"
+    },
+    {
+      "id": "pc:45d5804b68eb772d2fdf",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/dm/web/view",
+      "category": "playback",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:45d5804b68eb772d2fdf",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/dm/web/view",
+          "category": "playback",
+          "outcome": "protobuf-structure-passed",
+          "started_at": "2026-11-15T09:35:47.887Z",
+          "http_status": 200,
+          "business_code": null,
+          "body_sha256": "9f607843bb87ed768ed45576dfaccfe860ac5385c422c1e70fed789a9ac32209",
+          "body_bytes": 785,
+          "data_type": "protobuf",
+          "wire": {
+            "bytes": 785,
+            "total_fields": 6,
+            "fields": {
+              "4": {
+                "wire_types": [
+                  2
+                ],
+                "occurrences": 1,
+                "lengths": [
+                  6
+                ]
+              },
+              "5": {
+                "wire_types": [
+                  2
+                ],
+                "occurrences": 1,
+                "lengths": [
+                  57
+                ]
+              },
+              "8": {
+                "wire_types": [
+                  0
+                ],
+                "occurrences": 1,
+                "lengths": []
+              },
+              "10": {
+                "wire_types": [
+                  2
+                ],
+                "occurrences": 1,
+                "lengths": [
+                  73
+                ]
+              },
+              "12": {
+                "wire_types": [
+                  2
+                ],
+                "occurrences": 1,
+                "lengths": [
+                  236
+                ]
+              },
+              "20": {
+                "wire_types": [
+                  2
+                ],
+                "occurrences": 1,
+                "lengths": [
+                  397
+                ]
+              }
+            }
+          },
+          "request_parameter_names": [
+            "oid",
+            "pid",
+            "type",
+            "w_rid",
+            "wts"
+          ],
+          "checks": [
+            {
+              "name": "nonempty-protobuf",
+              "passed": true
+            },
+            {
+              "name": "known-root-field-present",
+              "passed": true
+            },
+            {
+              "name": "known-field-wire-types",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "protobuf-structure-passed"
+    },
+    {
+      "id": "pc:f7243482e8bda93dd3ad",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/subtitle/web/view",
+      "category": "playback",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:f7243482e8bda93dd3ad",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/v2/subtitle/web/view",
+          "category": "playback",
+          "outcome": "protobuf-structure-passed",
+          "started_at": "2026-11-15T09:35:49.209Z",
+          "http_status": 200,
+          "business_code": null,
+          "body_sha256": "5c041a84a677d909aee64c4dadb6cb9275ad3862dd869bd728c124cd3acd7ad9",
+          "body_bytes": 400,
+          "data_type": "protobuf",
+          "wire": {
+            "bytes": 400,
+            "total_fields": 1,
+            "fields": {
+              "1": {
+                "wire_types": [
+                  2
+                ],
+                "occurrences": 1,
+                "lengths": [
+                  397
+                ]
+              }
+            }
+          },
+          "request_parameter_names": [
+            "oid",
+            "pid",
+            "type",
+            "w_rid",
+            "wts"
+          ],
+          "checks": [
+            {
+              "name": "nonempty-protobuf",
+              "passed": true
+            },
+            {
+              "name": "known-root-field-present",
+              "passed": true
+            },
+            {
+              "name": "known-field-wire-types",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "protobuf-structure-passed"
+    },
+    {
+      "id": "pc:ffa6f579149e15efc508",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/broadcast/servers",
+      "category": "playback",
+      "aliases": [
+        "playback.broadcastServers"
+      ],
+      "attempts": [
+        {
+          "id": "pc:ffa6f579149e15efc508",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/broadcast/servers",
+          "category": "playback",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:50.542Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "afe3c2b977087110eedd0ceba9a7b7606e5cd0b0f29dd59203a4ccc124728288",
+          "body_bytes": 286,
+          "data_type": "object",
+          "request_parameter_names": [
+            "platform"
+          ],
+          "data_keys": [
+            "backoff",
+            "domain",
+            "heartbeat",
+            "heartbeat_max",
+            "nodes",
+            "tcp_port",
+            "ws_port",
+            "wss_port",
+            "wss_port_v2"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "broadcast-domain",
+              "passed": true
+            },
+            {
+              "name": "broadcast-nodes",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:24ce996da22547810158",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/relation/relations",
+      "category": "relation",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:24ce996da22547810158",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/relation/relations",
+          "category": "relation",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:51.827Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "b87f431c7af45d0a595f24d413dd6ab50b630d72dbd0e1fe3615572ad7a23f82",
+          "body_bytes": 149,
+          "data_type": "object",
+          "request_parameter_names": [
+            "fids"
+          ],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "relation-map",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:4ec84932bf4557905241",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/relation/stat",
+      "category": "relation",
+      "aliases": [
+        "user.relationStats"
+      ],
+      "attempts": [
+        {
+          "id": "pc:4ec84932bf4557905241",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/relation/stat",
+          "category": "relation",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:53.145Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "a33ae79db000811bf3a771ba648418c9c6d103468fa7752bb5f80a8a1afed5fa",
+          "body_bytes": 151,
+          "data_type": "object",
+          "request_parameter_names": [
+            "vmid"
+          ],
+          "data_keys": [
+            "black",
+            "fans_effect",
+            "fans_medal_toast",
+            "follower",
+            "following",
+            "mid",
+            "whisper"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-mid",
+              "passed": true
+            },
+            {
+              "name": "relation-counters",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:f7b2d8f2abfaf55e2ae3",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/suggest",
+      "category": "search",
+      "aliases": [
+        "search.suggest"
+      ],
+      "attempts": [
+        {
+          "id": "pc:f7b2d8f2abfaf55e2ae3",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/suggest",
+          "category": "search",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:54.462Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "024dd87d8756b5d7ca1e80047ad54c4ac96212505cd981940177df423acb1317",
+          "body_bytes": 1636,
+          "data_type": "object",
+          "request_parameter_names": [
+            "term"
+          ],
+          "data_keys": [
+            "code",
+            "exp_str",
+            "result",
+            "stoken",
+            "total_count"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "suggestion-list",
+              "passed": true
+            },
+            {
+              "name": "suggestion-entries",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:3f337ccb07527cf0ffcd",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/search/all/v2",
+      "category": "search",
+      "aliases": [
+        "search.all"
+      ],
+      "attempts": [
+        {
+          "id": "pc:3f337ccb07527cf0ffcd",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/all/v2",
+          "category": "search",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:55.830Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "9d2f903b74211648a0db1f7f2e263f7154765afe7d9e203af9efb5dd9efcf7c4",
+          "body_bytes": 46387,
+          "data_type": "object",
+          "request_parameter_names": [
+            "keyword",
+            "page",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "app_display_option",
+            "egg_hit",
+            "exp_list",
+            "in_black_key",
+            "in_white_key",
+            "is_hit_web_inf",
+            "is_search_page_grayed",
+            "next",
+            "numPages",
+            "numResults",
+            "page",
+            "pageinfo",
+            "pagesize",
+            "result",
+            "rqt_type",
+            "seid",
+            "show_column",
+            "show_module_list",
+            "suggest_keyword",
+            "top_tlist"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "search-results",
+              "passed": true
+            },
+            {
+              "name": "requested-page",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:d7f5632bf027a5365abe",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/search/default",
+      "category": "search",
+      "aliases": [
+        "search.default"
+      ],
+      "attempts": [
+        {
+          "id": "pc:d7f5632bf027a5365abe",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/default",
+          "category": "search",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:57.739Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "2a22531cc1bdb9fd91a3fdb7a2b1c6638cb509aeb22753ca5a756ca6d0a68587",
+          "body_bytes": 237,
+          "data_type": "object",
+          "request_parameter_names": [
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "goto_type",
+            "goto_value",
+            "id",
+            "name",
+            "seid",
+            "show_name",
+            "type",
+            "url"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "default-search-text",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:75299d8047cd11abefff",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+      "category": "search",
+      "aliases": [
+        "search.videos"
+      ],
+      "attempts": [
+        {
+          "id": "pc:75299d8047cd11abefff",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+          "category": "search",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:35:59.210Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "20c145fe38689044cd5c98faf1b461e0e15de29f66aa0d2bffc2ecc8d4fa3ff7",
+          "body_bytes": 29686,
+          "data_type": "object",
+          "request_parameter_names": [
+            "keyword",
+            "page",
+            "search_type",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "egg_hit",
+            "exp_list",
+            "in_black_key",
+            "in_white_key",
+            "is_hit_web_inf",
+            "next",
+            "numPages",
+            "numResults",
+            "page",
+            "pagesize",
+            "result",
+            "rqt_type",
+            "seid",
+            "show_column",
+            "suggest_keyword"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "search-results",
+              "passed": true
+            },
+            {
+              "name": "requested-page",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:32314e3af4892370f492",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/polymer/web-space/home/seasons_series",
+      "category": "user",
+      "aliases": [
+        "user.collections"
+      ],
+      "attempts": [
+        {
+          "id": "pc:32314e3af4892370f492",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/polymer/web-space/home/seasons_series",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:01.023Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "a47f5f9d6828e794883a51dd6aaf48e4496f516cdb418037c417a62fb1a3e654",
+          "body_bytes": 140,
+          "data_type": "object",
+          "request_parameter_names": [
+            "mid",
+            "page_num",
+            "page_size"
+          ],
+          "data_keys": [
+            "items_lists"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "collection-lists",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:79f7aa118257ffd78781",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/bangumi/follow/list",
+      "category": "user",
+      "aliases": [
+        "user.followedBangumi"
+      ],
+      "attempts": [
+        {
+          "id": "pc:79f7aa118257ffd78781",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/bangumi/follow/list",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:02.340Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "27dd3a4bc25b3de83e83b1ca7178bb0361bfc63a4dda2f93900e92c8554ccf94",
+          "body_bytes": 3914,
+          "data_type": "object",
+          "request_parameter_names": [
+            "type",
+            "vmid",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "list",
+            "pn",
+            "ps",
+            "total"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "follow-list",
+              "passed": true
+            },
+            {
+              "name": "follow-total",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:41723dabef14d6c75ba7",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/coin/video",
+      "category": "user",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:41723dabef14d6c75ba7",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/coin/video",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:03.652Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "c88d36cd210768d234aa65ff31767f8e1df751004e38b174db3dfad95ce8a1c8",
+          "body_bytes": 43,
+          "data_type": "array",
+          "request_parameter_names": [
+            "vmid"
+          ],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "public-video-list",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:3675dff431d6ccbfa3dd",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/lastplaygame/v2",
+      "category": "user",
+      "aliases": [
+        "user.games"
+      ],
+      "attempts": [
+        {
+          "id": "pc:3675dff431d6ccbfa3dd",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/lastplaygame/v2",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:05.096Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "5e6088f0813571b395f89651e5bb0de09a669d956c2d8dd6d5d51b5559c4badf",
+          "body_bytes": 804,
+          "data_type": "object",
+          "request_parameter_names": [
+            "mid",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "list",
+            "page_num",
+            "page_size",
+            "total_count"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "game-list",
+              "passed": true
+            },
+            {
+              "name": "game-total",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:c52f6608066c508c7dc8",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/like/video",
+      "category": "user",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:c52f6608066c508c7dc8",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/like/video",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:07.073Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "5b7e6122e66de2d6295d1b6165f12f8014c197909533e6593d86c151b3838827",
+          "body_bytes": 19728,
+          "data_type": "object",
+          "request_parameter_names": [
+            "vmid"
+          ],
+          "data_keys": [
+            "list"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "liked-video-list",
+              "passed": true
+            },
+            {
+              "name": "liked-card-identities",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:c30b01f2f25c77605071",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/masterpiece",
+      "category": "user",
+      "aliases": [
+        "user.masterpieces"
+      ],
+      "attempts": [
+        {
+          "id": "pc:c30b01f2f25c77605071",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/masterpiece",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:09.094Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "c88d36cd210768d234aa65ff31767f8e1df751004e38b174db3dfad95ce8a1c8",
+          "body_bytes": 43,
+          "data_type": "array",
+          "request_parameter_names": [
+            "vmid"
+          ],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "masterpiece-array",
+              "passed": true
+            },
+            {
+              "name": "masterpiece-identities",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:ff48ca8d6ffd36a2e45a",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/navnum",
+      "category": "user",
+      "aliases": [
+        "user.counters"
+      ],
+      "attempts": [
+        {
+          "id": "pc:ff48ca8d6ffd36a2e45a",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/navnum",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:10.663Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "cdeb069aa45e24ebea318e76e7ccda1c157f402051400f446b8c5802bbc12eb5",
+          "body_bytes": 229,
+          "data_type": "object",
+          "request_parameter_names": [
+            "mid"
+          ],
+          "data_keys": [
+            "album",
+            "article",
+            "audio",
+            "bangumi",
+            "channel",
+            "cinema",
+            "favourite",
+            "opus",
+            "playlist",
+            "pugv",
+            "season_num",
+            "tag",
+            "video"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "public-content-counters",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:bb28c5d6ecd0a326c3e9",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/notice",
+      "category": "user",
+      "aliases": [
+        "user.notice"
+      ],
+      "attempts": [
+        {
+          "id": "pc:bb28c5d6ecd0a326c3e9",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/notice",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:12.749Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "71b00b21f928a3ecfee7388a35fb62c2b3209ce62bff92efb54424d922c45e2e",
+          "body_bytes": 43,
+          "data_type": "string",
+          "request_parameter_names": [
+            "mid"
+          ],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "notice-text",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:2bd03a970991bc9e029d",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/reservation",
+      "category": "user",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:2bd03a970991bc9e029d",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/reservation",
+          "category": "user",
+          "outcome": "response-assertion-failed",
+          "started_at": "2026-11-15T09:36:14.368Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "28442a219ec34d6ed46f07920af9b47df6371d1968b12c2500771f24c133e741",
+          "body_bytes": 45,
+          "data_type": "null",
+          "request_parameter_names": [
+            "vmid",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "reservation-list-shape",
+              "passed": false
+            }
+          ]
+        }
+      ],
+      "outcome": "response-assertion-failed"
+    },
+    {
+      "id": "pc:155edf4e24c38d120761",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/setting",
+      "category": "user",
+      "aliases": [
+        "user.settings"
+      ],
+      "attempts": [
+        {
+          "id": "pc:155edf4e24c38d120761",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/setting",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:16.421Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "f60a017ce8042bcb3a4dd8e78212ab14d74bbb12f3c11f9e6ad7a56b63c36373",
+          "body_bytes": 920,
+          "data_type": "object",
+          "request_parameter_names": [
+            "mid"
+          ],
+          "data_keys": [
+            "index_order",
+            "privacy",
+            "show_nft_switch"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "privacy-settings",
+              "passed": true
+            },
+            {
+              "name": "index-order",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:f7b2ce7a859e12ca161c",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/upstat",
+      "category": "user",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:f7b2ce7a859e12ca161c",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/upstat",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:18.106Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "76f8b1745026be462cd23fc14aebb6f76e824d9ed7e3a6d7674b2ad8928e4886",
+          "body_bytes": 115,
+          "data_type": "object",
+          "request_parameter_names": [
+            "mid",
+            "web_location"
+          ],
+          "data_keys": [
+            "archive",
+            "article",
+            "likes"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "public-statistics",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:34f21f682c581e9d0dee",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/v2/myinfo",
+      "category": "user",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:34f21f682c581e9d0dee",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/v2/myinfo",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:19.617Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "0ea101e9c1ec9576e9eacb3ddf40ca69ccbf2e0c5047292f9ae7caa46f56aa0a",
+          "body_bytes": 2307,
+          "data_type": "object",
+          "request_parameter_names": [
+            "web_location"
+          ],
+          "data_keys": [
+            "coins",
+            "follower",
+            "following",
+            "level_exp",
+            "profile"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "own-profile-and-level",
+              "passed": true
+            },
+            {
+              "name": "expected-data-fields",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:c624942e5f08f10956e0",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/wbi/acc/info",
+      "category": "user",
+      "aliases": [
+        "user.info"
+      ],
+      "attempts": [
+        {
+          "id": "pc:c624942e5f08f10956e0",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/wbi/acc/info",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:37.489Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "2afd80768348a20fb0a91675fe75c189e4e719c9a986cd272663dad5dab9d454",
+          "body_bytes": 2623,
+          "data_type": "object",
+          "request_parameter_names": [
+            "mid",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "attestation",
+            "birthday",
+            "certificate_show",
+            "coins",
+            "contract",
+            "control",
+            "elec",
+            "face",
+            "face_nft",
+            "face_nft_type",
+            "fans_badge",
+            "fans_medal",
+            "gaia_data",
+            "gaia_res_type",
+            "is_followed",
+            "is_risk",
+            "is_senior_member",
+            "jointime",
+            "level",
+            "live_room",
+            "mcn_info",
+            "mid",
+            "moral",
+            "name",
+            "name_render",
+            "nameplate",
+            "official",
+            "pendant",
+            "profession",
+            "rank",
+            "school",
+            "series",
+            "sex",
+            "sign",
+            "silence",
+            "sys_notice",
+            "tags",
+            "theme",
+            "top_photo",
+            "top_photo_v2",
+            "user_honour_info",
+            "vip"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-mid",
+              "passed": true
+            },
+            {
+              "name": "public-profile",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:bc28bfec0a4092ee7518",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/wbi/acc/relation",
+      "category": "user",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:bc28bfec0a4092ee7518",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/wbi/acc/relation",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:21.276Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "3dbe0546ce6d1badb72498d4da7b0d619304962e217ebbbb6f83b45087562ae1",
+          "body_bytes": 73,
+          "data_type": "object",
+          "request_parameter_names": [
+            "mid",
+            "w_rid",
+            "web_location",
+            "wts"
+          ],
+          "data_keys": [
+            "be_relation",
+            "relation"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "relation-state",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:85ee24561c0230489a02",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/wbi/arc/search",
+      "category": "user",
+      "aliases": [
+        "user.uploads"
+      ],
+      "attempts": [
+        {
+          "id": "pc:85ee24561c0230489a02",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/wbi/arc/search",
+          "category": "user",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:38.881Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "d81fdab554deb45a5841cc5c9340e12e6fa4a63c65a15e314bca70fa45638a02",
+          "body_bytes": 2153,
+          "data_type": "object",
+          "request_parameter_names": [
+            "mid",
+            "order",
+            "pn",
+            "ps",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "episodic_button",
+            "gaia_data",
+            "gaia_res_type",
+            "is_risk",
+            "list",
+            "page"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "archive-list",
+              "passed": true
+            },
+            {
+              "name": "pagination",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:9370d433a07aefa4c43b",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/wbi/article",
+      "category": "user",
+      "aliases": [
+        "user.articles"
+      ],
+      "attempts": [
+        {
+          "id": "pc:9370d433a07aefa4c43b",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/wbi/article",
+          "category": "user",
+          "outcome": "response-assertion-failed",
+          "started_at": "2026-11-15T09:36:22.979Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "8e86934a42689e81a1cb955dc43f165066852a7aa2f2e68efb517877674120bb",
+          "body_bytes": 57,
+          "data_type": "object",
+          "request_parameter_names": [
+            "mid",
+            "pn",
+            "ps",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "pn",
+            "ps"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "article-list",
+              "passed": false
+            },
+            {
+              "name": "article-count",
+              "passed": false
+            }
+          ]
+        },
+        {
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/space/wbi/article",
+          "outcome": "field-case-passed",
+          "checked_at": "2026-11-15T09:38:25.191Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "ce91509d582953f6bec31a56b7582ee9c5af2244a06c85a740e6e27a659980b9",
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "article-list",
+              "passed": true
+            },
+            {
+              "name": "article-count",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:e076a80543fc7a1c252a",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/pagelist",
+      "category": "video",
+      "aliases": [
+        "video.pages"
+      ],
+      "attempts": [
+        {
+          "id": "pc:e076a80543fc7a1c252a",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/player/pagelist",
+          "category": "video",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:24.699Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "665e808f02e57e764bfbc4c319ae2933837e1383155afac83285029aa887fe17",
+          "body_bytes": 1212,
+          "data_type": "array",
+          "request_parameter_names": [
+            "bvid"
+          ],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "page-list",
+              "passed": true
+            },
+            {
+              "name": "page-identities",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:57f63b1332283ed36dbd",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/tag/archive/tags",
+      "category": "video",
+      "aliases": [
+        "video.tags"
+      ],
+      "attempts": [
+        {
+          "id": "pc:57f63b1332283ed36dbd",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/tag/archive/tags",
+          "category": "video",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:26.479Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "d7473d2bc1c7ad1e4d9eb86d430ffacf97cb0d46dea0f391190f53a1aa5a9b5c",
+          "body_bytes": 2793,
+          "data_type": "array",
+          "request_parameter_names": [
+            "bvid"
+          ],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "tag-array",
+              "passed": true
+            },
+            {
+              "name": "tag-field-shape",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:266315a6fec1126fb85a",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/archive/related",
+      "category": "video",
+      "aliases": [
+        "video.related"
+      ],
+      "attempts": [
+        {
+          "id": "pc:266315a6fec1126fb85a",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/archive/related",
+          "category": "video",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:28.935Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "4c469c6804542efca4d4d162ab4a68078e8f2548a88d559b156b235797a204c3",
+          "body_bytes": 64681,
+          "data_type": "array",
+          "request_parameter_names": [
+            "bvid"
+          ],
+          "data_keys": [],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "related-array",
+              "passed": true
+            },
+            {
+              "name": "related-card-shape",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:d49b952dc119c848d069",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/archive/stat",
+      "category": "video",
+      "aliases": [],
+      "attempts": [
+        {
+          "id": "pc:d49b952dc119c848d069",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/archive/stat",
+          "category": "video",
+          "outcome": "non-json-or-http-error",
+          "started_at": "2026-11-15T09:36:30.323Z",
+          "http_status": 404,
+          "business_code": null,
+          "body_sha256": "c4a47018729e2cfaf7b5dc82b0fcc5bfa1f7475d35f65aeadf918c5c4979e40f",
+          "body_bytes": 5671,
+          "data_type": "non-json",
+          "request_parameter_names": [
+            "bvid"
+          ]
+        }
+      ],
+      "outcome": "non-json-or-http-error"
+    },
+    {
+      "id": "pc:40ca00fc65f97d98abc1",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/view",
+      "category": "video",
+      "aliases": [
+        "video.detail"
+      ],
+      "attempts": [
+        {
+          "id": "pc:40ca00fc65f97d98abc1",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/view",
+          "category": "video",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:31.621Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "9616e6025e659833b1ca0529038900f7931b419bed8ed7408979f095df21dbaf",
+          "body_bytes": 155570,
+          "data_type": "object",
+          "request_parameter_names": [
+            "bvid"
+          ],
+          "data_keys": [
+            "aid",
+            "argue_info",
+            "bvid",
+            "cid",
+            "copyright",
+            "ctime",
+            "desc",
+            "desc_v2",
+            "dimension",
+            "disable_show_up_info",
+            "duration",
+            "dynamic",
+            "enable_vt",
+            "honor_reply",
+            "is_chargeable_season",
+            "is_hua_sheng",
+            "is_season_display",
+            "is_story",
+            "is_story_play",
+            "is_upower_exclusive",
+            "is_upower_exclusive_with_qa",
+            "is_upower_play",
+            "is_upower_preview",
+            "is_view_self",
+            "label",
+            "like_icon",
+            "need_jump_bv",
+            "no_cache",
+            "owner",
+            "pages",
+            "pic",
+            "premiere",
+            "pubdate",
+            "rights",
+            "season_id",
+            "stat",
+            "state",
+            "subtitle",
+            "teenage_mode",
+            "tid",
+            "tid_v2",
+            "title",
+            "tname",
+            "tname_v2",
+            "ugc_season",
+            "user_garb",
+            "videos",
+            "vt_display"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-bvid",
+              "passed": true
+            },
+            {
+              "name": "positive-aid-cid",
+              "passed": true
+            },
+            {
+              "name": "pages-array",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    },
+    {
+      "id": "pc:2c2f92743449324b75fa",
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/view/detail",
+      "category": "video",
+      "aliases": [
+        "video.detailBundle"
+      ],
+      "attempts": [
+        {
+          "id": "pc:2c2f92743449324b75fa",
+          "method": "GET",
+          "url": "https://api.bilibili.com/x/web-interface/wbi/view/detail",
+          "category": "video",
+          "outcome": "field-case-passed",
+          "started_at": "2026-11-15T09:36:32.984Z",
+          "http_status": 200,
+          "business_code": 0,
+          "body_sha256": "8324b535a2dab8b0c92aa899d967da1dfd95db8bf244e76e41567710c0a516e9",
+          "body_bytes": 223306,
+          "data_type": "object",
+          "request_parameter_names": [
+            "aid",
+            "w_rid",
+            "wts"
+          ],
+          "data_keys": [
+            "Card",
+            "Related",
+            "Reply",
+            "Spec",
+            "Tags",
+            "View",
+            "elec",
+            "emergency",
+            "guide",
+            "hot_share",
+            "is_hit_labour_day_activity",
+            "module_ctrl",
+            "participle",
+            "query_tags",
+            "replace_recommend",
+            "view_addit"
+          ],
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-aid",
+              "passed": true
+            },
+            {
+              "name": "related-array",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "field-case-passed"
+    }
+  ],
+  "additional": [
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/product/user/recommendation/follow-up/recent/whitelist/status",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "a95c8d1f61ed78b0460a208a202872c757bf1ec56e5de06a19ba72ac4031483a",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "in_whitelist",
+        "mid"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/history/continuation",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "28442a219ec34d6ed46f07920af9b47df6371d1968b12c2500771f24c133e741",
+      "data_type": "null",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-missing-input",
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [],
+      "missing_historical_parameter_names": [
+        "his_exp"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/dynamic/entrance",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "e5510f8ebccc4c593977dbed8751589b4daaa5ed3ff1ac53ee013308674616f0",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-missing-input",
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "dyn_basic_infos",
+        "entrance",
+        "update_info"
+      ],
+      "missing_historical_parameter_names": [
+        "alltype_offset",
+        "article_offset",
+        "video_offset"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/season/show",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "6e853d118d02c0b99c858a3e5a1d498ad5cc35485266320d7c82973a4a984d3f",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "show"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/fav/nav",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "3882fe9b253f8a26c15d494b69f9752133ad436129f9504b61fc6c0de1d0f478",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [
+        "mid",
+        "web_location"
+      ],
+      "data_keys": [
+        "arc",
+        "archive",
+        "movie",
+        "note",
+        "opus",
+        "playlist",
+        "pugv",
+        "topic",
+        "topic_list"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/resource/list",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "28442a219ec34d6ed46f07920af9b47df6371d1968b12c2500771f24c133e741",
+      "data_type": "null",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-missing-input",
+      "parameter_names": [
+        "pn",
+        "ps",
+        "keyword",
+        "order",
+        "type",
+        "platform",
+        "web_location"
+      ],
+      "data_keys": [],
+      "missing_historical_parameter_names": [
+        "media_id",
+        "tid"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/created/list-all",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "45f5747477a74bc8ee8980b005ac6dfc020c481c7f0f9142cd35fcabbcdb7abb",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [
+        "up_mid",
+        "web_location"
+      ],
+      "data_keys": [
+        "count",
+        "list",
+        "season"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/collected/list",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "85a48e5cd95c0c32eaff35493a55e4f3e762a8d4fb8bde6fbc3be4de955b6520",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [
+        "pn",
+        "ps",
+        "up_mid",
+        "platform",
+        "web_location"
+      ],
+      "data_keys": [
+        "count",
+        "has_more",
+        "list"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/open-interface/v1/fetch_client_resource",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "baf5c698bb7eff4c89f5d0762043af5d76e09d7e6f108f4cd1a99ba5f793213a",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [
+        "business",
+        "web_location"
+      ],
+      "data_keys": [
+        "kv_list"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-ucenter/user/get_user_info",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "8cecd2b43b4cc8205ad95b7bf5361139326152cff4338ce66b36481cd3430d47",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "achieve",
+        "billCoin",
+        "face",
+        "gold",
+        "identification",
+        "is_level_top",
+        "silver",
+        "svip",
+        "uid",
+        "uname",
+        "user_charged",
+        "user_intimacy",
+        "user_level",
+        "user_level_rank",
+        "user_next_intimacy",
+        "user_next_level",
+        "vip",
+        "wealth_info"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/nav/stat",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "8a656aa91d1a068ae9d4a338606e90b584129537d61c4064ec314aafc13d851d",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "dynamic_count",
+        "fans_effect",
+        "follower",
+        "following"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-interface/v1/index/getListV2",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "b21526c9836b3afb73f675b4f1be03b0f7f1b62dbf6c12c340f231046735aa3c",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [
+        "platform",
+        "page",
+        "web_location"
+      ],
+      "data_keys": [
+        "area_list",
+        "banners",
+        "big_tv_rec_switch",
+        "has_more",
+        "list",
+        "my_idols",
+        "recommend_room_list"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-ucenter/v1/room/GetHomePageConfig",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "fd942c2c67691125d5a962cc84433a69acae567a579d53f3b4570593dabf1d8b",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [
+        "room_id",
+        "web_location"
+      ],
+      "data_keys": [
+        "danmu_extra",
+        "dm_activity",
+        "dm_tag_info"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-interface/v1/index/getAreaMask",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "554640f3057262d673e9ef1d2b772332ac9b9f7a7830fd7086cc249612f2cba7",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-missing-input",
+      "parameter_names": [
+        "room_id",
+        "web_location"
+      ],
+      "data_keys": [
+        "area_masks"
+      ],
+      "missing_historical_parameter_names": [
+        "area_id",
+        "ruid"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-ucenter/v1/banned/GetShieldInfo",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "92bbf5bff16deecf7fd81336ae7a040c612d8370de7f839001c8415002057e9e",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [],
+      "data_keys": [
+        "keyword_list",
+        "shield_rules",
+        "shield_user_list"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getDanmuInfo",
+      "outcome": "risk-or-rate-response",
+      "http_status": 200,
+      "business_code": -352,
+      "body_sha256": "16f4584808bcd233bea877ac105153ffb85997ff7f1418006aa36f6c72ef2cbc",
+      "data_type": "undefined",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-missing-input",
+      "parameter_names": [
+        "type",
+        "web_location"
+      ],
+      "data_keys": [],
+      "missing_historical_parameter_names": [
+        "id",
+        "w_rid",
+        "wts"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/open-interface/v2/tracker/conf",
+      "outcome": "not-executed-risk-stop",
+      "prior_outcome": "not-executed-missing-input",
+      "missing_parameter_names": [
+        "protocol",
+        "roomid",
+        "stream",
+        "timeshift"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com//x/web-interface/search/default",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "fc09deb015d4f463e2c7bd282d57740c09130104a7f34296da38983e14c8e70b",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "parameter_names": [],
+      "data_keys": [
+        "goto_type",
+        "goto_value",
+        "id",
+        "name",
+        "seid",
+        "show_name",
+        "type",
+        "url"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/x/im/web/toast_msg",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "f02836c3cbff73cd009a320c0492eb050059aae262c6ffedf614d332f33de475",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "content",
+        "title",
+        "type"
+      ],
+      "missing_historical_parameter_names": [
+        "build",
+        "mobi_app",
+        "statistics"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/link_setting/v1/link_setting/get",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "6160b237add052edd13f2a2ce99fc0ca78b9f5d29bb2a9c3e12bd676c418ee55",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "ai_intercept",
+        "anti_harassment",
+        "followed_reply",
+        "is_group_fold",
+        "keys_reply",
+        "receive_unfollow_msg",
+        "recommend_followed_reply",
+        "recv_reply",
+        "set_at",
+        "set_comment",
+        "set_like",
+        "set_new_follow",
+        "set_recv_like",
+        "set_recv_reply",
+        "should_receive_group",
+        "voyage_reply"
+      ],
+      "missing_historical_parameter_names": [
+        "build",
+        "mobi_app",
+        "msg_notify",
+        "show_unfollowed_msg",
+        "statistics"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/link_setting/v1/link_setting/get_sys_setting",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "01f13f83dd1189afff6f3002955ea3ac569e2d1941955007cadae956c61ac2e3",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "auto_reply_html",
+        "auto_reply_msg_desc",
+        "discuss_unread_style_im_page",
+        "game_msg",
+        "huahuo_group_icon_dark_new",
+        "huahuo_group_icon_new",
+        "im_disabled_input_hint",
+        "is_archive_gray",
+        "is_auto_reply_available",
+        "is_auto_reply_recommend_available",
+        "is_create_group_available",
+        "is_discuss_style_im_page",
+        "is_new_up_assistant_effective",
+        "is_receive_unfollow_wl",
+        "is_voyage",
+        "migrate_session_api",
+        "old_up_assistant_door",
+        "session_cfg",
+        "vc_hint_detail",
+        "vc_hint_detail_button",
+        "vc_hint_title",
+        "vc_hint_title_button"
+      ],
+      "missing_historical_parameter_names": [
+        "build",
+        "mobi_app",
+        "statistics"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/session_svr/v1/session_svr/single_unread",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "7e9dd54ced8ccbc91e7c692c27e191b9d3b37d595d9bec8dfcc67424f009d930",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "biz_msg_follow_unread",
+        "biz_msg_unfollow_unread",
+        "custom_unread",
+        "dustbin_push_msg",
+        "dustbin_unread",
+        "follow_unread",
+        "unfollow_push_msg",
+        "unfollow_unread"
+      ],
+      "missing_historical_parameter_names": [
+        "build",
+        "mobi_app",
+        "show_dustbin",
+        "statistics",
+        "unread_type"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/x/im/web/msgfeed/unread",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "058f96b23206dbdaf49090d6f77d332a0d5a423d58af4641f8012025fc45a11b",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "at",
+        "coin",
+        "danmu",
+        "favorite",
+        "like",
+        "recv_like",
+        "recv_reply",
+        "reply",
+        "sys_msg",
+        "sys_msg_style",
+        "up"
+      ],
+      "missing_historical_parameter_names": [
+        "build",
+        "mobi_app",
+        "statistics"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/relation/blacks",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "43e0ddd0b77b052f5a087d56fc3783dcebe6c24a488ab964f29f57efca7f17af",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "list",
+        "re_version",
+        "total"
+      ],
+      "missing_historical_parameter_names": [
+        "cross_domain",
+        "statistics"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/session_svr/v1/session_svr/get_sessions",
+      "outcome": "business-error",
+      "http_status": 200,
+      "business_code": 2,
+      "body_sha256": "9404379e7058884616d3ba3d9baa268719d88cc5afcb5d589ab2dac8710e2fae",
+      "data_type": "null",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [],
+      "missing_historical_parameter_names": [
+        "build",
+        "group_fold",
+        "mobi_app",
+        "session_type",
+        "size",
+        "sort_rule",
+        "statistics",
+        "unfollow_fold",
+        "w_rid",
+        "wts"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/session_svr/v1/session_svr/my_group_unread",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "146d0ae0d25604ae06ab0715972fbb611a80faa57c5b47ec7ee60e45b7d11190",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [
+        "web_location"
+      ],
+      "data_keys": [
+        "unread_count"
+      ],
+      "missing_historical_parameter_names": [
+        "statistics"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/polymer/pc-electron/v1/user/cards",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "8568368daf14e3a8052a50e485977bffd9901d703f0828def36eb52ab7d5f00a",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [
+        "web_location",
+        "uids"
+      ],
+      "data_keys": [],
+      "missing_historical_parameter_names": [
+        "build",
+        "mobi_app",
+        "statistics",
+        "uids"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/link_setting/v1/link_setting/is_limit",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "7286d98e4b3d62c6fc2429862165c0a33d3a5dfe7f5e03bd183c8c499d4958b4",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [
+        "type",
+        "web_location",
+        "uid"
+      ],
+      "data_keys": [
+        "is_limit",
+        "report_limit"
+      ],
+      "missing_historical_parameter_names": [
+        "build",
+        "mobi_app",
+        "statistics",
+        "uid"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://message.bilibili.com/pages/nav/header_sync",
+      "outcome": "unconfirmed-response",
+      "http_status": 200,
+      "business_code": null,
+      "body_sha256": "25cd73e583bcdb29e7c3f9e82681cb3b19238a718408e6acb75ea35a7d9828d9",
+      "data_type": "undefined",
+      "semantic_fields_verified": false,
+      "parameter_names": [],
+      "data_keys": []
+    },
+    {
+      "method": "GET",
+      "url": "https://member.bilibili.com/x/vupre/web/archive/precheck",
+      "outcome": "business-error",
+      "http_status": 200,
+      "business_code": -400,
+      "body_sha256": "2e7181bb4c8606c1a613fa6550dec5b665e864404df094a582a095e6f07d95d9",
+      "data_type": "undefined",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [],
+      "data_keys": [],
+      "missing_historical_parameter_names": [
+        "check_item",
+        "content",
+        "t"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://member.bilibili.com/x/vupre/web/topic/type/v2",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "07c1ad094a2d9abe4679f9df8d633e01e12b02054c5c67593b5c3751af372a75",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [],
+      "data_keys": [
+        "maxpage",
+        "request_id",
+        "source_type",
+        "tags",
+        "topics"
+      ],
+      "missing_historical_parameter_names": [
+        "platform",
+        "pn",
+        "ps",
+        "t",
+        "title",
+        "track_id",
+        "type_id",
+        "type_pid",
+        "upload_id",
+        "zip_url"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://member.bilibili.com/x/vupre/web/tag/recommend",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "c0884c281e3610d2cc48eddbc16ddbfb4fbc54b50e6c870a69710d46bdb3468e",
+      "data_type": "array",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [],
+      "data_keys": [],
+      "missing_historical_parameter_names": [
+        "cover_url",
+        "description",
+        "filename",
+        "subtype_id",
+        "t",
+        "title",
+        "upload_id"
+      ]
+    },
+    {
+      "method": "GET",
+      "url": "https://member.bilibili.com/x/vupre/web/archive/aicover/taskquery",
+      "outcome": "direct-business-acknowledged",
+      "http_status": 200,
+      "business_code": 0,
+      "body_sha256": "e6304230b14c33387cd063a4846cc48f2e7fcaf4666bfcf6c02a30ed879a973a",
+      "data_type": "object",
+      "semantic_fields_verified": false,
+      "input_scope": "partial-input-probe; omitted historical parameter names are not assumed mandatory",
+      "prior_outcome": "not-executed-risk-stop",
+      "parameter_names": [],
+      "data_keys": [
+        "next_poll_ms",
+        "state",
+        "task_id"
+      ],
+      "missing_historical_parameter_names": [
+        "cid",
+        "filename",
+        "source",
+        "t"
+      ]
+    }
+  ],
+  "inventory": [
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/nav",
+      "category": "auth",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://passport.bilibili.com/x/passport-login/web/cookie/info",
+      "category": "auth",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/bapis/bilibili.api.ticket.v1.Ticket/GenWebTicket",
+      "category": "auxiliary",
+      "outcome": "observation-only-not-directly-replayed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/click-interface/click/now",
+      "category": "auxiliary",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/click-interface/click/web/h5",
+      "category": "auxiliary",
+      "outcome": "observation-only-not-directly-replayed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/click-interface/web/heartbeat",
+      "category": "auxiliary",
+      "outcome": "observation-only-not-directly-replayed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/frontend/finger/spi",
+      "category": "auxiliary",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/gaia-vgate/v2/register",
+      "category": "auxiliary",
+      "outcome": "observation-only-not-directly-replayed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/internal/gaia-gateway/ExClimbCongLing",
+      "category": "auxiliary",
+      "outcome": "observation-only-not-directly-replayed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/internal/gaia-gateway/ExClimbWuzhi",
+      "category": "auxiliary",
+      "outcome": "observation-only-not-directly-replayed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/internal/gaia-gateway/ExGetAxe",
+      "category": "auxiliary",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/kv-frontend/namespace/data",
+      "category": "auxiliary",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/vip/ads/materials",
+      "category": "auxiliary",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-frontend/risk/config",
+      "category": "auxiliary",
+      "outcome": "json-without-numeric-business-code",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-show/page/header/v2",
+      "category": "auxiliary",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-show/res/locs",
+      "category": "auxiliary",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-show/wbi/res/locs",
+      "category": "auxiliary",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/reply/reply",
+      "category": "comment",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/reply/subject/description",
+      "category": "comment",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/reply/wbi/main",
+      "category": "comment",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/dynamic/feed/dyn/banner",
+      "category": "dynamic",
+      "outcome": "response-assertion-failed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/hot",
+      "category": "dynamic",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/created/list",
+      "category": "favorite",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/index/ogv/rcmd",
+      "category": "feed",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/popular",
+      "category": "feed",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/index/top/feed/rcmd",
+      "category": "feed",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/general-interface/v1/content/get",
+      "category": "live",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/general-interface/v1/content/getRevenueMd5",
+      "category": "live",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-interface/v1/webMain/getMoreRecList",
+      "category": "live",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom",
+      "category": "live",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getIpInfo",
+      "category": "live",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomBaseInfo",
+      "category": "live",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v2/index/getRoomPlayInfo",
+      "category": "live",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/activity_components/eva_operation/object",
+      "category": "other",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/activity_components/exchange/list",
+      "category": "other",
+      "outcome": "business-error",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/activity_components/exchange/merry_go_round",
+      "category": "other",
+      "outcome": "business-error",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/component/contests",
+      "category": "other",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/contest/series/detail",
+      "category": "other",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/contest/team/detail",
+      "category": "other",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/season/series/knockout_match",
+      "category": "other",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/stats/hero2/rank",
+      "category": "other",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/note/is_forbid",
+      "category": "other",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/note/publish/list/archive",
+      "category": "other",
+      "outcome": "response-assertion-failed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/task/totalv2",
+      "category": "other",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/relation",
+      "category": "other",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/stats/player/kda/rank",
+      "category": "playback",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/esports/stats/player/mvp/rank",
+      "category": "playback",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/online/total",
+      "category": "playback",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/wbi/playurl",
+      "category": "playback",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/wbi/v2",
+      "category": "playback",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/dm/wbi/web/seg.so",
+      "category": "playback",
+      "outcome": "protobuf-structure-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/dm/web/view",
+      "category": "playback",
+      "outcome": "protobuf-structure-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/subtitle/web/view",
+      "category": "playback",
+      "outcome": "protobuf-structure-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/broadcast/servers",
+      "category": "playback",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/relation/relations",
+      "category": "relation",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/relation/stat",
+      "category": "relation",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/suggest",
+      "category": "search",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/search/all/v2",
+      "category": "search",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/search/default",
+      "category": "search",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+      "category": "search",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/polymer/web-space/home/seasons_series",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/bangumi/follow/list",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/coin/video",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/lastplaygame/v2",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/like/video",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/masterpiece",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/navnum",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/notice",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/reservation",
+      "category": "user",
+      "outcome": "response-assertion-failed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/setting",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/upstat",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/v2/myinfo",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/wbi/acc/info",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/wbi/acc/relation",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/wbi/arc/search",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/wbi/article",
+      "category": "user",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/pagelist",
+      "category": "video",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/tag/archive/tags",
+      "category": "video",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/archive/related",
+      "category": "video",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/archive/stat",
+      "category": "video",
+      "outcome": "non-json-or-http-error",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/view",
+      "category": "video",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/view/detail",
+      "category": "video",
+      "outcome": "field-case-passed",
+      "evidence": "baseline"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/product/user/recommendation/follow-up/recent/whitelist/status",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/history/continuation",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/dynamic/entrance",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/season/show",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/fav/nav",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/resource/list",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/created/list-all",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/collected/list",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/open-interface/v1/fetch_client_resource",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-ucenter/user/get_user_info",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/nav/stat",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-interface/v1/index/getListV2",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-ucenter/v1/room/GetHomePageConfig",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-interface/v1/index/getAreaMask",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-ucenter/v1/banned/GetShieldInfo",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getDanmuInfo",
+      "category": "additional",
+      "outcome": "risk-or-rate-response",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/open-interface/v2/tracker/conf",
+      "category": "additional",
+      "outcome": "not-executed-risk-stop",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com//x/web-interface/search/default",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/x/im/web/toast_msg",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/link_setting/v1/link_setting/get",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/link_setting/v1/link_setting/get_sys_setting",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/session_svr/v1/session_svr/single_unread",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/x/im/web/msgfeed/unread",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/relation/blacks",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/session_svr/v1/session_svr/get_sessions",
+      "category": "additional",
+      "outcome": "business-error",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/session_svr/v1/session_svr/my_group_unread",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/polymer/pc-electron/v1/user/cards",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.vc.bilibili.com/link_setting/v1/link_setting/is_limit",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://message.bilibili.com/pages/nav/header_sync",
+      "category": "additional",
+      "outcome": "unconfirmed-response",
+      "evidence": "additional"
+    },
+    {
+      "method": "POST",
+      "url": "https://member.bilibili.com/upload/file",
+      "category": "additional",
+      "outcome": "observation-only-not-directly-replayed",
+      "evidence": "prior-browser-observation"
+    },
+    {
+      "method": "GET",
+      "url": "https://member.bilibili.com/x/vupre/web/archive/precheck",
+      "category": "additional",
+      "outcome": "business-error",
+      "evidence": "additional"
+    },
+    {
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vupre/web/archive/types/predict",
+      "category": "additional",
+      "outcome": "observation-only-not-directly-replayed",
+      "evidence": "prior-browser-observation"
+    },
+    {
+      "method": "GET",
+      "url": "https://member.bilibili.com/x/vupre/web/topic/type/v2",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "GET",
+      "url": "https://member.bilibili.com/x/vupre/web/tag/recommend",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "POST",
+      "url": "https://member.bilibili.com/upload/multipart/new",
+      "category": "upload",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-direct-upload-validation.json"
+    },
+    {
+      "method": "GET",
+      "url": "https://member.bilibili.com/x/vupre/web/archive/aicover/taskquery",
+      "category": "additional",
+      "outcome": "direct-business-acknowledged",
+      "evidence": "additional"
+    },
+    {
+      "method": "POST",
+      "url": "https://member.bilibili.com/upload/multipart/part",
+      "category": "upload",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-direct-upload-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vupre/web/archive/videocheck",
+      "category": "additional",
+      "outcome": "observation-only-not-directly-replayed",
+      "evidence": "prior-browser-observation"
+    },
+    {
+      "method": "POST",
+      "url": "https://member.bilibili.com/upload/multipart/complete",
+      "category": "upload",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-direct-upload-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vu/web/add/v3",
+      "category": "upload",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-direct-upload-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/v2/dm/exposure",
+      "category": "additional",
+      "outcome": "observation-only-not-directly-replayed",
+      "evidence": "prior-browser-observation"
+    },
+    {
+      "method": "PUT",
+      "url": "https://jscs-luffy-upcdntx.bilivideo.com/[signed-upload]",
+      "category": "upload",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-direct-upload-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://member.bilibili.com/x/vu/web/cover/up",
+      "category": "upload",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-direct-upload-validation.json"
+    },
+    {
+      "method": "GET",
+      "url": "https://member.bilibili.com/x/vupre/web/archive/view",
+      "category": "upload",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-direct-upload-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/add",
+      "category": "controlled-write",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-full-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/edit",
+      "category": "controlled-write",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-full-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/del",
+      "category": "controlled-write",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-full-validation.json"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/info",
+      "category": "controlled-write",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-full-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/v3/fav/resource/deal",
+      "category": "controlled-write",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-full-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/v2/reply/add",
+      "category": "controlled-write",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-full-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/v2/reply/del",
+      "category": "controlled-write",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-full-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/web-interface/archive/like",
+      "category": "controlled-write",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-full-validation.json"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/archive/relation",
+      "category": "controlled-write",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-full-validation.json"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/history/cursor",
+      "category": "controlled-write",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-full-validation.json"
+    },
+    {
+      "method": "POST",
+      "url": "https://api.bilibili.com/x/v2/history/delete",
+      "category": "controlled-write",
+      "outcome": "prior-direct-workflow-evidence",
+      "evidence": "pc-full-validation.json"
+    }
+  ],
+  "limits": [
+    "固定目录 76 个 GET 均有本轮直接 Node HTTP 请求；空样本与失败保留。",
+    "公开专栏样本字段通过，自有空账号样本的失败同时保留，不能归因于登录或传输变化。",
+    "新增 GET 的 code=0 仅表示直接业务应答；没有领域字段断言时不升级成字段用例通过。",
+    "新增请求中历史缺少参数的条目进行了部分输入探测；返回0只算应答，不代表完整参数/功能已验证。直播弹幕配置返回-352后，另一直播跟踪请求停止；6个辅助POST及部分页面POST仍未直接重放。",
+    "已有评论/收藏等写入用例使用凭据化 fetch 直接请求 API；独立 Node 上传证据另存，均不以 UI 点击充当接口验证。",
+    "私信发送缺少第二个受控账号；笔记、预约及特殊权限需要对应样本或角色。",
+    "573 条静态候选未逐条盲测；全部已发现目录不等于全站所有接口。"
+  ]
+}

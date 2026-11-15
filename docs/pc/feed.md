@@ -1,6 +1,6 @@
 # 推荐与热门
 
-[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [先前浏览器矩阵](full-validation.md) · [最新直接 HTTP](web-validation.md)
 
 本模块有 3 个读取别名，2 个通过匿名快照相关匿名 HTTP 字段用例。
 
@@ -31,6 +31,7 @@ const client = new BiliWebClient();
 - 请求：`GET https://api.bilibili.com/x/web-interface/popular`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -83,6 +84,7 @@ node bin/bili-web.mjs show home.popular
 - 请求：`GET https://api.bilibili.com/x/web-interface/index/ogv/rcmd`
 - 匿名快照：⚠️ 请求失败
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:09:22.254Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -144,6 +146,7 @@ node bin/bili-web.mjs show home.ogv
 - 请求：`GET https://api.bilibili.com/x/web-interface/wbi/index/top/feed/rcmd`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 

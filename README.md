@@ -1,10 +1,12 @@
 # Bilibili APIs
 
-Bilibili PC 网页数据读取与接口研究项目。面向需要读取公开视频、搜索、评论、空间与直播信息的开发者，提供按功能组织的接口说明、Node.js 只读客户端及验证记录。
+Bilibili 网页数据读取与接口研究项目。面向需要读取公开视频、搜索、评论、空间与直播信息的开发者，提供按功能组织的接口说明、Node.js 只读客户端及验证记录。
 
-当前封装 **39 个 PC 只读别名**；匿名快照 **33 个地址**通过相关匿名 HTTP 字段用例。网页观察目录共 82 组方法与 URL，包含这些读取地址；不能将所有观察都算作可调用接口。
+当前封装 **39 个 网页 只读别名**；匿名快照 **33 个地址**通过相关匿名 HTTP 字段用例。网页观察目录共 82 组方法与 URL，包含这些读取地址；不能将所有观察都算作可调用接口。
 
 登录态固定目录覆盖 **82 组方法/URL**：65 组字段通过，3 组仅 Protobuf 结构通过，其余状态单列。[按功能查看全量矩阵](docs/pc/full-validation.md) · [受控写操作及清理](docs/pc/write-validation.md) · [直接 HTTP 上传](docs/pc/direct-upload.md)
+
+最新直接 HTTP：固定目录 82 组，66 组字段通过、3 组仅二进制结构通过；全部已发现方法/地址共 137 组，未执行项单列。[网页接口逐项验证与缺口](docs/pc/web-validation.md)
 
 ## 功能特性
 
@@ -72,9 +74,9 @@ node examples/pc-read.mjs
 
 ```text
 bin/                  命令行入口：bili-web 与 Android 目录查询
-src/web-client.mjs    PC 匿名 GET 客户端及读取别名
+src/web-client.mjs    网页 匿名 GET 客户端及读取别名
 src/pc-cases.mjs      字段断言
-examples/             可执行的 PC 读取示例
+examples/             可执行的 网页 读取示例
 docs/pc/              功能文档、使用场景及验证结果
 catalog/              脱敏目录、静态候选与 Android 元数据
 evidence/             来源哈希与脱敏验证记录
@@ -84,7 +86,7 @@ tests/                离线测试
 
 ## Android 研究资料
 
-[官方 Android 静态目录与 Play 对比](docs/official-android/README.md) · [历史 Play 目录与旧 CLI](docs/android-archive.md)。这些是独立静态证据，不自动作为网页可用性验证，也不导入 PC 客户端。
+[官方 Android 静态目录与 Play 对比](docs/official-android/README.md) · [历史 Play 目录与旧 CLI](docs/android-archive.md)。这些是独立静态证据，不自动作为网页可用性验证，也不导入 网页 客户端。
 
 ## 验证与维护
 

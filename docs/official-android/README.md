@@ -1,6 +1,6 @@
 # 官方 Android 静态接口目录
 
-面向研究官方 Android 安装包的读者，独立保存 9.19.0 的声明、参数模型及位置证据。PC 网页接口仍为[仓库主入口](../../README.md)；App 声明不会自动加入网页客户端。
+面向研究官方 Android 安装包的读者，独立保存 9.19.0 的声明、参数模型及位置证据。网页接口仍为[仓库主入口](../../README.md)；App 声明不会自动加入网页客户端。
 
 安装包来自[哔哩哔哩官方下载页](https://app.bilibili.com/)的 Android 64 位链接；包名 `tv.danmaku.bili`，versionCode `9190400`，minSdk 24、targetSdk 35。URL 中 latest 会变化，本基线以哈希固定。
 
@@ -18,7 +18,7 @@ APK SHA-256：`c3ea50c7773267f252e441b5c1aebf7574492223b2bb1568d7a7093d1f8eb59c`
 - 26,669 个 APK 成员完成哈希/CRC 检查；94 个 ELF 库解析；8 个嵌套 ZIP 的 309 个子成员未发现 DEX/JVM/ZIP/ELF 载荷。
 - 44 个动态 URL 声明、50 个直接调用点，5 个调用点恢复常量 URL（4 个去重 URL），45 个调用点未解析；computed 资源请求 219 条，不能补造成固定地址。
 - 不透明 Lynx bundle、严格 JSON 解析失败的资源、native 间接调用与未解析重定位、动态下载代码仍有覆盖缺口；原始覆盖记录保留全部限制。
-- 线上验证全部为 not-tested。Play 的运行时或静态语义核对不自动沿用到此 APK；PC 验证也不作为 App 验证。
+- 线上验证全部为 not-tested。Play 的运行时或静态语义核对不自动沿用到此 APK；网页 验证也不作为 App 验证。
 
 ## 按功能查找
 

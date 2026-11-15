@@ -1,6 +1,6 @@
 # 直播
 
-[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [先前浏览器矩阵](full-validation.md) · [最新直接 HTTP](web-validation.md)
 
 本模块有 4 个读取别名，3 个通过匿名快照相关匿名 HTTP 字段用例。
 
@@ -8,9 +8,9 @@
 
 | 接口 | 用途 | 匿名快照状态 |
 | --- | --- | --- |
-| [直播间播放信息](#live-roomPlayInfo) | 读取 PC 直播间状态及播放元数据，不监听直播弹幕。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [直播间播放信息](#live-roomPlayInfo) | 读取 网页 直播间状态及播放元数据，不监听直播弹幕。 | ✅ 匿名快照 HTTP 字段用例通过 |
 | [直播间基础信息](#live-roomBaseInfo) | 读取指定直播间的基础信息映射。 | ✅ 匿名快照 HTTP 字段用例通过 |
-| [直播推荐](#live-recommendations) | 读取 PC 直播推荐房间列表。 | ✅ 匿名快照 HTTP 字段用例通过 |
+| [直播推荐](#live-recommendations) | 读取 网页 直播推荐房间列表。 | ✅ 匿名快照 HTTP 字段用例通过 |
 | [直播间综合信息](#live-roomInfo) | 读取直播间综合信息；匿名快照返回 -352。 | ⚠️ 风控或限速 |
 
 ## JavaScript 初始化
@@ -26,12 +26,13 @@ const client = new BiliWebClient();
 
 ## 直播间播放信息
 
-读取 PC 直播间状态及播放元数据，不监听直播弹幕。
+读取 网页 直播间状态及播放元数据，不监听直播弹幕。
 
 - 客户端别名：`live.roomPlayInfo`
 - 请求：`GET https://api.live.bilibili.com/xlive/web-room/v2/index/getRoomPlayInfo`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -94,6 +95,7 @@ node bin/bili-web.mjs show live.roomPlayInfo
 - 请求：`GET https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomBaseInfo`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -144,12 +146,13 @@ node bin/bili-web.mjs show live.roomBaseInfo
 
 ## 直播推荐
 
-读取 PC 直播推荐房间列表。
+读取 网页 直播推荐房间列表。
 
 - 客户端别名：`live.recommendations`
 - 请求：`GET https://api.live.bilibili.com/xlive/web-interface/v1/webMain/getMoreRecList`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -200,6 +203,7 @@ node bin/bili-web.mjs show live.recommendations
 - 请求：`GET https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom`
 - 匿名快照：⚠️ 风控或限速
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 

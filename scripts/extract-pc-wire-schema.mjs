@@ -3,10 +3,10 @@ import crypto from 'node:crypto';
 import {parse} from '@babel/parser';
 const args=process.argv.slice(2),options={};for(let i=0;i<args.length;i+=2){if(!['--capture','--output'].includes(args[i])||!args[i+1])throw Error('Use --capture FILE --output FILE');options[args[i].slice(2)]=args[i+1];}if(!options.capture||!options.output)throw Error('Capture and output are required');
 const names=new Set(['DmWebViewReply','DmSegConfig','DmSegMobileReply','DanmakuElem','DmColorful','SubtitleViewReply']);
-const out={schema_version:1,scope:'Focused protobuf field metadata parsed from a served official PC player script; not an Android route import.',sources:[],messages:[]};
+const out={schema_version:1,scope:'Focused protobuf field metadata parsed from a served official web player script; not an Android route import.',sources:[],messages:[]};
 const capture=JSON.parse(fs.readFileSync(options.capture,'utf8').replace(/^\uFEFF/,''));
 const asset=capture.assets.find(a=>a.url.includes('/player/main/core.')&&fs.readFileSync(a.local_file,'utf8').includes('DmWebViewReply'));
-if(!asset)throw Error('No primary PC protobuf schema source');
+if(!asset)throw Error('No primary web protobuf schema source');
 const bytes=fs.readFileSync(asset.local_file);if(bytes.length>6*1024*1024||crypto.createHash('sha256').update(bytes).digest('hex')!==asset.sha256)throw Error('Source provenance or size mismatch');
 const text=bytes.toString('utf8'),ast=parse(text,{sourceType:'unambiguous',allowReturnOutsideFunction:true}),stack=[ast],seen=new Set();
 function walk(node,prefix=[]){

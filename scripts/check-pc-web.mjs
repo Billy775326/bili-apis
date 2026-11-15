@@ -7,7 +7,7 @@ const args=process.argv.slice(2);if(args[0]!=='--run')throw Error('Use --run --o
 const options={};for(let i=1;i<args.length;i+=2){if(!['--output','--video-case','--bvid','--only'].includes(args[i])||!args[i+1])throw Error('Invalid option');options[args[i].slice(2)]=args[i+1];}
 if(!options.output||Boolean(options['video-case'])===Boolean(options.bvid))throw Error('Output and exactly one of --video-case or --bvid are required');
 const output=path.resolve(options.output);if(!output.startsWith(path.resolve('.local')+path.sep))throw Error('Raw results must stay under .local');fs.mkdirSync(output,{recursive:true});
-const sample=options.bvid?{bvid:options.bvid,source:'explicit public video test input'}:JSON.parse(fs.readFileSync(options['video-case'],'utf8'));if(!/^BV[A-Za-z0-9]{10}$/.test(sample.bvid))throw Error('Expected public bvid from observed PC page');
+const sample=options.bvid?{bvid:options.bvid,source:'explicit public video test input'}:JSON.parse(fs.readFileSync(options['video-case'],'utf8'));if(!/^BV[A-Za-z0-9]{10}$/.test(sample.bvid))throw Error('Expected public bvid from observed web page');
 const observations=[],cases=[],blockedCategories=new Set();let context={bvid:sample.bvid},root=null;
 const client=new BiliWebClient({onObservation:o=>{
  const spec=WEB_READ_ENDPOINTS[o.endpoint];const file=path.join(output,sha256(o.body)+'.json');fs.writeFileSync(file,o.body);let summary;try{summary=summarizePcJson(JSON.parse(o.body));}catch{summary={business_code:null,data_type:'non-json'};}
@@ -25,7 +25,7 @@ const queue=[
  ['video.detailBundle',()=>context.aid?{aid:context.aid}:null],['user.uploads',{mid:'[REDACTED_INPUT]',pn:1,ps:25,order:'pubdate'}],['user.info',{mid:'[REDACTED_INPUT]'}],
  ['comment.main',()=>context.comments?.cursor?.is_end!==true&&context.comments?.cursor?.pagination_reply?.next_offset&&context.comments?.replies?.length?{oid:context.aid,pagination_str:JSON.stringify({offset:context.comments.cursor.pagination_reply.next_offset})}:null]
 ];
-if(options.only&&!Object.hasOwn(WEB_READ_ENDPOINTS,options.only))throw Error('Unknown selected PC alias');
+if(options.only&&!Object.hasOwn(WEB_READ_ENDPOINTS,options.only))throw Error('Unknown selected web alias');
 let globalStop=false;
 for(const [name,build]of queue){
  if(options.only&&name!==options.only)continue;

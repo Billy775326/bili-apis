@@ -1,6 +1,6 @@
 # 用户与空间
 
-[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md)
+[功能导航](README.md) · [使用场景](usage.md) · [匿名快照](current.md) · [先前浏览器矩阵](full-validation.md) · [最新直接 HTTP](web-validation.md)
 
 本模块有 10 个读取别名，8 个通过匿名快照相关匿名 HTTP 字段用例。
 
@@ -38,6 +38,7 @@ const client = new BiliWebClient();
 - 请求：`GET https://api.bilibili.com/x/space/wbi/acc/info`
 - 匿名快照：⏭ 匿名快照跳过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -93,6 +94,7 @@ node bin/bili-web.mjs show user.info
 - 请求：`GET https://api.bilibili.com/x/space/wbi/arc/search`
 - 匿名快照：⚠️ 风控或限速
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -151,6 +153,7 @@ node bin/bili-web.mjs show user.uploads
 - 请求：`GET https://api.bilibili.com/x/polymer/web-space/home/seasons_series`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -204,6 +207,7 @@ node bin/bili-web.mjs show user.collections
 - 请求：`GET https://api.bilibili.com/x/space/navnum`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -254,6 +258,7 @@ node bin/bili-web.mjs show user.counters
 - 请求：`GET https://api.bilibili.com/x/space/notice`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -304,6 +309,7 @@ node bin/bili-web.mjs show user.notice
 - 请求：`GET https://api.bilibili.com/x/space/masterpiece`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 
@@ -355,6 +361,7 @@ node bin/bili-web.mjs show user.masterpieces
 - 请求：`GET https://api.bilibili.com/x/space/bangumi/follow/list`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -407,6 +414,7 @@ node bin/bili-web.mjs show user.followedBangumi
 - 请求：`GET https://api.bilibili.com/x/space/lastplaygame/v2`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -458,6 +466,7 @@ node bin/bili-web.mjs show user.games
 - 请求：`GET https://api.bilibili.com/x/space/wbi/article`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：response-assertion-failed；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：客户端自动取得公开 nav 数据并添加签名参数。
 
@@ -511,6 +520,7 @@ node bin/bili-web.mjs show user.articles
 - 请求：`GET https://api.bilibili.com/x/space/setting`
 - 匿名快照：✅ 匿名快照 HTTP 字段用例通过
 - 登录态浏览器：字段用例通过；[完整矩阵](full-validation.md)
+- 最新 Node HTTP：field-case-passed；[网页逐项结果](web-validation.md)
 - 样本检查时间：`2026-11-15T04:07:52.474Z`（UTC，采集机时钟）
 - WBI：此别名未启用 WBI 自动签名。
 

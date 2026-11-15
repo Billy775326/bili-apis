@@ -1,10 +1,10 @@
-# PC 接口文档
+# 网页 接口文档
 
 按视频、搜索、评论、用户、收藏、动态、推荐和直播等功能组织。先在分类中选择接口，再看参数、调用示例和返回字段；匿名快照是否通过在每项旁单独标明。
 
 当前封装 39 个只读别名，匿名快照 33 个地址通过相关匿名 HTTP 字段用例。
 
-[使用场景与完整示例](usage.md) · [环境与客户端](client.md) · [匿名快照](current.md) · [登录态全量矩阵](full-validation.md) · [受控写操作](write-validation.md) · [直接 HTTP 上传](direct-upload.md) · [验证历史](validation.md)
+[使用场景与完整示例](usage.md) · [环境与客户端](client.md) · [匿名快照](current.md) · [先前浏览器矩阵](full-validation.md) · [最新直接 HTTP](web-validation.md) · [受控写操作](write-validation.md) · [直接 HTTP 上传](direct-upload.md) · [验证历史](validation.md)
 
 ## 功能分类
 
