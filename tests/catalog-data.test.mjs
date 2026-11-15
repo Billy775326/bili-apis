@@ -10,12 +10,12 @@ test("committed catalogs retain unique IDs and pinned artifact provenance", () =
   assert.equal(new Set(ids).size, ids.length);
   const input = readJson(path.join(root, "evidence/inputs.json"));
   for (const file of ["http", "grpc", "messages"]) {
-    const c = readJson(path.join(root, "catalog", file + ".json"));
+    const c = readJson(path.join(root, "catalog/android/com.bilibili.app.in/play/6.8.0", file + ".json"));
     assert.equal(c.artifact.sha256, input.artifact.sha256);
   }
   const expected = input.dex_files.map((d) => [d.name, d.sha256]).sort();
   for (const file of ["http", "grpc"]) {
-    const c = readJson(path.join(root, "catalog", file + ".json"));
+    const c = readJson(path.join(root, "catalog/android/com.bilibili.app.in/play/6.8.0", file + ".json"));
     assert.deepEqual(
       c.dex_files.map((d) => [d.name, d.sha256]).sort(),
       expected,
@@ -23,7 +23,7 @@ test("committed catalogs retain unique IDs and pinned artifact provenance", () =
   }
 });
 test("all message field numbers match independent generated constants", () => {
-  const report = readJson(path.join(root, "catalog/messages.json"));
+  const report = readJson(path.join(root, "catalog/android/com.bilibili.app.in/play/6.8.0/messages.json"));
   for (const m of report.messages) {
     assert.ok(m.wire_layout, m.descriptor);
     assert.equal(m.field_number_cross_check, "matched", m.descriptor);

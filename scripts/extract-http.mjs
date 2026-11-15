@@ -244,7 +244,7 @@ if (
   process.argv[1] &&
   import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
 ) {
-  const [input, provenancePath, outputDirectory = "catalog"] =
+  const [input, provenancePath, outputDirectory = "catalog/android/com.bilibili.app.in/play/6.8.0"] =
     process.argv.slice(2);
   if (!input || !provenancePath)
     throw Error(

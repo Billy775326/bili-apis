@@ -2,8 +2,8 @@
   "schema_version": 1,
   "classification": "Ordered path/domain/declaration-class name heuristics; business meaning is inferred, not runtime verified.",
   "source_json_stringify_sha256": {
-    "catalog/http.json": "afce01995febda085ac86cf649b9d2cab2f1a43c85af27b86e8108107dc54590",
-    "catalog/grpc.json": "9b6c49f7c322338850b93a3b99cb678840b91cd18f0d2dff5b50db5d85b8e229",
+    "catalog/android/com.bilibili.app.in/play/6.8.0/http.json": "afce01995febda085ac86cf649b9d2cab2f1a43c85af27b86e8108107dc54590",
+    "catalog/android/com.bilibili.app.in/play/6.8.0/grpc.json": "9b6c49f7c322338850b93a3b99cb678840b91cd18f0d2dff5b50db5d85b8e229",
     "evidence/live-checks.json": "79f5be263d1c404251430c5d5e85b9510df7470efebbf3cb42363fae5d4b7047"
   },
   "categories": [

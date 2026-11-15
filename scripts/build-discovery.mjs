@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import { readJson } from "../src/catalog.mjs";
-const read = (name) => readJson(path.join("catalog", name + ".json")),
+const read = (name) => readJson(path.join("catalog/android/com.bilibili.app.in/play/6.8.0", name + ".json")),
   dex = read("dex-routes"),
   dc = read("coverage-dex-routes"),
   resource = read("resource-routes"),
@@ -15,7 +15,7 @@ const cell = (x) =>
     .replaceAll("\r", " ")
     .replaceAll("\n", " ");
 const write = (name, lines) =>
-  fs.writeFileSync(path.join("docs", name), lines.join("\n").trimEnd() + "\n");
+  fs.writeFileSync(path.join("docs/android/com.bilibili.app.in/play/6.8.0", name), lines.join("\n").trimEnd() + "\n");
 const resolved = dex.dynamic_url_callers.filter((c) => c.route),
   staticResources = resource.declarations.filter(
     (d) => typeof d.path === "string" && !d.computed,
@@ -38,7 +38,7 @@ const summary = {
   schema_version: 1,
   artifact: dex.artifact,
   sources: files.map((name) => ({
-    file: "catalog/" + name + ".json",
+    file: "catalog/android/com.bilibili.app.in/play/6.8.0/" + name + ".json",
     json_stringify_sha256: crypto
       .createHash("sha256")
       .update(JSON.stringify(read(name)))
@@ -94,7 +94,7 @@ const summary = {
   ],
 };
 fs.writeFileSync(
-  "catalog/discovery-summary.json",
+  "catalog/android/com.bilibili.app.in/play/6.8.0/discovery-summary.json",
   JSON.stringify(summary, null, 2) + "\n",
 );
 write("discovery.md", [
@@ -121,7 +121,7 @@ write("discovery.md", [
   "",
   "## 可复核材料",
   "",
-  "[DEX 调用与路径](../catalog/dex-routes.json) · [资源请求](../catalog/resource-routes.json) · [gRPC 审计](../catalog/grpc-audit.json) · [广播路径](../catalog/grpc-additional.json) · [native/JNI](../catalog/native.json) · [汇总及来源哈希](../catalog/discovery-summary.json)。",
+  "[DEX 调用与路径](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/dex-routes.json) · [资源请求](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/resource-routes.json) · [gRPC 审计](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/grpc-audit.json) · [广播路径](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/grpc-additional.json) · [native/JNI](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/native.json) · [汇总及来源哈希](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/discovery-summary.json)。",
   "",
   "## 尚未覆盖",
   "",
@@ -142,13 +142,13 @@ write("resource-routes.md", [
 write("native.md", [
   "# Native 与 JNI 边界",
   "",
-  `共检查 ${native.parsed_libraries} 个 ELF64 little-endian AArch64 库。JNI 表布局和导出名称不是 HTTP/gRPC 接口。全部候选与来源见 [native.json](../catalog/native.json)，未解析重定位及覆盖状态见 [coverage-native.json](../catalog/coverage-native.json)。`,
+  `共检查 ${native.parsed_libraries} 个 ELF64 little-endian AArch64 库。JNI 表布局和导出名称不是 HTTP/gRPC 接口。全部候选与来源见 [native.json](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/native.json)，未解析重定位及覆盖状态见 [coverage-native.json](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/coverage-native.json)。`,
   "",
   "## 解析范围",
   "",
   "读取节、装载段、符号、RELA、Android APS2 和标准/Android RELR，恢复可静态解释的指针。JNI 候选要求名称与签名指针位于可读静态数据中，函数指针落在可执行装载段；与 Java native 声明只按名称/签名列候选，不推断运行时注册和类绑定。",
   "",
-  "LibBili 的 Map 签名封装先构造 TreeMap 再调用 native s/so；此处没有恢复签名算法或请求密钥。[局部核对](../evidence/round2-implementation.json)。",
+  "LibBili 的 Map 签名封装先构造 TreeMap 再调用 native s/so；此处没有恢复签名算法或请求密钥。[局部核对](../../../../../evidence/round2-implementation.json)。",
   "",
   "## 格式参考",
   "",
@@ -158,10 +158,10 @@ write("native.md", [
 console.log(JSON.stringify(summary));
 
 const coverageText = fs
-  .readFileSync("docs/coverage.md", "utf8")
+  .readFileSync("docs/android/com.bilibili.app.in/play/6.8.0/coverage.md", "utf8")
   .replace(/\n<!-- discovery:start -->[\s\S]*<!-- discovery:end -->\n?/, "");
 fs.writeFileSync(
-  "docs/coverage.md",
+  "docs/android/com.bilibili.app.in/play/6.8.0/coverage.md",
   coverageText.trimEnd() +
     "\n\n<!-- discovery:start -->\n## ?????\n\n?????????????? URL ??????????gRPC ??????? native/JNI ?????? [?????](discovery.md)???????????????????????????\n<!-- discovery:end -->\n",
 );

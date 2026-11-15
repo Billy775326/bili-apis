@@ -1,0 +1,42 @@
+# 实现核对与证据
+
+<!-- android-edition:start -->
+包名：`com.bilibili.app.in` · 渠道：Google Play · 版本：6.8.0（9180200）。
+
+[全部版本](../../../README.md) · [本包文档](README.md) · [网页接口](../../../../pc/README.md) · [基线元数据](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/edition.json)。
+
+本页归属上述 APK 基线；静态声明、候选与已记录的少量 HTTP 抽查分别标注，不代表网页或 App 已全量验证。
+<!-- android-edition:end -->
+
+## 视频详情 gRPC 描述符
+
+REA/JADX 对原包 `classes7.dex` 的未修改副本反编译 `com.bapis.bilibili.app.viewunite.v1.E2.getViewMethod()`，确认服务/方法为 `/bilibili.app.viewunite.v1.View/View`，类型为 UNARY；返回泛型及独立 marshaller 赋值分别对应 `ViewReq` 和 `ViewReply`。
+
+这是已核对的静态构造关系，未做线上调用验证。其他路由保留类型候选，不将单个方法核对泛化为全部 604 个方法均已验证。
+
+## 公共 HTTP 参数与签名边界
+
+REA/JADX 对 `classes18.dex` 的未修改副本反编译 `qC0.a`：
+
+- `addCommonParam(Map)` 的默认路径写入 `platform=android`、`mobi_app`、`appkey`、`build`、`channel`、`c_locale`、`s_locale`，并合并其他参数。账号存在时可补充 access key，其键由另一常量提供，本次未推断该常量值。
+- 配置的 `netPublicParamFactory` 可以替代默认公共参数路径，不能将上述字段当作所有请求必填参数。
+- `intercept` 先添加请求头；GET 补充 URL 公共参数，POST 尝试补充请求体，失败时回到 URL 参数路径。
+- `signQuery(Map)` 委托 `LibBili.h(Map)`。此处只定位签名调用边界，没有恢复 native 签名算法，也没有导入账号或重放认证请求。
+
+## 原始来源与派生副本
+
+[核对摘要](../../../../../evidence/implementation-review.json) 保留父 Evidence ID、方法签名、反编译文本哈希和结论。完整反编译文本仅保存在本机忽略目录，不随仓库发布。
+
+[View 副本来源](../../../../../evidence/focused-artifact.json) 和 [拦截器副本来源](../../../../../evidence/auth-focused-artifact.json) 记录原 APK 哈希、原 DEX 哈希、成员映射及副本哈希。这些副本移除了其他 DEX/资源，属于未签名的分析片段；不能当作可安装原包或完整调用图。
+
+[完整包超时记录](../../../../../evidence/full-apk-timeout.json) 记录 REA 的 120 秒加载限制。原始 APK 和分包均未被修改。
+
+## 第二轮实现核对
+
+[第二轮摘要](../../../../../evidence/round2-implementation.json) 对局部原始 DEX 字节进行 REA/JADX 核对：
+
+- DEX `okhttp3.z$a.l(String)`（JADX 名称 `okhttp3.z.a`）拒绝空 URL，转换 `ws/wss` scheme，然后调用 URL 解析器并赋给请求 URL 字段。只有该方法的关联调用提升为 `verified-url-setter`；仍不推断 HTTP 动词或实际发送。
+- 同类 `i(String)` 只委托请求头容器操作，没有提升为 URL 设置器。
+- `LibBili.h(Map)` 先复制为 `TreeMap`，再调用 native `s(SortedMap)`；含整型选项的 `i(Map,int,int)` 委托 native `so(SortedMap,int,int)`。静态初始化向库加载封装传入 `bili`。
+
+这只定位了排序封装与 JNI 签名边界，没有恢复 native 签名算法。所用副本的原始 DEX 映射及哈希分别记录在 [网络封装副本](../../../../../evidence/network-focused-artifact.json) 和 [native Java 副本](../../../../../evidence/native-java-focused-artifact.json)。

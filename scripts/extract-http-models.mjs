@@ -11,8 +11,8 @@ import {
 const [
   input,
   provenanceFile,
-  httpFile = "catalog/http.json",
-  output = "catalog",
+  httpFile = "catalog/android/com.bilibili.app.in/play/6.8.0/http.json",
+  output = "catalog/android/com.bilibili.app.in/play/6.8.0",
 ] = process.argv.slice(2);
 if (!input || !provenanceFile)
   throw Error(

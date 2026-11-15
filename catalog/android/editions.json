@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "editions": [
+    {
+      "edition": "play",
+      "channel": "Google Play",
+      "package_name": "com.bilibili.app.in",
+      "version_name": "6.8.0",
+      "version_code": 9180200,
+      "artifact_sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+      "catalog_directory": "catalog/android/com.bilibili.app.in/play/6.8.0",
+      "docs_directory": "docs/android/com.bilibili.app.in/play/6.8.0",
+      "manifest_evidence": "evidence/play-manifest.json",
+      "extraction_inputs": "evidence/inputs.json",
+      "encoding": "json",
+      "scope": "APK static extraction; not a web or App runtime availability claim",
+      "counts": {
+        "http": 2325,
+        "grpc": 604,
+        "artifact": 409,
+        "message": 4216,
+        "http-model": 4792,
+        "dynamic-url": 20,
+        "dex-route": 1392,
+        "resource-route": 290,
+        "broadcast": 4,
+        "native-url": 14,
+        "native-jni": 1062,
+        "java-native": 4977,
+        "associated-message": 17
+      }
+    },
+    {
+      "edition": "official",
+      "channel": "Official Android 64-bit",
+      "package_name": "tv.danmaku.bili",
+      "version_name": "9.19.0",
+      "version_code": 9190400,
+      "artifact_sha256": "c3ea50c7773267f252e441b5c1aebf7574492223b2bb1568d7a7093d1f8eb59c",
+      "catalog_directory": "catalog/android/tv.danmaku.bili/official/9.19.0",
+      "docs_directory": "docs/android/tv.danmaku.bili/official/9.19.0",
+      "manifest_evidence": "evidence/official-android/manifest.json",
+      "extraction_inputs": "evidence/official-android/inputs.json",
+      "encoding": "json.gz",
+      "scope": "APK static extraction; not a web or App runtime availability claim",
+      "counts": {
+        "http": 2514,
+        "grpc": 625,
+        "artifact": 412,
+        "message": 4501,
+        "http-model": 5300,
+        "dynamic-url": 50,
+        "dex-route": 1736,
+        "resource-route": 292,
+        "broadcast": 4,
+        "native-url": 14,
+        "native-jni": 930,
+        "java-native": 4974,
+        "associated-message": 17
+      }
+    }
+  ]
+}

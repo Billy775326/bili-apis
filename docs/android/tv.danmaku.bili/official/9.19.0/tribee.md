@@ -1,0 +1,120 @@
+# 兴趣社区
+
+<!-- android-edition:start -->
+包名：`tv.danmaku.bili` · 渠道：Official Android 64-bit · 版本：9.19.0（9190400）。
+
+[全部版本](../../../README.md) · [本包文档](README.md) · [网页接口](../../../../pc/README.md) · [基线元数据](../../../../../catalog/android/tv.danmaku.bili/official/9.19.0/edition.json)。
+
+本页归属上述 APK 基线；静态声明、候选与已记录的少量 HTTP 抽查分别标注，不代表网页或 App 已全量验证。
+<!-- android-edition:end -->
+
+Tribee 社区、群组和社区管理。分类根据路由、域名与声明类名称推断，未验证业务行为。
+
+官方 Android 9.19.0：0 条 HTTP 声明、86 条 gRPC 路由；全部为静态证据，线上状态为 not-tested。
+
+[返回分类](README.md) · [与 Play 对比](comparison.md)
+
+## HTTP
+
+参数为注解位置和名称；不代表默认值、必填性或完整请求体。BaseUrl 拼接只是候选，完整证据通过 CLI 查询。
+
+| ID | 方法 | 路径或 URL 候选 | 参数位置与名称 | Java 返回类型 |
+| --- | --- | --- | --- | --- |
+
+## gRPC
+
+请求/响应类型默认根据描述符构造顺序推断。单项 REA 复核不推广到其他路由，也不证明连接或认证可用。
+
+| 路由 | 请求类型候选 | 响应类型候选 |
+| --- | --- | --- |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AcceptTribeeStaffRecruitOffer | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AcceptTribeeStaffRecruitOfferReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AcceptTribeeStaffRecruitOfferRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AddTribeeDraft | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeDraftReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeDraftRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AddTribeeQuizLabel | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeQuizLabelReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeQuizLabelRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AddTribeeQuizQuestion | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeQuizQuestionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeQuizQuestionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AddTribeeStaffRecruitQuestion | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeStaffRecruitQuestionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AddTribeeStaffRecruitQuestionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminAddTribeeAdmin | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminAddTribeeAdminReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminAddTribeeAdminRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminCancelTribeeTopThread | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminCancelTribeeTopThreadReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminCancelTribeeTopThreadRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminCreateTribeeCategory | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminCreateTribeeCategoryReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminCreateTribeeCategoryRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminDeleteTribeeAdmin | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminDeleteTribeeAdminReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminDeleteTribeeAdminRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminDeleteTribeeCategory | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminDeleteTribeeCategoryReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminDeleteTribeeCategoryRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminListTribeeAudits | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminListTribeeAuditsReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminListTribeeAuditsRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminReviewTribeeAudit | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminReviewTribeeAuditReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminReviewTribeeAuditRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminSetTribeeTopThread | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSetTribeeTopThreadReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSetTribeeTopThreadRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminSortTribeeCategories | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSortTribeeCategoriesReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSortTribeeCategoriesRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminSortTribeeTopThreads | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSortTribeeTopThreadsReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminSortTribeeTopThreadsRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminUpdateTribeeAdmin | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeAdminReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeAdminRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminUpdateTribeeCategory | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeCategoryReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeCategoryRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AdminUpdateTribeeInfo | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeInfoReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AdminUpdateTribeeInfoRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ApproveTribeeCreatorCandidates | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ApproveTribeeCreatorCandidatesReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ApproveTribeeCreatorCandidatesRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AuditTribeeQuizActivity | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AuditTribeeQuizActivityReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AuditTribeeQuizActivityRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AuditTribeeStaffRecruitApply | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AuditTribeeStaffRecruitApplyReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AuditTribeeStaffRecruitApplyRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AuditTribeeStaffRecruitQuestion | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AuditTribeeStaffRecruitQuestionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/AuditTribeeStaffRecruitQuestionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/BatchAddTribeeQuizQuestion | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchAddTribeeQuizQuestionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchAddTribeeQuizQuestionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/BatchAddTribeeStaffRecruitQuestion | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchAddTribeeStaffRecruitQuestionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchAddTribeeStaffRecruitQuestionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/BatchDeleteTribeeQuizQuestion | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchDeleteTribeeQuizQuestionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchDeleteTribeeQuizQuestionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/BatchToggleTribeeQuizQuestionDisable | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchToggleTribeeQuizQuestionDisableReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchToggleTribeeQuizQuestionDisableRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/BatchUpdateTribeeQuizQuestionLabels | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchUpdateTribeeQuizQuestionLabelsReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchUpdateTribeeQuizQuestionLabelsRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/BatchUpdateTribeeQuizQuestionTimeLimit | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchUpdateTribeeQuizQuestionTimeLimitReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/BatchUpdateTribeeQuizQuestionTimeLimitRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ClearTribeeVisaRedDots | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ClearTribeeVisaRedDotsReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ClearTribeeVisaRedDotsRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ConfirmConvention | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ConfirmConventionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ConfirmConventionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ConfirmTribeeQuizQuestions | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ConfirmTribeeQuizQuestionsReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ConfirmTribeeQuizQuestionsRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/CreateTribeeQuizActivity | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/CreateTribeeQuizActivityReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/CreateTribeeQuizActivityRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/DeleteTribeeQuizActivity | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/DeleteTribeeQuizActivityReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/DeleteTribeeQuizActivityRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/DeleteTribeeQuizLabel | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/DeleteTribeeQuizLabelReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/DeleteTribeeQuizLabelRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/DeleteTribeeQuizQuestion | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/DeleteTribeeQuizQuestionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/DeleteTribeeQuizQuestionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/DeleteTribeeStaffRecruitQuestion | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/DeleteTribeeStaffRecruitQuestionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/DeleteTribeeStaffRecruitQuestionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/DelTribeeDraft | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/DelTribeeDraftReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/DelTribeeDraftRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ExcludeTribeeCreatorCandidates | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ExcludeTribeeCreatorCandidatesReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ExcludeTribeeCreatorCandidatesRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/FinishTribeeQuiz | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/FinishTribeeQuizReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/FinishTribeeQuizRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/FinishTribeeQuizActivity | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/FinishTribeeQuizActivityReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/FinishTribeeQuizActivityRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/FinishTribeeQuizActivityEarly | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/FinishTribeeQuizActivityEarlyReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/FinishTribeeQuizActivityEarlyRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/GetTribeeStaffRecruitApplyStatus | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitApplyStatusReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitApplyStatusRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/GetTribeeStaffRecruitEntry | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitEntryReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitEntryRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/GetTribeeStaffRecruitOffer | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitOfferReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitOfferRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/GetTribeeStaffRecruitWelcome | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitWelcomeRequest; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/GetTribeeStaffRecruitWelcomeResponse; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/JoinTribeeByInviteCode | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeByInviteCodeReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeByInviteCodeRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/JoinTribeeByVisa | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeByVisaReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeByVisaRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/JoinTribeeCandidatePool | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeCandidatePoolReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/JoinTribeeCandidatePoolRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/Ping | Lcom/google/protobuf/Empty; | Lcom/google/protobuf/Empty; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/RejectTribeeStaffRecruitOffer | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/RejectTribeeStaffRecruitOfferReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/RejectTribeeStaffRecruitOfferRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ReorderRecTribee | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ReorderRecTribeeReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ReorderRecTribeeRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SetTribeeQuizActivityQuestions | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeQuizActivityQuestionsReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeQuizActivityQuestionsRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SetTribeeQuizConfig | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeQuizConfigReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeQuizConfigRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SetTribeeQuizConfigQuestions | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeQuizConfigQuestionsReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeQuizConfigQuestionsRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SetTribeeStaffRecruitAssistantFollow | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeStaffRecruitAssistantFollowReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeStaffRecruitAssistantFollowRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SetTribeeStaffRecruitConfig | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeStaffRecruitConfigReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SetTribeeStaffRecruitConfigRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SimpleAction | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SimpleActionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SimpleActionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SortTribeeStaffRecruitQuestions | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SortTribeeStaffRecruitQuestionsReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SortTribeeStaffRecruitQuestionsRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/StartTribeeStaffRecruitApply | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/StartTribeeStaffRecruitApplyReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/StartTribeeStaffRecruitApplyRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SubmitTribeeQuizActivityAnswer | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeQuizActivityAnswerReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeQuizActivityAnswerRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SubmitTribeeQuizAnswer | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeQuizAnswerReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeQuizAnswerRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SubmitTribeeStaffRecruitApply | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeStaffRecruitApplyReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SubmitTribeeStaffRecruitApplyRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/Subscribe | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SubscribeReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SubscribeRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SubscribeCard | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SubscribeCardReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/SubscribeCardRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ToggleTribeeMembership | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ToggleTribeeQuizSwitch | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeQuizSwitchReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeQuizSwitchRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ToggleTribeeStaffRecruitQuestion | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeStaffRecruitQuestionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeStaffRecruitQuestionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ToggleTribeeStaffRecruitSwitch | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeStaffRecruitSwitchReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/ToggleTribeeStaffRecruitSwitchRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/TribeeDraftList | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDraftListReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDraftListRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/TribeeDraftView | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDraftViewReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDraftViewRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/TribeeDynClick | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDynClickReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeDynClickRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/TribeeInviteCodeNotificationsFeedback | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeInviteCodeNotificationsFeedbackReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeInviteCodeNotificationsFeedbackRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/TribeeManageAdjustThreadCategory | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageAdjustThreadCategoryReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageActionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/TribeeManageGetAllCategories | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageGetAllCategoriesReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageGetAllCategoriesRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/TribeeManageRejectThreadSelected | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageRejectThreadSelectedReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageActionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/TribeeManageRemoveThread | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageRemoveThreadReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageActionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/TribeeManageSendInviteCode | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageSendInviteCodeReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageActionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/TribeeManageThreadFeatured | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageThreadFeaturedReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageActionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/TribeeManageThreadSelected | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageThreadSelectedReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/TribeeManageActionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/UpdateRecTribee | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateRecTribeeReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateRecTribeeRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/UpdateTribeeQuizActivity | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizActivityReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizActivityRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/UpdateTribeeQuizLabel | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizLabelReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizLabelRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/UpdateTribeeQuizQuestion | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizQuestionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeQuizQuestionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/UpdateTribeeStaffRecruitQuestion | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeStaffRecruitQuestionReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpdateTribeeStaffRecruitQuestionRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/UpsertTribeeCreatorIdentityConfig | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeCreatorIdentityConfigReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeCreatorIdentityConfigRsp; |
+| /bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/UpsertTribeeIdentityBadgeConfig | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeIdentityBadgeConfigReq; | Lcom/bapis/bilibili/community/interfacess/cosmoconn/v1/UpsertTribeeIdentityBadgeConfigRsp; |
+
+```sh
+node bin/bili-apis.mjs --edition official list --category tribee --limit 10
+node bin/bili-apis.mjs --edition official show "ID"
+```

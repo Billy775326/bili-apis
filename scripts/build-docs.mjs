@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { readJson } from "../src/catalog.mjs";
-const read = (n) => readJson(path.join("catalog", n + ".json"));
+const read = (n) => readJson(path.join("catalog/android/com.bilibili.app.in/play/6.8.0", n + ".json"));
 const http = read("http"),
   grpc = read("grpc"),
   messages = read("messages"),
@@ -15,13 +15,13 @@ const cell = (v) =>
     .replaceAll("\r", " ")
     .replaceAll("\n", " ");
 function write(file, lines) {
-  fs.mkdirSync("docs", { recursive: true });
-  fs.writeFileSync(path.join("docs", file), lines.join("\n").trimEnd() + "\n");
+  fs.mkdirSync("docs/android/com.bilibili.app.in/play/6.8.0", { recursive: true });
+  fs.writeFileSync(path.join("docs/android/com.bilibili.app.in/play/6.8.0", file), lines.join("\n").trimEnd() + "\n");
 }
 write("http.md", [
   "# HTTP 声明目录",
   "",
-  `共 ${http.endpoints.length} 条声明，去重动词/路径 ${hc.unique_verb_path_pairs} 组。来源为 DEX 方法注解；BaseUrl 拼接结果为候选，不包含拦截器运行时改写。参数注解、泛型返回类型及来源索引见 [JSON](../catalog/http.json)。`,
+  `共 ${http.endpoints.length} 条声明，去重动词/路径 ${hc.unique_verb_path_pairs} 组。来源为 DEX 方法注解；BaseUrl 拼接结果为候选，不包含拦截器运行时改写。参数注解、泛型返回类型及来源索引见 [JSON](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/http.json)。`,
   "",
   "| ID | 方法 | 路径 | BaseUrl 声明 | 参数注解 |",
   "| --- | --- | --- | --- | --- |",
@@ -33,7 +33,7 @@ write("http.md", [
 write("grpc.md", [
   "# gRPC 方法目录",
   "",
-  `共 ${grpc.methods.length} 个静态 MethodDescriptor 路由。请求/响应角色默认按 getDefaultInstance 调用顺序列为候选，已人工核对的 View/View 见 [实现核对](implementation.md)。[原始位置及声明](../catalog/grpc.json)。`,
+  `共 ${grpc.methods.length} 个静态 MethodDescriptor 路由。请求/响应角色默认按 getDefaultInstance 调用顺序列为候选，已人工核对的 View/View 见 [实现核对](implementation.md)。[原始位置及声明](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/grpc.json)。`,
   "",
   "| 路由 | 请求类型候选 | 响应类型候选 |",
   "| --- | --- | --- |",
@@ -45,7 +45,7 @@ write("grpc.md", [
 write("messages.md", [
   "# Protobuf 消息索引",
   "",
-  `共 ${messages.messages.length} 个消息，${gc.decoded_wire_fields} 个字段。RawMessageInfo 字段编号已与 FIELD_NUMBER 常量交叉核对；Java 字段名不等于原始 proto 源字段名，原始枚举语义、选项和完整响应契约没有恢复。[字段元数据 JSON](../catalog/messages.json)。`,
+  `共 ${messages.messages.length} 个消息，${gc.decoded_wire_fields} 个字段。RawMessageInfo 字段编号已与 FIELD_NUMBER 常量交叉核对；Java 字段名不等于原始 proto 源字段名，原始枚举语义、选项和完整响应契约没有恢复。[字段元数据 JSON](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/messages.json)。`,
   "",
   "| 消息描述符 | 解析字段数 | 编号交叉核对 |",
   "| --- | --- | --- |",
@@ -74,7 +74,7 @@ write("coverage.md", [
   "- 完整 APK 的 REA/JADX 加载达到 120 秒限制；局部方法核对使用保留原始 DEX 字节的派生 APK，不能把派生副本当作原包或签名验证结果。",
   "",
   "详细边界与原始位置：",
-  "[HTTP 覆盖](../catalog/coverage-http.json) · [gRPC 覆盖](../catalog/coverage-grpc.json) · [资源覆盖](../catalog/coverage-artifacts.json) · [输入哈希](../evidence/inputs.json)。",
+  "[HTTP 覆盖](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/coverage-http.json) · [gRPC 覆盖](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/coverage-grpc.json) · [资源覆盖](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/coverage-artifacts.json) · [输入哈希](../../../../../evidence/inputs.json)。",
 ]);
 console.log(
   JSON.stringify({
@@ -93,7 +93,7 @@ write("http-models.md", [
   String(modelCoverage.model_definitions) +
     " reachable model definitions; " +
     String(modelCoverage.fields) +
-    " DEX fields. These are field inventories, not verified JSON schemas. See [format](catalog-format.md) and [metadata](../catalog/http-models.json).",
+    " DEX fields. These are field inventories, not verified JSON schemas. See [format](catalog-format.md) and [metadata](../../../../../catalog/android/com.bilibili.app.in/play/6.8.0/http-models.json).",
   "",
   "| Descriptor | Fields | DEX |",
   "| --- | --- | --- |",
@@ -108,7 +108,7 @@ write("http-models.md", [
       " |",
   ),
 ]);
-const coverageFile = "docs/coverage.md";
+const coverageFile = "docs/android/com.bilibili.app.in/play/6.8.0/coverage.md";
 fs.appendFileSync(
   coverageFile,
   "\n## HTTP model graph\n\n" +

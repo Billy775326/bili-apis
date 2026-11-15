@@ -7,6 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import { gunzipSync } from "node:zlib";
+import { resolveAndroidEdition } from './android-editions.mjs';
 export const readJson = (file) =>
   JSON.parse(fs.readFileSync(file, "utf8").replace(/^\uFEFF/, ""));
 export const CATALOG_KINDS = [
@@ -50,13 +51,10 @@ const definitions = [
   ],
   ["associated-message", "grpc-audit.json", "outside_associated_messages"],
 ];
-export function loadCatalog(root, { edition = "play" } = {}) {
-  if (!["play", "official"].includes(edition))
-    throw Error("edition must be play or official");
-  const directory =
-    edition === "official"
-      ? path.join(root, "catalog", "official-android")
-      : path.join(root, "catalog");
+export function loadCatalog(root, options = {}) {
+  const baseline = resolveAndroidEdition(options);
+  const { edition } = baseline;
+  const directory = path.join(root, baseline.catalog_directory);
   const manifest =
     edition === "official"
       ? readJson(path.join(directory, "manifest.json"))
@@ -119,7 +117,7 @@ export function loadCatalog(root, { edition = "play" } = {}) {
               .digest("hex")
               .slice(0, 24);
       }
-      return { ...e, id, ...(e.kind ? { record_kind: e.kind } : {}), kind };
+      return { ...e, id, source_edition: { edition, package_name: baseline.package_name, version_name: baseline.version_name }, ...(e.kind ? { record_kind: e.kind } : {}), kind };
     });
   });
 }

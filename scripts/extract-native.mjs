@@ -4,7 +4,7 @@ import crypto from "node:crypto";
 import { readDex } from "../src/dex.mjs";
 import { ZipReader } from "../src/zip.mjs";
 import { readElf } from "../src/native-elf.mjs";
-const [dexDir, provenancePath, armApk, out = "catalog"] = process.argv.slice(2);
+const [dexDir, provenancePath, armApk, out = "catalog/android/com.bilibili.app.in/play/6.8.0"] = process.argv.slice(2);
 if (!dexDir || !provenancePath || !armApk)
   throw Error(
     "Usage: node scripts/extract-native.mjs DEX_DIR INPUTS_JSON ARM64_APK [OUTPUT_DIR]",

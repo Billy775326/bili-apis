@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { ANDROID_EDITIONS, resolveAndroidEdition } from '../src/android-editions.mjs';
 import { FUNCTION_CATEGORIES } from "../src/functions.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -11,27 +12,30 @@ import {
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 try {
   const input = process.argv.slice(2);
-  let edition = "play";
-  if (input[0] === "--edition") {
-    input.shift();
-    edition = input.shift();
-    if (!["play", "official"].includes(edition))
-      throw Error("edition must be play or official");
+  const selectors = {};
+  while (['--edition', '--package', '--version'].includes(input[0])) {
+    const flag = input.shift(), value = input.shift();
+    const key = {'--edition':'edition','--package':'packageName','--version':'version'}[flag];
+    if (key in selectors || !value || value.startsWith('--')) throw Error('Duplicate or incomplete selector: ' + flag);
+    selectors[key] = value;
   }
+  const baseline = resolveAndroidEdition(selectors);
+  const edition = baseline.edition;
   const [command = "stats", ...args] = input;
-  if (["stats", "categories"].includes(command) && args.length)
+  if (["stats", "categories", "editions"].includes(command) && args.length)
     throw Error(
-      command + " takes no arguments; --edition must precede the command",
+      command + " takes no arguments; --edition, --package and --version must precede the command",
     );
   if (command === "--help" || command === "help")
     console.log(
-      "bili-apis stats\nbili-apis categories\nbili-apis list [--category CATEGORY] [--kind KIND] [--query TEXT] [--offset N] [--limit N]\nbili-apis show ID\nPrefix any command with --edition official to inspect the official Android catalog. Default edition: play.\nAll output is JSON; no API requests are sent.\nKinds: " +
+      "bili-apis editions\nbili-apis [--edition play|official] [--package NAME] [--version VERSION] stats\nbili-apis categories\nbili-apis list [--category CATEGORY] [--kind KIND] [--query TEXT] [--offset N] [--limit N]\nbili-apis show ID\nSelectors must precede the command and must describe one pinned package/channel/version. Default edition: play. editions lists the available baselines.\nAll output is JSON; no API requests are sent.\nKinds: " +
         CATALOG_KINDS.join("|"),
     );
+  else if (command === 'editions') console.log(JSON.stringify(ANDROID_EDITIONS, null, 2));
   else {
     const entries = loadCatalog(root, { edition });
     let result;
-    if (command === "stats") result = summarize(entries);
+    if (command === "stats") result = { baseline, ...summarize(entries) };
     else if (command === "categories")
       result = FUNCTION_CATEGORIES.map((c) => ({
         ...c,
@@ -59,7 +63,7 @@ try {
           ? Number(value)
           : value;
       }
-      result = select(entries, options);
+      result = { baseline, ...select(entries, options) };
     } else throw Error("Unknown command: " + command);
     console.log(JSON.stringify(result, null, 2));
   }

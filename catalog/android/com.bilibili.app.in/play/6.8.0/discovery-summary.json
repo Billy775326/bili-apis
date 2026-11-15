@@ -8,39 +8,39 @@
   },
   "sources": [
     {
-      "file": "catalog/dex-routes.json",
+      "file": "catalog/android/com.bilibili.app.in/play/6.8.0/dex-routes.json",
       "json_stringify_sha256": "b43052b23607770d4b90a1d66d38e3c1ddcf8d57e4cd02a351c8adfafd099290"
     },
     {
-      "file": "catalog/coverage-dex-routes.json",
+      "file": "catalog/android/com.bilibili.app.in/play/6.8.0/coverage-dex-routes.json",
       "json_stringify_sha256": "da676ae1c3963cc5ad973791e717e51ea81bd47aa02d0bfca7186665d3719348"
     },
     {
-      "file": "catalog/resource-routes.json",
+      "file": "catalog/android/com.bilibili.app.in/play/6.8.0/resource-routes.json",
       "json_stringify_sha256": "5cd716906bc8136b34061cacf7e35d2c79ae4037e604d5a695687d573e90f21b"
     },
     {
-      "file": "catalog/coverage-resource-routes.json",
+      "file": "catalog/android/com.bilibili.app.in/play/6.8.0/coverage-resource-routes.json",
       "json_stringify_sha256": "8074a4a573e888301023303cca0bd243d0192cc3fbecdf63e32b90934ab5be1d"
     },
     {
-      "file": "catalog/grpc-audit.json",
+      "file": "catalog/android/com.bilibili.app.in/play/6.8.0/grpc-audit.json",
       "json_stringify_sha256": "79968529a8ee7e4227bac3566fe92001528dc63672ade237593c14aaae6870a0"
     },
     {
-      "file": "catalog/coverage-grpc-audit.json",
+      "file": "catalog/android/com.bilibili.app.in/play/6.8.0/coverage-grpc-audit.json",
       "json_stringify_sha256": "678be3cfca043e12c8206049b027c052317cf924606995c4345ea03bb5169c94"
     },
     {
-      "file": "catalog/grpc-additional.json",
+      "file": "catalog/android/com.bilibili.app.in/play/6.8.0/grpc-additional.json",
       "json_stringify_sha256": "69ef9d5d247cbb8d8f473f3d27827063e1753e73dc9e59380bdf317bb0aa2fcb"
     },
     {
-      "file": "catalog/native.json",
+      "file": "catalog/android/com.bilibili.app.in/play/6.8.0/native.json",
       "json_stringify_sha256": "a5bb9f245ce3ff38fc96f704fc9e94f2f647e0a9d9db3659b595a36a5adda4b4"
     },
     {
-      "file": "catalog/coverage-native.json",
+      "file": "catalog/android/com.bilibili.app.in/play/6.8.0/coverage-native.json",
       "json_stringify_sha256": "e9a91729c30a369fff5d311b5a96fe4027c8a419a459f17f599e78fb6286bec4"
     }
   ],

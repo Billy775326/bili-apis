@@ -1,0 +1,634 @@
+# 官方 Android 与 Play 静态差异
+
+<!-- android-edition:start -->
+包名：`tv.danmaku.bili` · 渠道：Official Android 64-bit · 版本：9.19.0（9190400）。
+
+[全部版本](../../../README.md) · [本包文档](README.md) · [网页接口](../../../../pc/README.md) · [基线元数据](../../../../../catalog/android/tv.danmaku.bili/official/9.19.0/edition.json)。
+
+本页归属上述 APK 基线；静态声明、候选与已记录的少量 HTTP 抽查分别标注，不代表网页或 App 已全量验证。
+<!-- android-edition:end -->
+
+比较 Play 6.8.0（com.bilibili.app.in，versionCode 9180200）与官方 9.19.0（tv.danmaku.bili，versionCode 9190400）。**版本与发行渠道同时不同，不能归因为单一渠道差异，也不代表后端上线或下线。**
+
+[返回官方版入口](README.md) · [完整逐项差异 JSON](../../../../../catalog/android/tv.danmaku.bili/official/9.19.0/comparison.json) · [比较规则](../../../../../src/android-comparison.mjs)
+
+| 项目 | Play | 官方版 | 共同 | 仅官方 | 仅 Play | 共同项变化 |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| 规范化 HTTP 静态路由 | 2018 | 2143 | 1796 | 347 | 222 | 25 个命名注解绑定集合 |
+| gRPC 路由 ID | 604 | 625 | 604 | 21 | 0 | 0 个候选类型 |
+| Protobuf 消息 | 4216 | 4501 | 4216 | 285 | 0 | 12 个线格式布局 |
+
+HTTP 比较保留域名和端口，忽略查询值与片段，空动态 URL 排除；同一键下的命名注解绑定取并集。参数名变化不是完整请求 schema 的兼容性判定。Protobuf 不比较 DEX 偏移，缺少布局保留未知。
+
+12 个共同消息共增加 44 个字段编号；未发现已有编号删除或字段类型/标志变化。新增 285 个消息，不表示其他协议或服务已经全部覆盖。
+
+## 新增 gRPC 路由
+
+```text
+/bilibili.broadcast.message.mall.MerchantNotify/MessageNotify
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AcceptTribeeStaffRecruitOffer
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AddTribeeStaffRecruitQuestion
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AuditTribeeStaffRecruitApply
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/AuditTribeeStaffRecruitQuestion
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/BatchAddTribeeStaffRecruitQuestion
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/DeleteTribeeStaffRecruitQuestion
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/GetTribeeStaffRecruitApplyStatus
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/GetTribeeStaffRecruitEntry
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/GetTribeeStaffRecruitOffer
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/GetTribeeStaffRecruitWelcome
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/RejectTribeeStaffRecruitOffer
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SetTribeeStaffRecruitAssistantFollow
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SetTribeeStaffRecruitConfig
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SortTribeeStaffRecruitQuestions
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/StartTribeeStaffRecruitApply
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/SubmitTribeeStaffRecruitApply
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ToggleTribeeStaffRecruitQuestion
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/ToggleTribeeStaffRecruitSwitch
+/bilibili.community.interfaces.cosmoconn.v1.CosmoInterface/UpdateTribeeStaffRecruitQuestion
+/bilibili.mall.tab3.dynamic.v1.Opus/OpusDetail
+```
+
+## 资源与 native 观察
+
+资源中新增已知方法和路径 `POST /x/vupre/app/reason/feedback/submit`，见官方资源目录中的源成员、哈希和字节位置；未发送该写请求。
+
+`lib/arm64-v8a/libbili.so` 与 Play 库字节一致，11 个 LibBili native 方法签名一致。仅观察到 JNI_OnLoad 导出，未恢复运行时注册映射；字节一致不能证明认证、设备环境或服务端行为一致。
+
+## 仅见于官方的 HTTP 键
+
+```text
+GET http://api.bilibili.com/x/relation
+GET http://api.bilibili.com/x/relation/blacks
+GET http://elec.bilibili.com/api/elec.list.do
+GET http://line3-h5-mobile-api.biligame.com/game/center/h5/activity/center/participating_activities
+GET http://line3-h5-mobile-api.biligame.com/game/center/h5/game/benefit/user/coupon/list
+GET http://line3-h5-mobile-api.biligame.com/game/center/h5/gift/user_gift
+GET https://api.bilibili.com/pgc/season/episode/community
+GET https://api.bilibili.com/pgc/season/rank/tabs
+GET https://api.bilibili.com/pgc/season/rank/v2/list
+GET https://api.bilibili.com/x/article/conf
+GET https://api.bilibili.com/x/article/favorites/list
+GET https://api.bilibili.com/x/article/home
+GET https://api.bilibili.com/x/article/rank/categories
+GET https://api.bilibili.com/x/article/rank/list
+GET https://api.bilibili.com/x/article/view
+GET https://api.bilibili.com/x/emote/setting/panel
+GET https://api.bilibili.com/x/feedback/reply
+GET https://api.bilibili.com/x/garb/v1/trade/query
+GET https://api.bilibili.com/x/member/realname/status
+GET https://api.bilibili.com/x/push/setting/get
+GET https://api.bilibili.com/x/relation/followers
+GET https://api.bilibili.com/x/relation/followers/unread
+GET https://api.bilibili.com/x/relation/followers/unread/count
+GET https://api.bilibili.com/x/relation/followings
+GET https://api.bilibili.com/x/relation/tag
+GET https://api.bilibili.com/x/tv/vip/order/bpay_mobi/info
+GET https://api.bilibili.com/x/v2/dm/reply/list
+GET https://api.bilibili.com/x/v2/reply/folded
+GET https://api.bilibili.com/x/v2/reply/reply/folded
+GET https://api.bilibili.com/x/v2/reply/topics
+GET https://api.bilibili.com/x/vip/v1/order/status
+GET https://api.live.bilibili.com/av/v1/Battle/getNewPkResultInfo
+GET https://api.live.bilibili.com/av/v1/SuperChat/messageInfo
+GET https://api.live.bilibili.com/rankdb/v1/Common/roomRank
+GET https://api.live.bilibili.com/xlive/app-blink/v1/pk/GetList
+GET https://api.live.bilibili.com/xlive/app-blink/v1/pk/SearchAttentionList
+GET https://api.live.bilibili.com/xlive/app-blink/v1/pk/getMutualPeopleList
+GET https://api.live.bilibili.com/xlive/app-interface/v2/index/getClosedRoomIds
+GET https://api.live.bilibili.com/xlive/app-room/v1/card/card_up
+GET https://api.live.bilibili.com/xlive/app-room/v1/index/getMatchInfo
+GET https://api.live.bilibili.com/xlive/app-room/v1/index/getVirtualThermalStormInfo
+GET https://api.live.bilibili.com/xlive/app-room/v1/pk/GetInfoById
+GET https://api.live.bilibili.com/xlive/app-room/v2/multiUserConn/RoomCan
+GET https://api.live.bilibili.com/xlive/app-ucenter/v2/title/wearing
+GET https://api.live.bilibili.com/xlive/open-interface/v1/rtc/getTimestamp
+GET https://api.vc.bilibili.com/account/v1/user/cards
+GET https://api.vc.bilibili.com/link_alloc/v1/alloc/get_list
+GET https://api.vc.bilibili.com/link_alloc/v1/alloc/list
+GET https://api.vc.bilibili.com/link_dynamic/v1/dynamic/fans_group
+GET https://api.vc.bilibili.com/link_group/v1/group/qrcode
+GET https://api.vc.bilibili.com/link_group/v1/member/joinable_groups
+GET https://api.vc.bilibili.com/link_group/v1/member/my_groups
+GET https://api.vc.bilibili.com/link_group/v1/member/show_create_group_icon
+GET https://api.vc.bilibili.com/link_group/v1/user/identity
+GET https://api.vc.bilibili.com/link_setting/v1/link_setting/dm_wall
+GET https://api.vc.bilibili.com/link_setting/v1/link_setting/multi_switch
+GET https://api.vc.bilibili.com/link_setting/v1/link_setting/official_uids
+GET https://api.vc.bilibili.com/user/v1/UserRoom/isAnchor
+GET https://api.vc.bilibili.com/vote_svr/v1/vote_svr/vote_info
+GET https://api.vc.bilibili.com/x/im/anti_disturb/clean_disturb_session
+GET https://app.bilibili.com/x/feed/upper/article
+GET https://app.bilibili.com/x/resource/fission/check/new
+GET https://app.bilibili.com/x/v2/account/mode/status
+GET https://app.bilibili.com/x/v2/channel/red
+GET https://app.bilibili.com/x/v2/channel/square2
+GET https://app.bilibili.com/x/v2/search/live
+GET https://app.bilibili.com/x/v2/search/recommend/noresult
+GET https://app.bilibili.com/x/v2/space/archive
+GET https://app.bilibili.com/x/v2/space/search
+GET https://app.bilibili.com/x/v2/view/report
+GET https://app.bilibili.com/x/wall/unicom/userstate
+GET https://cm.bilibili.com/dwp/api/openApi/v1/window/goods/verify
+GET https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/feedback/faq
+GET https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/game/channels
+GET https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/game/pass/rules
+GET https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/game/pass/ticket_list
+GET https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/game/pass/time_record_list
+GET https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/notice/current
+GET https://line3-h5-mobile-api.biligame.com/api/common/hint_text
+GET https://line3-h5-mobile-api.biligame.com/api/common/red_point
+GET https://line3-h5-mobile-api.biligame.com/api/h5/game/center/user/coupon/applicable_games
+GET https://line3-h5-mobile-api.biligame.com/cps/src_pkg/list/v2
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/cancel_book
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/community/strategy/list
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/desktop_widget/share/template
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/detail/cps_order/related_booked
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/gift/home
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/gift/play
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/home/cloud_game/list/v2
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/home/gray/info/report
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/hot/report
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/incr_updated_pkg/list
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/interest_reward/popup_info
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/role_bind/query_list
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/small/game/mini_game_exit_popup
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/tag/game/list/v2
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/tag/top_game/list
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/user/auto_download/game_pkg_list/v2
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/user/game_download/multi_get_crypto_url
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/user/played_coupon_list
+GET https://line3-h5-mobile-api.biligame.com/game/center/h5/user/smallgame/side_bar_exp
+GET https://line3-statics-h5-mobile-api.biligame.net/disaster/game/center/h5/detail/gameinfo/v2/1/%7Bgame_base_id%7D
+GET https://mall.bilibili.com/community-hub/tab3_digital/digital_qa_type
+GET https://mall.bilibili.com/mall-c-search//ip/coupon/list
+GET https://mall.bilibili.com/mall-c-search/api/merchants/shop/category
+GET https://mall.bilibili.com/mall-c-search/api/merchants/shop/discovery
+GET https://mall.bilibili.com/mall-c-search/home/category/listV2
+GET https://mall.bilibili.com/mall-c-search/home/feed/list
+GET https://mall.bilibili.com/mall-c-search/home/index/v2
+GET https://mall.bilibili.com/mall-c-search/home/tab/read
+GET https://mall.bilibili.com/mall-c-search/ip/consumer_detail
+GET https://mall.bilibili.com/mall-c-search/ip/home/info
+GET https://mall.bilibili.com/mall-c-search/ip/role_protect/list
+GET https://mall.bilibili.com/mall-c-search/ip/route
+GET https://mall.bilibili.com/mall-c-search/ip/task/detail
+GET https://mall.bilibili.com/mall-c-search/ip/top/fans
+GET https://mall.bilibili.com/mall-c-search/ipright/list_group
+GET https://mall.bilibili.com/mall-c-search/search/shop
+GET https://mall.bilibili.com/mall-c-search/short/link/get
+GET https://mall.bilibili.com/mall-c/order/info/new/flag
+GET https://mall.bilibili.com/mall-c/orderlist/get
+GET https://mall.bilibili.com/mall-c/ugc/content/topicList
+GET https://mall.bilibili.com/mall-dayu/bigshot/project/query/preload
+GET https://mall.bilibili.com/mall-dayu/mall-trade/order/express/list
+GET https://mall.bilibili.com/mall-dayu/ticket/project/recommendToYou
+GET https://mall.bilibili.com/mall-gateway/async/order/result/query
+GET https://mall.bilibili.com/mall-search-items/items/panel/spu/info
+GET https://mall.bilibili.com/mall-up-search/user/space/index
+GET https://mall.bilibili.com/mall/ashbringer/app/abtest
+GET https://mall.bilibili.com/mall/noah/search/sug
+GET https://member.bilibili.com/x/app/index/v3
+GET https://member.bilibili.com/x/vupre/app/material/tips
+GET https://member.bilibili.com/x2/creative/h5/act/clock/v3/complete
+GET https://member.bilibili.com/xx/xxx/xx
+GET https://message.bilibili.com/api/notify/del.notify.list.do
+GET https://miniapp.bilibili.com/api/miniapp/navigate/app/list
+GET https://miniapp.bilibili.com/api/miniapp/report/data
+GET https://miniapp.bilibili.com/open/open_api/v1/miniapp/client/order/query
+GET https://show.bilibili.com/api/activity/index/collect/viewIp
+GET https://show.bilibili.com/api/activity/ip/dress/list
+GET https://show.bilibili.com/api/activity/v2/photo/config
+GET https://show.bilibili.com/api/activity/v2/photo/info
+GET https://show.bilibili.com/api/merchants/relation/stat
+GET https://show.bilibili.com/api/ticket-market/owner/home
+GET https://show.bilibili.com/api/ticket/addrinfo/list
+GET https://show.bilibili.com/api/ticket/buyerinfo/list
+GET https://show.bilibili.com/api/ticket/ordercenter/count
+GET https://show.bilibili.com/api/ticket/ordercenter/list
+GET https://show.bilibili.com/api/ticket/ordercenter/typeList
+GET https://show.bilibili.com/api/ticket/owner/home
+GET https://show.bilibili.com/api/ticket/ticket/list
+GET https://show.bilibili.com/api/ticket/ticket/verify
+GET https://show.bilibili.com/api/ticket/ticket/view
+GET https://show.bilibili.com/api/ticket/user/favcardlist
+GET https://show.bilibili.com/api/ticket/user/view
+GET https://show.bilibili.com/mall-c-search/api/merchants/shop/category
+GET https://show.bilibili.com/mall-c-search/api/merchants/shop/discovery
+POST /mall-c/cart/na/image
+POST http://api.bilibili.com/x/member/app/face/digitalKit/update
+POST http://line3-h5-mobile-api.biligame.com/game/center/h5/feedback/upload
+POST http://livetest.bilibili.co/dataflow/log
+POST https://api.bilibili.com/x/article/addshare
+POST https://api.bilibili.com/x/article/favorites/add
+POST https://api.bilibili.com/x/community/cosmo/interface/simple_action
+POST https://api.bilibili.com/x/dm/assist/banned
+POST https://api.bilibili.com/x/dm/filter/user/add2
+POST https://api.bilibili.com/x/dm/up/banned/del
+POST https://api.bilibili.com/x/garb/v1/trade/create
+POST https://api.bilibili.com/x/member/realname/change/person
+POST https://api.bilibili.com/x/relation/tag/del
+POST https://api.bilibili.com/x/tag/archive/del
+POST https://api.bilibili.com/x/tag/archive/hate2
+POST https://api.bilibili.com/x/tag/archive/like2
+POST https://api.bilibili.com/x/tag/subscribe/add
+POST https://api.bilibili.com/x/tv/vip/order/bpay_mobi/create
+POST https://api.bilibili.com/x/v2/dm/subtitle/report/add
+POST https://api.bilibili.com/x/v2/fav/video/add
+POST https://api.bilibili.com/x/v2/reply/recommend
+POST https://api.bilibili.com/x/v2/reply/report
+POST https://api.bilibili.com/x/v3/fav/resource/batch-add
+POST https://api.bilibili.com/x/vip/order/create
+POST https://api.live.bilibili.com/feed/v1/feed/isFollowed
+POST https://api.live.bilibili.com/relation/v1/Feed/follow
+POST https://api.live.bilibili.com/relation/v1/Feed/isFollowed
+POST https://api.live.bilibili.com/relation/v1/Feed/unfollow
+POST https://api.live.bilibili.com/room/v1/Room/report
+POST https://api.live.bilibili.com/xlive/app-room/v1/record/report
+POST https://api.live.bilibili.com/xlive/app-ucenter/v2/bigR/reportEntranceAction
+POST https://api.live.bilibili.com/xlive/pk-interface/v1/battle/pkScoreMultiVote
+POST https://api.vc.bilibili.com/dynamic_like/v1/dynamic_like/no_interest
+POST https://api.vc.bilibili.com/dynamic_like/v1/dynamic_like/thumb
+POST https://api.vc.bilibili.com/dynamic_repost/v1/dynamic_repost/repost
+POST https://api.vc.bilibili.com/feed/v1/feed/isFollowed
+POST https://api.vc.bilibili.com/impolyer/get-nft-status
+POST https://api.vc.bilibili.com/link_alloc/v1/alloc/list
+POST https://api.vc.bilibili.com/link_friend/v1/link_friend/apply_friend
+POST https://api.vc.bilibili.com/link_friend/v1/link_friend/friend_apply_ack
+POST https://api.vc.bilibili.com/link_friend/v1/link_friend/remove_friend
+POST https://api.vc.bilibili.com/link_group/v1/apply/invite
+POST https://api.vc.bilibili.com/link_group/v1/apply/invite_reply
+POST https://api.vc.bilibili.com/link_group/v1/apply/join
+POST https://api.vc.bilibili.com/link_group/v1/group/join_apply
+POST https://api.vc.bilibili.com/link_group/v1/group/join_group_without_agree
+POST https://api.vc.bilibili.com/link_group/v1/report/create
+POST https://api.vc.bilibili.com/link_search/v1/link_search/search
+POST https://api.vc.bilibili.com/promo_svr/v1/promo_svr/fetch_task
+POST https://api.vc.bilibili.com/report_service/v1/Report/add
+POST https://api.vc.bilibili.com/topic_svr/v1/topic_svr/up_act_pin
+POST https://api.vc.bilibili.com/vote_svr/v1/vote_svr/do_vote
+POST https://api.vc.bilibili.com/x/im/anti_disturb/set_disturb
+POST https://app.bilibili.com/x/v2/activity/liked
+POST https://app.bilibili.com/x/v2/family/timelock/pwd/verify
+POST https://app.bilibili.com/x/v2/view/report/add
+POST https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/app/properties
+POST https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/feedback/submit
+POST https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/feedback/tag/list
+POST https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/game/acquire
+POST https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/game/enter
+POST https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/game/exit
+POST https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/game/heartbeat
+POST https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/game/properties
+POST https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/game/queue/status
+POST https://line3-h5-mobile-api.biligame.com/api/cloud_game/v2/game/queue/waiting
+POST https://line3-h5-mobile-api.biligame.com/api/h5/game/center/user/sign_in/popup_info
+POST https://line3-h5-mobile-api.biligame.com/cps/src_pkg/report/v2
+POST https://line3-h5-mobile-api.biligame.com/game/center/h5/cancel_book/cps
+POST https://line3-h5-mobile-api.biligame.com/game/center/h5/detail/cps_order
+POST https://line3-h5-mobile-api.biligame.com/game/center/h5/game/incpkg
+POST https://line3-h5-mobile-api.biligame.com/game/center/h5/landing_page/introduction
+POST https://line3-h5-mobile-api.biligame.com/game/center/h5/user/auto_download/receipt
+POST https://line3-h5-mobile-api.biligame.com/game/center/h5/user/download_completed/report
+POST https://line3-h5-mobile-api.biligame.com/game/center/h5/user/remove/play
+POST https://line3-h5-mobile-api.biligame.com/game/center/track/query
+POST https://mall.bilibili.com/community-hub/activity/support_rank/operate
+POST https://mall.bilibili.com/community-hub/mall_reserve/reserve
+POST https://mall.bilibili.com/community-hub/mall_story/feed
+POST https://mall.bilibili.com/community-hub/mall_story/singleCard
+POST https://mall.bilibili.com/community-hub/ops/detail/delete
+POST https://mall.bilibili.com/community-hub/small_shop/feed/tab/item
+POST https://mall.bilibili.com/community-hub/small_shop/home/info
+POST https://mall.bilibili.com/community-hub/small_shop/live/replay/list/items
+POST https://mall.bilibili.com/community-hub/small_shop/live/replay/page/info
+POST https://mall.bilibili.com/community-hub/small_shop/shop/live/page
+POST https://mall.bilibili.com/community-hub/tab3_home/atmosphere
+POST https://mall.bilibili.com/community-hub/tab3_home/feedback
+POST https://mall.bilibili.com/community-hub/tab3_home/index
+POST https://mall.bilibili.com/community-hub/tab3_home/select_tab
+POST https://mall.bilibili.com/community-hub/tab3_home/user_action
+POST https://mall.bilibili.com/magic-c-search/warehouse/msg/dispatch
+POST https://mall.bilibili.com/mall-c-community/content/wish/add
+POST https://mall.bilibili.com/mall-c-community/content/wish/del
+POST https://mall.bilibili.com/mall-c-search/app/config/all
+POST https://mall.bilibili.com/mall-c-search/cart/integrate/promotion
+POST https://mall.bilibili.com/mall-c-search/circle_home/feed
+POST https://mall.bilibili.com/mall-c-search/circle_home/feed_single_card
+POST https://mall.bilibili.com/mall-c-search/diy/cancel/reserve
+POST https://mall.bilibili.com/mall-c-search/diy/live/reserve
+POST https://mall.bilibili.com/mall-c-search/fav/items
+POST https://mall.bilibili.com/mall-c-search/history/resource
+POST https://mall.bilibili.com/mall-c-search/home/a/feed
+POST https://mall.bilibili.com/mall-c-search/home/a/feed/count
+POST https://mall.bilibili.com/mall-c-search/home/a/index
+POST https://mall.bilibili.com/mall-c-search/home/category/feed
+POST https://mall.bilibili.com/mall-c-search/home/category/info
+POST https://mall.bilibili.com/mall-c-search/home/feed/single
+POST https://mall.bilibili.com/mall-c-search/home/index/batch/receive/coupons
+POST https://mall.bilibili.com/mall-c-search/home/index/fresh
+POST https://mall.bilibili.com/mall-c-search/home/new_items/list/v3
+POST https://mall.bilibili.com/mall-c-search/home/new_items/low/list
+POST https://mall.bilibili.com/mall-c-search/home/new_items/tab
+POST https://mall.bilibili.com/mall-c-search/home/tab/notify
+POST https://mall.bilibili.com/mall-c-search/interest/follow
+POST https://mall.bilibili.com/mall-c-search/ip/boost/popularity
+POST https://mall.bilibili.com/mall-c-search/ip/discovery/list
+POST https://mall.bilibili.com/mall-c-search/ip/home/feed
+POST https://mall.bilibili.com/mall-c-search/ip/home/list
+POST https://mall.bilibili.com/mall-c-search/ip/peek/list
+POST https://mall.bilibili.com/mall-c-search/ip/recommend
+POST https://mall.bilibili.com/mall-c-search/items/info/realtime
+POST https://mall.bilibili.com/mall-c-search/items/wish/set
+POST https://mall.bilibili.com/mall-c-search/search/category/allfilter
+POST https://mall.bilibili.com/mall-c-search/search/category/items/count
+POST https://mall.bilibili.com/mall-c-search/user/dev/auth
+POST https://mall.bilibili.com/mall-c-search/user/region
+POST https://mall.bilibili.com/mall-c-search/wallpaper/list
+POST https://mall.bilibili.com/mall-c//orderUpdate/receiveMsg/diff
+POST https://mall.bilibili.com/mall-c//orderUpdate/receiveMsg/modify/v2
+POST https://mall.bilibili.com/mall-c/cart/na/address/add
+POST https://mall.bilibili.com/mall-c/cart/na/check
+POST https://mall.bilibili.com/mall-c/cart/na/precreate
+POST https://mall.bilibili.com/mall-c/cart/na/presale
+POST https://mall.bilibili.com/mall-c/cart/page/list
+POST https://mall.bilibili.com/mall-c/coupon/batch/receive/coupon
+POST https://mall.bilibili.com/mall-c/items/wish/set
+POST https://mall.bilibili.com/mall-c/items/wish/set/na
+POST https://mall.bilibili.com/mall-c/story/delete
+POST https://mall.bilibili.com/mall-c/story/list
+POST https://mall.bilibili.com/mall-c/story/save
+POST https://mall.bilibili.com/mall-c/story/vote/set
+POST https://mall.bilibili.com/mall-c/ugc/content/add
+POST https://mall.bilibili.com/mall-c/ugc/content/operate
+POST https://mall.bilibili.com/mall-c/ugc/vote/set
+POST https://mall.bilibili.com/mall-dayu//mall-trade/order/express/infoByOrder
+POST https://mall.bilibili.com/mall-dayu/items/history/clear
+POST https://mall.bilibili.com/mall-dayu/items/history/delete
+POST https://mall.bilibili.com/mall-dayu/kfptfe/watermark/external/share/baseImgShareV3
+POST https://mall.bilibili.com/mall-dayu/mall-trade/order/express/info
+POST https://mall.bilibili.com/mall-dayu/muggle/iam
+POST https://mall.bilibili.com/mall-dayu/muggle/rights/manual-coupon/batch-release
+POST https://mall.bilibili.com/mall-dayu/muggle/rights/release
+POST https://mall.bilibili.com/mall-marketing-c/coupon/receivecoupon
+POST https://mall.bilibili.com/mall-marketing-c/pre/action/settlement
+POST https://mall.bilibili.com/mall-ugc/dynamic/createDynamic
+POST https://mall.bilibili.com/mall-ugc/dynamic/panel/config
+POST https://mall.bilibili.com/mall-up-search/items/fav/itemsList/na
+POST https://mall.bilibili.com/mall-up-search/items/fav/set
+POST https://mall.bilibili.com/mall/jiuqu/rt/action/report
+POST https://mall.bilibili.com/mall/noah/feed/sceneRec
+POST https://mall.bilibili.com/mall/noah/hit_mall_ticket/list/v2
+POST https://member.bilibili.com/x/app/archive/content/generation
+POST https://member.bilibili.com/x/app/growth/credit/receive
+POST https://member.bilibili.com/x/app/inspiration/fav
+POST https://member.bilibili.com/x/app/newcomer/credit/receive
+POST https://member.bilibili.com/x/vu/app/add_check
+POST https://member.bilibili.com/x/vu/app/dynamic/add
+POST https://miniapp.bilibili.com/open/open_api/v1/miniapp/client/iap/user/auto-unlock
+POST https://miniapp.bilibili.com/open/open_api/v1/miniapp/user/access/non_formal
+POST https://passport.bilibili.com/x/passport-login/web/sso/ticket
+POST https://pay.bilibili.com/payplatform/pay/qryForPayscoreDetail
+POST https://pay.bilibili.com/paywallet/wallet/getUserWallet
+POST https://shop.bilibili.com/mall-merchant-c/merchant/rtc/room/event
+POST https://shop.bilibili.com/mall-merchant-c/merchant/rtc/user/call
+POST https://shop.bilibili.com/mall-merchant-c/merchant/rtc/user/recover
+POST https://show.bilibili.com/api/activity/fire/common/event/dispatch
+POST https://show.bilibili.com/api/activity/ip/dress/update
+POST https://show.bilibili.com/api/activity/ip/sign/do
+POST https://show.bilibili.com/api/activity/ip/task/dispatch
+POST https://show.bilibili.com/api/activity/v2/photo/prize
+POST https://show.bilibili.com/api/merchants/relation/add
+POST https://show.bilibili.com/api/merchants/relation/del
+POST https://show.bilibili.com/api/ticket/addrinfo/create
+POST https://show.bilibili.com/api/ticket/addrinfo/delete
+POST https://show.bilibili.com/api/ticket/addrinfo/update
+POST https://show.bilibili.com/api/ticket/ticket/reTransfer
+POST https://show.bilibili.com/api/ticket/ticket/transfer
+POST https://show.bilibili.com/api/ticket/user/addfav
+POST https://show.bilibili.com/api/ticket/user/delfav
+```
+
+## 仅见于 Play 的 HTTP 键
+
+```text
+GET http://api.bilibili.com/x/member/realname/v2/card/types
+GET http://pre-ai.bilibili.co/byp/api/interface/tts/task/result
+GET https://api.live.bilibili.com/av/v1/SuperChat/getMessageList
+GET https://api.live.bilibili.com/av/v1/VideoConnection/getBlack
+GET https://api.live.bilibili.com/av/v1/VideoConnection/onlineSearch
+GET https://api.live.bilibili.com/client/v1/Game/getCallList
+GET https://api.live.bilibili.com/live_stream/v1/UpStreamExt/pause_by_room
+GET https://api.live.bilibili.com/room/v1/Danmu/getConf
+GET https://api.live.bilibili.com/xlive/anchor-task-interface/api/v1/GetAnchorTaskCenterPendantInfo
+GET https://api.live.bilibili.com/xlive/app-blink/v1/activity/GetActivityV2
+GET https://api.live.bilibili.com/xlive/app-blink/v1/activity/GetWidgetBannerSortedList
+GET https://api.live.bilibili.com/xlive/app-blink/v1/anchorBenefits/GetAnchorBenefitsEntranceInfo
+GET https://api.live.bilibili.com/xlive/app-blink/v1/clarity/HitClarityV2
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/CanAnchorEncryptRoom
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/ConvertVideoBackgroundUrl
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/GetBackground
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/GetEncryptRoomInfo
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/GetEncryptRoomPassword
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/GetPrivilegeMange
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/appointmentBeforeLiveCheck
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/areaListForLive
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/checkCanVirtual
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/getAnchorSwitch
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/getAnchorUsedClick
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/getIndexData
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/getMessageNum
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/getNoticeResult
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/getSpreadSwitch
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/getSubAreaInfoByID
+GET https://api.live.bilibili.com/xlive/app-blink/v1/index/getVirtualDateNum
+GET https://api.live.bilibili.com/xlive/app-blink/v1/live/GetQualityData
+GET https://api.live.bilibili.com/xlive/app-blink/v1/live/GetUpStreamRtmp
+GET https://api.live.bilibili.com/xlive/app-blink/v1/liveTagService/GetLiveTags
+GET https://api.live.bilibili.com/xlive/app-blink/v1/material/GetCoverMaterialDetailById
+GET https://api.live.bilibili.com/xlive/app-blink/v1/material/ListCoverMaterials
+GET https://api.live.bilibili.com/xlive/app-blink/v1/material/ListCoverMaterialsCategory
+GET https://api.live.bilibili.com/xlive/app-blink/v1/multiVoice/InvitationList
+GET https://api.live.bilibili.com/xlive/app-blink/v1/multiVoice/MultiVoiceApplicationList
+GET https://api.live.bilibili.com/xlive/app-blink/v1/music/bgmFav
+GET https://api.live.bilibili.com/xlive/app-blink/v1/music/bgmList
+GET https://api.live.bilibili.com/xlive/app-blink/v1/music/bgmPlay
+GET https://api.live.bilibili.com/xlive/app-blink/v1/music/bgmPre
+GET https://api.live.bilibili.com/xlive/app-blink/v1/music/bgmSearch
+GET https://api.live.bilibili.com/xlive/app-blink/v1/newEntrance/getLiveIconInfos
+GET https://api.live.bilibili.com/xlive/app-blink/v1/playTogether/PlayTogetherAnchorSwitch
+GET https://api.live.bilibili.com/xlive/app-blink/v1/popConf/getPopConfV2
+GET https://api.live.bilibili.com/xlive/app-blink/v1/popConf/postPopStatus
+GET https://api.live.bilibili.com/xlive/app-blink/v1/preLive/GetCoverAdviceAndQualityScore
+GET https://api.live.bilibili.com/xlive/app-blink/v1/preLive/GetReach
+GET https://api.live.bilibili.com/xlive/app-blink/v1/preLive/GetVisibleMode
+GET https://api.live.bilibili.com/xlive/app-blink/v1/preLive/PreLive
+GET https://api.live.bilibili.com/xlive/app-blink/v1/preLive/PreLiveBizCheck
+GET https://api.live.bilibili.com/xlive/app-blink/v1/preLive/getAiTitleConfig
+GET https://api.live.bilibili.com/xlive/app-blink/v1/preLive/getAiTitleResult
+GET https://api.live.bilibili.com/xlive/app-blink/v1/preLiveAiCover/CheckAiCoverEligibility
+GET https://api.live.bilibili.com/xlive/app-blink/v1/preLiveAiCover/GetAiCoverTaskStatus
+GET https://api.live.bilibili.com/xlive/app-blink/v1/preLiveAiCover/ListAiCoverMyTasks
+GET https://api.live.bilibili.com/xlive/app-blink/v1/preLiveAiCover/ListAiCoverStyles
+GET https://api.live.bilibili.com/xlive/app-blink/v1/record/getSwitch
+GET https://api.live.bilibili.com/xlive/app-blink/v1/room/AnnounceInfo
+GET https://api.live.bilibili.com/xlive/app-blink/v1/room/GetInfo
+GET https://api.live.bilibili.com/xlive/app-blink/v1/room/GetRoomContentAuditInfo
+GET https://api.live.bilibili.com/xlive/app-blink/v1/roomBg/AvailableBgList
+GET https://api.live.bilibili.com/xlive/app-blink/v1/roomBg/UpdateActiveBg
+GET https://api.live.bilibili.com/xlive/app-blink/v1/schedule/GetSchedule
+GET https://api.live.bilibili.com/xlive/app-blink/v1/stickers/getAnchorDynamicStickers
+GET https://api.live.bilibili.com/xlive/app-blink/v1/stickers/getDynamicStickers
+GET https://api.live.bilibili.com/xlive/app-blink/v1/stickers/getStickers
+GET https://api.live.bilibili.com/xlive/app-blink/v1/topic/GetLiveTopic
+GET https://api.live.bilibili.com/xlive/app-blink/v1/universalInteract/InConnPanel
+GET https://api.live.bilibili.com/xlive/app-blink/v1/upStreamConfig/CanUseH265Encoder
+GET https://api.live.bilibili.com/xlive/app-blink/v1/upStreamConfig/GetKeyFrameIntervalConfig
+GET https://api.live.bilibili.com/xlive/app-blink/v1/upStreamConfig/GetUpStreamConfig
+GET https://api.live.bilibili.com/xlive/app-blink/v1/upStreamConfig/GetUpStreamSpeedTestInfo
+GET https://api.live.bilibili.com/xlive/app-blink/v1/voiceConn/applicationList
+GET https://api.live.bilibili.com/xlive/app-blink/v1/voiceConn/config
+GET https://api.live.bilibili.com/xlive/app-blink/v1/voiceConn/endVoiceConn
+GET https://api.live.bilibili.com/xlive/app-blink/v1/voiceConn/rejectVoiceConn
+GET https://api.live.bilibili.com/xlive/app-blink/v1/voiceConn/searchUser
+GET https://api.live.bilibili.com/xlive/app-blink/v1/voiceConn/startVoiceConn
+GET https://api.live.bilibili.com/xlive/app-blink/v2/anchorCustomize/GetCustomizedButtonInfo
+GET https://api.live.bilibili.com/xlive/app-blink/v2/multiVoice/GetMvRoomConfig
+GET https://api.live.bilibili.com/xlive/app-blink/v2/preLiveIcon/GetPreLiveIcon
+GET https://api.live.bilibili.com/xlive/app-blink/v2/preLiveIcon/ReportPreLiveIconRedDotClick
+GET https://api.live.bilibili.com/xlive/app-blink/v2/universalInteract/Config
+GET https://api.live.bilibili.com/xlive/app-blink/v2/universalInteract/HistoryList
+GET https://api.live.bilibili.com/xlive/app-blink/v2/universalInteract/InteractList
+GET https://api.live.bilibili.com/xlive/app-room/v2/wish/GetWishInfo
+GET https://api.live.bilibili.com/xlive/app-ucenter/v1/highlight/ready
+GET https://api.live.bilibili.com/xlive/app-ucenter/v1/highlight/statistics
+GET https://api.live.bilibili.com/xlive/app-ucenter/v1/like_info_v3/like/getLikeInfov3
+GET https://api.live.bilibili.com/xlive/app-ucenter/v1/official_room/officialRoom/GetAnchorShowInfo
+GET https://api.live.bilibili.com/xlive/app-ucenter/v1/roomAdmin/senior_switch
+GET https://api.live.bilibili.com/xlive/app-ucenter/v2/xbanned/banned/GetDmSendConfig
+GET https://api.live.bilibili.com/xlive/general-interface/v1/paylive/getPayliveInfoForAnchor
+GET https://api.live.bilibili.com/xlive/general-interface/v1/paylive/queryPayliveStatus
+GET https://api.live.bilibili.com/xlive/general-interface/v2/pk/groupInfo
+GET https://api.live.bilibili.com/xlive/guard-interface/v1/guard/GuardTechoAnchorNotice
+GET https://api.live.bilibili.com/xlive/lottery-interface/v1/Anchor/Info
+GET https://api.live.bilibili.com/xlive/mcn-interface/v1/prompter/GetMyPrompterPermission
+GET https://api.live.bilibili.com/xlive/open-interface/v1/boss_upload_resource
+GET https://api.live.bilibili.com/xlive/revenue/v1/giftStream/getAnchorStatistics
+GET https://api.live.bilibili.com/xlive/virtual-interface/v1/duration/heartbeat
+GET https://api.live.bilibili.com/xlive/virtual-interface/v1/virtual3d/Get3DPlayResourceEntity
+GET https://api.live.bilibili.com/xlive/virtual-interface/v1/virtualModel/getVirtualModelById
+GET https://api.live.bilibili.com/xlive/virtual-interface/v1/virtualModel/getVirtualModelList
+GET https://api.live.bilibili.com/xlive/virtual-interface/v1/xvtuber/GetLatestUseModel
+GET https://member.bilibili.com/v2/bcut/caption/intelligent/get
+GET https://member.bilibili.com/v2/bcut/caption/recommend/get
+GET https://member.bilibili.com/v2/bcut/playstyle/result
+GET https://member.bilibili.com/v2/bcut/remix/music
+GET https://member.bilibili.com/v2/bcut/vchange/result
+GET https://member.bilibili.com/x/app/h5/mission/type/v2
+GET https://member.bilibili.com/x/bcut/app/aliyuntoken
+GET https://member.bilibili.com/x/bcut/app/material/bgm/recommend/list
+GET https://member.bilibili.com/x/bcut/app/rough-cut/get
+GET https://member.bilibili.com/x/bcut/app/videoconf
+GET https://member.bilibili.com/x/bcut/riskcontrol/publish
+GET https://member.bilibili.com/x/creative-tool/ai-collection/query/materials
+GET https://member.bilibili.com/x/creative-tool/intelligent-title/style
+GET https://member.bilibili.com/x/creative-tool/rubick-interface/task/result
+GET https://member.bilibili.com/x/material/bcut/up/template/del
+GET https://member.bilibili.com/x/material/bcut/up/template/list
+GET https://member.bilibili.com/x/material/bcut/v2/cover-template/by-tag
+GET https://member.bilibili.com/x/material/bcut/v2/list
+GET https://member.bilibili.com/x/material/bcut/v2/pre
+GET https://member.bilibili.com/x/material/bgm/bcut/check/state
+GET https://member.bilibili.com/x/material/bgm/bcut/pre
+GET https://member.bilibili.com/x/mvp/arc/desc/format
+GET https://member.bilibili.com/x/mvp/arc/pre
+GET https://member.bilibili.com/x/mvp/arc/types
+GET https://member.bilibili.com/x/mvp/material/list
+GET https://member.bilibili.com/x/vupre/mvp/archive/human/type2/list
+GET https://member.bilibili.com/x/vupre/mvp/archive/tags
+GET https://member.bilibili.com/x/vupre/mvp/topic/search
+GET https://member.bilibili.com/x/vupre/mvp/topic/tag/check
+GET https://member.bilibili.com/x/vupre/mvp/topic/type
+GET https://member.bilibili.com/x/vupre/mvp/topic/type/v2
+POST http://pre-ai.bilibili.co/byp/api/interface/tts/task
+POST http://pre-ai.bilibili.co/byp/api/interface/tts/task/run
+POST https://api.live.bilibili.com/room/v1/Room/startLive
+POST https://api.live.bilibili.com/room/v1/Room/stopLive
+POST https://api.live.bilibili.com/room_ex/v1/RoomNews/update
+POST https://api.live.bilibili.com/xlive/app-blink/v1/index/SetEncrypt
+POST https://api.live.bilibili.com/xlive/app-blink/v1/index/SetEncryptRoomInfo
+POST https://api.live.bilibili.com/xlive/app-blink/v1/index/UpdateBackground
+POST https://api.live.bilibili.com/xlive/app-blink/v1/index/VerifyEncryptRoomPassword
+POST https://api.live.bilibili.com/xlive/app-blink/v1/index/saveVirtualData
+POST https://api.live.bilibili.com/xlive/app-blink/v1/index/updateAnchorSwitch
+POST https://api.live.bilibili.com/xlive/app-blink/v1/index/updateTemporaryConf
+POST https://api.live.bilibili.com/xlive/app-blink/v1/index/updateVirtualDate
+POST https://api.live.bilibili.com/xlive/app-blink/v1/live/QualityCallback
+POST https://api.live.bilibili.com/xlive/app-blink/v1/liveTagService/AddLiveTag
+POST https://api.live.bilibili.com/xlive/app-blink/v1/liveTagService/DeleteLiveTag
+POST https://api.live.bilibili.com/xlive/app-blink/v1/music/addFav
+POST https://api.live.bilibili.com/xlive/app-blink/v1/music/delFav
+POST https://api.live.bilibili.com/xlive/app-blink/v1/preLive/AcceptReach
+POST https://api.live.bilibili.com/xlive/app-blink/v1/preLive/SaveVisibleMode
+POST https://api.live.bilibili.com/xlive/app-blink/v1/preLive/UpdateLocationStatus
+POST https://api.live.bilibili.com/xlive/app-blink/v1/preLive/UpdatePreLiveInfo
+POST https://api.live.bilibili.com/xlive/app-blink/v1/preLive/generateAiTitle
+POST https://api.live.bilibili.com/xlive/app-blink/v1/preLiveAiCover/GenerateAiCover
+POST https://api.live.bilibili.com/xlive/app-blink/v1/report/BlinkClientStatusReport
+POST https://api.live.bilibili.com/xlive/app-blink/v1/room/AnnounceCommit
+POST https://api.live.bilibili.com/xlive/app-blink/v1/stickers/postDynamicStickerText
+POST https://api.live.bilibili.com/xlive/app-blink/v1/stickers/postStickerText
+POST https://api.live.bilibili.com/xlive/app-blink/v1/stickers/updateAnchorDynamicStickers
+POST https://api.live.bilibili.com/xlive/app-blink/v1/topic/BindLiveTopic
+POST https://api.live.bilibili.com/xlive/app-blink/v1/universalInteract/Dissolve
+POST https://api.live.bilibili.com/xlive/app-blink/v1/universalInteract/Kick
+POST https://api.live.bilibili.com/xlive/app-blink/v1/voiceConn/setConfig
+POST https://api.live.bilibili.com/xlive/app-blink/v1/voiceConn/setRoomSwitch
+POST https://api.live.bilibili.com/xlive/app-blink/v1/voiceReportDM/GenVoiceReportDM
+POST https://api.live.bilibili.com/xlive/app-blink/v1/xInteract/ReconnectLink
+POST https://api.live.bilibili.com/xlive/app-blink/v2/anchorCustomize/SetCustomizedButton
+POST https://api.live.bilibili.com/xlive/app-blink/v2/multiVoice/ApplicationReply
+POST https://api.live.bilibili.com/xlive/app-blink/v2/multiVoice/CreateChannel
+POST https://api.live.bilibili.com/xlive/app-blink/v2/multiVoice/Invitation
+POST https://api.live.bilibili.com/xlive/app-blink/v2/multiVoice/PreCheck
+POST https://api.live.bilibili.com/xlive/app-blink/v2/multiVoice/SetMvRoomConfig
+POST https://api.live.bilibili.com/xlive/app-blink/v2/universalInteract/AddMatchInvite
+POST https://api.live.bilibili.com/xlive/app-blink/v2/universalInteract/ConfigModify
+POST https://api.live.bilibili.com/xlive/app-blink/v2/universalInteract/ResetScore
+POST https://api.live.bilibili.com/xlive/app-blink/v2/universalInteract/SwitchSpotlight
+POST https://api.live.bilibili.com/xlive/app-ucenter/v1/highlight/modify
+POST https://api.live.bilibili.com/xlive/app-ucenter/v1/labs/AppointConfig
+POST https://api.live.bilibili.com/xlive/app-ucenter/v1/labs/EditPlugs
+POST https://api.live.bilibili.com/xlive/app-ucenter/v2/xbanned/banned/DelBlack
+POST https://api.live.bilibili.com/xlive/app-ucenter/v2/xbanned/banned/SetDmSendConfig
+POST https://api.live.bilibili.com/xlive/devicelog/v1/upload
+POST https://api.live.bilibili.com/xlive/e-commerce-interface/v1/ecommerce-anchor/anchor_inner_operating_id
+POST https://api.live.bilibili.com/xlive/general-interface/v1/battle/cancel
+POST https://api.live.bilibili.com/xlive/general-interface/v1/paylive/prepareGuardPaylive
+POST https://api.live.bilibili.com/xlive/general-interface/v1/paylive/preparePaylive
+POST https://api.live.bilibili.com/xlive/general-interface/v2/pk/groupUpdate
+POST https://api.live.bilibili.com/xlive/mcn-interface/v1/prompter/SetPrompterPermission
+POST https://api.live.bilibili.com/xlive/pk-interface/multiVoice/UpdateAsrSwitch
+POST https://api.live.bilibili.com/xlive/pk-interface/v1/battle/addUserConf
+POST https://api.live.bilibili.com/xlive/pk-interface/v1/battle/join
+POST https://api.live.bilibili.com/xlive/virtual-interface/v1/virtual3d/Get3DPlayResourceList
+POST https://api.live.bilibili.com/xlive/virtual-interface/v1/xvtuber/LatestAction
+POST https://api.live.bilibili.com/xlive/virtual-interface/v1/xvtuber/UpdateModelPreview
+POST https://member.bilibili.com/v2/bcut/caption/intelligent/create
+POST https://member.bilibili.com/v2/bcut/experiment/publish-page
+POST https://member.bilibili.com/v2/bcut/playstyle/generate
+POST https://member.bilibili.com/v2/bcut/vchange/launch
+POST https://member.bilibili.com/x/bcut/app/cover-title/split
+POST https://member.bilibili.com/x/bcut/app/material/bgm/rec_list
+POST https://member.bilibili.com/x/bcut/app/pre/subjects
+POST https://member.bilibili.com/x/bcut/app/videogen/segment
+POST https://member.bilibili.com/x/bcut/app/videogen/segment/report
+POST https://member.bilibili.com/x/bcut/draftbox/draft/save
+POST https://member.bilibili.com/x/bcut/rubick-interface/task
+POST https://member.bilibili.com/x/creative-tool/pic-text/audit
+POST https://member.bilibili.com/x/creative-tool/rubick-interface/task
+POST https://member.bilibili.com/x/mvp/material/batch/fav
+POST https://member.bilibili.com/x/vu/h5/activity/add
+POST https://member.bilibili.com/x/vupre/mvp/archive/types/predict
+POST https://member.bilibili.com/x/vupre/mvp/reserve/add
+POST https://pay.bilibili.com/payplatform/iapfront/api/googlepay/one/artificial
+POST https://pay.bilibili.com/payplatform/iapfront/api/googlepay/purchase/verify
+POST https://pay.bilibili.com/payplatform/iapfront/api/googlepay/verify/consume
+```

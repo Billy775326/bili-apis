@@ -11,12 +11,13 @@
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "catalog": "node bin/bili-web.mjs",
-    "docs:generate": "node scripts/build-pc-docs.mjs",
-    "android:docs": "node scripts/build-docs.mjs && node scripts/build-discovery.mjs && node scripts/build-functions.mjs",
+    "docs:generate": "node scripts/build-pc-docs.mjs && node scripts/build-android-editions.mjs",
+    "android:docs": "node scripts/build-docs.mjs && node scripts/build-discovery.mjs && node scripts/build-functions.mjs && node scripts/build-official-android.mjs && node scripts/build-android-editions.mjs",
     "pc:capture": "node scripts/capture-pc-web.mjs",
     "pc:check": "node scripts/check-pc-web.mjs",
-    "android:official:docs": "node scripts/build-official-android.mjs",
-    "privacy:check": "node scripts/check-public-data.mjs"
+    "android:official:docs": "node scripts/build-official-android.mjs && node scripts/build-android-editions.mjs",
+    "privacy:check": "node scripts/check-public-data.mjs",
+    "android:play:docs": "node scripts/build-docs.mjs && node scripts/build-discovery.mjs && node scripts/build-functions.mjs && node scripts/build-android-editions.mjs"
   },
   "engines": {
     "node": ">=24.11.0"

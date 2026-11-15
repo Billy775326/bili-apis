@@ -6,7 +6,7 @@ import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { readJson } from "../src/catalog.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."),
-  read = (n) => readJson(path.join(root, "catalog", n + ".json"));
+  read = (n) => readJson(path.join(root, "catalog/android/com.bilibili.app.in/play/6.8.0", n + ".json"));
 test("discovery summary pins parsed source JSON across whitespace and platform line endings", () => {
   const summary = read("discovery-summary");
   for (const source of summary.sources) {

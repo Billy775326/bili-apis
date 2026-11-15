@@ -5,7 +5,7 @@ import { readDex } from "../src/dex.mjs";
 import { instructions, decodeMessageInfo } from "../src/grpc.mjs";
 const input = process.argv[2],
   provenance = process.argv[3],
-  out = process.argv[4] ?? "catalog";
+  out = process.argv[4] ?? "catalog/android/com.bilibili.app.in/play/6.8.0";
 if (!input || !provenance)
   throw Error(
     "Usage: node scripts/extract-grpc.mjs DEX_DIR INPUTS_JSON [OUTPUT_DIR]",

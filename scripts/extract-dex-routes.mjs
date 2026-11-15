@@ -13,8 +13,8 @@ import {
 const [
   directory,
   provenanceFile = "evidence/inputs.json",
-  httpFile = "catalog/http.json",
-  outputDirectory = "catalog",
+  httpFile = "catalog/android/com.bilibili.app.in/play/6.8.0/http.json",
+  outputDirectory = "catalog/android/com.bilibili.app.in/play/6.8.0",
 ] = process.argv.slice(2);
 if (!directory)
   throw Error(

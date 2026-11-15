@@ -1,0 +1,22 @@
+{
+  "artifact_sha256": "e70979a2d21d650c0b8ba0916616b8799ecbf89397b7c83282766e68f76c77ad",
+  "manifest_sha256": "935046033a2f139750c22a9cc178a10d64269b582d70691722dfe82a35809791",
+  "package_name": "com.bilibili.app.in",
+  "version_name": "6.8.0",
+  "version_code": 9180200,
+  "min_sdk": 24,
+  "target_sdk": 36,
+  "application_class": "tv.danmaku.bili.HiltApplication",
+  "debuggable": null,
+  "uses_cleartext_traffic": true,
+  "component_counts": {
+    "activity": 684,
+    "activity-alias": 1,
+    "service": 76,
+    "receiver": 32,
+    "provider": 58
+  },
+  "manifest_string_count": 1544,
+  "manifest_attribute_count": 5044,
+  "scope": "Binary AndroidManifest.xml metadata only; references into resources are preserved as unresolved typed values. No app execution or policy enforcement inferred."
+}

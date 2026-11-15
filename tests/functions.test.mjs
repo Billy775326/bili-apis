@@ -20,7 +20,7 @@ test('domain-specific categories take precedence over generic operations',()=>{
  assert.equal(classifyFunction({kind:'http',path:'/unknown/example'}).category,'other');
 });
 test('all declarations are classified exactly once with matching source digests',()=>{
- const data=readJson('catalog/functions.json'),endpoints=loadCatalog(process.cwd()).filter(e=>['http','grpc'].includes(e.kind));
+ const data=readJson('catalog/android/com.bilibili.app.in/play/6.8.0/functions.json'),endpoints=loadCatalog(process.cwd()).filter(e=>['http','grpc'].includes(e.kind));
  assert.equal(data.endpoints.length,endpoints.length);
  assert.equal(new Set(data.endpoints.map(e=>e.id)).size,endpoints.length);
  const map=new Map(endpoints.map(e=>[e.id,e]));
@@ -48,14 +48,14 @@ test('HTTP 200 does not establish success without business code and data shape',
  const safe=check('{"code":0,"data":{"access_token":"DO_NOT_PERSIST"}}');assert.ok(!JSON.stringify(safe).includes('DO_NOT_PERSIST'));
 });
 test('live plan permits only explicit catalog GET URLs without ambient credentials',()=>{
- const http=readJson('catalog/http.json');
+ const http=readJson('catalog/android/com.bilibili.app.in/play/6.8.0/http.json');
  for(const p of LIVE_PLAN){const url=planUrl(p,http.endpoints,{vmid:'1001',room_id:'1002'});assert.equal(url.protocol,'https:');assert.ok(!/[?&](?:access_key|appkey|sign|cookie)=/.test(url.href));}
  for(const p of LIVE_PLAN.filter(p=>p.required_params?.length))assert.throws(()=>planUrl(p,http.endpoints),/Explicit authorized/);
  const plan={endpoint_id:'a',params:{}};
  for(const [http_method,resolved_url_candidate] of [['POST','https://api.bilibili.com/x'],['GET','https://evil.example/x'],['GET','https://api.bilibili.com/x?access_key=secret'],['GET','http://api.bilibili.com/x']])assert.throws(()=>planUrl(plan,[{id:'a',http_method,resolved_url_candidate}]));
 });
 test('published live observations retain routes, parameter names and provenance while redacting values',()=>{
- const live=readJson('evidence/live-checks.json'),http=readJson('catalog/http.json');
+ const live=readJson('evidence/live-checks.json'),http=readJson('catalog/android/com.bilibili.app.in/play/6.8.0/http.json');
  assert.equal(live.source_artifact_sha256,http.artifact.sha256);
  assert.equal(live.observations.length,LIVE_PLAN.length);
  for(const [i,r] of live.observations.entries()){

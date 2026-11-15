@@ -81,8 +81,9 @@ function records(edition) {
 function fixture(t) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), "bili-edition-"));
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
-  const plain = path.join(root, "catalog"),
-    official = path.join(plain, "official-android");
+  const plain = path.join(root, "catalog/android/com.bilibili.app.in/play/6.8.0"),
+    official = path.join(root, "catalog/android/tv.danmaku.bili/official/9.19.0");
+  fs.mkdirSync(plain, { recursive: true });
   fs.mkdirSync(official, { recursive: true });
   for (const [name, data] of Object.entries(records("play")))
     fs.writeFileSync(path.join(plain, name), JSON.stringify(data));
@@ -123,6 +124,7 @@ function cliFixture(t) {
   for (const dir of ["src", "bin"]) fs.mkdirSync(path.join(f.root, dir));
   for (const name of [
     "src/catalog.mjs",
+    "src/android-editions.mjs",
     "src/functions.mjs",
     "bin/bili-apis.mjs",
   ])
@@ -300,7 +302,7 @@ const packagedJson = (relative) =>
       .replace(/^\uFEFF/, ""),
   );
 function packagedOfficial() {
-  const manifest = packagedJson("catalog/official-android/manifest.json"),
+  const manifest = packagedJson("catalog/android/tv.danmaku.bili/official/9.19.0/manifest.json"),
     data = new Map();
   assert.equal(
     new Set(manifest.files.map((file) => file.name)).size,
@@ -308,7 +310,7 @@ function packagedOfficial() {
   );
   for (const record of manifest.files) {
     const packed = fs.readFileSync(
-      new URL("catalog/official-android/" + record.name, projectRoot),
+      new URL("catalog/android/tv.danmaku.bili/official/9.19.0/" + record.name, projectRoot),
     );
     assert.equal(packed.length, record.bytes, record.name + " compressed size");
     assert.equal(
@@ -450,5 +452,5 @@ test("shipped official row counts and field checks match coverage while Play sta
   assert.equal(summarize(official).counts.http, hc.http_declarations);
   assert.equal(summarize(official).counts.grpc, gc.unique_methods);
   assert.equal(gc.unique_methods, 625);
-  assert.equal(packagedJson("catalog/grpc.json").methods.length, 604);
+  assert.equal(packagedJson("catalog/android/com.bilibili.app.in/play/6.8.0/grpc.json").methods.length, 604);
 });

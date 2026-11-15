@@ -12,7 +12,7 @@ import {
   classifyTransportMethod,
   classifyFullNameLiteral,
 } from "../src/grpc-audit.mjs";
-const [input, provenance = "evidence/inputs.json", output = "catalog"] =
+const [input, provenance = "evidence/inputs.json", output = "catalog/android/com.bilibili.app.in/play/6.8.0"] =
   process.argv.slice(2);
 if (!input)
   throw Error(

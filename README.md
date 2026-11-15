@@ -1,6 +1,16 @@
 # Bilibili APIs
 
-Bilibili 网页数据读取与接口研究项目。面向需要读取公开视频、搜索、评论、空间与直播信息的开发者，提供按功能组织的接口说明、Node.js 只读客户端及验证记录。
+Bilibili 网页接口与 Android 安装包接口研究项目。网页提供按功能组织的接口说明、Node.js 客户端及验证记录；Google Play 与官方 Android 安装包分别保存静态接口、参数模型与来源证据。
+
+## 选择接口范围
+
+| 范围 | 包名 | 版本 | 入口 |
+| --- | --- | --- | --- |
+| 网页 | 不适用 | 按观测与验证记录 | [功能文档与验证](docs/pc/README.md) |
+| Google Play | com.bilibili.app.in | 6.8.0 | [接口与文档](docs/android/com.bilibili.app.in/play/6.8.0/README.md) |
+| Official Android 64-bit | tv.danmaku.bili | 9.19.0 | [接口与文档](docs/android/tv.danmaku.bili/official/9.19.0/README.md) |
+
+[按包名、渠道和版本查看全部目录](docs/android/README.md)。以下客户端与在线验证说明属于网页范围，APK 声明的静态提取状态在各自文档中单列。
 
 当前封装 **39 个 网页 只读别名**；匿名快照 **33 个地址**通过相关匿名 HTTP 字段用例。网页观察目录共 82 组方法与 URL，包含这些读取地址；不能将所有观察都算作可调用接口。
 
@@ -78,8 +88,9 @@ bin/                  命令行入口：bili-web 与 Android 目录查询
 src/web-client.mjs    网页 匿名 GET 客户端及读取别名
 src/pc-cases.mjs      字段断言
 examples/             可执行的 网页 读取示例
-docs/pc/              功能文档、使用场景及验证结果
-catalog/              脱敏目录、静态候选与 Android 元数据
+docs/pc/              网页功能文档、使用场景及验证结果
+docs/android/         包名/渠道/版本下的 APK 文档
+catalog/android/com.bilibili.app.in/play/6.8.0/              脱敏目录、静态候选与 Android 元数据
 evidence/             来源哈希与脱敏验证记录
 scripts/              提取、复测和文档生成
 tests/                离线测试
@@ -87,7 +98,9 @@ tests/                离线测试
 
 ## Android 研究资料
 
-[官方 Android 静态目录与 Play 对比](docs/official-android/README.md) · [历史 Play 目录与旧 CLI](docs/android-archive.md)。这些是独立静态证据，不自动作为网页可用性验证，也不导入 网页 客户端。
+[按包名、渠道及版本选择](docs/android/README.md) · [机器可读版本清单](catalog/android/editions.json)。网页目录独立维护，Android 声明不自动计为网页可调用接口。
+
+[官方 Android 静态目录与 Play 对比](docs/android/tv.danmaku.bili/official/9.19.0/README.md) · [历史 Play 目录与旧 CLI](docs/android/com.bilibili.app.in/play/6.8.0/README.md)。这些是独立静态证据，不自动作为网页可用性验证，也不导入 网页 客户端。
 
 ## 验证与维护
 

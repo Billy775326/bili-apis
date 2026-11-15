@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "edition": "official",
+  "channel": "Official Android 64-bit",
+  "package_name": "tv.danmaku.bili",
+  "version_name": "9.19.0",
+  "version_code": 9190400,
+  "artifact_sha256": "c3ea50c7773267f252e441b5c1aebf7574492223b2bb1568d7a7093d1f8eb59c",
+  "catalog_directory": "catalog/android/tv.danmaku.bili/official/9.19.0",
+  "docs_directory": "docs/android/tv.danmaku.bili/official/9.19.0",
+  "manifest_evidence": "evidence/official-android/manifest.json",
+  "extraction_inputs": "evidence/official-android/inputs.json",
+  "encoding": "json.gz",
+  "scope": "APK static extraction; not a web or App runtime availability claim",
+  "counts": {
+    "http": 2514,
+    "grpc": 625,
+    "artifact": 412,
+    "message": 4501,
+    "http-model": 5300,
+    "dynamic-url": 50,
+    "dex-route": 1736,
+    "resource-route": 292,
+    "broadcast": 4,
+    "native-url": 14,
+    "native-jni": 930,
+    "java-native": 4974,
+    "associated-message": 17
+  }
+}

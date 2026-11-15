@@ -38,9 +38,9 @@ test("invalid transport and unsafe pagination fail", () => {
 test("malformed catalog shape is rejected", (t) => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "bili-catalog-"));
   t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
-  fs.mkdirSync(path.join(dir, "catalog"));
+  fs.mkdirSync(path.join(dir, "catalog/android/com.bilibili.app.in/play/6.8.0"), { recursive: true });
   fs.writeFileSync(
-    path.join(dir, "catalog/http.json"),
+    path.join(dir, "catalog/android/com.bilibili.app.in/play/6.8.0/http.json"),
     JSON.stringify({ endpoints: null }),
   );
   assert.throws(() => loadCatalog(dir), /expected endpoints array/);

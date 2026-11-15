@@ -19,6 +19,7 @@ function fixture(t, { published = false } = {}) {
   for (const file of [
     "scripts/build-official-android.mjs",
     "src/catalog.mjs",
+    "src/android-editions.mjs",
     "src/android-comparison.mjs",
     "src/functions.mjs",
     "evidence/official-android/inputs.json",
@@ -33,23 +34,24 @@ function fixture(t, { published = false } = {}) {
       ["scripts/build-official-android.mjs", ...args],
       { cwd: root, encoding: "utf8", timeout: 30000 },
     );
-  const official = path.join(root, "catalog/official-android");
+  const official = path.join(root, "catalog/android/tv.danmaku.bili/official/9.19.0");
   if (published) {
     fs.mkdirSync(official, { recursive: true });
     for (const name of fs
-      .readdirSync(path.join(repository, "catalog/official-android"))
+      .readdirSync(path.join(repository, "catalog/android/tv.danmaku.bili/official/9.19.0"))
       .filter((name) => name.endsWith(".json.gz") || name === "manifest.json"))
       fs.copyFileSync(
-        path.join(repository, "catalog/official-android", name),
+        path.join(repository, "catalog/android/tv.danmaku.bili/official/9.19.0", name),
         path.join(official, name),
       );
+    fs.mkdirSync(path.join(root, 'catalog/android/com.bilibili.app.in/play/6.8.0'), {recursive:true});
     const playArtifact = { sha256: "b".repeat(64) };
     for (const [file, data] of [
       ["http.json", { artifact: playArtifact, endpoints: [] }],
       ["grpc.json", { artifact: playArtifact, methods: [] }],
       ["messages.json", { artifact: playArtifact, messages: [] }],
     ])
-      fs.writeFileSync(path.join(root, "catalog", file), JSON.stringify(data));
+      fs.writeFileSync(path.join(root, "catalog/android/com.bilibili.app.in/play/6.8.0", file), JSON.stringify(data));
   }
   return { root, official, run };
 }
@@ -95,7 +97,7 @@ for (const updateCompressedHash of [false, true]) {
       fs.writeFileSync(manifestPath, JSON.stringify(manifest));
     }
     const comparison = path.join(f.official, "comparison.json"),
-      readme = path.join(f.root, "docs/official-android/README.md");
+      readme = path.join(f.root, "docs/android/tv.danmaku.bili/official/9.19.0/README.md");
     fs.mkdirSync(path.dirname(readme), { recursive: true });
     const oldComparison = Buffer.from("original comparison sentinel\n"),
       oldReadme = Buffer.from("original documentation sentinel\n");

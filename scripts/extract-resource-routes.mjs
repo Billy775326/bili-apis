@@ -17,8 +17,8 @@ const limits = {
 };
 const inputs = [],
   args = process.argv.slice(2);
-let output = "catalog/resource-routes.json",
-  coverageOutput = "catalog/coverage-resource-routes.json";
+let output = "catalog/android/com.bilibili.app.in/play/6.8.0/resource-routes.json",
+  coverageOutput = "catalog/android/com.bilibili.app.in/play/6.8.0/coverage-resource-routes.json";
 for (let i = 0; i < args.length; i++) {
   if (args[i] === "--apk") inputs.push(args[++i]);
   else if (args[i] === "--output") output = args[++i];

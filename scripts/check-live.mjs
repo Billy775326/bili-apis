@@ -3,7 +3,7 @@ import{sanitizePublicEvidence}from'../src/public-evidence.mjs';
 import {readJson} from '../src/catalog.mjs';
 import {LIVE_PLAN,planUrl,evaluateLiveResponse} from '../src/live-checks.mjs';
 const args=process.argv.slice(2);if(args[0]!=='--run')throw Error('Use --run [--uid UID] [--room-id ROOM]');const explicit={};for(let i=1;i<args.length;i+=2){if(!['--uid','--room-id'].includes(args[i])||!args[i+1])throw Error('Invalid input');explicit[args[i]==='--uid'?'vmid':'room_id']=args[i+1];}
-const http=readJson('catalog/http.json'),observations=[];
+const http=readJson('catalog/android/com.bilibili.app.in/play/6.8.0/http.json'),observations=[];
 for(const plan of LIVE_PLAN) {
  if((plan.required_params||[]).some(k=>!explicit[k])){observations.push({endpoint_id:plan.endpoint_id,outcome:'not-executed-missing-input',input_parameter_names:plan.required_params});continue;}
  const url=planUrl(plan,http.endpoints,explicit),started_at=new Date().toISOString();

@@ -110,8 +110,8 @@ async function sha256(filename) {
 async function main() {
   const args = process.argv.slice(2),
     inputs = [];
-  let output = "catalog/artifacts.json",
-    coverageOutput = "catalog/coverage-artifacts.json";
+  let output = "catalog/android/com.bilibili.app.in/play/6.8.0/artifacts.json",
+    coverageOutput = "catalog/android/com.bilibili.app.in/play/6.8.0/coverage-artifacts.json";
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--apk") inputs.push(args[++i]);
     else if (args[i] === "--output") output = args[++i];

@@ -10,3 +10,5 @@
 
 - Public evidence must omit all real request input values and page titles, including public account/video/room samples. Run assertions before the egress sanitizer; keep result codes, checks and hashes unchanged. Never publish real account, message or upload identifiers. Use explicit local resources for live tests and synthetic examples only.
 - Run `npm run privacy:check` before publishing. This scans tracked files, including decompressed catalogs; provide a private local denylist for account-specific checks when available. See `docs/privacy.md`. Shared history cleanup requires explicit authorization after a concrete preview.
+
+- Android catalog and documentation paths are catalog/android/<package>/<edition>/<version>/ and docs/android/<package>/<edition>/<version>/. Maintain src/android-editions.mjs and regenerate the edition index with npm run android:docs. Preserve old documentation redirects and historical evidence references. Web catalogs and runtime validation stay separate; channel and version differences must not be conflated.
