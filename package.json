@@ -3,14 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Evidence-based static API catalog for Bilibili Google Play Android",
+  "description": "PC desktop web API read client and evidence-based Bilibili interface catalog",
   "bin": {
-    "bili-apis": "bin/bili-apis.mjs"
+    "bili-apis": "bin/bili-apis.mjs",
+    "bili-web": "bin/bili-web.mjs"
   },
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "catalog": "node bin/bili-apis.mjs",
-    "docs:generate": "node scripts/build-docs.mjs && node scripts/build-discovery.mjs && node scripts/build-functions.mjs"
+    "catalog": "node bin/bili-web.mjs",
+    "docs:generate": "node scripts/build-pc-docs.mjs",
+    "android:docs": "node scripts/build-docs.mjs && node scripts/build-discovery.mjs && node scripts/build-functions.mjs",
+    "pc:capture": "node scripts/capture-pc-web.mjs",
+    "pc:check": "node scripts/check-pc-web.mjs"
   },
   "engines": {
     "node": ">=24.11.0"

@@ -1,0 +1,696 @@
+{
+  "schema_version": 1,
+  "scope": "Reviewed anonymous desktop HTTP cases; opaque cursor/signature values are not published. Failed pagination remains failed.",
+  "runs": [
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "home.popular",
+      "observation_id": "http:bcbccce1cc5eee0b:0",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "pn",
+        "ps"
+      ],
+      "public_input": {
+        "pn": "[REDACTED_INPUT]",
+        "ps": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "popular-list",
+          "passed": true
+        },
+        {
+          "name": "end-marker",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "video.detail",
+      "observation_id": "http:bcbccce1cc5eee0b:1",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "bvid"
+      ],
+      "public_input": {
+        "bvid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "requested-bvid",
+          "passed": true
+        },
+        {
+          "name": "positive-aid-cid",
+          "passed": true
+        },
+        {
+          "name": "pages-array",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "video.pages",
+      "observation_id": "http:bcbccce1cc5eee0b:2",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "bvid"
+      ],
+      "public_input": {
+        "bvid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "page-list",
+          "passed": true
+        },
+        {
+          "name": "page-identities",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "video.stats",
+      "observation_id": "http:bcbccce1cc5eee0b:3",
+      "http_status": 404,
+      "business_code": null,
+      "input_parameter_names": [
+        "bvid"
+      ],
+      "public_input": {
+        "bvid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "request-failed",
+      "reason": null,
+      "checks": []
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "video.related",
+      "observation_id": "http:bcbccce1cc5eee0b:4",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "bvid"
+      ],
+      "public_input": {
+        "bvid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "related-array",
+          "passed": true
+        },
+        {
+          "name": "related-card-shape",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "video.tags",
+      "observation_id": "http:bcbccce1cc5eee0b:5",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "bvid"
+      ],
+      "public_input": {
+        "bvid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "tag-array",
+          "passed": true
+        },
+        {
+          "name": "tag-field-shape",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "user.relationStats",
+      "observation_id": "http:bcbccce1cc5eee0b:6",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "vmid"
+      ],
+      "public_input": {
+        "vmid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "requested-mid",
+          "passed": true
+        },
+        {
+          "name": "relation-counters",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "user.info",
+      "observation_id": "http:bcbccce1cc5eee0b:8",
+      "http_status": 200,
+      "business_code": -352,
+      "input_parameter_names": [
+        "mid"
+      ],
+      "public_input": {
+        "mid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "risk-or-rate-response",
+      "reason": null,
+      "checks": []
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "search.default",
+      "observation_id": "http:bcbccce1cc5eee0b:9",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [],
+      "public_input": {},
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "default-search-text",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "search.videos",
+      "observation_id": "http:bcbccce1cc5eee0b:10",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "keyword",
+        "page"
+      ],
+      "public_input": {
+        "keyword": "[REDACTED_INPUT]",
+        "page": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "search-results",
+          "passed": true
+        },
+        {
+          "name": "requested-page",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "search.all",
+      "observation_id": "http:bcbccce1cc5eee0b:11",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "keyword",
+        "page"
+      ],
+      "public_input": {
+        "keyword": "[REDACTED_INPUT]",
+        "page": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "search-results",
+          "passed": true
+        },
+        {
+          "name": "requested-page",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "video.detailBundle",
+      "observation_id": "http:bcbccce1cc5eee0b:12",
+      "http_status": 200,
+      "business_code": -352,
+      "input_parameter_names": [
+        "aid"
+      ],
+      "public_input": {
+        "aid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "risk-or-rate-response",
+      "reason": null,
+      "checks": []
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "comment.main",
+      "observation_id": "http:bcbccce1cc5eee0b:13",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "oid"
+      ],
+      "public_input": {
+        "oid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "cursor-object",
+          "passed": true
+        },
+        {
+          "name": "comment-list",
+          "passed": true
+        },
+        {
+          "name": "visible-comment-or-empty-thread",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "comment.replies",
+      "observation_id": null,
+      "http_status": null,
+      "business_code": null,
+      "input_parameter_names": [],
+      "public_input": {},
+      "outcome": "skipped",
+      "reason": "dependent-public-resource-unavailable",
+      "checks": []
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "playback.info",
+      "observation_id": "http:bcbccce1cc5eee0b:14",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "aid",
+        "cid"
+      ],
+      "public_input": {
+        "aid": "[REDACTED_INPUT]",
+        "cid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "requested-aid-cid",
+          "passed": true
+        },
+        {
+          "name": "subtitle-metadata",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "playback.url",
+      "observation_id": "http:bcbccce1cc5eee0b:15",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "bvid",
+        "cid"
+      ],
+      "public_input": {
+        "bvid": "[REDACTED_INPUT]",
+        "cid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "quality-number",
+          "passed": true
+        },
+        {
+          "name": "playback-resource-list",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "favorite.folders",
+      "observation_id": "http:bcbccce1cc5eee0b:16",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "up_mid"
+      ],
+      "public_input": {
+        "up_mid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "collection-count",
+          "passed": true
+        },
+        {
+          "name": "collection-list",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "dynamic.hot",
+      "observation_id": "http:bcbccce1cc5eee0b:17",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "page"
+      ],
+      "public_input": {
+        "page": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "dynamic-items",
+          "passed": true
+        },
+        {
+          "name": "pagination-offset",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "user.uploads",
+      "observation_id": null,
+      "http_status": null,
+      "business_code": null,
+      "input_parameter_names": [
+        "mid",
+        "order",
+        "pn",
+        "ps"
+      ],
+      "public_input": {
+        "mid": "[REDACTED_INPUT]",
+        "pn": "[REDACTED_INPUT]",
+        "ps": "[REDACTED_INPUT]",
+        "order": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "skipped",
+      "reason": "same-category-risk-response",
+      "checks": []
+    },
+    {
+      "run_id": "http:bcbccce1cc5eee0b",
+      "endpoint": "live.roomPlayInfo",
+      "observation_id": "http:bcbccce1cc5eee0b:18",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "room_id"
+      ],
+      "public_input": {
+        "room_id": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "requested-room",
+          "passed": true
+        },
+        {
+          "name": "live-status",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:19aee11d5c18be3e",
+      "endpoint": "comment.replies",
+      "observation_id": "http:19aee11d5c18be3e:0",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "oid",
+        "root"
+      ],
+      "public_input": {
+        "oid": "[REDACTED_INPUT]",
+        "root": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "reply-list",
+          "passed": true
+        },
+        {
+          "name": "pagination",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:19aee11d5c18be3e",
+      "endpoint": "comment.main",
+      "observation_id": "http:19aee11d5c18be3e:2",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "oid",
+        "pagination_str"
+      ],
+      "public_input": {
+        "oid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "response-assertion-failed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "cursor-object",
+          "passed": true
+        },
+        {
+          "name": "comment-list",
+          "passed": true
+        },
+        {
+          "name": "next-page-or-explicit-end",
+          "passed": false
+        },
+        {
+          "name": "visible-comment-or-empty-thread",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "run_id": "http:19aee11d5c18be3e",
+      "endpoint": "video.online",
+      "observation_id": "http:19aee11d5c18be3e:3",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "aid",
+        "bvid",
+        "cid"
+      ],
+      "public_input": {
+        "aid": "[REDACTED_INPUT]",
+        "cid": "[REDACTED_INPUT]",
+        "bvid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "online-counter",
+          "passed": true
+        },
+        {
+          "name": "display-switch",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:7a29d445288fbf8b",
+      "endpoint": "comment.main",
+      "observation_id": "http:7a29d445288fbf8b:1",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "oid",
+        "web_location"
+      ],
+      "public_input": {
+        "oid": "[REDACTED_INPUT]",
+        "web_location": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "response-assertion-failed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "cursor-object",
+          "passed": true
+        },
+        {
+          "name": "comment-list",
+          "passed": true
+        },
+        {
+          "name": "visible-comment-or-empty-thread",
+          "passed": true
+        },
+        {
+          "name": "ordinary-comment-rows-present",
+          "passed": false
+        }
+      ]
+    }
+  ]
+}
