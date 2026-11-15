@@ -2,22 +2,22 @@
 
 本目录仅使用 PC 网站实际请求、官方前端脚本和独立桌面 HTTP 样本。默认 CLI 列表只显示至少一个匿名字段样本通过的地址。样本通过不等于所有输入、登录角色、分页和未来版本都已验证。
 
-[HTTP 用例结果](validation.md) · [读取客户端](client.md) · [完整目录 JSON](../../catalog/pc-web.json) · [前端候选 JSON](../../catalog/pc-candidates.json)
+[本轮 HTTP 验证](current.md) · [HTTP 用例历史](validation.md) · [读取客户端](client.md) · [完整目录 JSON](../../catalog/pc-web.json) · [前端候选 JSON](../../catalog/pc-candidates.json)
 
 | 功能 | 请求地址数 | 有通过样本 |
 | --- | ---: | ---: |
 | [视频详情与关联内容](video.md) | 6 | 5 |
-| [播放与在线人数](playback.md) | 8 | 3 |
-| [搜索](search.md) | 4 | 3 |
-| [评论与楼中楼](comment.md) | 3 | 2 |
-| [用户与空间](user.md) | 16 | 1 |
+| [播放与在线人数](playback.md) | 9 | 4 |
+| [搜索](search.md) | 4 | 4 |
+| [评论与楼中楼](comment.md) | 3 | 3 |
+| [用户与空间](user.md) | 16 | 9 |
 | [关注与粉丝统计](relation.md) | 2 | 1 |
 | [公开收藏夹](favorite.md) | 1 | 1 |
-| [动态](dynamic.md) | 2 | 1 |
-| [直播](live.md) | 7 | 1 |
-| [推荐与热门](feed.md) | 3 | 1 |
+| [动态](dynamic.md) | 2 | 2 |
+| [直播](live.md) | 7 | 3 |
+| [推荐与热门](feed.md) | 3 | 3 |
 | [登录状态](auth.md) | 2 | 0 |
 | [网页配置与辅助请求](auxiliary.md) | 15 | 0 |
-| [其他网页请求](other.md) | 13 | 0 |
+| [其他网页请求](other.md) | 12 | 1 |
 
-共 82 组方法与完整 URL，74 组由浏览器实际发起，19 组至少有一个字段样本通过。573 个脚本字符串候选另行记录；它们不作为可用接口数。
+共 82 组方法与完整 URL，74 组由浏览器实际发起，36 组至少有一个字段样本通过。573 个脚本字符串候选另行记录；它们不作为可用接口数。

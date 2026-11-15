@@ -4,6 +4,8 @@
   "runs": [
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:09.457Z",
       "endpoint": "home.popular",
       "observation_id": "http:bcbccce1cc5eee0b:0",
       "http_status": 200,
@@ -36,6 +38,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:10.966Z",
       "endpoint": "video.detail",
       "observation_id": "http:bcbccce1cc5eee0b:1",
       "http_status": 200,
@@ -70,6 +74,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:12.051Z",
       "endpoint": "video.pages",
       "observation_id": "http:bcbccce1cc5eee0b:2",
       "http_status": 200,
@@ -100,6 +106,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:13.142Z",
       "endpoint": "video.stats",
       "observation_id": "http:bcbccce1cc5eee0b:3",
       "http_status": 404,
@@ -117,6 +125,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:14.210Z",
       "endpoint": "video.related",
       "observation_id": "http:bcbccce1cc5eee0b:4",
       "http_status": 200,
@@ -147,6 +157,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:15.321Z",
       "endpoint": "video.tags",
       "observation_id": "http:bcbccce1cc5eee0b:5",
       "http_status": 200,
@@ -177,6 +189,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:16.420Z",
       "endpoint": "user.relationStats",
       "observation_id": "http:bcbccce1cc5eee0b:6",
       "http_status": 200,
@@ -207,6 +221,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:17.571Z",
       "endpoint": "user.info",
       "observation_id": "http:bcbccce1cc5eee0b:8",
       "http_status": 200,
@@ -224,6 +240,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:18.910Z",
       "endpoint": "search.default",
       "observation_id": "http:bcbccce1cc5eee0b:9",
       "http_status": 200,
@@ -245,6 +263,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:20.034Z",
       "endpoint": "search.videos",
       "observation_id": "http:bcbccce1cc5eee0b:10",
       "http_status": 200,
@@ -277,6 +297,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:21.582Z",
       "endpoint": "search.all",
       "observation_id": "http:bcbccce1cc5eee0b:11",
       "http_status": 200,
@@ -309,6 +331,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:23.183Z",
       "endpoint": "video.detailBundle",
       "observation_id": "http:bcbccce1cc5eee0b:12",
       "http_status": 200,
@@ -326,6 +350,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:24.297Z",
       "endpoint": "comment.main",
       "observation_id": "http:bcbccce1cc5eee0b:13",
       "http_status": 200,
@@ -337,7 +363,7 @@
         "oid": "[REDACTED_INPUT]"
       },
       "input_values_redacted": true,
-      "outcome": "anonymous-read-case-passed",
+      "outcome": "response-assertion-failed",
       "reason": null,
       "checks": [
         {
@@ -353,6 +379,10 @@
           "passed": true
         },
         {
+          "name": "ordinary-comments-or-explicit-empty",
+          "passed": false
+        },
+        {
           "name": "visible-comment-or-empty-thread",
           "passed": true
         }
@@ -360,6 +390,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": null,
       "endpoint": "comment.replies",
       "observation_id": null,
       "http_status": null,
@@ -372,6 +404,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:25.432Z",
       "endpoint": "playback.info",
       "observation_id": "http:bcbccce1cc5eee0b:14",
       "http_status": 200,
@@ -404,6 +438,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:26.539Z",
       "endpoint": "playback.url",
       "observation_id": "http:bcbccce1cc5eee0b:15",
       "http_status": 200,
@@ -436,6 +472,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:27.703Z",
       "endpoint": "favorite.folders",
       "observation_id": "http:bcbccce1cc5eee0b:16",
       "http_status": 200,
@@ -466,6 +504,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:28.774Z",
       "endpoint": "dynamic.hot",
       "observation_id": "http:bcbccce1cc5eee0b:17",
       "http_status": 200,
@@ -496,6 +536,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": null,
       "endpoint": "user.uploads",
       "observation_id": null,
       "http_status": null,
@@ -519,6 +561,8 @@
     },
     {
       "run_id": "http:bcbccce1cc5eee0b",
+      "checked_at": "2026-11-15T00:28:31.181Z",
+      "started_at": "2026-11-15T00:28:29.952Z",
       "endpoint": "live.roomPlayInfo",
       "observation_id": "http:bcbccce1cc5eee0b:18",
       "http_status": 200,
@@ -549,6 +593,8 @@
     },
     {
       "run_id": "http:19aee11d5c18be3e",
+      "checked_at": "2026-11-15T00:37:40.327Z",
+      "started_at": null,
       "endpoint": "comment.replies",
       "observation_id": "http:19aee11d5c18be3e:0",
       "http_status": 200,
@@ -576,11 +622,21 @@
         {
           "name": "pagination",
           "passed": true
+        },
+        {
+          "name": "requested-root",
+          "passed": true
+        },
+        {
+          "name": "requested-root-oid",
+          "passed": true
         }
       ]
     },
     {
       "run_id": "http:19aee11d5c18be3e",
+      "checked_at": "2026-11-15T00:37:40.327Z",
+      "started_at": null,
       "endpoint": "comment.main",
       "observation_id": "http:19aee11d5c18be3e:2",
       "http_status": 200,
@@ -613,6 +669,10 @@
           "passed": false
         },
         {
+          "name": "ordinary-comments-or-explicit-empty",
+          "passed": false
+        },
+        {
           "name": "visible-comment-or-empty-thread",
           "passed": false
         }
@@ -620,6 +680,8 @@
     },
     {
       "run_id": "http:19aee11d5c18be3e",
+      "checked_at": "2026-11-15T00:37:40.327Z",
+      "started_at": null,
       "endpoint": "video.online",
       "observation_id": "http:19aee11d5c18be3e:3",
       "http_status": 200,
@@ -654,6 +716,8 @@
     },
     {
       "run_id": "http:7a29d445288fbf8b",
+      "checked_at": "2026-11-15T01:20:40.576Z",
+      "started_at": null,
       "endpoint": "comment.main",
       "observation_id": "http:7a29d445288fbf8b:1",
       "http_status": 200,
@@ -689,8 +753,1247 @@
         {
           "name": "ordinary-comment-rows-present",
           "passed": false
+        },
+        {
+          "name": "ordinary-comments-or-explicit-empty",
+          "passed": false
         }
       ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:04.691Z",
+      "endpoint": "home.popular",
+      "observation_id": "http:cbf5bee62e2a57fd:0",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "pn",
+        "ps"
+      ],
+      "public_input": {
+        "pn": "[REDACTED_INPUT]",
+        "ps": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "popular-list",
+          "passed": true
+        },
+        {
+          "name": "end-marker",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:06.106Z",
+      "endpoint": "video.detail",
+      "observation_id": "http:cbf5bee62e2a57fd:1",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "bvid"
+      ],
+      "public_input": {
+        "bvid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "requested-bvid",
+          "passed": true
+        },
+        {
+          "name": "positive-aid-cid",
+          "passed": true
+        },
+        {
+          "name": "pages-array",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:07.272Z",
+      "endpoint": "video.pages",
+      "observation_id": "http:cbf5bee62e2a57fd:2",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "bvid"
+      ],
+      "public_input": {
+        "bvid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "page-list",
+          "passed": true
+        },
+        {
+          "name": "page-identities",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:08.357Z",
+      "endpoint": "video.related",
+      "observation_id": "http:cbf5bee62e2a57fd:3",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "bvid"
+      ],
+      "public_input": {
+        "bvid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "related-array",
+          "passed": true
+        },
+        {
+          "name": "related-card-shape",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:09.457Z",
+      "endpoint": "video.tags",
+      "observation_id": "http:cbf5bee62e2a57fd:4",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "bvid"
+      ],
+      "public_input": {
+        "bvid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "tag-array",
+          "passed": true
+        },
+        {
+          "name": "tag-field-shape",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:10.563Z",
+      "endpoint": "user.relationStats",
+      "observation_id": "http:cbf5bee62e2a57fd:5",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "vmid"
+      ],
+      "public_input": {
+        "vmid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "requested-mid",
+          "passed": true
+        },
+        {
+          "name": "relation-counters",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:11.679Z",
+      "endpoint": "search.default",
+      "observation_id": "http:cbf5bee62e2a57fd:7",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [],
+      "public_input": {},
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "default-search-text",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:12.892Z",
+      "endpoint": "search.suggest",
+      "observation_id": "http:cbf5bee62e2a57fd:8",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "term"
+      ],
+      "public_input": {
+        "term": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "suggestion-list",
+          "passed": true
+        },
+        {
+          "name": "suggestion-entries",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:14.232Z",
+      "endpoint": "search.videos",
+      "observation_id": "http:cbf5bee62e2a57fd:9",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "keyword",
+        "page"
+      ],
+      "public_input": {
+        "keyword": "[REDACTED_INPUT]",
+        "page": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "search-results",
+          "passed": true
+        },
+        {
+          "name": "requested-page",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:16.031Z",
+      "endpoint": "search.all",
+      "observation_id": "http:cbf5bee62e2a57fd:10",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "keyword",
+        "page"
+      ],
+      "public_input": {
+        "keyword": "[REDACTED_INPUT]",
+        "page": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "search-results",
+          "passed": true
+        },
+        {
+          "name": "requested-page",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:17.873Z",
+      "endpoint": "comment.subject",
+      "observation_id": "http:cbf5bee62e2a57fd:11",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "oid"
+      ],
+      "public_input": {
+        "oid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "subject-base",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:18.966Z",
+      "endpoint": "comment.main",
+      "observation_id": "http:cbf5bee62e2a57fd:12",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "oid"
+      ],
+      "public_input": {
+        "oid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "ordinary-comments-or-explicit-empty",
+          "passed": true
+        },
+        {
+          "name": "cursor-object",
+          "passed": true
+        },
+        {
+          "name": "comment-list",
+          "passed": true
+        },
+        {
+          "name": "visible-comment-or-empty-thread",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:20.180Z",
+      "endpoint": "comment.replies",
+      "observation_id": "http:cbf5bee62e2a57fd:13",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "oid",
+        "root"
+      ],
+      "public_input": {
+        "oid": "[REDACTED_INPUT]",
+        "root": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "reply-list",
+          "passed": true
+        },
+        {
+          "name": "pagination",
+          "passed": true
+        },
+        {
+          "name": "requested-root",
+          "passed": true
+        },
+        {
+          "name": "requested-root-oid",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:21.426Z",
+      "endpoint": "video.online",
+      "observation_id": "http:cbf5bee62e2a57fd:14",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "aid",
+        "bvid",
+        "cid"
+      ],
+      "public_input": {
+        "aid": "[REDACTED_INPUT]",
+        "cid": "[REDACTED_INPUT]",
+        "bvid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "online-counter",
+          "passed": true
+        },
+        {
+          "name": "display-switch",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:22.515Z",
+      "endpoint": "playback.info",
+      "observation_id": "http:cbf5bee62e2a57fd:15",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "aid",
+        "cid"
+      ],
+      "public_input": {
+        "aid": "[REDACTED_INPUT]",
+        "cid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "requested-aid-cid",
+          "passed": true
+        },
+        {
+          "name": "subtitle-metadata",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:23.633Z",
+      "endpoint": "playback.url",
+      "observation_id": "http:cbf5bee62e2a57fd:16",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "bvid",
+        "cid"
+      ],
+      "public_input": {
+        "bvid": "[REDACTED_INPUT]",
+        "cid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "quality-number",
+          "passed": true
+        },
+        {
+          "name": "playback-resource-list",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:24.782Z",
+      "endpoint": "playback.broadcastServers",
+      "observation_id": "http:cbf5bee62e2a57fd:17",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [],
+      "public_input": {},
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "broadcast-domain",
+          "passed": true
+        },
+        {
+          "name": "broadcast-nodes",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:25.917Z",
+      "endpoint": "favorite.folders",
+      "observation_id": "http:cbf5bee62e2a57fd:18",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "up_mid"
+      ],
+      "public_input": {
+        "up_mid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "collection-count",
+          "passed": true
+        },
+        {
+          "name": "collection-list",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:27.021Z",
+      "endpoint": "dynamic.hot",
+      "observation_id": "http:cbf5bee62e2a57fd:19",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "page"
+      ],
+      "public_input": {
+        "page": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "dynamic-items",
+          "passed": true
+        },
+        {
+          "name": "pagination-offset",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:28.188Z",
+      "endpoint": "dynamic.banner",
+      "observation_id": "http:cbf5bee62e2a57fd:20",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [],
+      "public_input": {},
+      "outcome": "response-assertion-failed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "banner-list",
+          "passed": false
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:29.289Z",
+      "endpoint": "user.collections",
+      "observation_id": "http:cbf5bee62e2a57fd:21",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "mid"
+      ],
+      "public_input": {
+        "mid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "collection-lists",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:30.405Z",
+      "endpoint": "user.counters",
+      "observation_id": "http:cbf5bee62e2a57fd:22",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "mid"
+      ],
+      "public_input": {
+        "mid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "public-content-counters",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:31.550Z",
+      "endpoint": "user.notice",
+      "observation_id": "http:cbf5bee62e2a57fd:23",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "mid"
+      ],
+      "public_input": {
+        "mid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "notice-text",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:32.775Z",
+      "endpoint": "user.masterpieces",
+      "observation_id": "http:cbf5bee62e2a57fd:24",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "vmid"
+      ],
+      "public_input": {
+        "vmid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "masterpiece-array",
+          "passed": true
+        },
+        {
+          "name": "masterpiece-identities",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:33.921Z",
+      "endpoint": "user.followedBangumi",
+      "observation_id": "http:cbf5bee62e2a57fd:25",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "vmid"
+      ],
+      "public_input": {
+        "vmid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "follow-list",
+          "passed": true
+        },
+        {
+          "name": "follow-total",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:35.071Z",
+      "endpoint": "user.games",
+      "observation_id": "http:cbf5bee62e2a57fd:26",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "mid"
+      ],
+      "public_input": {
+        "mid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "game-list",
+          "passed": true
+        },
+        {
+          "name": "game-total",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:36.346Z",
+      "endpoint": "user.articles",
+      "observation_id": "http:cbf5bee62e2a57fd:27",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "mid"
+      ],
+      "public_input": {
+        "mid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "article-list",
+          "passed": true
+        },
+        {
+          "name": "article-count",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:37.468Z",
+      "endpoint": "user.settings",
+      "observation_id": "http:cbf5bee62e2a57fd:28",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "mid"
+      ],
+      "public_input": {
+        "mid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "privacy-settings",
+          "passed": true
+        },
+        {
+          "name": "index-order",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:38.752Z",
+      "endpoint": "live.roomPlayInfo",
+      "observation_id": "http:cbf5bee62e2a57fd:29",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "room_id"
+      ],
+      "public_input": {
+        "room_id": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "requested-room",
+          "passed": true
+        },
+        {
+          "name": "live-status",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:40.064Z",
+      "endpoint": "live.roomBaseInfo",
+      "observation_id": "http:cbf5bee62e2a57fd:30",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "room_ids"
+      ],
+      "public_input": {
+        "room_ids": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "requested-room-key",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:41.152Z",
+      "endpoint": "live.recommendations",
+      "observation_id": "http:cbf5bee62e2a57fd:31",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [],
+      "public_input": {},
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "room-recommendations",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:42.623Z",
+      "endpoint": "live.roomInfo",
+      "observation_id": "http:cbf5bee62e2a57fd:32",
+      "http_status": 200,
+      "business_code": -352,
+      "input_parameter_names": [
+        "room_id"
+      ],
+      "public_input": {
+        "room_id": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "risk-or-rate-response",
+      "reason": null,
+      "checks": []
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:43.861Z",
+      "endpoint": "note.publicList",
+      "observation_id": "http:cbf5bee62e2a57fd:33",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "oid"
+      ],
+      "public_input": {
+        "oid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "response-assertion-failed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "public-note-list",
+          "passed": true
+        },
+        {
+          "name": "note-page",
+          "passed": false
+        },
+        {
+          "name": "public-note-display",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:45.391Z",
+      "endpoint": "note.availability",
+      "observation_id": "http:cbf5bee62e2a57fd:34",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "aid"
+      ],
+      "public_input": {
+        "aid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "note-entrance-flag",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:46.509Z",
+      "endpoint": "home.ogv",
+      "observation_id": "http:cbf5bee62e2a57fd:35",
+      "http_status": 200,
+      "business_code": -400,
+      "input_parameter_names": [],
+      "public_input": {},
+      "outcome": "request-failed",
+      "reason": null,
+      "checks": []
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:47.694Z",
+      "endpoint": "home.recommendations",
+      "observation_id": "http:cbf5bee62e2a57fd:36",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [],
+      "public_input": {},
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "recommended-items",
+          "passed": true
+        },
+        {
+          "name": "recommended-video-identities",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:48.827Z",
+      "endpoint": "video.detailBundle",
+      "observation_id": "http:cbf5bee62e2a57fd:37",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "aid"
+      ],
+      "public_input": {
+        "aid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "requested-aid",
+          "passed": true
+        },
+        {
+          "name": "related-array",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:50.037Z",
+      "endpoint": "user.uploads",
+      "observation_id": "http:cbf5bee62e2a57fd:38",
+      "http_status": 412,
+      "business_code": -412,
+      "input_parameter_names": [
+        "mid",
+        "order",
+        "pn",
+        "ps"
+      ],
+      "public_input": {
+        "mid": "[REDACTED_INPUT]",
+        "pn": "[REDACTED_INPUT]",
+        "ps": "[REDACTED_INPUT]",
+        "order": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "risk-or-rate-response",
+      "reason": null,
+      "checks": []
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": null,
+      "endpoint": "user.info",
+      "observation_id": null,
+      "http_status": null,
+      "business_code": null,
+      "input_parameter_names": [
+        "mid"
+      ],
+      "public_input": {
+        "mid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "skipped",
+      "reason": "same-category-risk-response",
+      "checks": []
+    },
+    {
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "started_at": "2026-11-15T04:07:51.186Z",
+      "endpoint": "comment.main",
+      "observation_id": "http:cbf5bee62e2a57fd:39",
+      "http_status": 200,
+      "business_code": 0,
+      "input_parameter_names": [
+        "oid",
+        "pagination_str"
+      ],
+      "public_input": {
+        "oid": "[REDACTED_INPUT]"
+      },
+      "input_values_redacted": true,
+      "outcome": "anonymous-read-case-passed",
+      "reason": null,
+      "checks": [
+        {
+          "name": "numeric-business-code-zero",
+          "passed": true
+        },
+        {
+          "name": "ordinary-comments-or-explicit-empty",
+          "passed": true
+        },
+        {
+          "name": "cursor-object",
+          "passed": true
+        },
+        {
+          "name": "comment-list",
+          "passed": true
+        },
+        {
+          "name": "visible-comment-or-empty-thread",
+          "passed": true
+        },
+        {
+          "name": "next-page-new-ordinary-comments-or-explicit-end",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "run_id": "http:77227e43818863f2",
+      "checked_at": "2026-11-15T04:09:22.254Z",
+      "started_at": "2026-11-15T04:09:20.960Z",
+      "endpoint": "home.ogv",
+      "observation_id": "http:77227e43818863f2:0",
+      "http_status": 200,
+      "business_code": -400,
+      "input_parameter_names": [],
+      "public_input": {},
+      "outcome": "request-failed",
+      "reason": null,
+      "checks": []
     }
   ]
 }

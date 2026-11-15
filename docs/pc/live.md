@@ -8,11 +8,11 @@
 | --- | --- | --- | --- |
 | /xlive/general-interface/v1/content/get | GET https://api.live.bilibili.com/xlive/general-interface/v1/content/get | key, t | 已观察请求，尚无通过样本 |
 | /xlive/general-interface/v1/content/getRevenueMd5 | GET https://api.live.bilibili.com/xlive/general-interface/v1/content/getRevenueMd5 | t | 已观察请求，尚无通过样本 |
-| /xlive/web-interface/v1/webMain/getMoreRecList | GET https://api.live.bilibili.com/xlive/web-interface/v1/webMain/getMoreRecList | platform, web_location, x-bili-device-req-json, x-bili-locale-json | 已观察请求，尚无通过样本 |
-| /xlive/web-room/v1/index/getInfoByRoom | GET https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom | room_id, w_rid, web_location, wts | 存在风控返回 |
+| 直播推荐 (live.recommendations) | GET https://api.live.bilibili.com/xlive/web-interface/v1/webMain/getMoreRecList | platform, web_location, x-bili-device-req-json, x-bili-locale-json | 本轮：本轮字段用例通过；历史累计：独立 HTTP 样本通过；浏览器样本通过 |
+| 直播间综合信息 (live.roomInfo) | GET https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom | room_id, w_rid, web_location, wts | 本轮：风控或限速；历史累计：存在风控返回 |
 | /xlive/web-room/v1/index/getIpInfo | GET https://api.live.bilibili.com/xlive/web-room/v1/index/getIpInfo |  | 已观察请求，尚无通过样本 |
-| /xlive/web-room/v1/index/getRoomBaseInfo | GET https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomBaseInfo | req_biz, room_ids, use_cache | 已观察请求，尚无通过样本 |
-| 直播间播放信息 (live.roomPlayInfo) | GET https://api.live.bilibili.com/xlive/web-room/v2/index/getRoomPlayInfo | codec, dolby, eotf, format, mask, no_playurl, panorama, platform, protocol, qn, room_id, supported_drms, w_rid, web_location, wts | 独立 HTTP 样本通过；浏览器样本通过 |
+| 直播间基础信息 (live.roomBaseInfo) | GET https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomBaseInfo | req_biz, room_ids, use_cache | 本轮：本轮字段用例通过；历史累计：独立 HTTP 样本通过 |
+| 直播间播放信息 (live.roomPlayInfo) | GET https://api.live.bilibili.com/xlive/web-room/v2/index/getRoomPlayInfo | codec, dolby, eotf, format, mask, no_playurl, panorama, platform, protocol, ptype, qn, room_id, supported_drms, w_rid, web_location, wts | 本轮：本轮字段用例通过；历史累计：独立 HTTP 样本通过；浏览器样本通过 |
 
 ## 查看证据
 

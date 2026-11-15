@@ -1524,6 +1524,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/widgets/npd.274.21a29ef7.js",
           "source_sha256": "72df96cf809983df6577a55ebc379523e641c287beaf502b21db830bfa9ed56f"
+        },
+        {
+          "literal": "/x/kv-frontend/app/batchupdates",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 27216,
+          "source_byte_offset": 27216,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/widgets/npd.842.bc778ce1.js",
+          "source_sha256": "72e70e011ab57c6c47ab732b2c5b7d5ff2f702b6a00d6af47ddbedb83e3561c1"
         }
       ]
     },
@@ -1735,6 +1747,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/widgets/npd.274.21a29ef7.js",
           "source_sha256": "72df96cf809983df6577a55ebc379523e641c287beaf502b21db830bfa9ed56f"
+        },
+        {
+          "literal": "/x/kv-frontend/namespace/data",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 27170,
+          "source_byte_offset": 27170,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/widgets/npd.842.bc778ce1.js",
+          "source_sha256": "72e70e011ab57c6c47ab732b2c5b7d5ff2f702b6a00d6af47ddbedb83e3561c1"
         }
       ]
     },
@@ -8439,6 +8463,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com//x/v2/dm/command/goods/add",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 310288,
+          "source_byte_offset": 311970,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -8686,6 +8722,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/bapis/bilibili.api.ticket.v1.Ticket/GenWebTicket",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 1071216,
+          "source_byte_offset": 1073424,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -8757,6 +8805,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/pgc/player/web/check",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 498424,
+          "source_byte_offset": 500372,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -8819,6 +8879,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/pgc/view/web/season",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 340906,
+          "source_byte_offset": 342612,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -8881,6 +8953,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/pugv/view/web/season",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 340969,
+          "source_byte_offset": 342675,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -8931,6 +9015,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/activity/reserve",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 308582,
+          "source_byte_offset": 310264,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -9098,6 +9194,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/click-interface/click/now",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 148115,
+          "source_byte_offset": 149547,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -9129,6 +9237,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/click-interface/click/web/h5",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 444408,
+          "source_byte_offset": 446280,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -9160,6 +9280,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/click-interface/web/heartbeat",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 438095,
+          "source_byte_offset": 439967,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -9191,6 +9323,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/dm/adv/buy",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 296592,
+          "source_byte_offset": 298086,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -9222,6 +9366,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/dm/adv/state",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 296057,
+          "source_byte_offset": 297551,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -9253,6 +9409,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/dm/filter/user",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 312936,
+          "source_byte_offset": 314618,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -9284,6 +9452,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/dm/filter/user/add",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 311499,
+          "source_byte_offset": 313181,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -9315,6 +9495,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/dm/filter/user/add2",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 311916,
+          "source_byte_offset": 313598,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -9346,6 +9538,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/dm/filter/user/del",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 312520,
+          "source_byte_offset": 314202,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -9377,6 +9581,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/dm/protect/apply",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 300733,
+          "source_byte_offset": 302415,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -9408,6 +9624,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/dm/report/add",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 275244,
+          "source_byte_offset": 276712,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10177,6 +10405,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/player/card/click",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 328245,
+          "source_byte_offset": 329951,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10208,6 +10448,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/player/online/total",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 271632,
+          "source_byte_offset": 273100,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10251,6 +10503,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/player/videoshot",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 344511,
+          "source_byte_offset": 346217,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10282,6 +10546,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/player/wbi/v2",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 336812,
+          "source_byte_offset": 338518,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10523,6 +10799,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/relation/modify",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 1035648,
+          "source_byte_offset": 1037836,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10630,6 +10918,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/stein/edgeinfo_v2",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 368524,
+          "source_byte_offset": 370230,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10661,6 +10961,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/stein/edgeinfo_v2/preview",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 368643,
+          "source_byte_offset": 370349,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10811,6 +11123,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v1/govern/qoe/qoe_report",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 311129,
+          "source_byte_offset": 312811,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10861,6 +11185,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/command/checkin/record/add",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 309858,
+          "source_byte_offset": 311540,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10892,6 +11228,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/command/cmtime/post",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 310708,
+          "source_byte_offset": 312390,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10923,6 +11271,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/command/del",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 271128,
+          "source_byte_offset": 272596,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10954,6 +11314,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/command/grade/post",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 309016,
+          "source_byte_offset": 310698,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -10985,6 +11357,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/command/post",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 270580,
+          "source_byte_offset": 272048,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11016,6 +11400,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/command/user/conf",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 309436,
+          "source_byte_offset": 311118,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11047,6 +11443,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/command/vote/post",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 307872,
+          "source_byte_offset": 309554,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11078,6 +11486,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/edit/pool",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 301142,
+          "source_byte_offset": 302824,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11109,6 +11529,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/edit/state",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 301551,
+          "source_byte_offset": 303233,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11159,6 +11591,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/filter/up/black",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 275652,
+          "source_byte_offset": 277120,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11190,6 +11634,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/history/index",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 301961,
+          "source_byte_offset": 303643,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11221,6 +11677,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/panel",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 332197,
+          "source_byte_offset": 333903,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11252,6 +11720,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/post",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 269379,
+          "source_byte_offset": 270847,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11283,6 +11763,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/post2",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 269993,
+          "source_byte_offset": 271461,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11314,6 +11806,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/recall",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 300325,
+          "source_byte_offset": 302007,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11364,6 +11868,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/thumbup/add",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 277535,
+          "source_byte_offset": 279003,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11395,6 +11911,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/thumbup/detail",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 274594,
+          "source_byte_offset": 276062,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11426,6 +11954,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/thumbup/stats",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 276066,
+          "source_byte_offset": 277534,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11457,6 +11997,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/up/delete",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 276714,
+          "source_byte_offset": 278182,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11488,6 +12040,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/up/sender",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 277126,
+          "source_byte_offset": 278594,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11519,6 +12083,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/wbi/web/",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 283862,
+          "source_byte_offset": 285330,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11550,6 +12126,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/wbi/web/seg.so",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 1016767,
+          "source_byte_offset": 1018895,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11581,6 +12169,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/web/",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 279749,
+          "source_byte_offset": 281217,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11612,6 +12212,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/dm/web/config",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 567918,
+          "source_byte_offset": 569930,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11892,6 +12504,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/v2/subtitle/web/view",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 622553,
+          "source_byte_offset": 624569,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11923,6 +12547,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/vip/hd/trial_modify",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 1036309,
+          "source_byte_offset": 1038497,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -11954,6 +12590,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/vip/play_events/add",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 584830,
+          "source_byte_offset": 586842,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -12390,6 +13038,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/widgets/npd.common-helper.6574a330.js",
           "source_sha256": "9f1cfa1daab507291a8d211f9a67a7f7b94655abbd395d03d6176a9a0b19f94b"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/web-frontend/data/collector",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 4129,
+          "source_byte_offset": 4129,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/widgets/npd.842.bc778ce1.js",
+          "source_sha256": "72e70e011ab57c6c47ab732b2c5b7d5ff2f702b6a00d6af47ddbedb83e3561c1"
         }
       ]
     },
@@ -12781,6 +13441,18 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/web-interface/relation",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 145056,
+          "source_byte_offset": 146488,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -12905,6 +13577,30 @@
           "status": "pc-script-literal-candidate",
           "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.a3c25289.js",
           "source_sha256": "8cfe837d44c8bfd572da353649f3e74726650086300f9244857cf208448930ea"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/web-interface/wbi/view/detail",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 340832,
+          "source_byte_offset": 342538,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
+        },
+        {
+          "literal": "https://api.bilibili.com/x/web-interface/wbi/view/detail",
+          "query_parameter_names": [],
+          "method_hint": null,
+          "method_hint_scope": null,
+          "literal_fragment": false,
+          "source_utf16_offset": 345453,
+          "source_byte_offset": 347159,
+          "status": "pc-script-literal-candidate",
+          "source_url": "https://s1.hdslb.com/bfs/static/player/main/core.55649ba4.js",
+          "source_sha256": "e4cd9e1a91c99ad0d92b6b3dce970a05b0d4d2547f0b3c2e0f50d39d11407e36"
         }
       ]
     },
@@ -14888,8 +15584,8 @@
     }
   ],
   "coverage": {
-    "assets": 109,
-    "parsed": 109,
+    "assets": 115,
+    "parsed": 115,
     "skipped": 0,
     "errors": 0
   }

@@ -6,7 +6,7 @@
 
 | 名称/别名 | 方法与 URL | 参数名 | 验证结果 |
 | --- | --- | --- | --- |
-| 公开收藏夹列表 (favorite.folders) | GET https://api.bilibili.com/x/v3/fav/folder/created/list | pn, ps, up_mid, web_location, x-bili-device-req-json, x-bili-locale-json | 独立 HTTP 样本通过；浏览器样本通过 |
+| 公开收藏夹列表 (favorite.folders) | GET https://api.bilibili.com/x/v3/fav/folder/created/list | pn, ps, up_mid, web_location, x-bili-device-req-json, x-bili-locale-json | 本轮：本轮字段用例通过；历史累计：独立 HTTP 样本通过 |
 
 ## 查看证据
 

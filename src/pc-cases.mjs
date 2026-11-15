@@ -16,8 +16,8 @@
   case 'playback.url':add('quality-number',Number.isFinite(d?.quality));add('playback-resource-list',Array.isArray(d?.dash?.video)||Array.isArray(d?.durl));break;
   case 'search.all':case 'search.videos':add('search-results',Array.isArray(d?.result)&&d.result.length>0);add('requested-page',Number(d?.page)===Number(input.page||1));break;
   case 'search.default':add('default-search-text',typeof d?.show_name==='string'&&typeof d?.name==='string');break;
-  case 'comment.main':add('cursor-object',object(d?.cursor));add('comment-list',Array.isArray(d?.replies)||d?.replies===null);add('visible-comment-or-empty-thread',(d?.replies?.length||0)>0||(d?.top_replies?.length||0)>0||(d?.cursor?.all_count===0&&d?.cursor?.is_end===true));break;
-  case 'comment.replies':add('reply-list',Array.isArray(d?.replies)||d?.replies===null);add('pagination',object(d?.page));break;
+  case 'comment.main':add('ordinary-comments-or-explicit-empty',(Array.isArray(d?.replies)&&d.replies.length>0)||(d?.cursor?.all_count===0&&d?.cursor?.is_end===true));add('cursor-object',object(d?.cursor));add('comment-list',Array.isArray(d?.replies)||d?.replies===null);add('visible-comment-or-empty-thread',(d?.replies?.length||0)>0||(d?.top_replies?.length||0)>0||(d?.cursor?.all_count===0&&d?.cursor?.is_end===true));break;
+  case 'comment.replies':add('requested-root',String(d?.root?.rpid_str??d?.root?.rpid)===String(input.root));add('requested-root-oid',String(d?.root?.oid_str??d?.root?.oid)===String(input.oid));add('reply-list',Array.isArray(d?.replies)||d?.replies===null);add('pagination',object(d?.page));break;
   case 'user.info':add('requested-mid',String(d?.mid)===String(input.mid));add('public-profile',typeof d?.name==='string'&&typeof d?.face==='string');break;
   case 'user.relationStats':add('requested-mid',String(d?.mid)===String(input.vmid));add('relation-counters',Number.isSafeInteger(d?.following)&&Number.isSafeInteger(d?.follower));break;
   case 'user.uploads':add('archive-list',Array.isArray(d?.list?.vlist));add('pagination',object(d?.page)&&Number.isSafeInteger(d.page.count));break;
@@ -25,6 +25,25 @@
   case 'favorite.folders':add('collection-count',Number.isSafeInteger(d?.count)&&d.count>=0);add('collection-list',Array.isArray(d?.list)||d?.list===null);break;
   case 'home.popular':add('popular-list',Array.isArray(d?.list)&&d.list.length>0);add('end-marker',typeof d?.no_more==='boolean');break;
   case 'live.roomPlayInfo':add('requested-room',String(d?.room_id)===String(input.room_id));add('live-status',Number.isInteger(d?.live_status));break;
+  case 'search.suggest':add('suggestion-list',Array.isArray(d?.result?.tag));add('suggestion-entries',Array.isArray(d?.result?.tag)&&d.result.tag.every(v=>typeof v.value==='string'));break;
+  case 'comment.subject':add('subject-base',object(d?.base));break;
+  case 'user.collections':add('collection-lists',Array.isArray(d?.items_lists?.seasons_list)&&Array.isArray(d?.items_lists?.series_list));break;
+  case 'user.counters':add('public-content-counters',Number.isSafeInteger(d?.video)&&d.video>=0&&Number.isSafeInteger(d?.article)&&d.article>=0);break;
+  case 'user.notice':add('notice-text',typeof d==='string');break;
+  case 'user.masterpieces':add('masterpiece-array',Array.isArray(d));add('masterpiece-identities',Array.isArray(d)&&d.every(v=>id(v.aid)&&typeof v.bvid==='string'));break;
+  case 'user.followedBangumi':add('follow-list',Array.isArray(d?.list));add('follow-total',Number.isSafeInteger(d?.total)&&d.total>=0);break;
+  case 'user.games':add('game-list',Array.isArray(d?.list));add('game-total',Number.isSafeInteger(d?.total_count)&&d.total_count>=0);break;
+  case 'user.articles':add('article-list',Array.isArray(d?.articles));add('article-count',Number.isSafeInteger(d?.count)&&d.count>=0);break;
+  case 'user.settings':add('privacy-settings',object(d?.privacy));add('index-order',Array.isArray(d?.index_order)||typeof d?.index_order==='string');break;
+  case 'live.roomBaseInfo':add('requested-room-key',object(d?.by_room_ids)&&Object.hasOwn(d.by_room_ids,String(input.room_ids)));break;
+  case 'live.recommendations':add('room-recommendations',Array.isArray(d?.recommend_room_list));break;
+  case 'live.roomInfo':add('requested-room',String(d?.room_info?.room_id)===String(input.room_id));add('room-live-status',Number.isInteger(d?.room_info?.live_status));break;
+  case 'dynamic.banner':add('banner-list',Array.isArray(d?.banners));break;
+  case 'home.ogv':add('ogv-items',Array.isArray(d?.items)&&d.items.length>0);break;
+  case 'home.recommendations':add('recommended-items',Array.isArray(d?.item)&&d.item.length>0);add('recommended-video-identities',Array.isArray(d?.item)&&d.item.some(v=>typeof v.bvid==='string'));break;
+  case 'note.publicList':add('public-note-list',Array.isArray(d?.list)||d?.list===null);add('note-page',object(d?.page));add('public-note-display',typeof d?.show_public_note==='boolean');break;
+  case 'note.availability':add('note-entrance-flag',typeof d?.forbid_note_entrance==='boolean');break;
+  case 'playback.broadcastServers':add('broadcast-domain',typeof d?.domain==='string'&&d.domain.length>0);add('broadcast-nodes',Array.isArray(d?.nodes)&&d.nodes.length>0);break;
   default:throw Error('No case assertions for '+name);
  }
  return {passed:checks.every(c=>c.passed),checks};

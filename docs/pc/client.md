@@ -30,7 +30,7 @@ const comments = await client.call('comment.main', { oid: video.aid });
 | video.pages | 分 P 列表 | bvid | {} | 未启用 | 样本通过 |
 | video.related | 相关视频 | bvid | {} | 未启用 | 样本通过 |
 | video.tags | 视频标签 | bvid | {} | 未启用 | 样本通过 |
-| video.detailBundle | 视频详情聚合 | aid | {} | 启用 | 未通过或未执行 |
+| video.detailBundle | 视频详情聚合 | aid | {} | 启用 | 样本通过 |
 | video.online | 在线观看人数 | aid, cid | {} | 未启用 | 样本通过 |
 | playback.info | 播放器与字幕信息 | aid, cid | {} | 启用 | 样本通过 |
 | playback.url | 播放地址元数据 | bvid, cid | {"qn":32,"fnval":16} | 启用 | 样本通过 |
@@ -46,6 +46,27 @@ const comments = await client.call('comment.main', { oid: video.aid });
 | favorite.folders | 公开收藏夹列表 | up_mid | {"pn":1,"ps":20} | 未启用 | 样本通过 |
 | home.popular | 热门视频 |  | {"pn":1,"ps":20} | 未启用 | 样本通过 |
 | live.roomPlayInfo | 直播间播放信息 | room_id | {"protocol":"0,1","format":"0,1,2","codec":"0,1","qn":0,"platform":"web","ptype":8} | 未启用 | 样本通过 |
+| search.suggest | 搜索建议 | term | {} | 未启用 | 样本通过 |
+| comment.subject | 评论区说明 | oid | {"type":1} | 未启用 | 样本通过 |
+| user.collections | 空间合集与系列 | mid | {"page_num":1,"page_size":10} | 未启用 | 样本通过 |
+| user.counters | 空间内容计数 | mid | {} | 未启用 | 样本通过 |
+| user.notice | 空间公告 | mid | {} | 未启用 | 样本通过 |
+| user.masterpieces | 代表作 | vmid | {} | 未启用 | 样本通过 |
+| user.followedBangumi | 公开追番 | vmid | {"type":1} | 启用 | 样本通过 |
+| user.games | 最近游戏列表 | mid | {} | 启用 | 样本通过 |
+| user.articles | 空间专栏 | mid | {"pn":1,"ps":10} | 启用 | 样本通过 |
+| user.settings | 空间公开设置 | mid | {} | 未启用 | 样本通过 |
+| live.roomBaseInfo | 直播间基础信息 | room_ids | {"req_biz":"web_room_componet"} | 未启用 | 样本通过 |
+| live.recommendations | 直播推荐 |  | {"platform":"web"} | 未启用 | 样本通过 |
+| live.roomInfo | 直播间综合信息 | room_id | {} | 启用 | 未通过或未执行 |
+| dynamic.banner | 动态横幅 |  | {} | 未启用 | 未通过或未执行 |
+| home.ogv | 番剧推荐 |  | {"season_type":1,"request_cnt":5,"brush":0,"fresh_type":0} | 未启用 | 未通过或未执行 |
+| home.recommendations | 首页推荐 |  | {"ps":3} | 启用 | 样本通过 |
+| note.publicList | 公开笔记 | oid | {"oid_type":0,"pn":1,"ps":3} | 未启用 | 未通过或未执行 |
+| note.availability | 笔记入口状态 | aid | {} | 未启用 | 样本通过 |
+| playback.broadcastServers | 广播连接配置 |  | {"platform":"web"} | 未启用 | 样本通过 |
+
+--current-http 只显示本轮相关 HTTP 用例全部通过的地址；默认 list 仍显示历史至少一个匿名样本通过的地址，--all 包含所有观察结果。空列表和一次成功都不代表所有输入可用。
 
 ## 会话、签名与失败
 
@@ -62,6 +83,8 @@ npm ci --ignore-scripts
 node --test tests/*.test.mjs
 node scripts/capture-pc-web.mjs --chrome /path/to/chrome --output .local/pc-run
 node scripts/check-pc-web.mjs --run --output .local/pc-http --bvid [REDACTED_VIDEO]
+node scripts/build-pc-web.mjs --capture .local/pc-run/capture.json --current-checks .local/pc-http/checks.json
+npm run docs:generate
 ```
 
 浏览器路径需替换为本机 Chrome/Chromium 可执行文件。原始输出目录必须在 `.local` 下。每次捕获创建全新配置，结束时关闭本次浏览器。CI 不访问 Bilibili。

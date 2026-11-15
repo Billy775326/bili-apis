@@ -14,10 +14,9 @@
 | /x/esports/contest/team/detail | GET https://api.bilibili.com/x/esports/contest/team/detail | team_ids | 已观察请求，尚无通过样本 |
 | /x/esports/season/series/knockout_match | GET https://api.bilibili.com/x/esports/season/series/knockout_match | series_id | 已观察请求，尚无通过样本 |
 | /x/esports/stats/hero2/rank | GET https://api.bilibili.com/x/esports/stats/hero2/rank | season_id, top | 已观察请求，尚无通过样本 |
-| /x/note/is_forbid | GET https://api.bilibili.com/x/note/is_forbid | aid, web_location | 已观察请求，尚无通过样本 |
-| /x/note/publish/list/archive | GET https://api.bilibili.com/x/note/publish/list/archive | oid, oid_type, pn, ps, web_location | 已观察请求，尚无通过样本 |
+| 笔记入口状态 (note.availability) | GET https://api.bilibili.com/x/note/is_forbid | aid, web_location | 本轮：本轮字段用例通过；历史累计：独立 HTTP 样本通过；浏览器样本通过 |
+| 公开笔记 (note.publicList) | GET https://api.bilibili.com/x/note/publish/list/archive | oid, oid_type, pn, ps, web_location | 本轮：字段断言未通过；历史累计：存在字段/分页断言失败 |
 | /x/task/totalv2 | GET https://api.bilibili.com/x/task/totalv2 | task_ids, web_location | 已观察请求，尚无通过样本 |
-| /x/web-interface/broadcast/servers | GET https://api.bilibili.com/x/web-interface/broadcast/servers | platform | 已观察请求，尚无通过样本 |
 | /x/web-interface/relation | GET https://api.bilibili.com/x/web-interface/relation | mid | 存在未登录返回 |
 
 ## 查看证据

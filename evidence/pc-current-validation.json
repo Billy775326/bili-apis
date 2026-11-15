@@ -1,0 +1,1746 @@
+{
+  "schema_version": 1,
+  "scope": "Latest explicitly selected anonymous HTTP run per method+URL; all cases for that endpoint in the selected run must pass. Older historical success is not a current pass. Empty lists establish response shape only, not content completeness.",
+  "summary": {
+    "endpoints": 39,
+    "cases": 41,
+    "passed": 33,
+    "outcomes": {
+      "anonymous-read-case-passed": 33,
+      "response-assertion-failed": 2,
+      "request-failed": 1,
+      "risk-or-rate-response": 2,
+      "skipped": 1
+    }
+  },
+  "endpoints": [
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/reply/reply",
+      "category": "comment",
+      "aliases": [
+        "comment.replies"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:20.180Z",
+          "endpoint": "comment.replies",
+          "observation_id": "http:cbf5bee62e2a57fd:13",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "oid",
+            "root"
+          ],
+          "public_input": {
+            "oid": "[REDACTED_INPUT]",
+            "root": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "reply-list",
+              "passed": true
+            },
+            {
+              "name": "pagination",
+              "passed": true
+            },
+            {
+              "name": "requested-root",
+              "passed": true
+            },
+            {
+              "name": "requested-root-oid",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/reply/subject/description",
+      "category": "comment",
+      "aliases": [
+        "comment.subject"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:17.873Z",
+          "endpoint": "comment.subject",
+          "observation_id": "http:cbf5bee62e2a57fd:11",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "oid"
+          ],
+          "public_input": {
+            "oid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "subject-base",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v2/reply/wbi/main",
+      "category": "comment",
+      "aliases": [
+        "comment.main"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:18.966Z",
+          "endpoint": "comment.main",
+          "observation_id": "http:cbf5bee62e2a57fd:12",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "oid"
+          ],
+          "public_input": {
+            "oid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "ordinary-comments-or-explicit-empty",
+              "passed": true
+            },
+            {
+              "name": "cursor-object",
+              "passed": true
+            },
+            {
+              "name": "comment-list",
+              "passed": true
+            },
+            {
+              "name": "visible-comment-or-empty-thread",
+              "passed": true
+            }
+          ]
+        },
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:51.186Z",
+          "endpoint": "comment.main",
+          "observation_id": "http:cbf5bee62e2a57fd:39",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "oid",
+            "pagination_str"
+          ],
+          "public_input": {
+            "oid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "ordinary-comments-or-explicit-empty",
+              "passed": true
+            },
+            {
+              "name": "cursor-object",
+              "passed": true
+            },
+            {
+              "name": "comment-list",
+              "passed": true
+            },
+            {
+              "name": "visible-comment-or-empty-thread",
+              "passed": true
+            },
+            {
+              "name": "next-page-new-ordinary-comments-or-explicit-end",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/dynamic/feed/dyn/banner",
+      "category": "dynamic",
+      "aliases": [
+        "dynamic.banner"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:28.188Z",
+          "endpoint": "dynamic.banner",
+          "observation_id": "http:cbf5bee62e2a57fd:20",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [],
+          "public_input": {},
+          "outcome": "response-assertion-failed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "banner-list",
+              "passed": false
+            }
+          ]
+        }
+      ],
+      "outcome": "response-assertion-failed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/hot",
+      "category": "dynamic",
+      "aliases": [
+        "dynamic.hot"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:27.021Z",
+          "endpoint": "dynamic.hot",
+          "observation_id": "http:cbf5bee62e2a57fd:19",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "page"
+          ],
+          "public_input": {
+            "page": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "dynamic-items",
+              "passed": true
+            },
+            {
+              "name": "pagination-offset",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/v3/fav/folder/created/list",
+      "category": "favorite",
+      "aliases": [
+        "favorite.folders"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:25.917Z",
+          "endpoint": "favorite.folders",
+          "observation_id": "http:cbf5bee62e2a57fd:18",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "up_mid"
+          ],
+          "public_input": {
+            "up_mid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "collection-count",
+              "passed": true
+            },
+            {
+              "name": "collection-list",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/index/ogv/rcmd",
+      "category": "feed",
+      "aliases": [
+        "home.ogv"
+      ],
+      "run_id": "http:77227e43818863f2",
+      "checked_at": "2026-11-15T04:09:22.254Z",
+      "cases": [
+        {
+          "run_id": "http:77227e43818863f2",
+          "checked_at": "2026-11-15T04:09:22.254Z",
+          "started_at": "2026-11-15T04:09:20.960Z",
+          "endpoint": "home.ogv",
+          "observation_id": "http:77227e43818863f2:0",
+          "http_status": 200,
+          "business_code": -400,
+          "input_parameter_names": [],
+          "public_input": {},
+          "outcome": "request-failed",
+          "reason": null,
+          "checks": []
+        }
+      ],
+      "outcome": "request-failed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/popular",
+      "category": "feed",
+      "aliases": [
+        "home.popular"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:04.691Z",
+          "endpoint": "home.popular",
+          "observation_id": "http:cbf5bee62e2a57fd:0",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "pn",
+            "ps"
+          ],
+          "public_input": {
+            "pn": "[REDACTED_INPUT]",
+            "ps": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "popular-list",
+              "passed": true
+            },
+            {
+              "name": "end-marker",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/index/top/feed/rcmd",
+      "category": "feed",
+      "aliases": [
+        "home.recommendations"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:47.694Z",
+          "endpoint": "home.recommendations",
+          "observation_id": "http:cbf5bee62e2a57fd:36",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [],
+          "public_input": {},
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "recommended-items",
+              "passed": true
+            },
+            {
+              "name": "recommended-video-identities",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-interface/v1/webMain/getMoreRecList",
+      "category": "live",
+      "aliases": [
+        "live.recommendations"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:41.152Z",
+          "endpoint": "live.recommendations",
+          "observation_id": "http:cbf5bee62e2a57fd:31",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [],
+          "public_input": {},
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "room-recommendations",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom",
+      "category": "live",
+      "aliases": [
+        "live.roomInfo"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:42.623Z",
+          "endpoint": "live.roomInfo",
+          "observation_id": "http:cbf5bee62e2a57fd:32",
+          "http_status": 200,
+          "business_code": -352,
+          "input_parameter_names": [
+            "room_id"
+          ],
+          "public_input": {
+            "room_id": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "risk-or-rate-response",
+          "reason": null,
+          "checks": []
+        }
+      ],
+      "outcome": "risk-or-rate-response"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomBaseInfo",
+      "category": "live",
+      "aliases": [
+        "live.roomBaseInfo"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:40.064Z",
+          "endpoint": "live.roomBaseInfo",
+          "observation_id": "http:cbf5bee62e2a57fd:30",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "room_ids"
+          ],
+          "public_input": {
+            "room_ids": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-room-key",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.live.bilibili.com/xlive/web-room/v2/index/getRoomPlayInfo",
+      "category": "live",
+      "aliases": [
+        "live.roomPlayInfo"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:38.752Z",
+          "endpoint": "live.roomPlayInfo",
+          "observation_id": "http:cbf5bee62e2a57fd:29",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "room_id"
+          ],
+          "public_input": {
+            "room_id": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-room",
+              "passed": true
+            },
+            {
+              "name": "live-status",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/note/is_forbid",
+      "category": "other",
+      "aliases": [
+        "note.availability"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:45.391Z",
+          "endpoint": "note.availability",
+          "observation_id": "http:cbf5bee62e2a57fd:34",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "aid"
+          ],
+          "public_input": {
+            "aid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "note-entrance-flag",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/note/publish/list/archive",
+      "category": "other",
+      "aliases": [
+        "note.publicList"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:43.861Z",
+          "endpoint": "note.publicList",
+          "observation_id": "http:cbf5bee62e2a57fd:33",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "oid"
+          ],
+          "public_input": {
+            "oid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "response-assertion-failed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "public-note-list",
+              "passed": true
+            },
+            {
+              "name": "note-page",
+              "passed": false
+            },
+            {
+              "name": "public-note-display",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "response-assertion-failed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/online/total",
+      "category": "playback",
+      "aliases": [
+        "video.online"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:21.426Z",
+          "endpoint": "video.online",
+          "observation_id": "http:cbf5bee62e2a57fd:14",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "aid",
+            "bvid",
+            "cid"
+          ],
+          "public_input": {
+            "aid": "[REDACTED_INPUT]",
+            "cid": "[REDACTED_INPUT]",
+            "bvid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "online-counter",
+              "passed": true
+            },
+            {
+              "name": "display-switch",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/wbi/playurl",
+      "category": "playback",
+      "aliases": [
+        "playback.url"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:23.633Z",
+          "endpoint": "playback.url",
+          "observation_id": "http:cbf5bee62e2a57fd:16",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "bvid",
+            "cid"
+          ],
+          "public_input": {
+            "bvid": "[REDACTED_INPUT]",
+            "cid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "quality-number",
+              "passed": true
+            },
+            {
+              "name": "playback-resource-list",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/wbi/v2",
+      "category": "playback",
+      "aliases": [
+        "playback.info"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:22.515Z",
+          "endpoint": "playback.info",
+          "observation_id": "http:cbf5bee62e2a57fd:15",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "aid",
+            "cid"
+          ],
+          "public_input": {
+            "aid": "[REDACTED_INPUT]",
+            "cid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-aid-cid",
+              "passed": true
+            },
+            {
+              "name": "subtitle-metadata",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/broadcast/servers",
+      "category": "playback",
+      "aliases": [
+        "playback.broadcastServers"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:24.782Z",
+          "endpoint": "playback.broadcastServers",
+          "observation_id": "http:cbf5bee62e2a57fd:17",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [],
+          "public_input": {},
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "broadcast-domain",
+              "passed": true
+            },
+            {
+              "name": "broadcast-nodes",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/relation/stat",
+      "category": "relation",
+      "aliases": [
+        "user.relationStats"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:10.563Z",
+          "endpoint": "user.relationStats",
+          "observation_id": "http:cbf5bee62e2a57fd:5",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "vmid"
+          ],
+          "public_input": {
+            "vmid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-mid",
+              "passed": true
+            },
+            {
+              "name": "relation-counters",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/suggest",
+      "category": "search",
+      "aliases": [
+        "search.suggest"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:12.892Z",
+          "endpoint": "search.suggest",
+          "observation_id": "http:cbf5bee62e2a57fd:8",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "term"
+          ],
+          "public_input": {
+            "term": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "suggestion-list",
+              "passed": true
+            },
+            {
+              "name": "suggestion-entries",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/search/all/v2",
+      "category": "search",
+      "aliases": [
+        "search.all"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:16.031Z",
+          "endpoint": "search.all",
+          "observation_id": "http:cbf5bee62e2a57fd:10",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "keyword",
+            "page"
+          ],
+          "public_input": {
+            "keyword": "[REDACTED_INPUT]",
+            "page": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "search-results",
+              "passed": true
+            },
+            {
+              "name": "requested-page",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/search/default",
+      "category": "search",
+      "aliases": [
+        "search.default"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:11.679Z",
+          "endpoint": "search.default",
+          "observation_id": "http:cbf5bee62e2a57fd:7",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [],
+          "public_input": {},
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "default-search-text",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/search/type",
+      "category": "search",
+      "aliases": [
+        "search.videos"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:14.232Z",
+          "endpoint": "search.videos",
+          "observation_id": "http:cbf5bee62e2a57fd:9",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "keyword",
+            "page"
+          ],
+          "public_input": {
+            "keyword": "[REDACTED_INPUT]",
+            "page": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "search-results",
+              "passed": true
+            },
+            {
+              "name": "requested-page",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/polymer/web-space/home/seasons_series",
+      "category": "user",
+      "aliases": [
+        "user.collections"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:29.289Z",
+          "endpoint": "user.collections",
+          "observation_id": "http:cbf5bee62e2a57fd:21",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "mid"
+          ],
+          "public_input": {
+            "mid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "collection-lists",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/bangumi/follow/list",
+      "category": "user",
+      "aliases": [
+        "user.followedBangumi"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:33.921Z",
+          "endpoint": "user.followedBangumi",
+          "observation_id": "http:cbf5bee62e2a57fd:25",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "vmid"
+          ],
+          "public_input": {
+            "vmid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "follow-list",
+              "passed": true
+            },
+            {
+              "name": "follow-total",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/lastplaygame/v2",
+      "category": "user",
+      "aliases": [
+        "user.games"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:35.071Z",
+          "endpoint": "user.games",
+          "observation_id": "http:cbf5bee62e2a57fd:26",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "mid"
+          ],
+          "public_input": {
+            "mid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "game-list",
+              "passed": true
+            },
+            {
+              "name": "game-total",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/masterpiece",
+      "category": "user",
+      "aliases": [
+        "user.masterpieces"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:32.775Z",
+          "endpoint": "user.masterpieces",
+          "observation_id": "http:cbf5bee62e2a57fd:24",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "vmid"
+          ],
+          "public_input": {
+            "vmid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "masterpiece-array",
+              "passed": true
+            },
+            {
+              "name": "masterpiece-identities",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/navnum",
+      "category": "user",
+      "aliases": [
+        "user.counters"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:30.405Z",
+          "endpoint": "user.counters",
+          "observation_id": "http:cbf5bee62e2a57fd:22",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "mid"
+          ],
+          "public_input": {
+            "mid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "public-content-counters",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/notice",
+      "category": "user",
+      "aliases": [
+        "user.notice"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:31.550Z",
+          "endpoint": "user.notice",
+          "observation_id": "http:cbf5bee62e2a57fd:23",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "mid"
+          ],
+          "public_input": {
+            "mid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "notice-text",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/setting",
+      "category": "user",
+      "aliases": [
+        "user.settings"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:37.468Z",
+          "endpoint": "user.settings",
+          "observation_id": "http:cbf5bee62e2a57fd:28",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "mid"
+          ],
+          "public_input": {
+            "mid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "privacy-settings",
+              "passed": true
+            },
+            {
+              "name": "index-order",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/wbi/acc/info",
+      "category": "user",
+      "aliases": [
+        "user.info"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": null,
+          "endpoint": "user.info",
+          "observation_id": null,
+          "http_status": null,
+          "business_code": null,
+          "input_parameter_names": [
+            "mid"
+          ],
+          "public_input": {
+            "mid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "skipped",
+          "reason": "same-category-risk-response",
+          "checks": []
+        }
+      ],
+      "outcome": "skipped"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/wbi/arc/search",
+      "category": "user",
+      "aliases": [
+        "user.uploads"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:50.037Z",
+          "endpoint": "user.uploads",
+          "observation_id": "http:cbf5bee62e2a57fd:38",
+          "http_status": 412,
+          "business_code": -412,
+          "input_parameter_names": [
+            "mid",
+            "order",
+            "pn",
+            "ps"
+          ],
+          "public_input": {
+            "mid": "[REDACTED_INPUT]",
+            "pn": "[REDACTED_INPUT]",
+            "ps": "[REDACTED_INPUT]",
+            "order": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "risk-or-rate-response",
+          "reason": null,
+          "checks": []
+        }
+      ],
+      "outcome": "risk-or-rate-response"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/space/wbi/article",
+      "category": "user",
+      "aliases": [
+        "user.articles"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:36.346Z",
+          "endpoint": "user.articles",
+          "observation_id": "http:cbf5bee62e2a57fd:27",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "mid"
+          ],
+          "public_input": {
+            "mid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "article-list",
+              "passed": true
+            },
+            {
+              "name": "article-count",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/player/pagelist",
+      "category": "video",
+      "aliases": [
+        "video.pages"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:07.272Z",
+          "endpoint": "video.pages",
+          "observation_id": "http:cbf5bee62e2a57fd:2",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "bvid"
+          ],
+          "public_input": {
+            "bvid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "page-list",
+              "passed": true
+            },
+            {
+              "name": "page-identities",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/tag/archive/tags",
+      "category": "video",
+      "aliases": [
+        "video.tags"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:09.457Z",
+          "endpoint": "video.tags",
+          "observation_id": "http:cbf5bee62e2a57fd:4",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "bvid"
+          ],
+          "public_input": {
+            "bvid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "tag-array",
+              "passed": true
+            },
+            {
+              "name": "tag-field-shape",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/archive/related",
+      "category": "video",
+      "aliases": [
+        "video.related"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:08.357Z",
+          "endpoint": "video.related",
+          "observation_id": "http:cbf5bee62e2a57fd:3",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "bvid"
+          ],
+          "public_input": {
+            "bvid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "related-array",
+              "passed": true
+            },
+            {
+              "name": "related-card-shape",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/view",
+      "category": "video",
+      "aliases": [
+        "video.detail"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:06.106Z",
+          "endpoint": "video.detail",
+          "observation_id": "http:cbf5bee62e2a57fd:1",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "bvid"
+          ],
+          "public_input": {
+            "bvid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-bvid",
+              "passed": true
+            },
+            {
+              "name": "positive-aid-cid",
+              "passed": true
+            },
+            {
+              "name": "pages-array",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    },
+    {
+      "method": "GET",
+      "url": "https://api.bilibili.com/x/web-interface/wbi/view/detail",
+      "category": "video",
+      "aliases": [
+        "video.detailBundle"
+      ],
+      "run_id": "http:cbf5bee62e2a57fd",
+      "checked_at": "2026-11-15T04:07:52.474Z",
+      "cases": [
+        {
+          "run_id": "http:cbf5bee62e2a57fd",
+          "checked_at": "2026-11-15T04:07:52.474Z",
+          "started_at": "2026-11-15T04:07:48.827Z",
+          "endpoint": "video.detailBundle",
+          "observation_id": "http:cbf5bee62e2a57fd:37",
+          "http_status": 200,
+          "business_code": 0,
+          "input_parameter_names": [
+            "aid"
+          ],
+          "public_input": {
+            "aid": "[REDACTED_INPUT]"
+          },
+          "input_values_redacted": true,
+          "outcome": "anonymous-read-case-passed",
+          "reason": null,
+          "checks": [
+            {
+              "name": "numeric-business-code-zero",
+              "passed": true
+            },
+            {
+              "name": "requested-aid",
+              "passed": true
+            },
+            {
+              "name": "related-array",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "outcome": "anonymous-read-case-passed"
+    }
+  ]
+}

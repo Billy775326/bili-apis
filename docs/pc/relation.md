@@ -7,7 +7,7 @@
 | 名称/别名 | 方法与 URL | 参数名 | 验证结果 |
 | --- | --- | --- | --- |
 | /x/relation/relations | GET https://api.bilibili.com/x/relation/relations | fids, web_location, x-bili-device-req-json, x-bili-locale-json | 存在未登录返回 |
-| 关注与粉丝数 (user.relationStats) | GET https://api.bilibili.com/x/relation/stat | vmid, web_location, x-bili-device-req-json, x-bili-locale-json | 独立 HTTP 样本通过；浏览器样本通过 |
+| 关注与粉丝数 (user.relationStats) | GET https://api.bilibili.com/x/relation/stat | vmid, web_location, x-bili-device-req-json, x-bili-locale-json | 本轮：本轮字段用例通过；历史累计：独立 HTTP 样本通过；浏览器样本通过 |
 
 ## 查看证据
 

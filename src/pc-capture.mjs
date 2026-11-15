@@ -7,7 +7,7 @@ export const sha256=b=>createHash('sha256').update(b).digest('hex');
 const API_HOSTS=new Set(['api.bilibili.com','api.live.bilibili.com','s.search.bilibili.com','api.vc.bilibili.com','passport.bilibili.com']);
 export function safePcUrl(value) {
  const u=new URL(value);if(!['https:','http:'].includes(u.protocol)||u.username||u.password)throw Error('Unexpected URL');
- const allowed=new Set(['bvid','aid','avid','cid','mid','vmid','host_mid','oid','type','pn','ps','page','page_size','keyword','search_type','order','qn','fnval','mode','plat','room_id','tid','rid','up_mid','root','web_location']);
+ const allowed=new Set(['bvid','aid','avid','cid','mid','vmid','host_mid','oid','type','pn','ps','page','page_size','keyword','search_type','order','qn','fnval','mode','plat','room_id','tid','rid','up_mid','root','web_location','term','page_num','season_type','oid_type','platform','room_ids','req_biz']);
  return {url:u.origin+u.pathname,query_parameter_names:[...new Set(u.searchParams.keys())].sort(),public_input:Object.fromEntries([...u.searchParams].filter(([k,v])=>allowed.has(k)&&v.length<=100))};
 }
 export function summarizePcJson(json) {
